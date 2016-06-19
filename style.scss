@@ -133,3 +133,147 @@ Make Enliven template to become friendly with all device.
 This module only use for demo site (you can delete it).
 ---------- */
 @import "sass/customize";
+
+// custom.
+
+.e-clear{
+	@include clearfix();
+}
+
+.e-bg{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+// fonts.
+.e-font-one{
+	font-family: $e_font_family_01;
+}
+
+.e-font-two{
+	font-family: $e_font_family_02;
+}
+
+// color.
+.e-color-one{
+	color: $e_primary_color;
+}
+
+.e-color-two{
+	color: $e_secondary_color;
+}
+
+.e-bg-one{
+	background-color: $e_primary_color;
+}
+
+// headings.
+.e-heading-001{
+	font-size: 60px;
+	line-height: 80px;
+	@extend .e-color-one;
+}
+
+.e-heading-002{
+	font-size: 48px;
+	line-height: 58px;
+	@extend .e-color-two;
+}
+
+// buttons.
+.e-button-001{
+	@include opacity( 1 );
+	@include inline-block( !important );	
+	@extend .e-bg-one;
+	@extend .e-font-two;
+	padding: 0px 30px;
+	color: $e_white;	
+	text-transform: uppercase;	
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 45px;
+	height: 45px;
+	text-decoration: none;
+}
+
+// widgets.
+.e-slider {
+		
+	.nivoSlider{
+		position: relative;
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: 0px;
+			right: 0px;
+			z-index: 10;
+			background-color: $e_black;
+			@include opacity( 0.5 );
+		}		
+	}
+
+	.nivo-caption{
+		background: transparent;
+		padding: 0px 0px 0px 0px;
+		bottom: 90px;		
+	}
+	
+	.nivo-caption,
+	.nivo-prevNav,
+	.nivo-nextNav{
+		z-index: 15;
+	}
+
+	h2{
+		@extend .e-font-two;
+		@extend .e-heading-001;
+		margin-top: 0px;
+		margin-bottom: 5px;		
+	}
+
+	h3{
+		@extend .e-font-two;
+		@extend .e-heading-002;
+		margin-top: 0px;
+		margin-bottom: 5px;		
+	}
+
+	h2, h3, p {
+		width: 50%;
+		@extend .e-clear;
+	}
+
+	a{
+		content: none;
+	}
+	
+	p{
+		padding: 0px;
+	}
+
+	.e-caption a{
+		@extend .e-button-001;
+		margin-top: 30px;
+	}
+}
+
+.e-carousel {}
+
+.e-count-down {}
+
+.e-image {}
+
+.e-register {}
+
+.e-welcome {}
+
+
+// .elements

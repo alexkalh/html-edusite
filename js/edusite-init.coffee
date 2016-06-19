@@ -32,9 +32,9 @@ Edusite =
 		if $e_slider.length
 			$e_slider.find('.nivoSlider').nivoSlider
 				pauseTime: 10000
-				directionNav: true
+				directionNav: false
 				controlNav: false
-				randomStart: false
+				randomStart: false				
 				beforeChange: ->
 					$e_slider.find('.nivo-caption').find( '.animated' ).each ->
 						jQuery(this).addClass 'fadeOut'

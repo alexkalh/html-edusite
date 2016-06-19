@@ -1,31 +1,25 @@
 $e_mode: "demo"; //stable or demo
 
-$e_font_family_01: 'Source Sans Pro', sans-serif;
-$e_font_family_02: "Raleway", sans-serif;
+$e_font_family_01: 'Roboto', sans-serif;
+$e_font_family_02: 'Montserrat', sans-serif;
 
 //PRIMARY
 $e_white: #FFFFFF;
 $e_black: #000000;
-$e_primary_color: #EE3440;
-$e_secondary_color: #252932;
+$e_primary_color: #ff7f00;
+$e_secondary_color: #e5e5e5;
 $e_link_color: $e_primary_color;
 $e_link_hover_color: $e_primary_color;
-
-$e_primary_color_darken_01: darken( $e_primary_color, 10 );
-$e_primary_color_darken_02: darken( $e_primary_color, 11 );
-$e_primary_color_darken_03: darken( $e_primary_color, 15 );
-
 
 //PRIMARY-MENU-2
 $e_color_primary_nav_2: #DFDFDF;
 
 //BODY
-$e_color_body: #646464;
+$e_color_body: #909090;
 $e_color_heading: #333333;
 
 //BORDER
 $e_border_color_01: #DEDEDE;
-
 
 $e_bg_main: #f9f9f9;
 $e_color_metadata_01: #888888;
@@ -89,7 +83,7 @@ $e_font_heading_letter_spacing: 0.5px;
 $e_link_hover_decoration: underline;
 
 $e_font_body: $e_font_family_01;
-$e_font_body_size: 16px;
+$e_font_body_size: 15px;
 $e_font_body_line_height: 24px;
 $e_font_body_weight: 400;
 $e_font_body_style: normal;

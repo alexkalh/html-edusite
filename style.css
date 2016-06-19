@@ -7420,11 +7420,11 @@ The basic rules for structure of site: header, footer, sidebar, navigation,..
 }
 
 a {
-  color: #ee3440;
+  color: #ff7f00;
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #ee3440;
+  color: #ff7f00;
   text-decoration: underline;
   outline: none;
 }
@@ -7607,7 +7607,7 @@ The common typography rules (font-family, font-size, line-height) for html, body
 ---------- */
 html {
   overflow-x: hidden;
-  color: #646464;
+  color: #909090;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -7619,15 +7619,15 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
 
 body {
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
   line-height: 24px;
   font-style: normal;
 }
 
 h1 {
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 35px;
   line-height: 45px;
   font-style: normal;
@@ -7636,7 +7636,7 @@ h1 {
 
 h2 {
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 29px;
   line-height: 38px;
   font-style: normal;
@@ -7645,7 +7645,7 @@ h2 {
 
 h3 {
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   line-height: 32px;
   font-style: normal;
@@ -7654,7 +7654,7 @@ h3 {
 
 h4 {
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   line-height: 25px;
   font-style: normal;
@@ -7663,7 +7663,7 @@ h4 {
 
 h5 {
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   line-height: 21px;
   font-style: normal;
@@ -7672,7 +7672,7 @@ h5 {
 
 h6 {
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-style: normal;
@@ -7787,16 +7787,6 @@ The style for all module: widget & block.
 9.1. CUSTOM WIDGET
 ----------
 ---------- */
-.e-bg {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-}
-
 /*
 9.2. WIDGET FOR SINGLE POST
 ----------
@@ -7886,4 +7876,121 @@ This module only use for demo site (you can delete it).
 ---------- */
 .e-custom-01 {
   background-image: url("demo/bg/welcome.jpg");
+}
+
+.e-clear:before, .e-slider h2:before, .e-slider h3:before, .e-slider p:before, .e-clear:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
+  content: "";
+  display: table;
+}
+.e-clear:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
+  clear: both;
+}
+
+.e-bg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.e-font-one {
+  font-family: "Roboto", sans-serif;
+}
+
+.e-font-two, .e-button-001, .e-slider .e-caption a, .e-slider h2, .e-slider h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.e-color-one, .e-heading-001, .e-slider h2 {
+  color: #ff7f00;
+}
+
+.e-color-two, .e-heading-002, .e-slider h3 {
+  color: #e5e5e5;
+}
+
+.e-bg-one, .e-button-001, .e-slider .e-caption a {
+  background-color: #ff7f00;
+}
+
+.e-heading-001, .e-slider h2 {
+  font-size: 60px;
+  line-height: 80px;
+}
+
+.e-heading-002, .e-slider h3 {
+  font-size: 48px;
+  line-height: 58px;
+}
+
+.e-button-001, .e-slider .e-caption a {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+  display: inline-block !important;
+  *display: inline !important;
+  zoom: 1;
+  padding: 0px 30px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 45px;
+  height: 45px;
+  text-decoration: none;
+}
+
+.e-slider .nivoSlider {
+  position: relative;
+}
+.e-slider .nivoSlider::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10;
+  background-color: black;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+.e-slider .nivo-caption {
+  background: transparent;
+  padding: 0px 0px 0px 0px;
+  bottom: 90px;
+}
+.e-slider .nivo-caption,
+.e-slider .nivo-prevNav,
+.e-slider .nivo-nextNav {
+  z-index: 15;
+}
+.e-slider h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.e-slider h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.e-slider h2, .e-slider h3, .e-slider p {
+  width: 50%;
+}
+.e-slider a {
+  content: none;
+}
+.e-slider p {
+  padding: 0px;
+}
+.e-slider .e-caption a {
+  margin-top: 30px;
 }
