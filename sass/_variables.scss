@@ -1,0 +1,137 @@
+$e_mode: "demo"; //stable or demo
+
+$e_font_family_01: 'Source Sans Pro', sans-serif;
+$e_font_family_02: "Raleway", sans-serif;
+
+//PRIMARY
+$e_white: #FFFFFF;
+$e_black: #000000;
+$e_primary_color: #EE3440;
+$e_secondary_color: #252932;
+$e_link_color: $e_primary_color;
+$e_link_hover_color: $e_primary_color;
+
+$e_primary_color_darken_01: darken( $e_primary_color, 10 );
+$e_primary_color_darken_02: darken( $e_primary_color, 11 );
+$e_primary_color_darken_03: darken( $e_primary_color, 15 );
+
+
+//PRIMARY-MENU-2
+$e_color_primary_nav_2: #DFDFDF;
+
+//BODY
+$e_color_body: #646464;
+$e_color_heading: #333333;
+
+//BORDER
+$e_border_color_01: #DEDEDE;
+
+
+$e_bg_main: #f9f9f9;
+$e_color_metadata_01: #888888;
+
+//FOOTER
+$e_bg_color_footer_bottom: #181A1E;
+$e_color_footer_top: #888888;
+$e_border_color_footer_01: #374048;
+$e_color_footer_bottom: #656565;
+$e_bg_color_footer_handler: #151515;
+
+
+//SLIDE MENU
+$e_bg_slide_nav_hover: #20232b;
+
+//SPACING
+$e_space_01: 90px;
+$e_space_02: 50px;
+$e_space_03: 24px;
+$e_space_04: 12px;
+$e_space_05: 5px;
+$e_space_06: 2.5px;
+
+
+//NOTIFICATION
+$e_color_info: #303F9F;
+$e_color_success: #689F38;
+$e_color_warning: #FFA000;
+$e_color_error: #D32F2F;
+
+//SOCIAL
+$twitter: #00ACED;
+$facebook: #3b5998;
+$google-plus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #aad450;
+$tumblr: #32506d;
+$instagram: #517fa4;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+$rss: #FA9B39;
+$email: #FA9B39;
+
+$rgba_dark_01: rgba( $e_black, 0.75 );
+
+$rgba_light_01: rgba( $e_white, 0.75 );
+
+//TYPOGRAPHY
+$e_font_heading_letter_spacing: 0.5px;
+$e_link_hover_decoration: underline;
+
+$e_font_body: $e_font_family_01;
+$e_font_body_size: 16px;
+$e_font_body_line_height: 24px;
+$e_font_body_weight: 400;
+$e_font_body_style: normal;
+
+$e_font_menu: $e_font_family_02;
+$e_font_menu_size: 15px;
+$e_font_menu_line_height: 50px;
+$e_font_menu_weight: 600;
+$e_font_menu_style: normal;
+
+$e_font_heading_1: $e_font_family_02;
+$e_font_heading_1_size: 35px;
+$e_font_heading_1_line_height: 45px;
+$e_font_heading_1_weight: 700;
+$e_font_heading_1_style: normal;
+
+$e_font_heading_2: $e_font_family_02;
+$e_font_heading_2_size: 29px;
+$e_font_heading_2_line_height: 38px;
+$e_font_heading_2_weight: 700;
+$e_font_heading_2_style: normal;
+
+$e_font_heading_3: $e_font_family_02;
+$e_font_heading_3_size: 24px;
+$e_font_heading_3_line_height: 32px;
+$e_font_heading_3_weight: 700;
+$e_font_heading_3_style: normal;
+
+$e_font_heading_4: $e_font_family_02;
+$e_font_heading_4_size: 18px;
+$e_font_heading_4_line_height: 25px;
+$e_font_heading_4_weight: 700;
+$e_font_heading_4_style: normal;
+
+$e_font_heading_5: $e_font_family_02;
+$e_font_heading_5_size: 15px;
+$e_font_heading_5_line_height: 21px;
+$e_font_heading_5_weight: 700;
+$e_font_heading_5_style: normal;
+
+$e_font_heading_6: $e_font_family_02;
+$e_font_heading_6_size: 13px;
+$e_font_heading_6_line_height: 18px;
+$e_font_heading_6_weight: 700;
+$e_font_heading_6_style: normal;

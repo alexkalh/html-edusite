@@ -1,0 +1,73 @@
+html{
+	overflow-x: hidden;
+	color: $e_color_body;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: $e_color_heading;
+    & > a{
+        color: $e_color_heading;
+    }
+}
+
+body{
+    font-weight: $e_font_body_weight;
+    font-family: $e_font_body;    
+    font-size: $e_font_body_size;
+    line-height: $e_font_body_line_height;
+    font-style: $e_font_body_style;
+}
+
+h1{
+    font-weight: $e_font_heading_1_weight;
+    font-family: $e_font_heading_1;
+    font-size: $e_font_heading_1_size;
+    line-height: $e_font_heading_1_line_height;
+    font-style: $e_font_heading_1_style;
+    letter-spacing: $e_font_heading_letter_spacing;
+}
+
+h2{
+    font-weight: $e_font_heading_2_weight;
+    font-family: $e_font_heading_2;
+    font-size: $e_font_heading_2_size;
+    line-height: $e_font_heading_2_line_height;
+    font-style: $e_font_heading_2_style;
+    letter-spacing: $e_font_heading_letter_spacing;
+}
+
+h3{
+    font-weight: $e_font_heading_3_weight;
+    font-family: $e_font_heading_3;
+    font-size: $e_font_heading_3_size;
+    line-height: $e_font_heading_3_line_height;
+    font-style: $e_font_heading_3_style;
+    letter-spacing: $e_font_heading_letter_spacing;
+}
+
+h4{
+    font-weight: $e_font_heading_4_weight;
+    font-family: $e_font_heading_4;
+    font-size: $e_font_heading_4_size;
+    line-height: $e_font_heading_4_line_height;
+    font-style: $e_font_heading_4_style;
+    letter-spacing: $e_font_heading_letter_spacing;
+}
+
+h5{
+    font-weight: $e_font_heading_5_weight;
+    font-family: $e_font_heading_5;
+    font-size: $e_font_heading_5_size;
+    line-height: $e_font_heading_5_line_height;
+    font-style: $e_font_heading_5_style;
+    letter-spacing: $e_font_heading_letter_spacing;
+}
+
+h6{
+    font-weight: $e_font_heading_6_weight;
+    font-family: $e_font_heading_6;
+    font-size: $e_font_heading_6_size;
+    line-height: $e_font_heading_6_line_height;
+    font-style: $e_font_heading_6_style;
+    letter-spacing: $e_font_heading_letter_spacing;
+}

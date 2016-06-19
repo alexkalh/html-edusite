@@ -1,0 +1,34 @@
+ul
+  li.current-menu-item
+    a(href=$e_home_url) Home  
+  li
+    a(href=$e_archive_url) Blog            
+  li
+    a(href=$e_single_url) Single
+    ul.sub-menu
+      li
+        a(href=$e_single_url) Standart
+      li
+        a(href="single-video.html") Video
+      li
+        a(href="single-gallery.html") Gallery
+      li.e_last
+        a(href="single-audio.html") Audio
+  
+  li
+    a(href="page.html") Page
+    ul.sub-menu
+      li
+        a(href="page-fullwidth.html") Page - Fullwidth
+      li
+        a(href="elements.html") Elements
+      li
+        a(href="contact.html") Contact
+      li.e_last
+        a(href="404.html") Error 404
+  li.e-search.e-icon.e-circle
+    a(href="#")
+      i.ti-search
+  li.e-cart.e-icon.e-transparent
+    a(href="#")
+      i.ti-shopping-cart

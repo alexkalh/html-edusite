@@ -1,0 +1,30 @@
+.e-widget.e-carousel
+	.e-widget-title.e-one
+		i.fa.fa-send-o
+		h3 Latest courses
+		p It gave me the opportunity to step back
+	
+		span.e-prev.ti-angle-left
+		span.e-next.ti-angle-right
+
+	.row.owl-carousel
+		- for (var $i=0; $i<4; $i++)
+			- var $image = 'demo/carousel/1.jpg'
+			article.col-xs-12
+				figure
+					img.img-responsive(src=$image alt)
+					figcaption
+						a(href=$e_archive_url) Education
+						i.fa.fa-clock-o
+						span 83 days
+				.e-content
+					h3
+						a(href=$e_single_url) Become a startup founder
+						i.fa.e-star.e-three
+					.e-price
+						ins $122.25
+						del $240.05
+
+
+
+

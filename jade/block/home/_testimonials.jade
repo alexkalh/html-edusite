@@ -1,0 +1,13 @@
+.e-widget.e-testimonials
+	.e-widget-title.e-three		
+		h3 What students say
+	
+	.row.owl-carousel
+		- for (var $i=0; $i<4; $i++)
+			- var $image = 'demo/testimonials/1.jpg'
+			
+			blockquote(data-avatar=$image).col-xs-12
+				|#{$e_tweets[$i]}
+				cite 
+					|John Joe, Australia,
+					small Saprol Costumer

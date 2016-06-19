@@ -1,0 +1,61 @@
+/*
+3.1. MIXIN
+----------
+All custom funtions for sass framework.
+---------- */
+@import "mixin";
+
+/*
+3.2. BASIC STRUCTURE
+----------
+The basic rules for structure of site: header, footer, sidebar, navigation,..
+---------- */
+@import "basic-structure";
+
+/*
+3.2.3 BASIC STRUCTURE
+----------
+Extended rule for bootstrap grid.
+---------- */
+@import "grid";
+
+/*
+3.3 BOXED MODE
+----------
+The other rules for boxed mode. Default is fullwidth (fluid).
+---------- */
+@import "boxed";
+
+/*
+3.4. TYPOGRAPHY
+----------
+The common typography rules (font-family, font-size, line-height) for html, body, heading, widget-title, widget-content,..
+---------- */
+@import "typography";
+
+/*
+3.5. WIDGET-TITLE
+----------
+The rules for widget-title: global, and private (widget on sidebar, widget on footer,..).
+---------- */
+@import "widget-title";
+
+/*
+3.6. WIDGET-WRAP
+----------
+---------- */
+@import "widget-wrap";
+
+/*
+3.7. PAGINATION
+----------
+The rules for pagination of blog posts: archive, category, tag, search.
+---------- */
+@import "pagination";
+
+/*
+3.8. PARALLAX
+----------
+The rules for parallax effect.
+---------- */
+@import "parallax";

@@ -1,0 +1,135 @@
+/*
+Theme Name: Edusite
+Theme URI: http://colourstheme.com/themes/edusite
+Author: Colours Theme
+Author URI: http://colourstheme.com
+Description: 
+Version: 1.0
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats, theme-options, translation-ready
+Requires at least: 4.4
+Tested up to: 4.5.2
+Text Domain: edusite
+Domain Path: /languages/
+
+0. TABLE OF CONTENTS
+----------
+1. Bootstrap
+
+2. Variables
+
+3. Base
+
+4. Header
+
+5. Footer
+
+6. Navigation
+
+7. Elements
+
+8. Layout
+
+9. Widget
+
+10. Socials
+
+11. Responsive
+
+12. Colorful
+
+13. Customize
+---------- */
+
+/*
+1. BOOTSTRAP
+----------
+Include bootstrap framework.
+---------- */
+@import "sass/bootstrap/bootstrap";
+
+/*
+2. VARIABLES
+----------
+Setting up variables. Bringing in Colors and Spacing.
+---------- */
+@import "sass/variables";
+
+/*
+3. BASE
+----------
+The commont rules: color, typography use for all or multi objects.
+---------- */
+@import "sass/base/all";
+
+/*
+4. HEADER
+----------
+The basic rules for header of site.
+---------- */
+@import "sass/header/all";
+
+/*
+5. FOOTER
+----------
+The basic rules for footer of site.
+---------- */
+@import "sass/footer/all";
+
+/*
+6. NAVIGATION
+----------
+Inlude top menu (main-menu) and bottom menu (footer-menu).
+---------- */
+@import "sass/navigation/all";
+
+/*
+7. ELEMENTS
+----------
+The style for all pages: blog, static-page, single-post, 404.
+---------- */
+@import "sass/elements/all";
+
+
+/*
+8. LAYOUT
+----------
+The style for all pages: blog, static-page, single-post, 404.
+---------- */
+@import "sass/layout/all";
+
+/*
+9. WIDGET
+----------
+The style for all module: widget & block.
+---------- */
+@import "sass/widget/all";
+
+/*
+10. SOCIALS
+----------
+The style for all social list.
+---------- */
+@import "sass/socials/all";
+
+/*
+11. EFFECTS
+----------
+All hover effects..
+---------- */
+@import "sass/effects/all";
+
+/*
+12. RESPONSIVE
+----------
+Make Enliven template to become friendly with all device.
+---------- */
+@import "sass/responsive";
+
+/*
+13. CUSTOMIZE
+----------
+This module only use for demo site (you can delete it).
+---------- */
+@import "sass/customize";

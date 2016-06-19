@@ -1,0 +1,76 @@
+include jade/base/_config.jade
+include jade/base/_mixins.jade
+
+doctype
+html( lang="en-US" prefix="og: http://ogp.me/ns#" )
+
+	include jade/header/__/_head.jade
+
+	body.e-home-01
+				
+		header.container
+			.e-sub.clearfix
+				a.pull-left(href='mailto:support@colourstheme.com') support@colourstheme.com
+				a.pull-right(href="#register") Register
+				span.pull-right.e-divider
+				a.pull-right(href="#register") Login
+
+			.e-main.clearfix
+				h1.e-logo.pull-left
+					a(href=$e_home_url title='')
+						img(src=$e_logo alt='')
+				nav.navigation.pull-right
+					include jade/nav/_primary.jade
+		
+		#e-body
+			
+			include jade/block/home/_slider.jade
+
+			section.e-section
+				.container
+					.row.e-match-height
+						.col-lg-8
+							include jade/block/home/_carousel.jade
+						.col-lg-4			
+							include jade/block/home/_count-down.jade
+							include jade/block/home/_register.jade			
+
+			section.e-section.e-bg.e-custom-01
+				.container
+					.row
+						.col-lg-5.col-md-offset-1
+							include jade/block/home/_image.jade
+
+						.col-lg-5			
+							include jade/block/home/_welcome.jade							
+			
+			section.e-section.e-box
+				.container
+					include jade/block/home/_search-course.jade
+
+					include jade/block/home/_service-text.jade
+
+			section.e-section.e-box
+				.container			
+					include jade/block/home/_courses.jade
+
+			section.e-section.e-parallax
+				.container
+					include jade/block/home/_service-number.jade	
+
+			section.e-section
+				.container
+					.col-lg-6
+						include jade/block/home/_accordions.jade
+					.col-lg-6
+						include jade/block/home/_testimonials.jade
+
+			section.e-section.e-bg.e-custom-01
+				include jade/block/home/_video.jade
+
+			section.e-section
+				.container
+					include jade/block/home/_blog.jade
+
+		footer.container
+			include jade/footer/__/_footer.jade

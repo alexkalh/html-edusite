@@ -1,0 +1,24 @@
+.e-widget.e-courses
+	.e-widget-title.e-one.e-center
+		i.fa.fa-bullhorn
+		h3 Popular courses
+		p Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam 
+
+	.row.e-first
+		- for (var $i=0; $i<4; $i++)
+			- var $image = 'demo/courses/1.jpg'
+			.col-md-3
+				article
+					figure
+						img.img-responsive(src=$image alt)
+						figcaption
+							a(href=$e_archive_url) Education
+							i.fa.fa-clock-o
+							span 83 days
+					.e-content
+						h3
+							a(href=$e_single_url) Become a startup founder
+							i.fa.e-star.e-three
+						.e-price
+							ins $122.25
+							del $240.05					

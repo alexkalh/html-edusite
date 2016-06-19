@@ -1,0 +1,19 @@
+.container
+	.row.e-blocks
+		.col-lg-3
+			include ../../../jade/block/footer/_about.jade
+		.col-lg-3
+			include ../../../jade/block/footer/_menu.jade
+		.col-lg-3
+			include ../../../jade/block/footer/_tweets.jade
+		.col-lg-3
+			include ../../../jade/block/footer/_contact.jade
+	
+	.row.e-end
+		.col-lg-6
+			include ../../../jade/block/footer/_copyright.jade
+		.col-lg-6
+			include ../../../jade/block/footer/_socials.jade
+	
+	.e-scripts.hidden
+		+e_load_js()

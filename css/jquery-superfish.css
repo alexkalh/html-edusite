@@ -1,0 +1,60 @@
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sf-menu li {
+    position: relative;
+}
+.sf-menu ul.sub-menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+}
+.sf-menu > li {
+    float: left;
+}
+.sf-menu li:hover > ul.sub-menu,
+.sf-menu li.sfHover > ul.sub-menu {
+    display: block;
+}
+
+.sf-menu a {
+    display: block;
+    position: relative;
+}
+.sf-menu ul.sub-menu ul.sub-menu {
+    top: 0;
+    left: 100%;
+}
+
+/*Megafish*/
+
+.sf-menu {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sf-menu .sf-mega {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 500;
+  width: 100%;
+}
+.sf-menu > li {
+  float: left;
+}
+.sf-menu li:hover > .sf-mega,
+.sf-menu li.sfHover > .sf-mega {
+  display: block;
+}
+
+.sf-menu > li > a {
+  display: block;
+  position: relative;
+}
