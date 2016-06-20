@@ -8,8 +8,12 @@ $e_white: #FFFFFF;
 $e_black: #000000;
 $e_primary_color: #ff7f00;
 $e_secondary_color: #e5e5e5;
+
 $e_link_color: $e_primary_color;
 $e_link_hover_color: $e_primary_color;
+
+$e_link_color_02: #c1c1c1;
+$e_link_hover_color_02: $e_primary_color;
 
 //PRIMARY-MENU-2
 $e_color_primary_nav_2: #DFDFDF;
@@ -24,6 +28,10 @@ $e_border_color_01: #DEDEDE;
 $e_bg_main: #f9f9f9;
 $e_color_metadata_01: #888888;
 
+//MENU:
+$e_menu_color: #444;
+
+
 //FOOTER
 $e_bg_color_footer_bottom: #181A1E;
 $e_color_footer_top: #888888;
@@ -31,9 +39,13 @@ $e_border_color_footer_01: #374048;
 $e_color_footer_bottom: #656565;
 $e_bg_color_footer_handler: #151515;
 
+//DEMO
+$bg_001: #f7f7f7;
+$bg_002: #333333;
+$bg_003: #e7e7e7;
 
-//SLIDE MENU
-$e_bg_slide_nav_hover: #20232b;
+
+
 
 //SPACING
 $e_space_01: 90px;
@@ -74,7 +86,7 @@ $soundcloud: #ff3a00;
 $rss: #FA9B39;
 $email: #FA9B39;
 
-$rgba_dark_01: rgba( $e_black, 0.75 );
+$rgba_dark_01: rgba( $e_black, 0.4 );
 
 $rgba_light_01: rgba( $e_white, 0.75 );
 
@@ -91,41 +103,41 @@ $e_font_body_style: normal;
 $e_font_menu: $e_font_family_02;
 $e_font_menu_size: 15px;
 $e_font_menu_line_height: 50px;
-$e_font_menu_weight: 600;
+$e_font_menu_weight: 400;
 $e_font_menu_style: normal;
 
 $e_font_heading_1: $e_font_family_02;
 $e_font_heading_1_size: 35px;
 $e_font_heading_1_line_height: 45px;
-$e_font_heading_1_weight: 700;
+$e_font_heading_1_weight: 400;
 $e_font_heading_1_style: normal;
 
 $e_font_heading_2: $e_font_family_02;
 $e_font_heading_2_size: 29px;
 $e_font_heading_2_line_height: 38px;
-$e_font_heading_2_weight: 700;
+$e_font_heading_2_weight: 400;
 $e_font_heading_2_style: normal;
 
 $e_font_heading_3: $e_font_family_02;
 $e_font_heading_3_size: 24px;
 $e_font_heading_3_line_height: 32px;
-$e_font_heading_3_weight: 700;
+$e_font_heading_3_weight: 400;
 $e_font_heading_3_style: normal;
 
 $e_font_heading_4: $e_font_family_02;
 $e_font_heading_4_size: 18px;
 $e_font_heading_4_line_height: 25px;
-$e_font_heading_4_weight: 700;
+$e_font_heading_4_weight: 400;
 $e_font_heading_4_style: normal;
 
 $e_font_heading_5: $e_font_family_02;
 $e_font_heading_5_size: 15px;
 $e_font_heading_5_line_height: 21px;
-$e_font_heading_5_weight: 700;
+$e_font_heading_5_weight: 400;
 $e_font_heading_5_style: normal;
 
 $e_font_heading_6: $e_font_family_02;
 $e_font_heading_6_size: 13px;
 $e_font_heading_6_line_height: 18px;
-$e_font_heading_6_weight: 700;
+$e_font_heading_6_weight: 400;
 $e_font_heading_6_style: normal;

@@ -9,6 +9,7 @@ jQuery(document).ready ($) ->
 	return
 
 jQuery(window).load ($) ->
+	Edusite.initMatchHeight();
 	return
 
 jQuery(window).scroll ($) ->
@@ -18,8 +19,8 @@ jQuery(window).scroll ($) ->
 Edusite =
 	
 	initNavigation: ->
-		if jQuery('.navigation').length
-			jQuery('.navigation ul').superfish
+		if jQuery('.e-navigation').length
+			jQuery('.e-navigation ul').superfish
 				cssArrows: false
 				delay: 0
 				speed: 'fast'
@@ -81,4 +82,12 @@ Edusite =
 				pagination : false
 				navigation : false
 
-		return		
+		return	
+
+	initMatchHeight: ->
+		$e_rows = jQuery( '.e-match-height' )
+		if $e_rows.length
+			jQuery.each $e_rows, ()->
+				jQuery(this).find(' > div .e-col').matchHeight()
+				return
+		return

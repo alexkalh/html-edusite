@@ -8,32 +8,36 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 	body.e-home-01
 				
-		header.container.hidden
-			.e-sub.clearfix
-				a.pull-left(href='mailto:support@colourstheme.com') support@colourstheme.com
-				a.pull-right(href="#register") Register
-				span.pull-right.e-divider
-				a.pull-right(href="#register") Login
+		header
+			.container
+				.e-sub.clearfix
+					a.pull-left(href='mailto:support@colourstheme.com') support@colourstheme.com
+									
+					a.pull-right(href="#register") Login
+					span.pull-right.e-divider /
+					a.pull-right(href="#register") Register
 
-			.e-main.clearfix
-				h1.e-logo.pull-left
-					a(href=$e_home_url title='')
-						img(src=$e_logo alt='')
-				nav.navigation.pull-right
-					include jade/nav/_primary.jade
+				.e-main.clearfix
+					h1.e-logo.pull-left
+						a(href=$e_home_url title='')
+							img(src=$e_logo alt='')
+					nav.e-navigation.pull-right
+						include jade/nav/_primary.jade
 		
 		#e-body
 			
 			include jade/block/home/_slider.jade
 
-			section.e-section
+			section.e-section.e-custom-02
 				.container
 					.row.e-match-height
 						.col-lg-8
-							include jade/block/home/_carousel.jade
-						.col-lg-4			
-							include jade/block/home/_count-down.jade
-							include jade/block/home/_register.jade			
+							.e-col
+								include jade/block/home/_carousel.jade
+						.col-lg-4
+							.e-col.e-custom-04
+								include jade/block/home/_count-down.jade
+								include jade/block/home/_register.jade			
 
 			section.e-section.e-bg.e-custom-01
 				.container

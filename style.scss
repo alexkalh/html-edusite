@@ -172,10 +172,21 @@ This module only use for demo site (you can delete it).
 	background-color: $e_primary_color;
 }
 
+.e-link-one{
+	color: $e_link_color_02;
+	&:hover{
+		color: $e_link_hover_color_02;
+	}
+}
+
+.e-link-two{
+	color: $e_primary_color;
+}
+
 // headings.
 .e-heading-001{
 	font-size: 60px;
-	line-height: 80px;
+	line-height: 70px;
 	@extend .e-color-one;
 }
 
@@ -185,10 +196,22 @@ This module only use for demo site (you can delete it).
 	@extend .e-color-two;
 }
 
+.e-heading-003{
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 400;
+}
+
+.e-heading-004{
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+}
+
+
 // buttons.
-.e-button-001{
-	@include opacity( 1 );
-	@include inline-block( !important );	
+.e-button-001{	
+	@include inline-block();	
 	@extend .e-bg-one;
 	@extend .e-font-two;
 	padding: 0px 30px;
@@ -199,6 +222,115 @@ This module only use for demo site (you can delete it).
 	line-height: 45px;
 	height: 45px;
 	text-decoration: none;
+}
+
+// widget-titles.
+.e-widget-title{
+	
+	&.e-one{
+		position: relative;
+		padding: 60px 0px;
+		i{
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0px;			
+			z-index: 5;
+			font-size: 60px;
+			line-height: 60px;
+			color: #d7d7d7;
+			margin-top: -45px;
+		}
+
+		h3, p{
+			position: relative;
+			z-index: 10;
+		}
+
+		h3{
+			margin: 0px;
+			@extend .e-heading-003;
+		}
+
+		p{
+			margin: 10px 0px 0px 0px;
+		}
+
+		span{
+			display: none;
+		}
+	}
+
+}
+
+// articles.
+.e-article-one{
+	background-color: $e_white;
+	figure{
+		position: relative;
+		
+		figcaption{
+			@extend .e-clear;
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			width: 100%;
+			padding: 10px 20px;
+			background-color: $rgba_dark_01;
+			font-size: 14px;
+			*{
+				line-height: 24px !important;
+				color: $e_white;
+			}												
+
+			i, span{
+				@include inline-block();
+				float: right;				
+			}		
+
+			i{
+				margin-right: 10px;
+			}
+
+			a{
+				@extend .e-link-two;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.e-content{
+		margin-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	h3{
+		@extend .e-heading-004;
+		margin: 0px 0px 25px 0px;
+		padding-left: 20px;
+		position: relative;
+	
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 5px;
+			left: 0px;
+			height: 40px;
+			width: 4px;
+			@extend .e-bg-one;		
+		}
+
+		a{
+			display: block;
+			width: 100%;
+			text-decoration: none;
+		}
+		i{
+			font-size: 12px;
+			@extend .e-color-one;
+		}
+	}
 }
 
 // widgets.
@@ -236,7 +368,7 @@ This module only use for demo site (you can delete it).
 		@extend .e-font-two;
 		@extend .e-heading-001;
 		margin-top: 0px;
-		margin-bottom: 5px;		
+		margin-bottom: 0px;		
 	}
 
 	h3{
@@ -256,7 +388,9 @@ This module only use for demo site (you can delete it).
 	}
 	
 	p{
+		margin-top: 30px;
 		padding: 0px;
+		color: $e_white;
 	}
 
 	.e-caption a{
@@ -265,7 +399,13 @@ This module only use for demo site (you can delete it).
 	}
 }
 
-.e-carousel {}
+.e-carousel {
+	overflow: hidden;
+	article{
+		@extend .e-article-one;
+	}
+
+}
 
 .e-count-down {}
 
@@ -275,5 +415,151 @@ This module only use for demo site (you can delete it).
 
 .e-welcome {}
 
+.e-courses{
+	article{
+		@extend .e-article-one;
+	}
+}
 
 // .elements
+
+
+// header.
+body.e-home-01{
+	position: relative;
+
+	header{					
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		z-index: 15;			
+		
+		.e-sub{
+			margin: 15px 0px;			
+			a{
+				@extend .e-link-one;
+				text-decoration: none;
+			}
+			span{
+				color: $e_link_color_02;
+			}
+		}
+
+		.e-sub,
+		.e-main {
+			position: relative;
+			z-index: 20;
+		}		
+
+		.e-sub {
+			.pull-right{
+				@include inline-block();
+				margin-left: 10px;
+			}
+
+		}
+
+		.e-main {						
+			background-color: $e_white;
+			padding: 0px 25px;		
+		}
+
+		.e-logo{			
+			margin: 25px 0px;
+			a{
+				display: block;
+				line-height: 0px;
+			}
+		}
+	}
+}
+
+.e-navigation{
+	a{
+		text-decoration: none;
+	}
+
+	ul, li {
+		list-style-type: none;
+	}
+
+	ul {
+		padding-left: 0px;
+		margin-bottom: 0px;	
+	}
+
+	& > ul > li {
+		@include inline-block();
+		position: relative;
+		margin: 0px 10px;
+	
+		&.current-menu-item{
+			&::before{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100%;
+				top: 0px;
+				left: 0px;
+				height: 3px;
+				@extend .e-bg-one;
+			}
+			a{
+				font-weight: 700;
+			}
+		}
+
+		& > a{
+			height: 84px;
+			line-height: 84px;
+			padding: 0px 10px;
+			font-weight: 400;
+			color: $e_menu_color;			
+		}
+	
+		&.e-first{
+			margin-left: 0px;
+		}
+
+		&.e-last{
+			margin-right: -10px;
+		}
+
+		&.e-icon{
+			
+		}
+
+		&.e-circle{
+			font-size: 12px;
+
+			&::after{
+				@include border-radius( 50% );
+				@extend	.e-bg-one;
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				content: '';
+				top: 50%;
+				left: 50%;
+				margin-top: -15px;
+				margin-left: -15px;
+			}
+
+			& > a {
+				position: relative;
+				z-index: 20;
+				color: $e_white;
+			}
+			
+		} 
+
+		&.e-transparent{
+			a{
+				@extend .e-color-one;
+				font-size: 24px;
+			}
+		}
+
+	}
+}

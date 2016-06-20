@@ -6,9 +6,9 @@
     opacity: $opacity;
 }
 
-@mixin inline-block( $sufix ){
-  display: inline-block $sufix;
-  *display: inline $sufix;
+@mixin inline-block(){
+  display: inline-block;
+  *display: inline;
   zoom: 1;
 }
 

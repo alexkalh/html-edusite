@@ -10,14 +10,16 @@
     Edusite.initTestimonials();
   });
 
-  jQuery(window).load(function($) {});
+  jQuery(window).load(function($) {
+    Edusite.initMatchHeight();
+  });
 
   jQuery(window).scroll(function($) {});
 
   Edusite = {
     initNavigation: function() {
-      if (jQuery('.navigation').length) {
-        jQuery('.navigation ul').superfish({
+      if (jQuery('.e-navigation').length) {
+        jQuery('.e-navigation ul').superfish({
           cssArrows: false,
           delay: 0,
           speed: 'fast',
@@ -83,6 +85,15 @@
           items: 2,
           pagination: false,
           navigation: false
+        });
+      }
+    },
+    initMatchHeight: function() {
+      var $e_rows;
+      $e_rows = jQuery('.e-match-height');
+      if ($e_rows.length) {
+        jQuery.each($e_rows, function() {
+          jQuery(this).find(' > div .e-col').matchHeight();
         });
       }
     }

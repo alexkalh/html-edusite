@@ -7626,7 +7626,7 @@ body {
 }
 
 h1 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 35px;
   line-height: 45px;
@@ -7635,7 +7635,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 29px;
   line-height: 38px;
@@ -7644,7 +7644,7 @@ h2 {
 }
 
 h3 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   line-height: 32px;
@@ -7653,7 +7653,7 @@ h3 {
 }
 
 h4 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   line-height: 25px;
@@ -7662,7 +7662,7 @@ h4 {
 }
 
 h5 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   line-height: 21px;
@@ -7671,7 +7671,7 @@ h5 {
 }
 
 h6 {
-  font-weight: 700;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -7878,11 +7878,23 @@ This module only use for demo site (you can delete it).
   background-image: url("demo/bg/welcome.jpg");
 }
 
-.e-clear:before, .e-slider h2:before, .e-slider h3:before, .e-slider p:before, .e-clear:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
+.e-custom-02 {
+  background-color: #f7f7f7;
+}
+
+.e-custom-03 {
+  background-color: #333333;
+}
+
+.e-custom-04 {
+  background-color: #e7e7e7;
+}
+
+.e-clear:before, .e-article-one figure figcaption:before, .e-carousel article figure figcaption:before, .e-courses article figure figcaption:before, .e-slider h2:before, .e-slider h3:before, .e-slider p:before, .e-clear:after, .e-article-one figure figcaption:after, .e-carousel article figure figcaption:after, .e-courses article figure figcaption:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
   content: "";
   display: table;
 }
-.e-clear:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
+.e-clear:after, .e-article-one figure figcaption:after, .e-carousel article figure figcaption:after, .e-courses article figure figcaption:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
   clear: both;
 }
 
@@ -7904,7 +7916,7 @@ This module only use for demo site (you can delete it).
   font-family: "Montserrat", sans-serif;
 }
 
-.e-color-one, .e-heading-001, .e-slider h2 {
+.e-color-one, .e-heading-001, .e-slider h2, .e-article-one h3 i, .e-carousel article h3 i, .e-courses article h3 i, .e-navigation > ul > li.e-transparent a {
   color: #ff7f00;
 }
 
@@ -7912,13 +7924,24 @@ This module only use for demo site (you can delete it).
   color: #e5e5e5;
 }
 
-.e-bg-one, .e-button-001, .e-slider .e-caption a {
+.e-bg-one, .e-button-001, .e-slider .e-caption a, .e-article-one h3::before, .e-carousel article h3::before, .e-courses article h3::before, .e-navigation > ul > li.current-menu-item::before, .e-navigation > ul > li.e-circle::after {
   background-color: #ff7f00;
+}
+
+.e-link-one, body.e-home-01 header .e-sub a {
+  color: #c1c1c1;
+}
+.e-link-one:hover, body.e-home-01 header .e-sub a:hover {
+  color: #ff7f00;
+}
+
+.e-link-two, .e-article-one figure figcaption a, .e-carousel article figure figcaption a, .e-courses article figure figcaption a {
+  color: #ff7f00;
 }
 
 .e-heading-001, .e-slider h2 {
   font-size: 60px;
-  line-height: 80px;
+  line-height: 70px;
 }
 
 .e-heading-002, .e-slider h3 {
@@ -7926,14 +7949,21 @@ This module only use for demo site (you can delete it).
   line-height: 58px;
 }
 
+.e-heading-003, .e-widget-title.e-one h3 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.e-heading-004, .e-article-one h3, .e-carousel article h3, .e-courses article h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
 .e-button-001, .e-slider .e-caption a {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  opacity: 1;
-  display: inline-block !important;
-  *display: inline !important;
+  display: inline-block;
+  *display: inline;
   zoom: 1;
   padding: 0px 30px;
   color: white;
@@ -7943,6 +7973,93 @@ This module only use for demo site (you can delete it).
   line-height: 45px;
   height: 45px;
   text-decoration: none;
+}
+
+.e-widget-title.e-one {
+  position: relative;
+  padding: 60px 0px;
+}
+.e-widget-title.e-one i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  z-index: 5;
+  font-size: 60px;
+  line-height: 60px;
+  color: #d7d7d7;
+  margin-top: -45px;
+}
+.e-widget-title.e-one h3, .e-widget-title.e-one p {
+  position: relative;
+  z-index: 10;
+}
+.e-widget-title.e-one h3 {
+  margin: 0px;
+}
+.e-widget-title.e-one p {
+  margin: 10px 0px 0px 0px;
+}
+.e-widget-title.e-one span {
+  display: none;
+}
+
+.e-article-one, .e-carousel article, .e-courses article {
+  background-color: white;
+}
+.e-article-one figure, .e-carousel article figure, .e-courses article figure {
+  position: relative;
+}
+.e-article-one figure figcaption, .e-carousel article figure figcaption, .e-courses article figure figcaption {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+}
+.e-article-one figure figcaption *, .e-carousel article figure figcaption *, .e-courses article figure figcaption * {
+  line-height: 24px !important;
+  color: white;
+}
+.e-article-one figure figcaption i, .e-carousel article figure figcaption i, .e-courses article figure figcaption i, .e-article-one figure figcaption span, .e-carousel article figure figcaption span, .e-courses article figure figcaption span {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  float: right;
+}
+.e-article-one figure figcaption i, .e-carousel article figure figcaption i, .e-courses article figure figcaption i {
+  margin-right: 10px;
+}
+.e-article-one figure figcaption a, .e-carousel article figure figcaption a, .e-courses article figure figcaption a {
+  text-decoration: none;
+}
+.e-article-one .e-content, .e-carousel article .e-content, .e-courses article .e-content {
+  margin-top: 25px;
+  padding-bottom: 25px;
+}
+.e-article-one h3, .e-carousel article h3, .e-courses article h3 {
+  margin: 0px 0px 25px 0px;
+  padding-left: 20px;
+  position: relative;
+}
+.e-article-one h3::before, .e-carousel article h3::before, .e-courses article h3::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  height: 40px;
+  width: 4px;
+}
+.e-article-one h3 a, .e-carousel article h3 a, .e-courses article h3 a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+.e-article-one h3 i, .e-carousel article h3 i, .e-courses article h3 i {
+  font-size: 12px;
 }
 
 .e-slider .nivoSlider {
@@ -7976,7 +8093,7 @@ This module only use for demo site (you can delete it).
 }
 .e-slider h2 {
   margin-top: 0px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 .e-slider h3 {
   margin-top: 0px;
@@ -7989,8 +8106,124 @@ This module only use for demo site (you can delete it).
   content: none;
 }
 .e-slider p {
+  margin-top: 30px;
   padding: 0px;
+  color: white;
 }
 .e-slider .e-caption a {
   margin-top: 30px;
+}
+
+.e-carousel {
+  overflow: hidden;
+}
+
+body.e-home-01 {
+  position: relative;
+}
+body.e-home-01 header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 15;
+}
+body.e-home-01 header .e-sub {
+  margin: 15px 0px;
+}
+body.e-home-01 header .e-sub a {
+  text-decoration: none;
+}
+body.e-home-01 header .e-sub span {
+  color: #c1c1c1;
+}
+body.e-home-01 header .e-sub,
+body.e-home-01 header .e-main {
+  position: relative;
+  z-index: 20;
+}
+body.e-home-01 header .e-sub .pull-right {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-left: 10px;
+}
+body.e-home-01 header .e-main {
+  background-color: white;
+  padding: 0px 25px;
+}
+body.e-home-01 header .e-logo {
+  margin: 25px 0px;
+}
+body.e-home-01 header .e-logo a {
+  display: block;
+  line-height: 0px;
+}
+
+.e-navigation a {
+  text-decoration: none;
+}
+.e-navigation ul, .e-navigation li {
+  list-style-type: none;
+}
+.e-navigation ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+.e-navigation > ul > li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  position: relative;
+  margin: 0px 10px;
+}
+.e-navigation > ul > li.current-menu-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 3px;
+}
+.e-navigation > ul > li.current-menu-item a {
+  font-weight: 700;
+}
+.e-navigation > ul > li > a {
+  height: 84px;
+  line-height: 84px;
+  padding: 0px 10px;
+  font-weight: 400;
+  color: #444444;
+}
+.e-navigation > ul > li.e-first {
+  margin-left: 0px;
+}
+.e-navigation > ul > li.e-last {
+  margin-right: -10px;
+}
+.e-navigation > ul > li.e-circle {
+  font-size: 12px;
+}
+.e-navigation > ul > li.e-circle::after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+}
+.e-navigation > ul > li.e-circle > a {
+  position: relative;
+  z-index: 20;
+  color: white;
+}
+.e-navigation > ul > li.e-transparent a {
+  font-size: 24px;
 }
