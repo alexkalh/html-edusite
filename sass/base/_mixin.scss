@@ -176,11 +176,11 @@
   border: 1px solid $border;
 }
 
-@mixin box-shadow($width,$color) {
-  box-shadow: 0 0 0 $width $color;
-  -ms-box-shadow: 0 0 0 $width $color;
-  -moz-box-shadow: 0 0 0 $width $color;
-  -webkit-box-shadow: 0 0 0 $width $color;
+@mixin box-shadow( $h-shadow, $v-shadow, $blur, $spread, $color ) {
+    box-shadow: $h-shadow $v-shadow $blur $spread $color;
+    -ms-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+    -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+    -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
 }
 
 @mixin before-left($top,$bottom,$right,$color,$topp) {

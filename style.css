@@ -7885,9 +7885,32 @@ This module only use for demo site (you can delete it).
 .e-custom-03 {
   background-color: #333333;
 }
+.e-custom-03 .e-widget-title.e-one i {
+  color: #515151;
+}
+.e-custom-03 .e-widget-title.e-one h3 {
+  color: white;
+}
+.e-custom-03 .e-widget-title.e-one p {
+  color: #cccccc;
+}
 
 .e-custom-04 {
   background-color: #e7e7e7;
+}
+
+.e-custom-05 {
+  position: relative;
+  padding: 0px 30px 30px 30px;
+}
+.e-custom-05:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 7px;
 }
 
 .e-clear:before, .e-article-one figure figcaption:before, .e-carousel article figure figcaption:before, .e-courses article figure figcaption:before, .e-slider h2:before, .e-slider h3:before, .e-slider p:before, .e-clear:after, .e-article-one figure figcaption:after, .e-carousel article figure figcaption:after, .e-courses article figure figcaption:after, .e-slider h2:after, .e-slider h3:after, .e-slider p:after {
@@ -7920,11 +7943,15 @@ This module only use for demo site (you can delete it).
   color: #ff7f00;
 }
 
-.e-color-two, .e-heading-002, .e-slider h3 {
+.e-color-two, .e-heading-002, .e-slider h3, .e-article-one del, .e-carousel article del, .e-courses article del {
   color: #e5e5e5;
 }
 
-.e-bg-one, .e-button-001, .e-slider .e-caption a, .e-article-one h3::before, .e-carousel article h3::before, .e-courses article h3::before, .e-navigation > ul > li.current-menu-item::before, .e-navigation > ul > li.e-circle::after {
+.e-color-white, .e-article-one ins, .e-carousel article ins, .e-courses article ins {
+  color: white;
+}
+
+.e-bg-one, .e-custom-05:before, .e-button-001, .e-slider .e-caption a, .e-article-one h3::before, .e-carousel article h3::before, .e-courses article h3::before, .e-article-one ins, .e-carousel article ins, .e-courses article ins, .e-navigation > ul > li.current-menu-item::before, .e-navigation > ul > li.e-circle::after {
   background-color: #ff7f00;
 }
 
@@ -7937,6 +7964,10 @@ This module only use for demo site (you can delete it).
 
 .e-link-two, .e-article-one figure figcaption a, .e-carousel article figure figcaption a, .e-courses article figure figcaption a {
   color: #ff7f00;
+}
+
+.e-border-color-one {
+  border-color: #ff7f00;
 }
 
 .e-heading-001, .e-slider h2 {
@@ -7988,7 +8019,7 @@ This module only use for demo site (you can delete it).
   font-size: 60px;
   line-height: 60px;
   color: #d7d7d7;
-  margin-top: -45px;
+  margin-top: -60px;
 }
 .e-widget-title.e-one h3, .e-widget-title.e-one p {
   position: relative;
@@ -8005,7 +8036,12 @@ This module only use for demo site (you can delete it).
 }
 
 .e-article-one, .e-carousel article, .e-courses article {
+  box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -ms-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
   background-color: white;
+  margin-bottom: 70px;
 }
 .e-article-one figure, .e-carousel article figure, .e-courses article figure {
   position: relative;
@@ -8060,6 +8096,17 @@ This module only use for demo site (you can delete it).
 }
 .e-article-one h3 i, .e-carousel article h3 i, .e-courses article h3 i {
   font-size: 12px;
+}
+.e-article-one ins, .e-carousel article ins, .e-courses article ins, .e-article-one del, .e-carousel article del, .e-courses article del {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  height: 35px;
+  line-height: 35px;
+  padding: 0px 20px;
+}
+.e-article-one ins, .e-carousel article ins, .e-courses article ins {
+  text-decoration: none;
 }
 
 .e-slider .nivoSlider {

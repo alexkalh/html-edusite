@@ -168,6 +168,10 @@ This module only use for demo site (you can delete it).
 	color: $e_secondary_color;
 }
 
+.e-color-white{
+	color: $e_white;
+}
+
 .e-bg-one{
 	background-color: $e_primary_color;
 }
@@ -181,6 +185,12 @@ This module only use for demo site (you can delete it).
 
 .e-link-two{
 	color: $e_primary_color;
+}
+
+// borders.
+
+.e-border-color-one{
+ 	border-color: $e_primary_color;
 }
 
 // headings.
@@ -239,7 +249,7 @@ This module only use for demo site (you can delete it).
 			font-size: 60px;
 			line-height: 60px;
 			color: #d7d7d7;
-			margin-top: -45px;
+			margin-top: -60px;
 		}
 
 		h3, p{
@@ -261,11 +271,33 @@ This module only use for demo site (you can delete it).
 		}
 	}
 
+	&.e-two{
+
+	}
+
+	&.e-three{
+
+	}
+
+	&.e-four{
+
+	}
+
+	&.e-five{
+
+	}
+
+	&.e-six{
+
+	}
 }
 
 // articles.
 .e-article-one{
+	@include box-shadow( 0px, 1px, 5px, 0px, rgba( 150, 150, 150, 0.3 ) );
 	background-color: $e_white;
+	margin-bottom: $e_space_01;
+
 	figure{
 		position: relative;
 		
@@ -330,6 +362,23 @@ This module only use for demo site (you can delete it).
 			font-size: 12px;
 			@extend .e-color-one;
 		}
+	}
+	
+	ins, del{
+		@include inline-block();
+		height: $e_space_02;
+		line-height: $e_space_02;
+		padding: 0px 20px;		
+	}	
+
+	ins{		
+		text-decoration: none;
+		@extend .e-bg-one;
+		@extend .e-color-white;		
+	}
+
+	del{
+		@extend .e-color-two;		
 	}
 }
 
@@ -407,7 +456,9 @@ This module only use for demo site (you can delete it).
 
 }
 
-.e-count-down {}
+.e-count-down {
+
+}
 
 .e-image {}
 

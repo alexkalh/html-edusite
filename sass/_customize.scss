@@ -8,8 +8,36 @@
 
 .e-custom-03{
 	background-color: $bg_002;
+	.e-widget-title.e-one{
+		i{
+			color: $e_title_color_02;
+		}
+		h3{
+			color: $e_white;
+		}
+		p{
+			color: $e_title_color_01;
+		}
+	}
 }
 
 .e-custom-04{
 	background-color: $bg_003;
+}
+
+
+.e-custom-05{
+	position: relative;
+	padding: 0px 30px 30px 30px;
+	
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		height: $e_space_11;
+		@extend .e-bg-one;
+	}
 }
