@@ -71,3 +71,49 @@ h6{
     font-style: $e_font_heading_6_style;
     letter-spacing: $e_font_heading_letter_spacing;
 }
+
+// fonts.
+.e-font-one{
+    font-family: $e_font_family_01;
+}
+
+.e-font-two{
+    font-family: $e_font_family_02;
+}
+
+// headings.
+.e-heading-001{
+    font-size: 60px;
+    line-height: 70px;
+    @extend .e-color-primary;
+}
+
+.e-heading-002{
+    font-size: 48px;
+    line-height: 58px;
+    @extend .e-color-secondary;
+}
+
+.e-heading-003{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.e-heading-004{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.e-heading-005{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.e-heading-006{
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: 400;
+}

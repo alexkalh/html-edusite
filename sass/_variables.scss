@@ -8,6 +8,7 @@ $e_white: #FFFFFF;
 $e_black: #000000;
 $e_primary_color: #ff7f00;
 $e_secondary_color: #e5e5e5;
+$e_third_color: #ffb440;
 
 $e_link_color: $e_primary_color;
 $e_link_hover_color: $e_primary_color;
@@ -43,6 +44,9 @@ $e_bg_color_footer_handler: #151515;
 $bg_001: #f7f7f7;
 $bg_002: #333333;
 $bg_003: #e7e7e7;
+$bg_004: #fbfbfb;
+$bg_005: #f8f8f8;
+$bg_006: #9f9f9f;
 
 
 //TITLE
@@ -52,8 +56,17 @@ $e_title_color_02: #515151;
 //SPACING
 $e_space_01: 70px;
 $e_space_02: 35px;
+$e_space_03: 40px;
+$e_space_04: 30px;
+$e_space_05: 90px;
+$e_space_06: 50px;
 
-$e_space_11: 7px;
+$e_space_11: 7.5px;
+$e_space_12: 15px;
+$e_space_13: 20px;
+$e_space_14: 60px;
+$e_space_15: 130px;
+$e_space_16: 4px;
 
 //NOTIFICATION
 $e_color_info: #303F9F;
@@ -86,8 +99,11 @@ $rss: #FA9B39;
 $email: #FA9B39;
 
 $rgba_dark_01: rgba( $e_black, 0.4 );
-
 $rgba_light_01: rgba( $e_white, 0.75 );
+
+$rgba_light_02: rgba( $e_white, 0.4 );
+
+$rgba_primary_01: rgba( $e_primary_color, 0.4 );
 
 //TYPOGRAPHY
 $e_font_heading_letter_spacing: 0.5px;

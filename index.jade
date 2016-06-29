@@ -39,7 +39,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/block/home/_count-down.jade
 								include jade/block/home/_register.jade			
 
-			section.e-section.e-bg.e-custom-01
+			section.e-section.e-bg.e-overlay.e-custom-01
 				.container
 					.row
 						.col-lg-5.col-md-offset-1
@@ -48,28 +48,28 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 						.col-lg-5			
 							include jade/block/home/_welcome.jade							
 			
-			section.e-section.e-box
-				.container
+			section.e-section.e-custom-08
+				.container.e-box
 					include jade/block/home/_search-course.jade
 
-					include jade/block/home/_service-text.jade
+					include jade/block/home/_intro.jade
 
-			section.e-section.e-box
+			section.e-section.e-custom-10
 				.container			
 					include jade/block/home/_courses.jade
 
-			section.e-section.e-parallax
+			section.e-section.e-parallax.e-bg.e-overlay.e-custom-11
 				.container
-					include jade/block/home/_service-number.jade	
+					include jade/block/home/_icons.jade	
 
-			section.e-section
+			section.e-section.e-custom-10
 				.container
 					.col-lg-6
 						include jade/block/home/_accordions.jade
 					.col-lg-6
 						include jade/block/home/_testimonials.jade
 
-			section.e-section.e-bg.e-custom-01
+			section.e-section.e-parallax.e-bg.e-overlay.e-custom-11
 				include jade/block/home/_video.jade
 
 			section.e-section

@@ -1,33 +1,4 @@
-.e-star{
-	&:before{ content: "\f006\f006\f006\f006\f006"; }
-	
-	&.e-one{
-		&:before{
-			content: "\f005\f006\f006\f006\f006"; 
-		}
-	}
-
-	&.e-two{
-		&:before{
-			content: "\f005\f005\f006\f006\f006"; 
-		}
-	}
-
-	&.e-three{
-		&:before{
-			content: "\f005\f005\f005\f006\f006"; 
-		}
-	}
-
-	&.e-four{
-		&:before{
-			content: "\f005\f005\f005\f005\f006"; 
-		}
-	}
-
-	&.e-five{
-		&:before{
-			content: "\f005\f005\f005\f005\f005"; 
-		}
-	}	
-}
+@import "button";
+@import "stars";
+@import "form";
+@import "accordions";

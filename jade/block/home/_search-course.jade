@@ -1,20 +1,23 @@
 .e-widget.e-search-course
-	.e-widget-title.e-one.e-center
-		i.ti-pencil-alt
-		h3 Find Your Course
+	.e-widget-title.e-one.e-center		
+		h3 
+			i.ti-pencil-alt
+			span Find Your Course
 		p Make Your Success a Priority
 
-	form(action="" method="post").row
+	form.e-form.row(action="" method="post")
 		.col-md-3
-			select(name="course-category")
+			select(name="course-category" autocomplete="off")
+				option(value="" selected="selected") Select Category
 				option(value="Foo") Foo
 				option(value="Foo") Baz				
 		.col-md-3
-			select(name="course-status")
+			select(name="course-status" autocomplete="off")
+				option(value="" selected="selected") Select Status
 				option(value="Lorem") Lorem
 				option(value="Ipsum") Ipsum
 		.col-md-3
-			input(type=text name="s" placeholder="Type keyword")
+			input(type="text" name="s" placeholder="Type keyword")
 
 		.col-md-3
-			input(type=submit value="Search cource")
+			input(type="submit" value="Search cource")

@@ -1,0 +1,88 @@
+.e-article-one{
+	@include box-shadow( 0px, 1px, 5px, 0px, rgba( 150, 150, 150, 0.3 ) );
+	background-color: $e_white;
+	margin-bottom: $e_space_01;
+
+	figure{
+		position: relative;
+		
+		figcaption{
+			@extend .e-clear;
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			width: 100%;
+			padding: 10px 20px;
+			background-color: $rgba_dark_01;
+			font-size: 14px;
+			*{
+				line-height: 24px !important;
+				color: $e_white;
+			}												
+
+			i, span{
+				@include inline-block();
+				float: right;				
+			}		
+
+			i{
+				margin-right: 10px;
+			}
+
+			a{
+				@extend .e-link-two;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.e-content{
+		margin-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	h3{
+		@extend .e-heading-004;
+		margin: 0px 0px 25px 0px;
+		padding-left: 20px;
+		position: relative;
+	
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 5px;
+			left: 0px;
+			height: 40px;
+			width: 4px;
+			@extend .e-bg-primary;		
+		}
+
+		a{
+			display: block;
+			width: 100%;
+			text-decoration: none;
+		}
+		i{
+			font-size: 12px;
+			@extend .e-color-primary;
+		}
+	}
+	
+	ins, del{
+		@include inline-block();
+		height: $e_space_02;
+		line-height: $e_space_02;
+		padding: 0px 20px;		
+	}	
+
+	ins{		
+		text-decoration: none;
+		@extend .e-bg-primary;
+		@extend .e-color-white;		
+	}
+
+	del{
+		@extend .e-color-secondary;		
+	}
+}

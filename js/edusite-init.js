@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-  var Edusite;
+  var Edusite, Edusite_Accordions, Edusite_Count_Down;
 
   jQuery(document).ready(function($) {
     Edusite.initNavigation();
@@ -8,6 +8,8 @@
     Edusite.initCarousel();
     Edusite.initBlog();
     Edusite.initTestimonials();
+    Edusite_Count_Down.register();
+    Edusite_Accordions.init();
   });
 
   jQuery(window).load(function($) {
@@ -58,10 +60,24 @@
       var $e_carousel;
       $e_carousel = jQuery('.e-carousel .owl-carousel');
       if ($e_carousel.length) {
-        $e_carousel.owlCarousel({
-          items: 2,
-          pagination: false,
-          navigation: false
+        jQuery.each($e_carousel, function() {
+          var $_next, $_owl, $_prev, $_widget;
+          $_widget = jQuery(this).closest('.e-carousel');
+          $_next = $_widget.find('.e-next');
+          $_prev = $_widget.find('.e-prev');
+          $_owl = jQuery(this).owlCarousel({
+            items: 2,
+            pagination: false,
+            navigation: false,
+            afterInit: function() {
+              $_prev.on("click", function() {
+                $_owl.trigger('owl.prev');
+              });
+              $_next.on("click", function() {
+                $_owl.trigger('owl.next');
+              });
+            }
+          });
         });
       }
     },
@@ -94,6 +110,44 @@
       if ($e_rows.length) {
         jQuery.each($e_rows, function() {
           jQuery(this).find(' > div .e-col').matchHeight();
+        });
+      }
+    }
+  };
+
+  Edusite_Count_Down = {
+    register: function() {
+      var $e_counter;
+      $e_counter = jQuery('.e-count-down');
+      if ($e_counter.length) {
+        jQuery.each($e_counter, function() {
+          var $_end, $_obj;
+          $_obj = jQuery(this);
+          $_end = new Date($_obj.find('.e-date').val());
+          countdown($_end, (function(ts) {
+            $_obj.find('.e-number:eq(0) b').html(ts.hours);
+            $_obj.find('.e-number:eq(1) b').html(ts.minutes);
+            $_obj.find('.e-number:eq(2) b').html(ts.seconds);
+          }), countdown.HOURS | countdown.MINUTES | countdown.SECONDS);
+        });
+      }
+    }
+  };
+
+  Edusite_Accordions = {
+    init: function() {
+      var $e_accordions;
+      $e_accordions = jQuery('.e-accordions');
+      if ($e_accordions.length) {
+        $e_accordions.on('click', '> h4', function($event) {
+          var $e_caption, $e_wrap;
+          $e_wrap = jQuery(this).closest('.e-accordions');
+          $e_caption = jQuery(this);
+          if (!$e_caption.hasClass('e-active')) {
+            $e_wrap.find('.e-active').removeClass('e-active');
+            $e_caption.addClass('e-active');
+            $e_caption.next().addClass('e-active');
+          }
         });
       }
     }
