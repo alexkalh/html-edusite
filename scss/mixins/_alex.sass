@@ -1,0 +1,124 @@
+=inline-block()
+	display: inline-block
+	*display: inline
+	zoom: 1
+
+=clearfix
+	&:before, &:after
+		display: table
+		content: ""
+	&:after
+		clear: both
+
+=transition($time)
+	transition: all $time
+	-ms-transition: all $time
+	-webkit-transition: all $time
+	-moz-transition: all $time
+
+=transition_m($var, $time)
+	transition: $var $time
+	-ms-transition: $var $time
+	-webkit-transition: $var $time
+	-moz-transition: $var $time
+
+=animation-duration( $time )
+	-webkit-animation-duration: $time
+	animation-duration: $time
+
+=border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	-ms-border-radius: $radius
+	border-radius: $radius
+
+=attr( $name, $type:null )
+	@if $type != null
+		$namespace: str-slice($type, 0, 1)
+		&.#{$namespace}-#{$name}
+			@content
+	@else
+		&.#{$name}
+			@content
+
+=new-child( $name, $type:null, $relation:null )
+	@if $type != null
+		$namespace: str-slice($type, 0, 1)
+		& #{$relation} .#{$namespace}-#{$name}
+			@content
+	@else
+		& #{$relation} .#{$name}
+			@content
+
+=min-height( $height )
+	min-height: $height
+	height: $height
+	height: auto
+
+=space( $type, $top: null, $right: null, $bottom: null, $left: null )
+	@if $top != null
+		#{$type}-top: $top
+	@if $right != null
+		#{$type}-right: $right
+	@if $bottom != null
+		#{$type}-bottom: $bottom
+	@if $left != null
+		#{$type}-left: $left
+
++new( animation-duration, $prefix )
+	+when( 01 )
+		+animation-duration(1s)
+	+when( 02 )
+		+animation-duration(2s)
+	+when( 03 )
+		+animation-duration(3s)
+	+when( 04 )
+		+animation-duration(4s)
+	+when( 05 )
+		+animation-duration(5s)			
+
+@for $i from 0 to length( $space--list )
+	+new( margin_top, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( margin, nth(  $space--list, $i+1 ) )
+		
+	+new( margin_bottom, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( margin, null, null, nth(  $space--list, $i+1 ) )
+	
+	+new( margin_right, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( margin, null, nth(  $space--list, $i+1 ) )		
+	
+	+new( padding_top, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( padding, nth(  $space--list, $i+1 ) )
+
+	+new( padding_bottom, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( padding, null, null, nth(  $space--list, $i+1 ) )	
+
+	+new( padding, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			padding: nth(  $space--list, $i+1 )
+
++new( bg_color, $prefix )
+	+when( '07' )
+		background-color: $color__light--12
+	+when( '10' )
+		background-color: $color__light--10
+
++new( row, $prefix )
+	+when( xs )
+		margin-left: $space--01 * -1
+		margin-right: $space--01 * -1
+		& > div
+			padding-left: $space--01
+			padding-right: $space--01
+
+	+when( sm )
+		margin-left: $space--02 * -1
+		margin-right: $space--02 * -1
+		& > div
+			padding-left: $space--02
+			padding-right: $space--02

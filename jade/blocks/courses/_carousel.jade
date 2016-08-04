@@ -1,0 +1,33 @@
+.e-widget.e-courses.e-courses--carousel
+	.e-caption.e-caption--withIcon.e-padding_top--10.e-padding_bottom--08
+		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+			i.e-caption--withIcon__icon.fa.fa-send-o
+			span.e-caption--withIcon__text Latest courses
+			
+			div.e-owl__nav
+				span.e-owl__nav__link.e-owl__nav__link--prev.ti-angle-left
+				span.e-owl__nav__link.e-owl__nav__link--next.ti-angle-right			
+
+		p.e-caption--withIcon__subtitle It gave me the opportunity to step back
+
+	.row
+		.owl-carousel
+			- for (var $i=0; $i<4; $i++)
+				- var $image = 'demo/carousel/1.jpg'
+				.col-xs-12
+					article.e-course.e-course--withRating
+						figure.e-course__thumbnail.e-course__thumbnail--relative.clearfix
+							img.img-responsive(src=$image alt)
+							figcaption.e-course__metadata
+								a.e-course__term(href=$e_archive_url) Education							
+								span.e-course__date.e-course__date--right 83 Days
+								i.e-course__icon.e-course__icon--right.e-margin_right--02.ti-alarm-clock
+						.e-course__content
+							h3.e-course__name.e-course__name--borderLeft
+								a.e-course__link(href=$e_single_url) Become a startup founder
+								i.e-rating.e-rating--three.e-rating--small.e-rating--primary.fa
+							.e-price.e-margin_top--06
+								a(href="#" title="").e-price__ins.e-button.e-button--primary.e-button--medium  
+									ins.e-price__ins__link $122.25
+								a(href="#" title="").e-price__del.e-button--link.e-button--medium 
+									del.e-price__del__link $240.05

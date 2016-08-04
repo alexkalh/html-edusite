@@ -1,0 +1,425 @@
+@import 'scss/config'
+@import 'scss/mixins/bem'
+@import 'scss/mixins/alex'
+@import 'scss/mixins/andy'
+
+*, *:before, *:after
+	@include box-sizing(border-box)
+
+body
+	font-family: $font--content
+	font-size: $space--04
+	line-height: $space--06	
+	color: $color__dark--08
+
+h1, h2, h3, h4, h5, h6
+	font-family: $font--heading
+	color: $color__dark--03	
+
++new( body, $prefix )
+	+when (relative)
+		position: relative
+
++new( header, $prefix )
+	+when( fixed )
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 20
+
++new( top_menu, $prefix )
+	+when (right)
+		text-align: right
+
+	+has ( links )
+		list-style-type: none
+		padding-left: 0
+		margin: $space--04 0			
+	
+	+has( link )
+		+when( lvl_0 )
+			+inline-block
+
+	+has( url )		
+		text-decoration: none
+		color: $color__light--06
+		+transition_m( color, 0.5s )
+		&:hover
+			color: $color--primary		
+
++new( header_bottom, $prefix )
+	+when( fixed )
+		background-color: $color__light--00
+		padding: 0 $space--06
+
++new( logo, $prefix )
+	+when( left )
+		margin: $space--06 0
+		float: left
+
++new( main_menu, $prefix )
+	+when( right )
+		float: right
+	+has( links )		
+	
+	+has( link )
+		+when( lvl_0 )
+			margin-left: $space--03
+			height: 84px
+			
+			+new-child( main_menu__url, $prefix, '>' )
+				padding: $space--07 $space--03
+				line-height: 24px
+				font-size: $space--04a
+				font-family: $font--heading
+				text-transform: uppercase
+				color: $color__dark--04
+				letter-spacing: 1px
+
+			+attr( current-menu-item )
+				+new-child( main_menu__url, $prefix, '>' )
+					font-weight: 700
+					color: $color__dark--02
+
+	+has( url )
+		text-decoration: none
+
++new( slider, $prefix )
+	+when( nivo )
+		position: relative
+		&::before
+			display: block
+			position: absolute
+			content: ''			
+			top: 0px
+			left: 0px
+			bottom: 0px
+			right: 0px
+			z-index: 10
+			background-color: $color__dark--00
+			+opacity( .5 )
+	
++new( slide, $prefix )
+	+when( nivo )
+		position: relative
+		background: transparent		
+		margin-bottom: $space--14
+
+	+has( title )
+		font-size: $space--11
+		line-height: $space--13
+		font-weight: 700		
+		text-transform: uppercase
+		color: $color--primary
+		width: 50%
+		margin: 0
+
+	+has( subtitle )		
+		font-size: $space--09
+		line-height: $space--11
+		text-transform: uppercase
+		color: $color__light--09
+		width: 50%
+		margin: 0
+
+	+has( excerpt )
+		color: $color__light--00
+		width: 50%		
+
++new( button, $prefix )
+	+inline-block()	 
+	border: none
+	font-family: $font--heading
+	letter-spacing: 1px
+	text-decoration: none
+	text-transform: uppercase	
+
+	+when( primary )
+		background-color: $color--primary
+		color: $color__light--00		
+		a
+			color: $color__light--00
+
+	+when( large )
+		height: $space--09
+		line-height: $space--09
+		padding: 0 $space--07			
+		font-size: 14px
+		
+
+	+when( medium )
+		height: $space--08 * 0.875
+		line-height: $space--08 * 0.875
+		padding: 0 $space--04		
+		font-size: 14px		
+
++new( caption, $prefix )
+
+	+when( withIcon )		
+		
+		+has( title )
+			margin: 0
+			+when( relative )
+				position: relative
+
+		+has( text )
+			position: relative
+			font-size: $space--06
+			line-height: $space--06 *  3/2
+			letter-spacing: 1px
+			text-transform: uppercase
+			color: $color__dark--05
+			font-family: $font--heading
+			font-weight: 400
+
+		+has( icon )
+			display: block
+			position: absolute
+			top: 50%
+			left: 0
+			margin-top: $space--11 / -2
+			font-size: $space--11
+			line-height: $space--11
+			width: $space--11
+			height: $space--11
+			color: $color__light--08
+
+		+has( subtitle )
+			margin-top: $space--03	
+			margin-bottom: 0
+
++new( courses, $prefix )
+	+when( carousel )
+		overflow-x: hidden
+
++new( course, $prefix )
+	+when( withRating )
+		background-color: $color__light--00
+
+	+has( thumbnail )		
+		+when( relative )
+			margin: 0
+			position: relative			
+		img
+			display: block
+			width: 100%
+			height: auto
+	
+	
+	+has( content )
+		padding: $space--06 0
+
+	+has( metadata )
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		padding: $space--02 $space--06
+		background-color: $color__dark__rgba--01
+
+	+has( term )
+		font-family: $font--heading
+		text-transform: uppercase
+		text-decoration: none
+		color: $color__light--00
+		font-size: 14px
+		line-height: $space--06
+
+	+has( date )
+		+when( right )
+			font-family: $font--content
+			display: block
+			float: right
+			font-size: 14px
+			line-height: $space--06
+			color: $color__light--00
+
+	+has( icon )
+		+when( right )
+			display: block
+			float: right
+			font-size: 14px
+			line-height: $space--06
+			color: $color__light--00	
+
+	+has( name )
+		margin: 0
+		+when( borderLeft )
+			padding: 0 $space--06
+			position: relative
+			&::before
+				display: block
+				position: absolute
+				content: ''
+				top: $space--01
+				bottom: $space--01
+				left: 0
+				width: $space--01
+				background-color: $color--primary	
+
+	+has( link )
+		display: block
+		font-family: $font--heading
+		font-size: $space--05 * 9 / 10
+		font-weight: 400
+		text-decoration: none
+		line-height: $space--06
+		color: $color__dark--05
+
++new( price, $prefix )
+	+has( ins )				
+		text-decoration: none
+		+has( link )
+			text-decoration: none
+
+	+has( del )
+		color: $color__light--03
+
++new( rating, $prefix )
+	+when( small )
+		font-size: 12px
+		line-height: $space--06
+
+	+when( primary )
+		color: $color--primary
+
+	+when( one )
+		&::before
+			content: "\f005\f006\f006\f006\f006"
+
+	+when( two )
+		&::before
+			content: "\f005\f005\f006\f006\f006"
+
+	+when( three )
+		&::before
+			content: "\f005\f005\f005\f006\f006"
+
+	+when( four )
+		&::before
+			content: "\f005\f005\f005\f005\f006"	
+
+	+when( five )
+		&::before
+			content: "\f005\f005\f005\f005\f005"	
+
++new( owl, $prefix )
+	+has( nav )
+		display: block
+		position: absolute
+		top: 50%
+		right: 0
+		margin-top: $space--08 / -2
+		text-align: right
+
+		+has( link )						
+			+inline-block()
+			width: $space--08
+			height: $space--08
+			line-height: $space--08
+			text-align: center
+			border: 1px solid $color__light--06
+			color: $color__dark--04
+			font-size: $space--04
+			cursor: pointer
+
+			+when( prev )
+				margin-right: $space--01
+
+			+when( next )
+
++new( count_down, $prefix )
+
++new( date_block, $prefix )
+	display: block
+	min-height: 90px
+	height: 90px
+	height: auto
+	text-align: center
+
+	+when( halfBg )
+		position: relative
+		background-color: $color__light--00
+		padding-top: $space--04
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			right: -1px
+			left: 50%			
+			border-left: 1px dashed $color__light--07
+			background-color: $color__light--12
+
+	+when( borderRound )
+		overflow: hidden
+		+border-radius( 5px )
+
+	+has( number )
+		display: block
+		position: relative
+		font-family: $font--heading
+		font-size: $space--08 * .9
+		font-weight: 400
+		line-height: $space--08 * .9
+		color: $color__dark--05
+
+	+has( text )
+		display: block
+		position: relative
+		font-family: $font--heading
+		font-size: $space--04 * 0.8
+		font-weight: 400
+		line-height: $space--06
+		color: $color__dark--05
+		text-transform: uppercase
+
++new( widget, $prefix )
+	+when( dark )
+		background-color: $color__dark--05
+		padding: 0 $space--07 $space--07 $space--07
+	
+		+new-child( caption, $prefix )
+			+when( withIcon )
+				display: block
+				+has( text )
+					color: $color__light--00
+				+has( icon )
+					color: $color__dark--06
+				+has( subtitle )
+					color: $color__light--06
+
+
+	+when( borderTop )		
+		border-top-width: $space--02  
+		border-top-style: solid
+
+	+when( borderPrimary )
+		border-color: $color--primary
+
++new( form, $prefix )
+	+when( register )
+
++new( width, $prefix )
+	+when( full )
+		width: 100%
+
++new( height, $prefix )
+	+when( match )
+
++new( field_group, $prefix )
+	+when( first )
+	+when( other )		
+	+when( last )
+
++new( field, $prefix )
+	+when( text )
+		height: $space--08
+		line-height: $space--08
+		border: 1px solid $color__light--10
+		background-color: $color__light--00
+		padding: 0 $space--04
+
+	+when( submit )

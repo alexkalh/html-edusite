@@ -1,80 +1,52 @@
-include jade/base/_config.jade
-include jade/base/_mixins.jade
+include jade/_config.jade
+include jade/mixins/_alex.jade
 
 doctype
 html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
-	include jade/header/__/_head.jade
+	include jade/_head.jade
 
-	body.e-home-01
-				
-		header
+	body.e-body.e-body--relative.e-body--first
+
+		header.e-header.e-header--fixed
 			.container
-				.e-sub.clearfix
-					a.pull-left(href='mailto:support@colourstheme.com') support@colourstheme.com
-									
-					a.pull-right(href="#register") Login
-					span.pull-right.e-divider /
-					a.pull-right(href="#register") Register
-
-				.e-main.clearfix
-					h1.e-logo.pull-left
+				.e-header_top.row
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--left
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href='mailto:support@colourstheme.com') support@colourstheme.com
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--right
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href="#login") Login
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href="#register") Register
+				
+				.e-header_bottom.e-header_bottom--fixed.clearfix
+					h1.e-logo.e-logo--left
 						a(href=$e_home_url title='')
 							img(src=$e_logo alt='')
-					nav.e-navigation.pull-right
-						include jade/nav/_primary.jade
-		
-		#e-body
-			
-			include jade/block/home/_slider.jade
 
-			section.e-section.e-custom-02
+					nav.e-main_menu.e-main_menu--right
+						include jade/blocks/nav/_primary.jade
+		
+		.e-main_content
+			include jade/blocks/slider/_nivo.jade
+			
+			section.e-section.e-bg_color--07
 				.container
-					.row.e-match-height
+					.row.e-height--match
 						.col-lg-8
 							.e-col
-								include jade/block/home/_carousel.jade
+								include jade/blocks/courses/_carousel.jade
 						.col-lg-4
-							.e-col.e-custom-04
-								include jade/block/home/_count-down.jade
-								include jade/block/home/_register.jade			
+							.e-col.e-bg_color--10
+								include jade/blocks/misc/_count-down.jade
+								include jade/blocks/form/_register.jade
+									
 
-			section.e-section.e-bg.e-overlay.e-custom-01
-				.container
-					.row
-						.col-lg-5.col-md-offset-1
-							include jade/block/home/_image.jade
-
-						.col-lg-5			
-							include jade/block/home/_welcome.jade							
-			
-			section.e-section.e-custom-08
-				.container.e-box
-					include jade/block/home/_search-course.jade
-
-					include jade/block/home/_intro.jade
-
-			section.e-section.e-custom-10
-				.container			
-					include jade/block/home/_courses.jade
-
-			section.e-section.e-parallax.e-bg.e-overlay.e-custom-11
-				.container
-					include jade/block/home/_icons.jade	
-
-			section.e-section.e-custom-10
-				.container
-					.col-lg-6
-						include jade/block/home/_accordions.jade
-					.col-lg-6
-						include jade/block/home/_testimonials.jade
-
-			section.e-section.e-parallax.e-bg.e-overlay.e-custom-11
-				include jade/block/home/_video.jade
-
-			section.e-section
-				.container
-					include jade/block/home/_blog.jade
 
 		footer.container
-			include jade/footer/__/_footer.jade
+			include jade/_footer.jade

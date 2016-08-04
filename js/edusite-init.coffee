@@ -1,27 +1,20 @@
 "use strict";
 
 jQuery(document).ready ($) ->
-	Edusite.initNavigation()
-	Edusite.initNivoSlider()
-	Edusite.initCarousel()
-	Edusite.initBlog()
-	Edusite.initTestimonials()
-
-	Edusite_Count_Down.register()
-
-	Edusite_Accordions.init()
+	Edusite.initNavigation()	
+	Edusite_Slider.init( 'nivo' )
+	Edusite_Course.initCarousel()
+	Edusite_Count_Down.create()
 	return
 
-jQuery(window).load ($) ->
-	Edusite.initMatchHeight()	
+jQuery(window).load ($) ->	
+	Edusite_Hack.matchHeight( '> div .e-col' )
 	return
 
 jQuery(window).scroll ($) ->
 	return
 
-
-Edusite =
-	
+Edusite =	
 	initNavigation: ->
 		if jQuery('.e-navigation').length
 			jQuery('.e-navigation ul').superfish
@@ -31,41 +24,48 @@ Edusite =
 				speedOut: 'fast'
 
 		return
-	
-	initNivoSlider: ->
-		$e_slider = jQuery('.e-slider')
-		if $e_slider.length
-			$e_slider.find('.nivoSlider').nivoSlider
+			
+Edusite_Slider = 
+	init: ( type )->
+		if 'nivo' == type
+			Edusite_Slider.getNivo()
+		return
+	getNivo: ->
+		$e_nivoSliderLarge = jQuery('.e-slider--nivo')
+		if $e_nivoSliderLarge.length
+			$e_nivoSliderLarge.find('.nivoSlider').nivoSlider
 				pauseTime: 10000
 				directionNav: false
 				controlNav: false
 				randomStart: false				
 				beforeChange: ->
-					$e_slider.find('.nivo-caption').find( '.animated' ).each ->
+					$e_nivoSliderLarge.find('.nivo-caption').find( '.animated' ).each ->
 						jQuery(this).addClass 'fadeOut'
 						return
 					return
 				afterChange: ->
-					$e_slider.find('.nivo-caption').find('.animated').each ->
+					$e_nivoSliderLarge.find('.nivo-caption').find('.animated').each ->
 						jQuery(this).addClass jQuery(this).attr( 'data-animate' )
 						return
 					return
 				afterLoad: ->
-					$e_slider.find('.nivo-caption').find('.animated').each ->
+					$e_nivoSliderLarge.find('.nivo-caption').find('.animated').each ->
 						jQuery(this).addClass jQuery(this).attr('data-animate')
 						return
 					return
-
-		return		
+		return
+	
+Edusite_Course = 
 	
 	initCarousel: ->
-		$e_carousel = jQuery('.e-carousel .owl-carousel')
-		if $e_carousel.length
+		$e_course_sliders = jQuery( '.e-courses--carousel .owl-carousel' )
+		if $e_course_sliders.length
+			
+			jQuery.each $e_course_sliders, ()->
 
-			jQuery.each $e_carousel, ()->
-				$_widget = jQuery(this).closest '.e-carousel'
-				$_next   = $_widget.find '.e-next'
-				$_prev   = $_widget.find '.e-prev'
+				$_widget = jQuery(this).closest '.e-courses--carousel'
+				$_next   = $_widget.find '.e-owl__nav__link--next'
+				$_prev   = $_widget.find '.e-owl__nav__link--prev'
 
 				$_owl = jQuery(this).owlCarousel			
 					items : 2
@@ -80,71 +80,34 @@ Edusite =
 							$_owl.trigger 'owl.next'
 							return
 
-						return
+						return			
 				return
+
 		return
-
-	initTestimonials: ->
-		$e_testimonials = jQuery('.e-testimonials .owl-carousel')
-		if $e_testimonials.length
-			$e_testimonials.owlCarousel				
-				items : 1
-				singleItem : true
-				pagination : true
-				navigation : false
-		return
-
-	initBlog: ->
-		$e_blogs = jQuery('.e-blog .owl-carousel')
-		if $e_blogs.length
-			$e_blogs.owlCarousel				
-				items : 2
-				pagination : false
-				navigation : false
-
-		return	
-
-	initMatchHeight: ->
-		$e_rows = jQuery( '.e-match-height' )
-		if $e_rows.length
-			jQuery.each $e_rows, ()->
-				jQuery(this).find(' > div .e-col').matchHeight()
-				return
-		return
-
 
 Edusite_Count_Down = 
-	
-	register: ->
-		$e_counter = jQuery '.e-count-down'
+	create: ->
+		$e_counter = jQuery '.e-count_down'
 		
 		if $e_counter.length
 			jQuery.each $e_counter, ()->				
 				$_obj = jQuery(this)				
-				$_end   = new Date $_obj.find('.e-date').val()				
+				$_end   = new Date $_obj.find('input[type=hidden]').val()				
 				countdown( $_end, ( ( ts ) ->						
-					$_obj.find( '.e-number:eq(0) b' ).html ts.hours
-					$_obj.find( '.e-number:eq(1) b' ).html ts.minutes
-					$_obj.find( '.e-number:eq(2) b' ).html ts.seconds						
+					$_obj.find( '.e-date--hours .e-date_block__number' ).html ts.hours
+					$_obj.find( '.e-date--minutes .e-date_block__number' ).html ts.minutes
+					$_obj.find( '.e-date--seconds .e-date_block__number' ).html ts.seconds						
 					return
 				), countdown.HOURS | countdown.MINUTES | countdown.SECONDS)			
 						
 				return
 		return
 
-Edusite_Accordions = 
-
-	init: ->
-		$e_accordions = jQuery '.e-accordions'
-		if $e_accordions.length			
-			$e_accordions.on 'click', '> h4', ( $event )->				
-				$e_wrap    = jQuery( this ).closest '.e-accordions'
-				$e_caption = jQuery( this )
-
-				if ! $e_caption.hasClass 'e-active'
-					$e_wrap.find( '.e-active' ).removeClass( 'e-active' )
-					$e_caption.addClass 'e-active'
-					$e_caption.next().addClass 'e-active'
-
+Edusite_Hack = 
+	matchHeight: (selector)->
+		$e_rows = jQuery( '.e-height--match' )
+		if $e_rows.length
+			jQuery.each $e_rows, ()->
+				jQuery(this).find( selector ).matchHeight()
 				return
 		return

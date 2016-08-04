@@ -12,6 +12,7 @@
     	<script src='js/respond.js'></script>
     	<script src='js/pie.js'></script>
     <![endif]-->	
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
     <link href="css/font-themify.css" rel="stylesheet" type="text/css"/>
     <link href="css/font-linea-basic.css" rel="stylesheet" type="text/css"/>
@@ -21,133 +22,145 @@
     <link href="css/jquery-superfish.css" rel="stylesheet" type="text/css"/>
     <link href="css/jquery-nivo-slider.css" rel="stylesheet" type="text/css"/>
     <link href="style.css" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,400italic,700,700italic" rel="stylesheet" type="text/css"/>
   </head>
-  <body class="e-home-01">
-    <header>
+  <body class="e-body e-body--relative e-body--first">
+    <header class="e-header e-header--fixed">
       <div class="container">
-        <div class="e-sub clearfix"><a href="mailto:support@colourstheme.com" class="pull-left">support@colourstheme.com</a><a href="#register" class="pull-right">Login</a><span class="pull-right e-divider">/</span><a href="#register" class="pull-right">Register</a></div>
-        <div class="e-main clearfix">
-          <h1 class="e-logo pull-left"><a href="index.html" title=""><img src="demo/logo.png" alt=""></a></h1>
-          <nav class="e-navigation pull-right">
-            <ul class="sf-menu">
-              <li class="current-menu-item e-first"><a href="index.html">Home  </a></li>
-              <li><a href="blog.html">Blog            </a></li>
-              <li><a href="single-post.html">Single</a>
+        <div class="e-header_top row">
+          <div class="col-lg-6">
+            <nav class="e-top_menu e-top_menu--left">
+              <ul class="e-top_menu__links">
+                <li class="e-top_menu__link e-top_menu__link--lvl_0"><a href="mailto:support@colourstheme.com" class="e-top_menu__url">support@colourstheme.com</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-6">
+            <nav class="e-top_menu e-top_menu--right">
+              <ul class="e-top_menu__links">
+                <li class="e-top_menu__link e-top_menu__link--lvl_0"><a href="#login" class="e-top_menu__url">Login</a></li>
+                <li class="e-top_menu__link e-top_menu__link--lvl_0"><a href="#register" class="e-top_menu__url">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="e-header_bottom e-header_bottom--fixed clearfix">
+          <h1 class="e-logo e-logo--left"><a href="index.html" title=""><img src="demo/logo.png" alt=""></a></h1>
+          <nav class="e-main_menu e-main_menu--right">
+            <ul class="e-main_menu__links e-main_menu__links--default sf-menu clearfix">
+              <li class="current-menu-item e-main_menu__link e-main_menu__link--lvl_0"><a href="index.html" class="e-main_menu__url">Home</a></li>
+              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="blog.html" class="e-main_menu__url">Blog</a></li>
+              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="single-post.html" class="e-main_menu__url">Single</a>
                 <ul class="sub-menu">
-                  <li><a href="single-post.html">Standart</a></li>
-                  <li><a href="single-video.html">Video</a></li>
-                  <li><a href="single-gallery.html">Gallery</a></li>
-                  <li class="e_last"><a href="single-audio.html">Audio</a></li>
+                  <li class="e-main_menu__link"><a href="single-post.html" class="e-main_menu__url">Standart</a></li>
+                  <li class="e-main_menu__link"><a href="single-video.html" class="e-main_menu__url">Video</a></li>
+                  <li class="e-main_menu__link"><a href="single-gallery.html" class="e-main_menu__url">Gallery</a></li>
+                  <li class="e-main_menu__link"><a href="single-audio.html" class="e-main_menu__url">Audio</a></li>
                 </ul>
               </li>
-              <li><a href="page.html">Page</a>
+              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="page.html" class="e-main_menu__url">Page</a>
                 <ul class="sub-menu">
-                  <li><a href="page-fullwidth.html">Page - Fullwidth</a></li>
-                  <li><a href="elements.html">Elements</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li class="e_last"><a href="404.html">Error 404</a></li>
+                  <li class="e-main_menu__link"><a href="page-fullwidth.html" class="e-main_menu__url">Page - Fullwidth</a></li>
+                  <li class="e-main_menu__link"><a href="elements.html" class="e-main_menu__url">Elements</a></li>
+                  <li class="e-main_menu__link"><a href="contact.html" class="e-main_menu__url">Contact</a></li>
+                  <li class="e-main_menu__link"><a href="404.html" class="e-main_menu__url">Error 404</a></li>
                 </ul>
               </li>
-              <li class="e-search e-icon e-circle"><a href="#"><i class="ti-search"></i></a></li>
-              <li class="e-cart e-icon e-transparent e-last"><a href="#"><i class="ti-shopping-cart"></i></a></li>
+              <li class="e-search e-icon e-circle e-main_menu__link e-main_menu__link--lvl_0"><a href="#" class="e-main_menu__url"><i class="ti-search"></i></a></li>
+              <li class="e-cart e-icon e-transparent e-last e-main_menu__link e-main_menu__link--lvl_0"><a href="#" class="e-main_menu__url"><i class="ti-shopping-cart"></i></a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <div id="e-body">
-      <div class="e-widget e-slider">
+    <div class="e-main_content">
+      <div class="e-widget e-slider e-slider--nivo">
         <div class="nivoSlider"><img src="demo/slider/nivo-1.jpg" alt title="#e-caption-1" data-transition="fade"><img src="demo/slider/nivo-2.jpg" alt title="#e-caption-2" data-transition="fade"><img src="demo/slider/nivo-3.jpg" alt title="#e-caption-3" data-transition="fade"></div>
         <div class="hidden">
-          <div id="e-caption-1" class="e-caption">
-            <div class="e-caption container">
-              <h2 data-animate="fadeInRight" class="animated">New skills.					</h2>
-              <h3 data-animate="fadeInRight" class="animated e-duration-15">Improved skills. Now</h3>
-              <p data-animate="fadeInRight" class="animated e-duration-20">The MBA course has given me the confidence to move ahead in my career. It gave me the opportunity to step back and reflect on what I do, how well I do it and where I can improve together with the toolkit to progress.</p><a href="single-post.html" data-animate="fadeInRight" class="animated e-duration-10">View Cources				</a>
+          <div id="e-caption-1">
+            <div class="e-slide e-slide--nivo container e-padding_top--0 e-padding_bottom--0">
+              <h2 data-animate="fadeInRight" class="e-slide__title animated">New skills.</h2>
+              <h3 data-animate="fadeInRight" class="e-slide__subtitle animated e-animation_duration--02">Improved skills. Now</h3>
+              <p data-animate="fadeInRight" class="e-slide__excerpt animated e-animation_duration--03 e-margin_top--05">The MBA course has given me the confidence to move ahead in my career. It gave me the opportunity to step back and reflect on what I do, how well I do it and where I can improve together with the toolkit to progress.</p><a href="single-post.html" data-animate="fadeInRight" class="e-button e-button--primary e-button--large e-margin_top--07 animated e-animation_duration--03">View Cources</a>
             </div>
           </div>
-          <div id="e-caption-2" class="e-caption">
-            <div class="e-caption container">
-              <h2 data-animate="fadeInRight" class="animated">New skills.					</h2>
-              <h3 data-animate="fadeInRight" class="animated e-duration-15">Improved skills. Now</h3>
-              <p data-animate="fadeInRight" class="animated e-duration-20">The MBA course has given me the confidence to move ahead in my career. It gave me the opportunity to step back and reflect on what I do, how well I do it and where I can improve together with the toolkit to progress.</p><a href="single-post.html" data-animate="fadeInRight" class="animated e-duration-10">View Cources			</a>
+          <div id="e-caption-2">
+            <div class="e-slide e-slide--nivo container">
+              <h2 data-animate="fadeInRight" class="e-slide__title animated">New skills.</h2>
+              <h3 data-animate="fadeInRight" class="e-slide__subtitle animated e-animation_duration--02">Improved skills. Now</h3>
+              <p data-animate="fadeInRight" class="e-slide__excerpt animated e-animation_duration--03 e-margin_top--05">The MBA course has given me the confidence to move ahead in my career. It gave me the opportunity to step back and reflect on what I do, how well I do it and where I can improve together with the toolkit to progress.</p><a href="single-post.html" data-animate="fadeInRight" class="e-button e-button--primary e-button--large e-margin_top--07 animated e-animation_duration--03">View Cources</a>
             </div>
           </div>
-          <div id="e-caption-3" class="e-caption">
-            <div class="e-caption container">
-              <h2 data-animate="fadeInRight" class="animated">New skills.					</h2>
-              <h3 data-animate="fadeInRight" class="animated e-duration-15">Improved skills. Now</h3>
-              <p data-animate="fadeInRight" class="animated e-duration-20">The MBA course has given me the confidence to move ahead in my career. It gave me the opportunity to step back and reflect on what I do, how well I do it and where I can improve together with the toolkit to progress.</p><a href="single-post.html" data-animate="fadeInRight" class="animated e-duration-10">View Cources</a>
+          <div id="e-caption-3">
+            <div class="e-slide e-slide--nivo container">
+              <h2 data-animate="fadeInRight" class="e-slide__title animated">New skills.</h2>
+              <h3 data-animate="fadeInRight" class="e-slide__subtitle animated e-animation_duration--02">Improved skills. Now</h3>
+              <p data-animate="fadeInRight" class="e-slide__excerpt animated e-animation_duration--03 e-margin_top--05">The MBA course has given me the confidence to move ahead in my career. It gave me the opportunity to step back and reflect on what I do, how well I do it and where I can improve together with the toolkit to progress.</p><a href="single-post.html" data-animate="fadeInRight" class="e-button e-button--primary e-button--large e-margin_top--07 animated e-animation_duration--03">View Cources</a>
             </div>
           </div>
         </div>
       </div>
-      <section class="e-section e-custom-02">
+      <section class="e-section e-bg_color--07">
         <div class="container">
-          <div class="row e-match-height">
+          <div class="row e-height--match">
             <div class="col-lg-8">
               <div class="e-col">
-                <div class="e-widget e-carousel">
-                  <div class="e-widget-title e-one">
-                    <h3><i class="fa fa-send-o"></i><span>Latest courses</span>
-                      <button class="e-prev ti-angle-left"></button>
-                      <button class="e-next ti-angle-right"></button>
+                <div class="e-widget e-courses e-courses--carousel">
+                  <div class="e-caption e-caption--withIcon e-padding_top--10 e-padding_bottom--08">
+                    <h3 class="e-caption--withIcon__title e-caption--withIcon__title--relative clearfix"><i class="e-caption--withIcon__icon fa fa-send-o"></i><span class="e-caption--withIcon__text">Latest courses</span>
+                      <div class="e-owl__nav"><span class="e-owl__nav__link e-owl__nav__link--prev ti-angle-left"></span><span class="e-owl__nav__link e-owl__nav__link--next ti-angle-right">			</span></div>
                     </h3>
-                    <p>It gave me the opportunity to step back</p>
+                    <p class="e-caption--withIcon__subtitle">It gave me the opportunity to step back</p>
                   </div>
                   <div class="row">
                     <div class="owl-carousel">
                       <div class="col-xs-12">
-                        <article>
-                          <figure><img src="demo/carousel/1.jpg" alt class="img-responsive">
-                            <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
+                        <article class="e-course e-course--withRating">
+                          <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/carousel/1.jpg" alt class="img-responsive">
+                            <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
                           </figure>
-                          <div class="e-content">
-                            <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                            <div class="e-price"><ins>$122.25</ins>
-                              <del>$240.05</del>
-                            </div>
+                          <div class="e-course__content">
+                            <h3 class="e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h3>
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--primary e-button--medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button--link e-button--medium">
+                                <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
                       </div>
                       <div class="col-xs-12">
-                        <article>
-                          <figure><img src="demo/carousel/1.jpg" alt class="img-responsive">
-                            <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
+                        <article class="e-course e-course--withRating">
+                          <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/carousel/1.jpg" alt class="img-responsive">
+                            <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
                           </figure>
-                          <div class="e-content">
-                            <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                            <div class="e-price"><ins>$122.25</ins>
-                              <del>$240.05</del>
-                            </div>
+                          <div class="e-course__content">
+                            <h3 class="e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h3>
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--primary e-button--medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button--link e-button--medium">
+                                <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
                       </div>
                       <div class="col-xs-12">
-                        <article>
-                          <figure><img src="demo/carousel/1.jpg" alt class="img-responsive">
-                            <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
+                        <article class="e-course e-course--withRating">
+                          <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/carousel/1.jpg" alt class="img-responsive">
+                            <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
                           </figure>
-                          <div class="e-content">
-                            <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                            <div class="e-price"><ins>$122.25</ins>
-                              <del>$240.05</del>
-                            </div>
+                          <div class="e-course__content">
+                            <h3 class="e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h3>
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--primary e-button--medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button--link e-button--medium">
+                                <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
                       </div>
                       <div class="col-xs-12">
-                        <article>
-                          <figure><img src="demo/carousel/1.jpg" alt class="img-responsive">
-                            <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
+                        <article class="e-course e-course--withRating">
+                          <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/carousel/1.jpg" alt class="img-responsive">
+                            <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
                           </figure>
-                          <div class="e-content">
-                            <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                            <div class="e-price"><ins>$122.25</ins>
-                              <del>$240.05</del>
-                            </div>
+                          <div class="e-course__content">
+                            <h3 class="e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h3>
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--primary e-button--medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button--link e-button--medium">
+                                <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
                       </div>
@@ -157,38 +170,40 @@
               </div>
             </div>
             <div class="col-lg-4">
-              <div class="e-col e-custom-04">
-                <div class="e-widget e-count-down e-custom-03 e-custom-05">
-                  <div class="e-widget-title e-one">		
-                    <h3><i class="ti-alarm-clock"></i><span>Register Now</span></h3>
-                    <p>Create your Free account now and get immediate access to 100s of online courses.</p>
+              <div class="e-col e-bg_color--10">
+                <div class="e-widget e-count_down e-widget--dark e-widget--borderTop e-widget--borderPrimary">
+                  <div class="e-caption e-caption--withIcon e-padding_top--10 e-padding_bottom--08">
+                    <h3 class="e-caption--withIcon__title e-caption--withIcon__title--relative clearfix"><i class="e-caption--withIcon__icon ti-alarm-clock"></i><span class="e-caption--withIcon__text">Register Now</span></h3>
+                    <p class="e-caption--withIcon__subtitle">Create your Free account now and get immediate access to 100s of online courses.</p>
                   </div>
-                  <input type="hidden" value="2016,07,01" class="e-date">
-                  <div class="row">
+                  <input type="hidden" value="2016,08,06">
+                  <div class="row e-row--xs">
                     <div class="col-xs-4">
-                      <div class="e-number"><b>00</b><span>hours</span></div>
+                      <div class="e-date_block e-date_block--halfBg e-date_block--borderRound e-date--hours"><b class="e-date_block__number">00</b><span class="e-date_block__text">hours</span></div>
                     </div>
                     <div class="col-xs-4">
-                      <div class="e-number"><b>00</b><span>minutes</span></div>
+                      <div class="e-date_block e-date_block--halfBg e-date_block--borderRound e-date--minutes"><b class="e-date_block__number">00</b><span class="e-date_block__text">minutes</span></div>
                     </div>
                     <div class="col-xs-4">
-                      <div class="e-number"><b>00</b><span>seconds</span></div>
+                      <div class="e-date_block e-date_block--halfBg e-date_block--borderRound e-date--seconds"><b class="e-date_block__number">00</b><span class="e-date_block__text">seconds</span></div>
                     </div>
                   </div>
                 </div>
-                <div class="e-widget e-register e-custom-06">
-                  <form action="#" method="post" class="e-form row">
-                    <div class="col-md-6">
-                      <input type="text" name="name" placeholder="Name *">
+                <div class="e-widget e-form e-form--register e-padding--07">
+                  <form action="#" method="post" class="e-form">
+                    <div class="row e-row--sm e-field_group e-field_group--first">
+                      <div class="col-md-6">
+                        <input type="text" name="name" placeholder="Name *" class="e-field e-field--text e-width--full">
+                      </div>
+                      <div class="col-md-6">
+                        <input type="email" name="phone" placeholder="Phone" class="e-field e-field--text e-width--full">
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <input type="email" name="email" placeholder="Email *">
+                    <div class="e-field_group e-field_group--other e-margin_top--04">
+                      <input type="text" name="email" placeholder="Email *" class="e-field e-field--text e-width--full">
                     </div>
-                    <div class="col-md-12">
-                      <input type="text" name="phone" placeholder="Phone">
-                    </div>
-                    <div class="col-md-12">
-                      <input type="submit" value="Get it now">
+                    <div class="e-field_group e-field_group--last e-margin_top--04">
+                      <input type="submit" value="Signup Now" class="e-field e-field--submit e-width--full e-button e-button--primary e-button--medium">
                     </div>
                   </form>
                 </div>
@@ -197,323 +212,30 @@
           </div>
         </div>
       </section>
-      <section class="e-section e-bg e-overlay e-custom-01">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5 col-md-offset-1">
-              <div class="e-widget e-image"><img src="demo/image/girl.png" alt></div>
-            </div>
-            <div class="col-lg-5">			
-              <div class="e-widget e-welcome e-custom-07">
-                <div class="e-widget-title e-two">		
-                  <h4>Welcome to Edusite</h4>
-                  <h3>The <span>Latest </span>Course</h3>
-                </div>
-                <div class="e-content">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam, sed diam nonummy nibh “euismod tincidunt” ut laoreet dolore magna aliquam losa volutpat. Lorem ipsum dolor sit amet.</p>
-                </div><a href="callto:166634346790" title class="e-button"><span>Have question ?</span><span>1-666-3434-6790</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="e-section e-custom-08">
-        <div class="container e-box">
-          <div class="e-widget e-search-course">
-            <div class="e-widget-title e-one e-center">		
-              <h3><i class="ti-pencil-alt"></i><span>Find Your Course</span></h3>
-              <p>Make Your Success a Priority</p>
-            </div>
-            <form action="" method="post" class="e-form row">
-              <div class="col-md-3">
-                <select name="course-category" autocomplete="off">
-                  <option value="" selected="selected">Select Category</option>
-                  <option value="Foo">Foo</option>
-                  <option value="Foo">Baz				</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <select name="course-status" autocomplete="off">
-                  <option value="" selected="selected">Select Status</option>
-                  <option value="Lorem">Lorem</option>
-                  <option value="Ipsum">Ipsum</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <input type="text" name="s" placeholder="Type keyword">
-              </div>
-              <div class="col-md-3">
-                <input type="submit" value="Search cource">
-              </div>
-            </form>
-          </div>
-          <div class="row e-custom-09">
-            <div class="col-md-4">
-              <div class="e-widget e-intro e-first">
-                <div class="e-item"><i class="icon-basic-lightbulb"></i><span>Over 400 students Enrolled Learn Skills</span></div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="e-widget e-intro e-first">
-                <div class="e-item"><i class="icon-basic-book"></i><span>More than 3020 Online Courses Available</span></div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="e-widget e-intro e-first">
-                <div class="e-item"><i class="fa fa-users"></i><span>More than 320 Instructors Available</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="e-section e-custom-10">
-        <div class="container">			
-          <div class="e-widget e-courses">
-            <div class="e-widget-title e-one e-center">		
-              <h3><i class="fa fa-bullhorn"></i><span>Popular courses</span></h3>
-              <p>Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam </p>
-            </div>
-            <div class="row e-first">
-              <div class="col-md-3">
-                <article>
-                  <figure><img src="demo/courses/1.jpg" alt class="img-responsive">
-                    <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
-                  </figure>
-                  <div class="e-content">
-                    <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                    <div class="e-price"><ins>$122.25</ins>
-                      <del>$240.05					</del>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-3">
-                <article>
-                  <figure><img src="demo/courses/1.jpg" alt class="img-responsive">
-                    <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
-                  </figure>
-                  <div class="e-content">
-                    <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                    <div class="e-price"><ins>$122.25</ins>
-                      <del>$240.05					</del>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-3">
-                <article>
-                  <figure><img src="demo/courses/1.jpg" alt class="img-responsive">
-                    <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
-                  </figure>
-                  <div class="e-content">
-                    <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                    <div class="e-price"><ins>$122.25</ins>
-                      <del>$240.05					</del>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-3">
-                <article>
-                  <figure><img src="demo/courses/1.jpg" alt class="img-responsive">
-                    <figcaption><a href="blog.html">Education							</a><span>83 days</span><i class="fa fa-clock-o"></i></figcaption>
-                  </figure>
-                  <div class="e-content">
-                    <h3><a href="single-post.html">Become a startup founder</a><i class="fa e-star e-three"></i></h3>
-                    <div class="e-price"><ins>$122.25</ins>
-                      <del>$240.05					</del>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="e-section e-parallax e-bg e-overlay e-custom-11">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="e-widget e-intro e-second">
-                <div class="e-item"><i class="fa fa-graduation-cap"></i><b>190</b><span>Countries reached</span></div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="e-widget e-intro e-second">
-                <div class="e-item"><i class="fa fa-book"></i><b>25000</b><span>Passed graduates</span></div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="e-widget e-intro e-second">
-                <div class="e-item"><i class="fa fa-users"></i><b>3400</b><span>Courses published</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="e-section e-custom-10">
-        <div class="container">
-          <div class="col-lg-6">
-            <div class="e-widget e-accordions e-box e-custom-12">
-              <div class="e-widget-title e-one">		
-                <h3><i class="ti-files"></i><span>Why choose us</span></h3>
-                <p>Quisque cursus in augue eget faucibus</p>
-              </div>
-              <div class="e-accordions e-first">
-                <h4 class="e-active"><span>01</span>Let's make things better</h4>
-                <div class="e-content e-active">
-                  <p><b>Fusce eleifend. Donec sapien sed phase lusa</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam sed diam nonummy nibh euismod tincidunt ut laoreet dolore. Premium quality products consectetuer adipiscing elit diam.</p>
-                </div>
-                <h4><span>02</span>The miracles of science</h4>
-                <div class="e-content">
-                  <p><b>Fusce eleifend. Donec sapien sed phase lusa</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam sed diam nonummy nibh euismod tincidunt ut laoreet dolore. Premium quality products consectetuer adipiscing elit diam.</p>
-                </div>
-                <h4><span>03</span>Better sound through research</h4>
-                <div class="e-content">
-                  <p><b>Fusce eleifend. Donec sapien sed phase lusa</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam sed diam nonummy nibh euismod tincidunt ut laoreet dolore. Premium quality products consectetuer adipiscing elit diam.</p>
-                </div>
-                <h4><span>04</span>We bring good things to life</h4>
-                <div class="e-content">
-                  <p><b>Fusce eleifend. Donec sapien sed phase lusa</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam sed diam nonummy nibh euismod tincidunt ut laoreet dolore. Premium quality products consectetuer adipiscing elit diam.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="e-widget e-testimonials">
-              <div class="e-widget-title e-three">		
-                <h3>What students say</h3>
-              </div>
-              <div class="row owl-carousel">
-                <blockquote data-avatar="demo/testimonials/1.jpg" class="col-xs-12">The most technologically efficient machine that man has ever invented is the book.
-                  <cite>John Joe, Australia,<small>Saprol Costumer</small></cite>
-                </blockquote>
-                <blockquote data-avatar="demo/testimonials/1.jpg" class="col-xs-12">Technology is a word that describes something that doesn’t work yet.
-                  <cite>John Joe, Australia,<small>Saprol Costumer</small></cite>
-                </blockquote>
-                <blockquote data-avatar="demo/testimonials/1.jpg" class="col-xs-12">
-                  <cite>John Joe, Australia,<small>Saprol Costumer</small></cite>
-                </blockquote>
-                <blockquote data-avatar="demo/testimonials/1.jpg" class="col-xs-12">
-                  <cite>John Joe, Australia,<small>Saprol Costumer</small></cite>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="e-section e-parallax e-bg e-overlay e-custom-11">
-        <div class="e-widget e-video">
-          <div class="e-widget-title e-four"><i class="ti-control-forward"></i>
-            <h3>Campus Life Video Tour</h3>
-            <p>Having over 9 million students worldwide and more than 50,000 online courses available.</p>
-          </div>
-        </div>
-      </section>
-      <section class="e-section">
-        <div class="container">
-          <div class="e-widget e-blog">
-            <div class="e-widget-title e-one e-center">		
-              <h3><i class="fa fa-pagelines"></i><span>Education News</span></h3>
-              <p>Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam </p>
-            </div>
-            <div class="row owl-carousel">
-              <article class="col-xs-12">
-                <figure><img src="demo/blog/1.jpg" alt class="img-responsive"></figure>
-                <div class="e-content">
-                  <time>09<span>Jul, 15</span></time>
-                  <h4>Learning And Collobarating</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet.</p><a href="single-post.html">Read more</a>
-                </div>
-              </article>
-              <article class="col-xs-12">
-                <figure><img src="demo/blog/1.jpg" alt class="img-responsive"></figure>
-                <div class="e-content">
-                  <time>09<span>Jul, 15</span></time>
-                  <h4>Learning And Collobarating</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet.</p><a href="single-post.html">Read more</a>
-                </div>
-              </article>
-              <article class="col-xs-12">
-                <figure><img src="demo/blog/1.jpg" alt class="img-responsive"></figure>
-                <div class="e-content">
-                  <time>09<span>Jul, 15</span></time>
-                  <h4>Learning And Collobarating</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet.</p><a href="single-post.html">Read more</a>
-                </div>
-              </article>
-              <article class="col-xs-12">
-                <figure><img src="demo/blog/1.jpg" alt class="img-responsive"></figure>
-                <div class="e-content">
-                  <time>09<span>Jul, 15</span></time>
-                  <h4>Learning And Collobarating</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy Lorem ipsum dolor sit amet.</p><a href="single-post.html">Read more</a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
     <footer class="container">
-      <div class="container">
-        <div class="row e-blocks">
-          <div class="col-lg-3">
-            <div class="e-widget e-about">
-              <div class="e-widget-title e-five"><i class="fa fa-cogs"></i>
-                <h3>About</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="e-widget e-menu">
-              <div class="e-widget-title e-five"><i class="fa fa-ellipsis-v"></i>
-                <h3>Company</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="e-widget e-tweets">
-              <div class="e-widget-title e-five"><i class="fa fa-twitter"></i>
-                <h3>Latest Tweets</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="e-widget e-contact">
-              <div class="e-widget-title e-five"><i class="fa fa-envelope"></i>
-                <h3>Quick contact</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row e-end">
-          <div class="col-lg-6">
-            <p>Copyright &copy; 2015 Academica, Online Learning | Created by Colourstheme</p>
-          </div>
-          <div class="col-lg-6">
-            <div class="e-socials">
-              <p><a href="#" title><i class="fa fa-facebook"></i></a><a href="#" title><i class="fa fa-twitter"></i></a><a href="#" title><i class="fa fa-pinterest"></i></a><a href="#" title><i class="fa fa-behance"></i></a><a href="#" title><i class="fa fa-dribbble"></i></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="e-scripts hidden">
-          <script src="js/modernizr.js"></script>
-          <script src="js/jquery.js"></script>
-          <script src="js/bootstrap.js"></script>
-          <script src="js/jquery-fitvids.js"></script>
-          <script src="js/jquery-owl-carousel.js"></script>
-          <script src="js/jquery-superfish.js"></script>
-          <script src="js/jquery-matchheight.js"></script>
-          <script src="js/jquery-nivo-slider.js"></script>
-          <script src="js/countdown.js"></script>
-          <script src="js/edusite-custom.js"></script>
-          <script src="js/edusite-init.js"></script>
-        </div>
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6"></div>
+      </div>
+      <div class="e-scripts hidden">
+        <script src="js/modernizr.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery-fitvids.js"></script>
+        <script src="js/jquery-owl-carousel.js"></script>
+        <script src="js/jquery-superfish.js"></script>
+        <script src="js/jquery-matchheight.js"></script>
+        <script src="js/jquery-nivo-slider.js"></script>
+        <script src="js/countdown.js"></script>
+        <script src="js/edusite-custom.js"></script>
+        <script src="js/edusite-init.js"></script>
       </div>
     </footer>
   </body>

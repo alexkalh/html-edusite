@@ -1,0 +1,165 @@
+
+// ------------------------------------------------
+// Expressive BEM mixins (for BEM and namespacing)
+//-------------------------------------------------
+
+//---------------------------------------------
+// Creates a new, top-level Block
+// --------------------------------------------
+// If a type (e.g. component, module, utility)
+// is given, it will auto-generate a namespaced
+// class that adheres to Harry Roberts' post
+// on namespaced BEM classes.
+// If given: +new(product-item, component)
+// Produces: .c-product-item
+// Remember, the $type is optional.
+
+=new ($name, $type: null)
+  @at-root
+    @if $type != null
+      $namespace: str-slice($type, 0, 1)
+      .#{$namespace}-#{$name}
+        @content
+    @else
+      .#{$name}
+        @content
+
+=class ($name, $type: null) /* OOP class alias */
+  +new($name, $type)
+    @content
+
+=createClass ($name, $type: null) /* React-inspired class alias */
+  +new($name, $type)
+    @content
+
+//---------------------------------------------
+// Creates an Element
+//---------------------------------------------
+// If given: 
+// +new(product-item, component)
+//  +has(title)
+// 
+// Produces: 
+// .c-product-item {}
+// .c-product-item__title {}
+//
+// If given: 
+// +new(person)
+//   +when(female)
+//    +has(hand, person) refers to the parent scope
+// 
+// Produces: 
+// .person {}
+// .person--female {}
+// .person--female .person__hand {}
+//
+
+=has ($name, $childOf: '')
+  @if ($childOf != '')
+    .#{$childOf}__#{$name}
+      @content
+  @else
+    @at-root
+      &__#{$name}
+        @content
+
+//----------------------------------------------
+// Creates a Modifier
+// ---------------------------------------------
+// If given: 
+// +new(person)
+//   +when(female)
+// 
+// Produces: 
+// .person {}
+// .person--female {}
+
+=when ($name)
+  @at-root
+    &--#{$name}
+      @content
+
+//-----------------------------------------------
+// Creates a behaviorial State
+// -----------------------------------------
+// If given: 
+// +new(menu, component)
+//   +has(item)
+//     +if(active)
+// 
+// Produces: 
+// .c-menu {}
+// .c-menu__item {}
+// .c-menu__item.is-active {}
+
+=if-its ($state)
+  &.is-#{$state}
+    @content
+
+=if ($state)
+  +if-its($state)
+    @content
+
+//-----------------------------------------------
+// Creates an ownership State
+//-----------------------------------------------
+// If given: 
+// +new(menu, component)
+//   +has(item)
+//     +with(dropdown)
+// 
+// Produces: 
+// .c-menu {}
+// .c-menu__item {}
+// .c-menu__item.has-dropdown {}
+
+=got ($something)
+  &.has-#{$something}
+    @content
+
+=with ($something)
+  +got($something)
+    @content
+
+//-----------------------------------------------
+// Allows importing Blocks into other Blocks
+//-----------------------------------------------
+// Uses @extend, so BEWARE. This is experimental,
+// may mess up your code, so double-check that the
+// output is what you want.
+//
+// This potentially allows you to create blocks
+// (components, modules etc.) seperately and instead
+// load them into a parent block / component similar
+// to something like React.
+//
+// As a silly example, let's say you've made
+// a List component and your Product
+// component should be imported into, rather than
+// nested as a +has:
+// 
+// +new(product, component)
+//   color: red
+//   height: 50px
+//   width: 100px
+// 
+// +new(list, component)
+//   display: block
+//   margin: 0
+//
+//   +import(c-product)
+//
+// Note that we're using the generated class name
+// as the parameter value in +import. So just saying
+// +import(product) won't work (unless you wrote
+// +new(product) without setting a type).
+
+=import ($something)
+  @at-root
+    & .#{$something}
+      @extend .#{$something}
+      @content
+
+=fetch ($something)
+  +import($something)
+    @content
