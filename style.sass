@@ -16,6 +16,83 @@ h1, h2, h3, h4, h5, h6
 	font-family: $font--heading
 	color: $color__dark--03	
 
+h1
+	&,
+	&.is-md
+		font-size: 70px
+		line-height: round( 70px * 1.3333 )
+		margin: round( 70px / 3 ) 0
+
+h2
+	&.is-xs
+		font-size: 40px
+		line-height: round( 40px * 1.3333 )
+		margin: round( 40px / 3 ) 0
+
+	&.is-sm
+		font-size: 45px
+		line-height: round( 45px * 1.3333 )
+		margin: round( 45px / 3 ) 0
+
+	&,
+	&.is-md
+		font-size: 48px
+		line-height: round( 48px * 1.3333 )
+		margin: round( 48px / 3 ) 0
+
+	&.is-lg
+		font-size: 60px
+		line-height: round( 60px * 1.3333 )
+		margin: round( 60px / 3 ) 0
+h3
+	&.is-sm
+		font-size: 30px
+		line-height: round( 30px * 1.3333 )
+		margin: round( 30px / 3 ) 0
+
+	&,
+	&.is-md
+		font-size: 46px 
+		line-height: round( 46px * 1.3333 )
+		margin: round( 46px / 3 ) 0
+
+h4
+	&,
+	&.is-md
+		font-size: 24px
+		line-height: round( 24px * 1.3333 )
+		margin: round( 24px / 3 ) 0
+
+h5
+	&,
+	&.is-md
+		font-size: 18px
+		line-height: round( 18px * 1.3333 )
+		margin: round( 18px / 3 ) 0
+
+h6
+	&.is-xs
+		font-size: 12px
+		line-height: round( 12px * 1.3333 )
+		margin: round( 12px / 3 ) 0
+
+	&.is-sm
+		font-size: 13px
+		line-height: round( 13px * 1.3333 )
+		margin: round( 13px / 3 ) 0
+
+	&,
+	&.is-md
+		font-size: 14px
+		line-height: round( 14px * 1.3333 )
+		margin: round( 14px / 3 ) 0
+
+	&.is-lg
+		font-size: 15px
+		line-height: round( 15px * 1.3333 )
+		margin: round( 15px / 3 ) 0
+
+
 +new( body, $prefix )
 	+when (relative)
 		position: relative
@@ -51,12 +128,17 @@ h1, h2, h3, h4, h5, h6
 +new( header_bottom, $prefix )
 	+when( fixed )
 		background-color: $color__light--00
-		padding: 0 $space--06
+		padding: $space--06
 
 +new( logo, $prefix )
 	+when( left )
-		margin: $space--06 0
+		margin: 0
 		float: left
+
+	+has(img)
+		display: block
+		margin: 0
+		padding: 0
 
 +new( main_menu, $prefix )
 	+when( right )
@@ -66,11 +148,11 @@ h1, h2, h3, h4, h5, h6
 	+has( link )
 		+when( lvl_0 )
 			margin-left: $space--03
-			height: 84px
+			height: $logo-height			
 			
 			+new-child( main_menu__url, $prefix, '>' )
-				padding: $space--07 $space--03
-				line-height: 24px
+				padding: 0 $space--03
+				line-height: $logo-height
 				font-size: $space--04a
 				font-family: $font--heading
 				text-transform: uppercase
@@ -80,10 +162,33 @@ h1, h2, h3, h4, h5, h6
 			+attr( current-menu-item )
 				+new-child( main_menu__url, $prefix, '>' )
 					font-weight: 700
-					color: $color__dark--02
+					color: $color__dark--02				
 
 	+has( url )
 		text-decoration: none
+
++new( menu_icon, $prefix )
+	+when( primary )
+		+new-child( menu_icon, $prefix )
+			+has( icon )
+				color: $color--primary 
+
+	+when( circle )
+		background-color: $color--primary
+		+border-radius( 50% )
+		
+		+new-child( menu_icon, $prefix )
+			+has( icon )
+				display: block
+				color: $color__light--00
+				font-size: $space--04b
+				line-height: $logo-height			
+
+	+when( transparent )				
+		+new-child( menu_icon, $prefix )
+			+has( icon )
+				font-size: $space--06
+				line-height: $logo-height
 
 +new( slider, $prefix )
 	+when( nivo )
@@ -188,6 +293,22 @@ h1, h2, h3, h4, h5, h6
 		+has( subtitle )
 			margin-top: $space--03	
 			margin-bottom: 0
+
+	+when( withPrefix )
+		margin-bottom: $space--05
+
+		+has( subtitle )
+			line-height: $space--06
+			font-weight: 400
+			text-transform: uppercase
+			letter-spacing: 2px
+
+		+has( title )
+			text-transform: uppercase
+			font-weight: 700
+			letter-spacing: 1px
+			& > span
+				color: $color--primary
 
 +new( courses, $prefix )
 	+when( carousel )
@@ -377,10 +498,9 @@ h1, h2, h3, h4, h5, h6
 		text-transform: uppercase
 
 +new( widget, $prefix )
-	+when( dark )
-		background-color: $color__dark--05
-		padding: 0 $space--07 $space--07 $space--07
-	
+
+	+when( dark )				
+
 		+new-child( caption, $prefix )
 			+when( withIcon )
 				display: block
@@ -391,6 +511,15 @@ h1, h2, h3, h4, h5, h6
 				+has( subtitle )
 					color: $color__light--06
 
+			+when( withPrefix )
+				+has( subtitle)
+					color: $color__light--00
+
+				+has( title )
+					color: $color__light--00
+		
+		+new-child( intro__content, $prefix )
+			color: $color__light--14
 
 	+when( borderTop )		
 		border-top-width: $space--02  
@@ -423,3 +552,56 @@ h1, h2, h3, h4, h5, h6
 		padding: 0 $space--04
 
 	+when( submit )
+
++new( intro, $prefix )
+	+when( text )
+
++new( cta, $prefix )
+	+inline-block()
+	padding: ( ( $space--10 - $space--06) / 2 ) $space--08
+	+border-radius( 2px )
+	font-family: $font--heading
+
+	+when( light )
+		background-color: $color__light--00
+
+	+when( default )
+
+		+has( secondary )
+			display: block
+			font-size: $space--04a
+			line-height: $space--06
+			margin-right: $space--07
+			float: left
+			color: $color__dark--05
+			text-transform: uppercase
+
+		+has( primary )
+			display: block
+			font-size: $space--04a
+			line-height: $space--06
+			left-right: $space--07
+			float: left
+			color: $color--primary
+
++new( section, $prefix )
+	+with( overlay )
+		position: relative
+
+		&::before
+			display: block
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background-color: $color__dark__rgba--02
+
+// For only demo.
++new( body, $prefix )
+	+when( home )
+		+new-child( demo, $prefix )
+			+has( row )
+				+when( '02' )
+					background: url( demo/bg/welcome.jpg ) no-repeat center center transparent

@@ -6,7 +6,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 	include jade/_head.jade
 
-	body.e-body.e-body--relative.e-body--first
+	body.e-body.e-body--relative.e-body--home
 
 		header.e-header.e-header--fixed
 			.container
@@ -26,8 +26,8 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 				
 				.e-header_bottom.e-header_bottom--fixed.clearfix
 					h1.e-logo.e-logo--left
-						a(href=$e_home_url title='')
-							img(src=$e_logo alt='')
+						a.e-logo__link(href=$e_home_url title='')
+							img.e-logo__img(src=$e_logo alt='')
 
 					nav.e-main_menu.e-main_menu--right
 						include jade/blocks/nav/_primary.jade
@@ -45,7 +45,17 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 							.e-col.e-bg_color--10
 								include jade/blocks/misc/_count-down.jade
 								include jade/blocks/form/_register.jade
-									
+			
+			section.e-section.has-overlay.e-demo__row--02
+				.container
+					.row
+						.col-lg-5.col-md-offset-1
+							.e-col
+								include jade/blocks/misc/_image.jade
+
+						.col-lg-5
+							.e-col
+								include jade/blocks/misc/_welcome.jade		
 
 
 		footer.container

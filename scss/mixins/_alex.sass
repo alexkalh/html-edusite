@@ -102,11 +102,19 @@
 		+when( nth( $indexs, $i+ 1 ) )
 			padding: nth(  $space--list, $i+1 )
 
+
++new( padding, $prefix )
+	+when( '0_07_07_07' )
+		padding: 0 $space--07 $space--07 $space--07
+
 +new( bg_color, $prefix )
 	+when( '07' )
 		background-color: $color__light--12
 	+when( '10' )
 		background-color: $color__light--10
+	
+	+when( dark_05 )		
+		background-color: $color__dark--05
 
 +new( row, $prefix )
 	+when( xs )
