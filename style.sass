@@ -584,6 +584,16 @@ h6
 			float: left
 			color: $color--primary
 
++new( banner, $prefix )
+	+when( single )
+		+has( link )
+			display: block
+
+		+has( image )
+			display: block
+			margin: 0
+			padding: 0
+
 +new( section, $prefix )
 	+with( overlay )
 		position: relative
@@ -597,6 +607,12 @@ h6
 			left: 0
 			right: 0
 			background-color: $color__dark__rgba--02
+	
+	+has( box )
+		display: block
+		background-color: $color__light--00
+		position: relative
+		padding: $space--09
 
 // For only demo.
 +new( body, $prefix )

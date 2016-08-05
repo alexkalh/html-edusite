@@ -78,6 +78,12 @@
 		+animation-duration(5s)			
 
 @for $i from 0 to length( $space--list )
+
+	+new( margin_top, $prefix )		
+		+when( nth( $indexs, $i+ 1 ) )
+			+has( negative )
+				+space( margin, nth(  $space--list, $i+1 ) * -1 )
+
 	+new( margin_top, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
 			+space( margin, nth(  $space--list, $i+1 ) )

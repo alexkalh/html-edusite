@@ -46,17 +46,21 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/blocks/misc/_count-down.jade
 								include jade/blocks/form/_register.jade
 			
-			section.e-section.has-overlay.e-demo__row--02
+			section.e-section.has-overlay.e-demo__row--02.e-padding_bottom--09
 				.container
 					.row
 						.col-lg-5.col-md-offset-1
 							.e-col
-								include jade/blocks/misc/_image.jade
+								include jade/blocks/misc/_banner.jade
 
 						.col-lg-5
 							.e-col
 								include jade/blocks/misc/_welcome.jade		
 
+			section.e-section.e-demo__row--03.e-bg_color--07
+				.container
+					.e-section__box.e-margin_top--09__negative
+						include jade/blocks/courses/_search.jade
 
 		footer.container
 			include jade/_footer.jade
