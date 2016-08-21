@@ -1,23 +1,25 @@
-.e-widget.e-search-course
-	.e-widget-title.e-one.e-center		
-		h3 
-			i.ti-pencil-alt
-			span Find Your Course
-		p Make Your Success a Priority
+.e-widget.e-form--searchCourse
+	.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
+		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+			i.e-caption--withIcon__icon.ti-pencil-alt
+			span.e-caption--withIcon__text Find Your Course
+			
+		p.e-caption--withIcon__subtitle Make Your Success a Priority
 
-	form.e-form.row(action="" method="post")
-		.col-md-3
-			select(name="course-category" autocomplete="off")
-				option(value="" selected="selected") Select Category
-				option(value="Foo") Foo
-				option(value="Foo") Baz				
-		.col-md-3
-			select(name="course-status" autocomplete="off")
-				option(value="" selected="selected") Select Status
-				option(value="Lorem") Lorem
-				option(value="Ipsum") Ipsum
-		.col-md-3
-			input(type="text" name="s" placeholder="Type keyword")
+	form.e-form(action="" method="post")
+		.row
+			.col-md-3
+				select.e-field.e-field--select.is-shadow.is-huge.is-fullwidth(name="course-category" autocomplete="off")
+					option(value="" selected="selected") Select Category
+					option(value="Foo") Foo
+					option(value="Foo") Baz				
+			.col-md-3
+				select.e-field.e-field--select.is-shadow.is-huge.is-fullwidth(name="course-status" autocomplete="off")
+					option(value="" selected="selected") Select Status
+					option(value="Lorem") Lorem
+					option(value="Ipsum") Ipsum
+			.col-md-3
+				input.e-field.e-field--text.is-shadow.is-huge.is-fullwidth(type="text" name="s" placeholder="Type keyword")
 
-		.col-md-3
-			input(type="submit" value="Search cource")
+			.col-md-3
+				input.e-field.e-field--submit.e-button.is-fullwidth.is-primary.is-huge.is-shadow(type="submit" value="Search cource")

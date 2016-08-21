@@ -39,7 +39,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 				.container
 					.row.e-height--match
 						.col-lg-8
-							.e-col
+							.e-col.clearfix
 								include jade/blocks/courses/_carousel.jade
 						.col-lg-4
 							.e-col.e-bg_color--10
@@ -50,17 +50,59 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 				.container
 					.row
 						.col-lg-5.col-md-offset-1
-							.e-col
+							.e-col.clearfix
 								include jade/blocks/misc/_banner.jade
 
 						.col-lg-5
-							.e-col
+							.e-col.clearfix
 								include jade/blocks/misc/_welcome.jade		
 
 			section.e-section.e-demo__row--03.e-bg_color--07
 				.container
 					.e-section__box.e-margin_top--09__negative
 						include jade/blocks/courses/_search.jade
+
+						section.e-section.e-section--child							
+							.row
+								.col-lg-4
+									.e-col.clearfix
+										- var $intro_icon = 'icon-basic-lightbulb'
+										- var $intro_desc = 'Over 400 Students Enrolled Learn Skills'
+										include jade/blocks/elements/_intro-1st.jade
+
+								.col-lg-4
+									.e-col.clearfix
+										- var $intro_icon = 'icon-basic-book'
+										- var $intro_desc = 'More than 3020 Online Courses Available'
+										include jade/blocks/elements/_intro-1st.jade
+
+								.col-lg-4
+									.e-col.clearfix
+										- var $intro_icon = 'fa fa-users'
+										- var $intro_desc = 'More than 320 Instructors Available'
+										include jade/blocks/elements/_intro-1st.jade
+
+			section.e-section.e-demo__row--04.e-bg_color--07
+				.container
+					.row
+						.col-lg-12
+							.e-col.clearfix.e-margin_bottom--08
+								include jade/blocks/courses/_grid.jade
+
+			section.e-section.e-demo__row--05
+				.container.e-padding_top--12.e-padding_bottom--12
+					.row
+						.col-lg-4
+							.e-col.clearfix.e-margin_top--05
+								include jade/blocks/elements/_intro-2nd.jade
+
+						.col-lg-4
+							.e-col.clearfix.e-margin_top--05
+								include jade/blocks/elements/_intro-2nd.jade
+
+						.col-lg-4
+							.e-col.clearfix.e-margin_top--05
+								include jade/blocks/elements/_intro-2nd.jade								
 
 		footer.container
 			include jade/_footer.jade

@@ -162,7 +162,7 @@ h6
 			+attr( current-menu-item )
 				+new-child( main_menu__url, $prefix, '>' )
 					font-weight: 700
-					color: $color__dark--02				
+					color: $color__dark--02
 
 	+has( url )
 		text-decoration: none
@@ -240,28 +240,38 @@ h6
 	text-decoration: none
 	text-transform: uppercase	
 
-	+when( primary )
+	+if( primary )
 		background-color: $color--primary
 		color: $color__light--00		
 		a
 			color: $color__light--00
 
-	+when( large )
+	+if( large )
 		height: $space--09
 		line-height: $space--09
 		padding: 0 $space--07			
 		font-size: 14px
 		
 
-	+when( medium )
+	+if( medium )
 		height: $space--08 * 0.875
 		line-height: $space--08 * 0.875
 		padding: 0 $space--04		
-		font-size: 14px		
+		font-size: 14px
+
+	+if( huge )
+		height: $space--10
+		line-height: $space--10
+		padding: 0 $space--10	
+		font-size: 14px
+
+	+if( shadow )		
+		+box-shadow( -1px, 1px, 2px, -1px, darken( $color--primary, 10 ) )			
+
 
 +new( caption, $prefix )
 
-	+when( withIcon )		
+	+when( withIcon )
 		
 		+has( title )
 			margin: 0
@@ -291,8 +301,16 @@ h6
 			color: $color__light--08
 
 		+has( subtitle )
-			margin-top: $space--03	
-			margin-bottom: 0
+			margin: 0
+			font-weight: 200			
+
+		+if( center )
+			text-align: center
+			+new-child( caption, $prefix )
+				+when( withIcon )
+					+has( icon )
+						left: 50%
+						margin-left: $space--11 / -2
 
 	+when( withPrefix )
 		margin-bottom: $space--05
@@ -311,12 +329,21 @@ h6
 				color: $color--primary
 
 +new( courses, $prefix )
-	+when( carousel )
-		overflow-x: hidden
+	
+	+when( carousel )		
 
 +new( course, $prefix )
+
 	+when( withRating )
 		background-color: $color__light--00
+	
+	+when( boxShadow )
+		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+		transform: scale(1,1)
+		-moz-transform: scale(1,1)
+		-webkit-transform: scale(1,1)
+		-o-transform: scale(1,1)
+		-ms-transform: scale(1,1)
 
 	+has( thumbnail )		
 		+when( relative )
@@ -326,8 +353,7 @@ h6
 			display: block
 			width: 100%
 			height: auto
-	
-	
+		
 	+has( content )
 		padding: $space--06 0
 
@@ -365,7 +391,8 @@ h6
 			color: $color__light--00	
 
 	+has( name )
-		margin: 0
+		+if( md )
+			margin: 0
 		+when( borderLeft )
 			padding: 0 $space--06
 			position: relative
@@ -498,7 +525,6 @@ h6
 		text-transform: uppercase
 
 +new( widget, $prefix )
-
 	+when( dark )				
 
 		+new-child( caption, $prefix )
@@ -533,8 +559,7 @@ h6
 
 +new( width, $prefix )
 	+when( full )
-		width: 100%
-
+		
 +new( height, $prefix )
 	+when( match )
 
@@ -544,17 +569,97 @@ h6
 	+when( last )
 
 +new( field, $prefix )
+	+if( fullwidth )
+		width: 100%		
+
 	+when( text )
-		height: $space--08
-		line-height: $space--08
-		border: 1px solid $color__light--10
-		background-color: $color__light--00
 		padding: 0 $space--04
+		font-size: $space--04a
+
+		+if( medium )
+			height: $space--07a
+			line-height: $space--07a
+
+		+if( huge )
+			height: $space--10
+			line-height: $space--10
+			
+		+if( solid )
+			border: 1px solid $color__light--10
+			background-color: $color__light--00			
+			color: $color__dark--05
+
+		+if( shadow )
+			background-color: $color__light--14
+			border: 1px solid $color__light--11
+			+box-shadow( -1px, 1px, 2px, 0px, $color__light--08 )						
 
 	+when( submit )
+	
+	+when( select )
+		position: relative
+		padding: 0 $space--04
+		font-size: $space--04a
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		&::-ms-expand
+			display: none
+
+		+if( medium )
+			height: $space--07a
+			line-height: $space--07a		
+
+		+if( huge )
+			height: $space--10
+			line-height: $space--10
+
+		+if( shadow )
+			background-color: $color__light--14
+			border: 1px solid $color__light--11
+			color: $color__dark--05
+			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )			
 
 +new( intro, $prefix )
-	+when( text )
+
+	+when( 1st )
+
+		+new-child( intro, $prefix )
+
+			+has( icon )
+				display: block
+				font-size: $space--09
+				line-height: $space--09
+				margin-right: $space--04				
+
+
+	+when( 2nd )
+
+		+new-child( intro, $prefix )
+
+			+has( icon )
+				display: block
+				text-align: center
+				font-size: $space--09a
+				line-height: $space--15
+				width: $space--15
+				margin-right: $space--05
+				position: relative
+				border: 1px solid $color__light--08
+				+border-radius( 50% )				
+
+				&:after
+					display: block
+					content: ''
+					position: absolute
+					top: $space--03
+					bottom: $space--03
+					left: $space--03
+					right: $space--03
+					+border-radius( 50% )
+					background-color: $color__light--08
+					z-index: -1					
+
 
 +new( cta, $prefix )
 	+inline-block()
@@ -595,6 +700,9 @@ h6
 			padding: 0
 
 +new( section, $prefix )
+	+when( child )
+		margin-top: $space--09
+
 	+with( overlay )
 		position: relative
 
@@ -613,6 +721,8 @@ h6
 		background-color: $color__light--00
 		position: relative
 		padding: $space--09
+
+
 
 // For only demo.
 +new( body, $prefix )

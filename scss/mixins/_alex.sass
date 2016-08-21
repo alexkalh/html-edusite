@@ -65,6 +65,12 @@
 	@if $left != null
 		#{$type}-left: $left
 
+=box-shadow( $h-shadow, $v-shadow, $blur, $spread, $color )
+	box-shadow: $h-shadow $v-shadow $blur $spread $color
+	-ms-box-shadow: $h-shadow $v-shadow $blur $spread $color
+	-moz-box-shadow: $h-shadow $v-shadow $blur $spread $color
+	-webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color
+
 +new( animation-duration, $prefix )
 	+when( 01 )
 		+animation-duration(1s)
@@ -110,8 +116,13 @@
 
 
 +new( padding, $prefix )
-	+when( '0_07_07_07' )
-		padding: 0 $space--07 $space--07 $space--07
+	+when( 'horizontal_07' )
+		padding-left: $space--07
+		padding-right: $space--07
+
+	+when( 'vertical_09' )
+		padding-top: $space--09
+		padding-bottom: $space--09
 
 +new( bg_color, $prefix )
 	+when( '07' )
