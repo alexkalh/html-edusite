@@ -1,6 +1,7 @@
 .e-widget.e-intro.e-intro--2nd
 	.e-intro__wrap.clearfix
-		i.e-intro__icon.pull-left( class='fa fa-graduation-cap' )
+		span.e-intro__icon.pull-left
+			i.e-intro__symbol( class=$intro_icon)
 		div.e-intro__desc
-			p.e-intro__index 190
-			p.e-intro__excerpt Countries reached
+			p.e-intro__index #{$intro_number}
+			p.e-intro__excerpt #{$intro_desc}

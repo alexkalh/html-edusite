@@ -35,7 +35,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 		.e-main_content
 			include jade/blocks/slider/_nivo.jade
 			
-			section.e-section.e-bg_color--07
+			section.e-section.e-demo__row--01.e-bg_color--07
 				.container
 					.row.e-height--match
 						.col-lg-8
@@ -46,7 +46,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/blocks/misc/_count-down.jade
 								include jade/blocks/form/_register.jade
 			
-			section.e-section.has-overlay.e-demo__row--02.e-padding_bottom--09
+			section.e-section.e-demo__row--02.has-overlay.e-padding_bottom--09
 				.container
 					.row
 						.col-lg-5.col-md-offset-1
@@ -59,28 +59,30 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 			section.e-section.e-demo__row--03.e-bg_color--07
 				.container
-					.e-section__box.e-margin_top--09__negative
-						include jade/blocks/courses/_search.jade
+					.row
+						.col-lg-12
+							.e-col.e-col--box.clearfix.e-margin_top--09__negative
+								include jade/blocks/courses/_search.jade
 
-						section.e-section.e-section--child							
-							.row
-								.col-lg-4
-									.e-col.clearfix
-										- var $intro_icon = 'icon-basic-lightbulb'
-										- var $intro_desc = 'Over 400 Students Enrolled Learn Skills'
-										include jade/blocks/elements/_intro-1st.jade
+								section.e-section.e-section--child
+									.row
+										.col-lg-4
+											.e-col.clearfix
+												- var $intro_icon = 'icon-basic-lightbulb'
+												- var $intro_desc = 'Over 400 Students Enrolled Learn Skills'
+												include jade/blocks/elements/_intro-1st.jade
 
-								.col-lg-4
-									.e-col.clearfix
-										- var $intro_icon = 'icon-basic-book'
-										- var $intro_desc = 'More than 3020 Online Courses Available'
-										include jade/blocks/elements/_intro-1st.jade
+										.col-lg-4
+											.e-col.clearfix
+												- var $intro_icon = 'icon-basic-book'
+												- var $intro_desc = 'More than 3020 Online Courses Available'
+												include jade/blocks/elements/_intro-1st.jade
 
-								.col-lg-4
-									.e-col.clearfix
-										- var $intro_icon = 'fa fa-users'
-										- var $intro_desc = 'More than 320 Instructors Available'
-										include jade/blocks/elements/_intro-1st.jade
+										.col-lg-4
+											.e-col.clearfix
+												- var $intro_icon = 'fa fa-users'
+												- var $intro_desc = 'More than 320 Instructors Available'
+												include jade/blocks/elements/_intro-1st.jade
 
 			section.e-section.e-demo__row--04.e-bg_color--07
 				.container
@@ -89,20 +91,39 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 							.e-col.clearfix.e-margin_bottom--08
 								include jade/blocks/courses/_grid.jade
 
-			section.e-section.e-demo__row--05
+			section.e-section.e-demo__row--05.e-section--dark.has-overlay
 				.container.e-padding_top--12.e-padding_bottom--12
 					.row
 						.col-lg-4
 							.e-col.clearfix.e-margin_top--05
+								- var $intro_icon   = 'fa fa-graduation-cap'
+								- var $intro_number = '190'			
+								- var $intro_desc   = 'Countries reached'
 								include jade/blocks/elements/_intro-2nd.jade
 
 						.col-lg-4
 							.e-col.clearfix.e-margin_top--05
+								- var $intro_icon   = 'fa fa-book'
+								- var $intro_number = '25000'			
+								- var $intro_desc   = 'Passed graduates'
 								include jade/blocks/elements/_intro-2nd.jade
 
 						.col-lg-4
 							.e-col.clearfix.e-margin_top--05
+								- var $intro_icon   = 'fa fa-users'
+								- var $intro_number = '3400'			
+								- var $intro_desc   = 'Courses published'
 								include jade/blocks/elements/_intro-2nd.jade								
+
+			section.e-section.e-demo__row--06.e-bg_color--07
+				.container
+					.row
+						.col-lg-6
+							.e-col.e-col--box.clearfix.e-margin_top--09__negative.e-margin_bottom--12
+								include jade/blocks/elements/_accordion-1st.jade
+						.col-lg-6
+							.e-col.clearfix.e-margin_bottom--12
+								include jade/blocks/testimonials/_carousel.jade
 
 		footer.container
 			include jade/_footer.jade

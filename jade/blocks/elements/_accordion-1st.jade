@@ -1,0 +1,25 @@
+.e-widget.e-text.e-text--default
+	.e-caption.e-caption--withIcon.e-padding_bottom--08
+		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+			i.e-caption--withIcon__icon.ti-files.fa-flip-horizontal
+			span.e-caption--withIcon__text Whe chose us
+						
+		p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus
+
+
+	.e-accordion.e-accordion--1st
+
+		#e_demo__accordion.accordion
+			- for (var $i=0; $i<4; $i++)
+				- var $index         = '0' + ( $i + 1 )
+				- var $title         = $e_titles[$i]
+				- var $title_class   = ( 0 === $i ) ? '' : 'collapsed'
+				- var $content_id    = 'e_demo__collapse--0' + $i
+				- var $content_class = ( 0 === $i ) ? 'in' : ''				
+					.e-accordion__group.panel
+						.e-accordion__heading
+							a.e-accordion__toggle.clearfix(data-toggle='collapse', data-parent='#e_demo__accordion', href="##{$content_id}", class=$title_class )
+								span.e-accordion__index.pull-left #{$index}
+								span.e-accordion__text.pull-left #{$title}
+						.e-accordion__body.collapse( id=$content_id, class=$content_class)
+							.e-accordion__inner #{$e_excerpt}

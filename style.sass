@@ -266,7 +266,7 @@ h6
 		font-size: 14px
 
 	+if( shadow )		
-		+box-shadow( -1px, 1px, 2px, -1px, darken( $color--primary, 10 ) )			
+		+box-shadow( -1px, 1px, 2px, -1px, darken( $color--primary, 10 ) )
 
 
 +new( caption, $prefix )
@@ -547,12 +547,16 @@ h6
 		+new-child( intro__content, $prefix )
 			color: $color__light--14
 
-	+when( borderTop )		
+
+
+
+	+when( borderTop )
 		border-top-width: $space--02  
 		border-top-style: solid
 
 	+when( borderPrimary )
 		border-color: $color--primary
+
 
 +new( form, $prefix )
 	+when( register )
@@ -637,6 +641,11 @@ h6
 
 		+new-child( intro, $prefix )
 
+			+has( symbol )				
+				color: $color__light--00
+				position: relative
+				z-index: 5
+
 			+has( icon )
 				display: block
 				text-align: center
@@ -645,7 +654,7 @@ h6
 				width: $space--15
 				margin-right: $space--05
 				position: relative
-				border: 1px solid $color__light--08
+				border: 1px solid $color__primary__rgba--01				
 				+border-radius( 50% )				
 
 				&:after
@@ -657,9 +666,43 @@ h6
 					left: $space--03
 					right: $space--03
 					+border-radius( 50% )
-					background-color: $color__light--08
-					z-index: -1					
+					background-color: $color__primary__rgba--01					
 
+			+has( index )
+				font-family: $font--heading
+				font-size: $space--08
+				line-height: $space--15 / 2
+				font-weight: 400
+				margin: 0
+				position: relative
+				&:after
+					display: block
+					position: absolute				
+					content: ''
+					bottom: 1px					
+					left: 50%
+					margin-left: ( $space--14 * -0.5 ) + 20
+					background-color: $color__dark__rgba--03
+					height: 1px
+					width: $space--14
+
+			+has( excerpt )
+				font-family: $font--heading
+				font-size: $space--04c
+				line-height: $space--15 / 2
+				font-weight: 400
+				margin: 0
+				text-transform: uppercase
+
++new( section, $prefix )
+	+when( dark )
+		+new-child( intro, $prefix )
+			+when( 2nd )		
+				+new-child( intro, $prefix )
+					+has( index )
+						color: $color__light--00	
+					+has( excerpt )
+						color: $color__light--06
 
 +new( cta, $prefix )
 	+inline-block()
@@ -699,6 +742,63 @@ h6
 			margin: 0
 			padding: 0
 
+
++new( accordion, $prefix )
+	
+	+has( group )
+		margin-bottom: $space--01a	
+
+	+when( 1st )
+
+		+new-child( accordion, $prefix )
+			
+			+has( toggle )
+				display: block
+				text-decoration: none
+				background-color: $color--primary
+
+				&.collapsed
+					background-color: $color__light--13
+					+new-child( accordion, $prefix )
+						+has( index )
+							background-color: $color__light--11
+							color: $color__dark--11
+
+						+has( text )							
+							color: $color__dark--05					
+
+			+has( heading )
+				font-family: $font--heading
+				font-size: $space--04a
+				line-height: $space--06a
+							
+			+has( index )
+				line-height: $space--06a
+				padding: $space--03 0
+				width: $space--09
+				text-align: center				
+				color: $color__light--00
+				background-color: $color--primary__lighten--01
+
+			+has( text )
+				line-height: $space--06a
+				padding: $space--03
+				color: $color__light--00		
+
+			+has( inner )
+				padding: $space--07a
+				position: relative
+				&:before
+					display: block
+					position: absolute
+					content: ''
+					top: $space--08
+					left: 0
+					height: $space--08
+					width: $space--01
+					background-color: $color--primary
+
+
 +new( section, $prefix )
 	+when( child )
 		margin-top: $space--09
@@ -715,19 +815,27 @@ h6
 			left: 0
 			right: 0
 			background-color: $color__dark__rgba--02
-	
-	+has( box )
+
++new( col, $prefix )
+	+when( box )
 		display: block
 		background-color: $color__light--00
 		position: relative
 		padding: $space--09
+		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+
 
 
 
 // For only demo.
 +new( body, $prefix )
 	+when( home )
+		min-height: 4000px
 		+new-child( demo, $prefix )
 			+has( row )
 				+when( '02' )
 					background: url( demo/bg/welcome.jpg ) no-repeat center center transparent
+					background-attachment: fixed
+				+when( '05' )
+					background: url( demo/bg/counter.jpg ) no-repeat center center transparent
+					background-attachment: fixed
