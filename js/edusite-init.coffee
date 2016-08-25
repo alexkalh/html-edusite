@@ -1,10 +1,13 @@
 "use strict";
 
 jQuery(document).ready ($) ->
+
 	Edusite.initNavigation()	
-	Edusite_Slider.init( 'nivo' )
-	Edusite_Course.initCarousel()
 	Edusite_Count_Down.create()
+	Edusite_Slider.init( 'nivo' )
+	Edusite_Course.init( 'carousel' )	
+	Edusite_Testimonial.init( 'carousel' )
+
 	return
 
 jQuery(window).load ($) ->	
@@ -56,8 +59,12 @@ Edusite_Slider =
 		return
 	
 Edusite_Course = 
-	
-	initCarousel: ->
+	init: ( type ) ->
+		if 'carousel' == type
+			Edusite_Course.makeCarousel()
+		return
+
+	makeCarousel: ->
 		$e_course_sliders = jQuery( '.e-courses--carousel .owl-carousel' )
 		if $e_course_sliders.length
 			
@@ -110,4 +117,52 @@ Edusite_Hack =
 			jQuery.each $e_rows, ()->
 				jQuery(this).find( selector ).matchHeight()
 				return
+		return
+
+Edusite_Testimonial =
+	init: ( type ) ->
+		if 'carousel' == type
+			Edusite_Testimonial.makeCarousel()
+		return
+
+	makeCarousel: () ->
+		$carousels = jQuery '.e-testimonials--carousel'
+
+		if $carousels.length
+
+			jQuery.each $carousels, ( index, item ) ->
+				$slides    = jQuery(this).find '.e-testimonials__slides'
+				$avatars   = jQuery(this).find '.e-testimonials__avatars'
+				
+				slides_id  = $slides.attr( 'id' )
+				avatars_id = $avatars.attr( 'id' )
+
+				console.log( slides_id )
+				console.log( avatars_id )
+
+				if $slides.length
+
+					$slides.slick
+						slidesToShow: 1
+						slidesToScroll: 1
+						arrows: false
+						fade: false
+						swipe: false
+						adaptiveHeight: true
+						asNavFor: '#' + avatars_id
+
+					$avatars.slick
+						slidesToShow: 3
+						slidesToScroll: 1
+						arrows: false
+						fade: false	
+						centerMode: true
+						focusOnSelect: true
+						swipe: false
+						asNavFor: '#' + slides_id
+						centerPadding: '0px'
+
+				return
+
+
 		return

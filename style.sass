@@ -328,6 +328,79 @@ h6
 			& > span
 				color: $color--primary
 
+	+when( default )
+		+has( title )			
+			text-transform: uppercase
+			font-weight: 400
+			color: $color__dark--05
+			+if( md )
+				margin: 0px
+
++new( testimonials, $prefix )
+	
+	+when( carousel )
+		+new-child( testimonials, $prefix )
+			+has( outer )
+				position: relative
+				padding-left: $space--14a
+
+			+has( inner )
+
+			+has( icon )
+				display: block
+				margin: 0
+				padding: 0
+				font-size: $space--12
+				line-height: $space--12
+				position: absolute
+				top: 0
+				left: 0
+				color: $color__light--09
+
+			+has( avatars )
+				width: ( $space--12 * 3 ) + $space--04a
+
+			+has( avatar )
+				cursor: pointer
+
+				& > img
+					+opacity( 0.5 )
+
+				&.slick-current > img
+					+opacity( 1 )
+
+			+has( img )
+				+border-radius( 50% )
+
+			+has( content )
+				font-size: $space--04c
+				line-height: $space--06b
+				color: $color__dark--09
+
+			+has( author )
+				font-family: $font--heading
+
+			+has( name )
+				display: block
+				float: left
+				margin-right: $space--01
+				font-size: $space--04d				
+				color: $color__dark--05
+				text-transform: uppercase
+
+			+has( country )
+				display: block
+				float: left
+				margin-right: $space--01
+				font-size: $space--04d				
+				color: $color__dark--05
+				text-transform: uppercase
+
+			+has( jobs )
+				display: block
+				float: left
+				color: $color__dark--12
+
 +new( courses, $prefix )
 	
 	+when( carousel )		

@@ -746,6 +746,78 @@ h6.is-lg {
 .e-caption--withPrefix__title > span {
   color: #ff7f00;
 }
+.e-caption--default__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #333333;
+}
+.e-caption--default__title.is-md {
+  margin: 0px;
+}
+.e-testimonials--carousel .e-testimonials__outer {
+  position: relative;
+  padding-left: 100px;
+}
+.e-testimonials--carousel .e-testimonials__icon {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 70px;
+  line-height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #e5e5e5;
+}
+.e-testimonials--carousel .e-testimonials__avatars {
+  width: 224px;
+}
+.e-testimonials--carousel .e-testimonials__avatar {
+  cursor: pointer;
+}
+.e-testimonials--carousel .e-testimonials__avatar > img {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+.e-testimonials--carousel .e-testimonials__avatar.slick-current > img {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.e-testimonials--carousel .e-testimonials__img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.e-testimonials--carousel .e-testimonials__content {
+  font-size: 18px;
+  line-height: 28px;
+  color: #888888;
+}
+.e-testimonials--carousel .e-testimonials__author {
+  font-family: "Montserrat", sans-serif;
+}
+.e-testimonials--carousel .e-testimonials__name {
+  display: block;
+  float: left;
+  margin-right: 4px;
+  font-size: 16px;
+  color: #333333;
+  text-transform: uppercase;
+}
+.e-testimonials--carousel .e-testimonials__country {
+  display: block;
+  float: left;
+  margin-right: 4px;
+  font-size: 16px;
+  color: #333333;
+  text-transform: uppercase;
+}
+.e-testimonials--carousel .e-testimonials__jobs {
+  display: block;
+  float: left;
+  color: #909090;
+}
 .e-course--withRating {
   background-color: white;
 }

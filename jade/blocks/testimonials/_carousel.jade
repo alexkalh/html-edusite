@@ -1,0 +1,32 @@
+.e-widget.e-testimonials.e-testimonials--carousel.e-margin_top--12
+	.e-caption.e-caption--default.e-padding_bottom--08
+		h4.e-caption--default__title.is-md	What student says			
+
+
+	.e-testimonials__outer.clearfix
+		i.e-testimonials__icon.fa.fa-quote-left
+
+		.e-testimonials__inner
+
+			#e-demo__testimonials__slides.e-testimonials__slides
+
+				- for (var $i=0; $i<4; $i++)
+					- var $name    = $quote_authors[$i][0]
+					- var $country = $quote_authors[$i][1]
+					- var $jobs    = $quote_authors[$i][2]
+
+					.e-testimonials__quote
+						.e-testimonials__content #{$quotes[$i]}
+
+						.e-testimonials__author.clearfix.e-margin_top--05
+							span.e-testimonials__name #{$name}, 
+							span.e-testimonials__country #{$country},
+							span.e-testimonials__jobs #{$jobs}		
+
+			#e-demo__testimonials__avatar.e-testimonials__avatars.e-margin_top--08
+				- for (var $i=0; $i<4; $i++)
+					- var $name    = $quote_authors[$i][0]
+					- var $image   = "demo/testimonials/carousel/" + $i + ".jpg"
+					
+					span.e-testimonials__avatar
+						img.e-testimonials__img( src="#{$image}" alt="#{$name}")
