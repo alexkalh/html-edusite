@@ -92,7 +92,6 @@ h6
 		line-height: round( 15px * 1.3333 )
 		margin: round( 15px / 3 ) 0
 
-
 +new( body, $prefix )
 	+when (relative)
 		position: relative
@@ -268,7 +267,6 @@ h6
 	+if( shadow )		
 		+box-shadow( -1px, 1px, 2px, -1px, darken( $color--primary, 10 ) )
 
-
 +new( caption, $prefix )
 
 	+when( withIcon )
@@ -336,6 +334,37 @@ h6
 			+if( md )
 				margin: 0px
 
+	+when( withIconTop )
+
+		+if( center )									
+			text-align: center
+
+		+new-child( caption, $prefix )	
+
+			+has( link )
+				display: block
+				text-decoration: none
+				margin-bottom: $space--05
+
+			+has( icon )
+				+inline-block()
+				width: $space--12
+				height: $space--12
+				line-height: $space--12
+				font-size: $space--07
+				text-align: center
+				+border-radius( 50% )
+				border: 1px solid $color__primary__rgba--01
+				color: $color--primary
+				
+			+has( title )
+				margin: 0
+				font-weight: 400
+
+			+has( subtitle )
+				margin: $space--05 0 0 0
+				font-family: $font--heading
+
 +new( testimonials, $prefix )
 	
 	+when( carousel )
@@ -400,10 +429,6 @@ h6
 				display: block
 				float: left
 				color: $color__dark--12
-
-+new( courses, $prefix )
-	
-	+when( carousel )		
 
 +new( course, $prefix )
 
@@ -601,6 +626,7 @@ h6
 	+when( dark )				
 
 		+new-child( caption, $prefix )
+
 			+when( withIcon )
 				display: block
 				+has( text )
@@ -617,6 +643,22 @@ h6
 				+has( title )
 					color: $color__light--00
 		
+			+when( withIconTop )
+
+				+new-child( caption, $prefix )	
+					+has( link )
+					
+					+has( icon )
+						
+					+has( title )
+						color: $color__light--00
+					
+					+has( subtitle )
+						color: $color__light--06
+
+
+
+
 		+new-child( intro__content, $prefix )
 			color: $color__light--14
 
@@ -629,7 +671,6 @@ h6
 
 	+when( borderPrimary )
 		border-color: $color--primary
-
 
 +new( form, $prefix )
 	+when( register )
@@ -815,7 +856,6 @@ h6
 			margin: 0
 			padding: 0
 
-
 +new( accordion, $prefix )
 	
 	+has( group )
@@ -871,7 +911,6 @@ h6
 					width: $space--01
 					background-color: $color--primary
 
-
 +new( section, $prefix )
 	+when( child )
 		margin-top: $space--09
@@ -897,9 +936,6 @@ h6
 		padding: $space--09
 		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
 
-
-
-
 // For only demo.
 +new( body, $prefix )
 	+when( home )
@@ -909,6 +945,11 @@ h6
 				+when( '02' )
 					background: url( demo/bg/welcome.jpg ) no-repeat center center transparent
 					background-attachment: fixed
+				
 				+when( '05' )
 					background: url( demo/bg/counter.jpg ) no-repeat center center transparent
 					background-attachment: fixed
+				
+				+when( '07' )
+					background: url( demo/bg/life.jpg ) no-repeat center center transparent
+					background-attachment: fixed					

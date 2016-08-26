@@ -754,6 +754,38 @@ h6.is-lg {
 .e-caption--default__title.is-md {
   margin: 0px;
 }
+.e-caption--withIconTop.is-center {
+  text-align: center;
+}
+.e-caption--withIconTop .e-caption__link {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.e-caption--withIconTop .e-caption__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 30px;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 127, 0, 0.6);
+  color: #ff7f00;
+}
+.e-caption--withIconTop .e-caption__title {
+  margin: 0;
+  font-weight: 400;
+}
+.e-caption--withIconTop .e-caption__subtitle {
+  margin: 20px 0 0 0;
+  font-family: "Montserrat", sans-serif;
+}
 .e-testimonials--carousel .e-testimonials__outer {
   position: relative;
   padding-left: 100px;
@@ -1023,6 +1055,12 @@ h6.is-lg {
 .e-widget--dark .e-caption--withPrefix__title {
   color: white;
 }
+.e-widget--dark .e-caption--withIconTop .e-caption__title {
+  color: white;
+}
+.e-widget--dark .e-caption--withIconTop .e-caption__subtitle {
+  color: #cccccc;
+}
 .e-widget--dark .e-intro__content {
   color: #fcfcfc;
 }
@@ -1285,5 +1323,9 @@ h6.is-lg {
 }
 .e-body--home .e-demo__row--05 {
   background: url(demo/bg/counter.jpg) no-repeat center center transparent;
+  background-attachment: fixed;
+}
+.e-body--home .e-demo__row--07 {
+  background: url(demo/bg/life.jpg) no-repeat center center transparent;
   background-attachment: fixed;
 }
