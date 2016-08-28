@@ -137,9 +137,6 @@ Edusite_Testimonial =
 				slides_id  = $slides.attr( 'id' )
 				avatars_id = $avatars.attr( 'id' )
 
-				console.log( slides_id )
-				console.log( avatars_id )
-
 				if $slides.length
 
 					$slides.slick
@@ -148,7 +145,7 @@ Edusite_Testimonial =
 						arrows: false
 						fade: false
 						swipe: false
-						adaptiveHeight: true
+						adaptiveHeight: false
 						asNavFor: '#' + avatars_id
 
 					$avatars.slick

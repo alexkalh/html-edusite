@@ -33,8 +33,14 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 						include jade/blocks/nav/_primary.jade
 		
 		.e-main_content
-			include jade/blocks/slider/_nivo.jade
 			
+			section.e-section.e-demo__row--00
+				.e-container--full
+					.row
+						.col-lg-12
+							.e-col.clearfix
+								include jade/blocks/slider/_nivo.jade
+
 			section.e-section.e-demo__row--01.e-bg_color--07
 				.container
 					.row.e-height--match
@@ -132,5 +138,12 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 							.e-col.clearfix
 								include jade/blocks/video/_centered.jade
 
-		footer.container
-			include jade/_footer.jade
+			section.e-section.e-demo__row--08
+				.container
+					.row
+						.col-lg-12
+							.e-col.clearfix.e-margin_bottom--12
+								include jade/blocks/posts/_grid_two_cols.jade
+
+		
+		include jade/_footer.jade

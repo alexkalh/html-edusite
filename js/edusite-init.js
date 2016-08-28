@@ -143,8 +143,6 @@ Edusite_Testimonial = {
         $avatars = jQuery(this).find('.e-testimonials__avatars');
         slides_id = $slides.attr('id');
         avatars_id = $avatars.attr('id');
-        console.log(slides_id);
-        console.log(avatars_id);
         if ($slides.length) {
           $slides.slick({
             slidesToShow: 1,
@@ -152,7 +150,7 @@ Edusite_Testimonial = {
             arrows: false,
             fade: false,
             swipe: false,
-            adaptiveHeight: true,
+            adaptiveHeight: false,
             asNavFor: '#' + avatars_id
           });
           $avatars.slick({

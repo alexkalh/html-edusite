@@ -1,0 +1,32 @@
+.e-widget.e-posts--grid_two_cols.e-margin_top--09
+	.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
+		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+			i.e-caption--withIcon__icon.fa.fa-pagelines
+			span.e-caption--withIcon__text Education News
+			
+		p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
+
+
+	.row.e-row--07a
+		- for (var $i=0; $i<2; $i++)
+			- var $image = 'demo/posts/grid-two-cols/1.jpg'
+			- var $post_title = $e_titles[$i]
+			.col-lg-6
+				article.e-article.e-article--fullBg
+					img(src=$image alt='')
+
+					.e-article__outter
+						.e-article__inner
+							div.e-article__date
+								span.e-article__day 09
+								span.e-article__month_year Aug, 16
+
+							h5.e-article__title.is-xs
+								a.e-article__link(href=$e_single_url title="") #{$post_title}
+
+							p.e-article__excerpt #{$e_excerpt}								
+
+							a.e-readmore.e-readmore--arrow.e-margin_top--05(href=$e_single_url)
+								span.e-readmore__text Read More
+								i.e-readmore__icon.icon-arrows-slim-right
+

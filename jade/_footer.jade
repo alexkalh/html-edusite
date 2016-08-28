@@ -1,17 +1,27 @@
-.row
-	.col-lg-3
-		
-	.col-lg-3
-		
-	.col-lg-3
-		
-	.col-lg-3
-		
+footer.e-footer
+	section.e-footer__widgets.e-footer__widgets--light
+		.container.e-padding_top--14
+			.row
+				.col-lg-3
+					include ../jade/blocks/contact/_info.jade
 
-.row
-	.col-lg-6
-		
-	.col-lg-6
+				.col-lg-3
+					include ../jade/blocks/category/_list_two_cols.jade
 
-.e-scripts.hidden
-	+e_load_js()
+				.col-lg-3
+					include ../jade/blocks/socials/_list_tweets.jade
+
+				.col-lg-3
+					include ../jade/blocks/contact/_form.jade
+			
+	section.e-footer__info.e-footer__info--light
+		.e-footer__info__outter.container.e-padding_top--10.e-padding_bottom--08
+			.row
+				.col-lg-6.e-footer__info__left
+					include ../jade/blocks/contact/_copyright.jade
+
+				.col-lg-6.e-footer__info__right
+					include ../jade/blocks/socials/_our_socials.jade
+
+	.e-scripts.hidden
+		+e_load_js()
