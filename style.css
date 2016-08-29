@@ -1540,18 +1540,6 @@ h6.is-lg {
 .e-footer .e-footer__info--light {
   background-color: #f7f7f7;
 }
-.e-footer .e-footer__info--light__outter {
-  position: relative;
-}
-.e-footer .e-footer__info--light__outter:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 15px;
-  right: 15px;
-  height: 1px;
-  background-color: #e5e5e5;
-}
 .e-footer .e-footer__info--dark {
   background-color: #1f1f1f;
 }
@@ -1581,6 +1569,14 @@ h6.is-lg {
 }
 .e-space--11 {
   height: 60px;
+}
+.e-divider--solid {
+  display: block;
+  width: 100;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5e5;
 }
 .e-body--home {
   min-height: 4000px;

@@ -1172,18 +1172,6 @@ h6
 			+when( light )
 				background-color: $color__light--12
 
-				+has( outter )
-					position: relative
-					
-					&:before
-						position: absolute
-						content: ''
-						top: 0
-						left: $space--04
-						right: $space--04
-						height: 1px
-						background-color: $color__light--09
-
 			+when( dark )
 				background-color: $color__dark--01
 
@@ -1212,6 +1200,15 @@ h6
 		height: $space--07
 	+when( '11' )
 		height: $space--11
+
++new( divider, $prefix )
+	+when( solid )
+		display: block
+		width: 100
+		height: 1px
+		margin: 0
+		padding: 0
+		background-color: $color__light--09
 
 // For only demo.
 +new( body, $prefix )
