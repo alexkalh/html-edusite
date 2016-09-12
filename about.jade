@@ -1,0 +1,102 @@
+include jade/_config.jade
+include jade/mixins/_alex.jade
+
+doctype
+html( lang="en-US" prefix="og: http://ogp.me/ns#" )
+
+	include jade/_head.jade
+
+	body.e-body.e-body--relative.e-body--sub.e-body--about
+
+		header.e-header.e-header--fixed
+			.container
+				.e-header_top.row
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--left
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href='mailto:support@colourstheme.com') support@colourstheme.com
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--right
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href="#login") Login
+								li.e-top_menu__link.e-top_menu__link--lvl_0.is-other
+									a.e-top_menu__url(href="#register") Register
+				
+				.e-header_bottom.e-header_bottom--fixed.clearfix
+					h1.e-logo.e-logo--left
+						a.e-logo__link(href=$e_home_url title='')
+							img.e-logo__img(src=$e_logo alt='')
+
+					nav.e-main_menu.e-main_menu--right
+						include jade/blocks/nav/_primary.jade
+		
+		.e-main_content
+			
+			section.e-section.e-demo__row--0.e-section--dark.e-padding_top--15.has-overlay
+				.e-container.container
+					.row
+						.col-lg-12
+							.e-col.clearfix.e-margin_top--13.e-margin_bottom--13
+								include jade/blocks/breadcrumbs/_centered.jade
+
+			section.e-section.e-demo__row--01.e-padding_top--12.e-padding_bottom--08
+				.e-container.container
+					.row
+						.col-lg-12
+							.e-col.clearfix
+								- var $caption_icon = 'fa fa-pagelines'
+								- var $caption_text = 'Welcome to Edusite'
+								- var $caption_desc = 'Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam'
+								include jade/blocks/caption/_centered.jade
+
+			section.e-section.e-demo__row--02
+				.e-container.container
+					.row
+						.col-lg-6.col-lg-push-6
+							.e-col.clearfix
+								- var $caption_text = "We're in the business of hosting great ideas."
+								include jade/blocks/caption/_default_lowercase.jade
+
+			section.e-section.e-demo__row--03.e-padding_top--07.e-padding_bottom--12
+				.e-container.container
+					.row
+						.col-lg-6
+							.e-col.clearfix.e-margin_top--15__negative
+								- var $img_src = "demo/image/writing.jpg"
+								- var $classes = 'e-widget'
+								include jade/blocks/elements/_image.jade
+								
+						.col-lg-6
+							.e-col.clearfix				
+								include jade/blocks/about/_signature.jade
+		
+			section.e-section.e-demo__row--04
+				.e-container.container
+					.row
+						.col-lg-12
+							include jade/blocks/testimonials/_carousel-single.jade
+
+			section.e-section.e-demo__row--05
+				.e-container--full
+					.row.e-row--noSpace
+						.col-lg-3
+							- var $card_thumb = 'demo/card/single/0.jpg'
+							- var $card_full  = 'demo/card/single/0-full.jpg'
+							include jade/blocks/elements/_card-1st.jade
+						.col-lg-3
+							- var $card_thumb = 'demo/card/single/1.jpg'
+							- var $card_full  = 'demo/card/single/1-full.jpg'
+							include jade/blocks/elements/_card-1st.jade
+						.col-lg-3
+							- var $card_thumb = 'demo/card/single/2.jpg'
+							- var $card_full  = 'demo/card/single/2-full.jpg'
+							include jade/blocks/elements/_card-1st.jade
+						.col-lg-3
+							- var $card_thumb = 'demo/card/single/3.jpg'
+							- var $card_full  = 'demo/card/single/3-full.jpg'
+							include jade/blocks/elements/_card-1st.jade
+
+
+		include jade/_footer.jade

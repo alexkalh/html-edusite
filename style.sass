@@ -16,6 +16,18 @@ h1, h2, h3, h4, h5, h6
 	font-family: $font--heading
 	color: $color__dark--03	
 
+p, dl, multicol
+	margin-top: 0
+	margin-bottom: $space--04
+
+a
+	&:link,
+	&:visited
+		color: $color--primary
+
+	&:hover
+		color: lighten( $color--primary, 20 )
+
 h1
 	&,
 	&.is-md
@@ -122,11 +134,28 @@ h6
 	+has( link )
 		+when( lvl_0 )
 			+inline-block
+			+if( other )
+				margin-left: $space--03
+				padding-left: $space--03
+				position: relative
+
+				&:before
+					display: block
+					position: absolute
+					content: ''
+					top: 3px
+					bottom: 3px
+					left: -3px				
+					width: 2px 
+					background-color: $color__light--06			
+					transform: skewX(160deg)
+
 
 	+has( url )		
-		text-decoration: none
-		color: $color__light--06
-		+transition_m( color, 0.5s )
+		&:link, &:visited
+			color: $color__light--06
+		text-decoration: none		
+		+transition_m( color, 0.25s )
 		&:hover
 			color: $color--primary		
 
@@ -240,7 +269,8 @@ h6
 +new( button, $prefix )
 	+inline-block()	 
 	border: none
-	font-family: $font--heading
+	font-family: $font--desc
+	font-weight: 500
 	letter-spacing: 1px
 	text-decoration: none
 	text-transform: uppercase	
@@ -283,6 +313,11 @@ h6
 			+if( md )
 				margin: 0px
 
+			+if( lowercase )
+				text-transform: lowercase
+				&:first-letter
+					text-transform: uppercase
+
 	+when( withIcon )
 		
 		+has( title )
@@ -314,7 +349,8 @@ h6
 
 		+has( subtitle )
 			margin: 0
-			font-weight: 200			
+			font-weight: 300		
+			font-family: $font--desc
 
 		+if( center )
 			text-align: center
@@ -329,7 +365,8 @@ h6
 
 		+has( subtitle )
 			line-height: $space--06
-			font-weight: 400
+			font-weight: 300	
+			font-family: $font--desc
 			text-transform: uppercase
 			letter-spacing: 2px
 
@@ -369,7 +406,8 @@ h6
 
 			+has( subtitle )
 				margin: $space--05 0 0 0
-				font-family: $font--heading
+				font-family: $font--desc
+				font-weight: 300	
 
 	+when( borderBottom )
 		position: relative
@@ -404,7 +442,7 @@ h6
 
 +new( testimonials, $prefix )
 	
-	+when( carousel )
+	+when( carousel )	
 		+new-child( testimonials, $prefix )
 			+has( outer )
 				position: relative
@@ -467,88 +505,147 @@ h6
 				float: left
 				color: $color__dark--12
 
+	+when( carouselSingle )
+		+new-child( testimonials, $prefix )					
+			+has( quote )
+				text-align: center
+			
+			+has( avatar )
+				text-align: center
+			
+			+has( img )
+				+inline-block()
+
+			+has( content )
+				font-size: $space--06
+				line-height: $space--07a
+				font-weight: 100
+				font-style: italic
+
+			+has( avatar )
+				margin-top: $space--07a
+
+			+has( img )
+				+border-radius( 50% )
+				border: $space--01a solid $color--primary
+
+			+has( authorName )
+				text-transform: uppercase
+				margin-top: $space--04				
+
+			+has( authorInfo )
+				color: $color__dark--09a
+
+			+has( job )
+				+inline-block()
+
+			+has( divider )
+				+inline-block()
+				margin-left: $space--02
+				margin-right: $space--02
+
+			+has( country )
+				+inline-block()
+			
+		+new-child( owl-pagination  )
+			margin-top: $space--08
+			text-align: center
+
+		+new-child( owl-page )			
+			+inline-block
+			margin-left: $space--01
+			margin-right: $space--01
+			height: $space--02a
+			width: $space--02a
+			background-color: $color__light--10
+
+			&.active
+				background-color: $color--primary
+	
+
 +new( course, $prefix )
 
 	+when( withRating )
 		background-color: $color__light--00
-	
+		
+		+new-child( course, $prefix )
+
+			+has( thumbnail )
+				+when( relative )
+					margin: 0
+					position: relative			
+				img
+					display: block
+					width: 100%
+					height: auto
+				
+			+has( content )
+				padding: $space--06 0
+
+			+has( metadata )
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				padding: $space--02 $space--06
+				background-color: $color__dark__rgba--01
+
+			+has( term )
+				font-family: $font--heading
+				text-transform: uppercase
+				text-decoration: none
+				color: $color__light--00
+				font-size: 14px
+				line-height: $space--06
+
+			+has( date )
+				+when( right )
+					font-family: $font--content
+					display: block
+					float: right
+					font-size: 14px
+					line-height: $space--06
+					color: $color__light--00
+
+			+has( icon )
+				+when( right )
+					display: block
+					float: right
+					font-size: 14px
+					line-height: $space--06
+					color: $color__light--00	
+
+			+has( name )
+				+if( md )
+					margin: 0
+				+when( borderLeft )
+					padding: 0 $space--06
+					position: relative
+					&::before
+						display: block
+						position: absolute
+						content: ''
+						top: $space--01
+						bottom: $space--01
+						left: 0
+						width: $space--01
+						background-color: $color--primary	
+
+			+has( link )
+				display: block
+				font-family: $font--heading
+				font-size: $space--05 * 9 / 10
+				font-weight: 400
+				text-decoration: none
+				line-height: $space--06
+				color: $color__dark--05
+
 	+when( boxShadow )
 		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
-		transform: scale(1,1)
-		-moz-transform: scale(1,1)
-		-webkit-transform: scale(1,1)
-		-o-transform: scale(1,1)
-		-ms-transform: scale(1,1)
+		+transition( .25s )
+		&:hover
+			+box-shadow( 5px, 5px, 10px, 0px, $color__light__rgba--01 )
 
-	+has( thumbnail )		
-		+when( relative )
-			margin: 0
-			position: relative			
-		img
-			display: block
-			width: 100%
-			height: auto
-		
-	+has( content )
-		padding: $space--06 0
-
-	+has( metadata )
-		position: absolute
-		bottom: 0
-		left: 0
-		width: 100%
-		padding: $space--02 $space--06
-		background-color: $color__dark__rgba--01
-
-	+has( term )
-		font-family: $font--heading
-		text-transform: uppercase
-		text-decoration: none
-		color: $color__light--00
-		font-size: 14px
-		line-height: $space--06
-
-	+has( date )
-		+when( right )
-			font-family: $font--content
-			display: block
-			float: right
-			font-size: 14px
-			line-height: $space--06
-			color: $color__light--00
-
-	+has( icon )
-		+when( right )
-			display: block
-			float: right
-			font-size: 14px
-			line-height: $space--06
-			color: $color__light--00	
-
-	+has( name )
-		+if( md )
-			margin: 0
-		+when( borderLeft )
-			padding: 0 $space--06
-			position: relative
-			&::before
-				display: block
-				position: absolute
-				content: ''
-				top: $space--01
-				bottom: $space--01
-				left: 0
-				width: $space--01
-				background-color: $color--primary	
-
-	+has( link )
-		display: block
-		font-family: $font--heading
-		font-size: $space--05 * 9 / 10
-		font-weight: 400
-		text-decoration: none
-		line-height: $space--06
-		color: $color__dark--05
 
 +new( price, $prefix )
 	+has( ins )				
@@ -557,7 +654,9 @@ h6
 			text-decoration: none
 
 	+has( del )
-		color: $color__light--03
+		&:link,
+		&:visited
+			color: $color__light--03		
 
 +new( rating, $prefix )
 	+when( small )
@@ -853,20 +952,6 @@ h6
 				margin: 0
 				text-transform: uppercase
 
-+new( section, $prefix )
-	+new-child( container, $prefix )
-		+when( full )
-			overflow-x: hidden
-
-	+when( dark )
-		+new-child( intro, $prefix )
-			+when( 2nd )		
-				+new-child( intro, $prefix )
-					+has( index )
-						color: $color__light--00	
-					+has( excerpt )
-						color: $color__light--06
-
 +new( cta, $prefix )
 	+inline-block()
 	padding: ( ( $space--10 - $space--06) / 2 ) $space--08
@@ -973,6 +1058,10 @@ h6
 				width: 60%
 				background-color: $color__light--00
 				+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+				+transition( .25s )
+				&:hover
+					+box-shadow( 5px, 5px, 10px, 0px, $color__light__rgba--01 )
+
 
 			+has( inner )
 				position: relative
@@ -1133,9 +1222,30 @@ h6
 				width: $space--07
 				text-align: center
 				background-color: $color__dark--05
+				border: 1px solid $color__dark--05
 				color: $color__light--00
 
 +new( section, $prefix )
+
+	+new-child( container, $prefix )
+		+when( full )
+			overflow-x: hidden
+
+	+when( dark )
+		+new-child( intro, $prefix )
+			+when( 2nd )		
+				+new-child( intro, $prefix )
+					+has( index )
+						color: $color__light--00	
+					+has( excerpt )
+						color: $color__light--06
+
+		+new-child( breadcrumb, $prefix )
+			+when( centered )
+				+new-child( breadcrumb, $prefix )
+					+has( title )
+						color: $color__light--00
+
 	+when( child )
 		margin-top: $space--09
 
@@ -1161,22 +1271,105 @@ h6
 	+new-child( footer, $prefix )
 		+has( widgets )
 
-			+when( light )	
+			+if( light )	
 				background-color: $color__light--12			
 			
-			+when( dark )
+			+if( dark )
 				background-color: $color__dark--01
 
 		+has( info )			
 
-			+when( light )
+			+if( light )
 				background-color: $color__light--12
 
-			+when( dark )
+			+if( dark )
 				background-color: $color__dark--01
 
 			+has( right )
 				text-align: right
+
++new( section, $prefix )
+	+if( dark )
+		+new-child( caption, $prefix )
+			+when( borderBottom )
+
+				&:before					
+					background-color: $color__dark--09
+
+				+new-child( caption, $prefix )
+
+					+has( title )
+						color: $color__light--00
+					+has( icon )
+					
+					+has( text )				
+
+		+new-child( divider, $prefix )
+			+when( solid )
+				background: $color__dark--05a
+
+		+new-child( tweets, $prefix )
+			+when( list )
+				+new-child( tweets, $prefix )
+					+has( single )
+						border-top-color: $color__dark--05a
+
+		+new-child( field, $prefix )
+
+			+when( text )
+
+				+if( solid )
+					+border-radius( 2px )
+					border-color: $color__dark--05a					
+					background-color: $color__dark--03		
+					color: $color__light--00
+
+			+when( textarea )
+			
+				+if( solid )
+					+border-radius( 2px )
+					border-color: $color__dark--05a
+					background-color: $color__dark--03		
+					color: $color__light--00
+
+			+when( submit )
+				+border-radius( 2px )
+
+			+when( select )
+
+				+if( shadow )
+
+
+		+new-child( socials, $prefix )
+			+when( default )
+				+new-child( socials, $prefix )
+					+has( link )					
+						border-color: $color__dark--05a
+
++new( breadcrumb, $prefix )
+	+when( centered )
+		+new-child( breadcrumb, $prefix )
+			+has( title )
+				text-align: center
+				margin-top: 0
+				margin-bottom: 0
+				text-transform: uppercase
+			
+			+has( links )
+				text-align: center
+				font-size: $space--04a
+			
+			+has( item )
+				+inline-block()
+
+			+has( divider )
+				+inline-block()
+				padding-left: $space--03
+				padding-right: $space--03
+
+			+has( link )
+				text-decoration: none
+
 
 +new( row, $prefix )
 	+when( '07a' )
@@ -1186,6 +1379,15 @@ h6
 		& > [class*=" col-"]
 			padding-left: $space--07a
 			padding-right: $space--07a
+	
+	+when( noSpace )
+		margin-left: 0
+		margin-right: 0
+		& > [class^="col-"], 
+		& > [class*=" col-"]
+			padding-left: 0
+			padding-right: 0
+
 
 +new( col, $prefix )
 	+when( box )
@@ -1194,6 +1396,9 @@ h6
 		position: relative
 		padding: $space--09
 		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+		+transition( .25s )
+		&:hover
+			+box-shadow( 5px, 5px, 10px, 0px, $color__light__rgba--01 )
 
 +new( space, $prefix )
 	+when( '07' )
@@ -1209,6 +1414,98 @@ h6
 		margin: 0
 		padding: 0
 		background-color: $color__light--09
+
++new( image, $prefix )
+	+when( default )
+		+new-child( image, $prefix )
+			+has( link )
+				display: block
+				margin: 0
+				padding: 0
+				
+			+has( img )
+				display: block
+				margin: 0
+				padding: 0
+
++new( author, $prefix )
+	+when( 1st )
+		+new-child( author, $prefix )
+			+has( prefix )
+				+inline-block()
+				margin-right: $space--02
+			+has( link )
+				+inline-block()
+				text-decoration: none
+				&:hover
+					text-decoration: underline
+			+has( job )
+				+inline-block()
+				margin-left: $space--02
+
+
++new( card, $prefix )
+	+when( 1st )
+		position: relative
+		overflow: hidden
+			
+		&:hover
+			+new-child( card, $prefix )				
+				+has( title )
+					bottom: 80px
+					+opacity( 1 )
+				+has( subtitle )
+					bottom: 50px
+					+opacity( 1 )
+
+		+new-child( card, $prefix )				
+			+has( overlay )
+				position: absolute
+				top: 0
+				bottom: 0	
+				left: 0
+				right: 0
+				background-color: $color__dark__rgba--02
+				z-index: 1
+	
+			+has( img )
+				display: block
+				margin: 0
+				padding: 0
+
+			+has( title )
+				position: absolute
+				bottom: $space--15 * -2
+				left: $space--04
+				right: $space--04
+				text-align: center
+				text-transform: uppercase
+				z-index: 2
+				margin-top: 0
+				margin-bottom: 0
+				+transition(.5s )
+				+has( link )
+					text-decoration: none
+					color: $color__light--00
+					&:hover
+						color: $color--primary
+
+			+has( subtitle  )
+				position: absolute
+				bottom: $space--15 * -1
+				left: $space--04
+				right: $space--04
+				text-align: center
+				z-index: 2
+				margin-top: 0
+				margin-bottom: 0
+				+transition( .25s )				
+				+has( link )
+					text-decoration: none
+					color: $color__light--00
+					&:hover
+						color: $color--primary
+
 
 // For only demo.
 +new( body, $prefix )
@@ -1227,3 +1524,23 @@ h6
 				+when( '07' )
 					background: url( demo/bg/life.jpg ) no-repeat center center transparent
 					background-attachment: fixed					
+
+	+when( sub )
+		+new-child( demo, $prefix )
+			+has( row )
+				+when( '0' )
+					background: url( demo/bg/breadcrumb.jpg ) repeat-y center center transparent
+					background-attachment: scroll
+	
+					+with( overlay )
+						&::before
+							background-color: $color__dark__rgba--02b
+	
+	+when( about )
+		+new-child( demo, $prefix )
+			+has( row )
+				+when( '03' )
+					background-color: $color__light--12
+
+
+

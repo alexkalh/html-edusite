@@ -110,6 +110,14 @@
 		+when( nth( $indexs, $i+ 1 ) )
 			+space( padding, null, null, nth(  $space--list, $i+1 ) )	
 
+	+new( padding_left, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( padding, null, null, null, nth(  $space--list, $i+1 ) )
+
+	+new( padding_right, $prefix )
+		+when( nth( $indexs, $i+ 1 ) )
+			+space( padding, null, nth(  $space--list, $i+1 ) )				
+
 	+new( padding, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
 			padding: nth(  $space--list, $i+1 )

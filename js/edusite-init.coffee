@@ -7,11 +7,11 @@ jQuery(document).ready ($) ->
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )	
 	Edusite_Testimonial.init( 'carousel' )
-
+	Edusite_Testimonial.init( 'carouselSingle' )
 	return
 
 jQuery(window).load ($) ->	
-	Edusite_Hack.matchHeight( '> div .e-col' )
+	Edusite_Hack.matchHeight( '> div .e-col' )	
 	return
 
 jQuery(window).scroll ($) ->
@@ -123,6 +123,8 @@ Edusite_Testimonial =
 	init: ( type ) ->
 		if 'carousel' == type
 			Edusite_Testimonial.makeCarousel()
+		else if 'carouselSingle' == type
+			Edusite_Testimonial.makeCarouselSingle()
 		return
 
 	makeCarousel: () ->
@@ -161,5 +163,28 @@ Edusite_Testimonial =
 
 				return
 
+		return
 
+	makeCarouselSingle: () ->
+		$carousels = jQuery '.e-testimonials--carouselSingle'
+
+		if $carousels.length
+
+			jQuery.each $carousels, ( index, item ) ->
+
+				$slides = jQuery(this).find '.e-testimonials__slides'
+
+				if $slides.length
+					$slides.owlCarousel			
+						items : 1
+						singleItem: true
+						pagination : true
+						navigation : false
+
+				return
+
+		return
+
+Edusite_Effect =
+	init: ( type )->
 		return

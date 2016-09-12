@@ -1,0 +1,35 @@
+.e-widget.e-testimonials.e-testimonials--carouselSingle.e-margin_top--12.e-margin_bottom--12
+	.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
+		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+			i.e-caption--withIcon__icon.ti-comment
+			span.e-caption--withIcon__text People loved Edusite
+			
+		p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
+
+
+	.e-testimonials__outer
+		.e-testimonials__slides
+
+			- for (var $i=0; $i<4; $i++)
+				- var $name    = $quote_authors[$i][0]
+				- var $country = $quote_authors[$i][1]
+				- var $jobs    = $quote_authors[$i][2]					
+				- var $image   = "demo/testimonials/carousel/" + $i + ".jpg"
+
+				.e-testimonials__quote.e-padding_left--12.e-padding_right--12
+
+					.e-testimonials__content #{$quotes[$i]}
+					
+					.e-testimonials__avatar
+						img.e-testimonials__img( src="#{$image}" alt="#{$name}")
+
+					.e-testimonials__authorName
+						h5.is-xs.e-testimonials__name #{$name}
+					
+					.e-testimonials__authorInfo.clearfix							
+						span.e-testimonials__job #{$jobs}
+						span.e-testimonials__divider &#45;
+						span.e-testimonials__country #{$country}	
+					
+
+

@@ -24,10 +24,11 @@
     <link href="css/jquery-nivo-slider.css" rel="stylesheet" type="text/css"/>
     <link href="css/jquery-slick.css" rel="stylesheet" type="text/css"/>
     <link href="css/jquery-slick-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-lightcase.css" rel="stylesheet" type="text/css"/>
     <link href="style.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,700,700italic" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,400,400italic,700,700italic" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,500" rel="stylesheet" type="text/css"/>
   </head>
   <body class="e-body e-body--relative e-body--home">
     <header class="e-header e-header--fixed">
@@ -44,7 +45,7 @@
             <nav class="e-top_menu e-top_menu--right">
               <ul class="e-top_menu__links">
                 <li class="e-top_menu__link e-top_menu__link--lvl_0"><a href="#login" class="e-top_menu__url">Login</a></li>
-                <li class="e-top_menu__link e-top_menu__link--lvl_0"><a href="#register" class="e-top_menu__url">Register</a></li>
+                <li class="e-top_menu__link e-top_menu__link--lvl_0 is-other"><a href="#register" class="e-top_menu__url">Register</a></li>
               </ul>
             </nav>
           </div>
@@ -54,7 +55,7 @@
           <nav class="e-main_menu e-main_menu--right">
             <ul class="e-main_menu__links e-main_menu__links--default sf-menu clearfix">
               <li class="current-menu-item e-main_menu__link e-main_menu__link--lvl_0"><a href="index.html" class="e-main_menu__url">Home</a></li>
-              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="blog.html" class="e-main_menu__url">Blog</a></li>
+              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="blog.html" class="e-main_menu__url">Blog  </a></li>
               <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="single-post.html" class="e-main_menu__url">Single</a>
                 <ul class="sub-menu">
                   <li class="e-main_menu__link"><a href="single-post.html" class="e-main_menu__url">Standart</a></li>
@@ -66,6 +67,7 @@
               <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="page.html" class="e-main_menu__url">Page</a>
                 <ul class="sub-menu">
                   <li class="e-main_menu__link"><a href="page-fullwidth.html" class="e-main_menu__url">Page - Fullwidth</a></li>
+                  <li class="e-main_menu__link"><a href="about.html" class="e-main_menu__url">About Us</a></li>
                   <li class="e-main_menu__link"><a href="elements.html" class="e-main_menu__url">Elements</a></li>
                   <li class="e-main_menu__link"><a href="contact.html" class="e-main_menu__url">Contact</a></li>
                   <li class="e-main_menu__link"><a href="404.html" class="e-main_menu__url">Error 404</a></li>
@@ -186,10 +188,10 @@
               <div class="e-col e-bg_color--10">
                 <div class="e-widget e-count_down e-widget--dark e-bg_color--dark_05 e-widget--borderTop e-widget--borderPrimary e-padding_bottom--09 e-padding--horizontal_07">
                   <div class="e-caption e-caption--withIcon e-padding_top--10 e-padding_bottom--08">
-                    <h3 class="e-caption--withIcon__title e-caption--withIcon__title--relative clearfix"><i class="e-caption--withIcon__icon ti-alarm-clock"></i><span class="e-caption--withIcon__text">Register Now</span></h3>
+                    <h3 class="e-caption--withIcon__title e-caption--withIcon__title--relative clearfix"><i class="e-caption--withIcon__icon ti-alarm-clock"></i><span class="e-caption--withIcon__text">Free Course</span></h3>
                     <p class="e-caption--withIcon__subtitle">Create your Free account now and get immediate access to 100s of online courses.</p>
                   </div>
-                  <input type="hidden" value="2016,08,20">
+                  <input type="hidden" value="2016,09,02">
                   <div class="row e-row--xs">
                     <div class="col-xs-4">
                       <div class="e-date_block e-date_block--halfBg e-date_block--borderRound e-date--hours"><b class="e-date_block__number">00</b><span class="e-date_block__text">hours</span></div>
@@ -563,7 +565,7 @@
       </section>
     </div>
     <footer class="e-footer">
-      <section class="e-footer__widgets e-footer__widgets--dark e-padding_top--14">
+      <section class="e-section e-footer__widgets is-dark e-padding_top--14">
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
@@ -646,7 +648,7 @@
           </div>
         </div>
       </section>
-      <section class="e-footer__info e-footer__info--dark">
+      <section class="e-section e-footer__info is-dark">
         <div class="container">
           <div class="e-divider e-divider--solid"></div>
         </div>
@@ -677,6 +679,7 @@
         <script src="js/jquery-matchheight.js"></script>
         <script src="js/jquery-nivo-slider.js"></script>
         <script src="js/jquery-slick.js"></script>
+        <script src="js/jquery-lightcase.js"></script>
         <script src="js/countdown.js"></script>
         <script src="js/edusite-custom.js"></script>
         <script src="js/edusite-init.js"></script>

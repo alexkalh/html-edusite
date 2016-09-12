@@ -1,5 +1,5 @@
 "use strict";
-var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Hack, Edusite_Slider, Edusite_Testimonial;
+var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Hack, Edusite_Slider, Edusite_Testimonial;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
   Edusite_Slider.init('nivo');
   Edusite_Course.init('carousel');
   Edusite_Testimonial.init('carousel');
+  Edusite_Testimonial.init('carouselSingle');
 });
 
 jQuery(window).load(function($) {
@@ -131,6 +132,8 @@ Edusite_Testimonial = {
   init: function(type) {
     if ('carousel' === type) {
       Edusite_Testimonial.makeCarousel();
+    } else if ('carouselSingle' === type) {
+      Edusite_Testimonial.makeCarouselSingle();
     }
   },
   makeCarousel: function() {
@@ -167,5 +170,27 @@ Edusite_Testimonial = {
         }
       });
     }
+  },
+  makeCarouselSingle: function() {
+    var $carousels;
+    $carousels = jQuery('.e-testimonials--carouselSingle');
+    if ($carousels.length) {
+      jQuery.each($carousels, function(index, item) {
+        var $slides;
+        $slides = jQuery(this).find('.e-testimonials__slides');
+        if ($slides.length) {
+          $slides.owlCarousel({
+            items: 1,
+            singleItem: true,
+            pagination: true,
+            navigation: false
+          });
+        }
+      });
+    }
   }
+};
+
+Edusite_Effect = {
+  init: function(type) {}
 };
