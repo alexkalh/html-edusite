@@ -6,20 +6,20 @@
 						
 		p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus
 
+	.e-text__outter
+		.e-accordion.e-accordion--1st
 
-	.e-accordion.e-accordion--1st
-
-		#e_demo__accordion.accordion
-			- for (var $i=0; $i<4; $i++)
-				- var $index         = '0' + ( $i + 1 )
-				- var $title         = $e_titles[$i]
-				- var $title_class   = ( 0 === $i ) ? '' : 'collapsed'
-				- var $content_id    = 'e_demo__collapse--0' + $i
-				- var $content_class = ( 0 === $i ) ? 'in' : ''				
-					.e-accordion__group.panel
-						.e-accordion__heading
-							a.e-accordion__toggle.clearfix(data-toggle='collapse', data-parent='#e_demo__accordion', href="##{$content_id}", class=$title_class )
-								span.e-accordion__index.pull-left #{$index}
-								span.e-accordion__text.pull-left #{$title}
-						.e-accordion__body.collapse( id=$content_id, class=$content_class)
-							.e-accordion__inner #{$e_excerpt}
+			#e_demo__accordion.accordion
+				- for (var $i=0; $i<4; $i++)
+					- var $index         = '0' + ( $i + 1 )
+					- var $title         = $e_titles[$i]
+					- var $title_class   = ( 0 === $i ) ? '' : 'collapsed'
+					- var $content_id    = 'e_demo__collapse--0' + $i
+					- var $content_class = ( 0 === $i ) ? 'in' : ''				
+						.e-accordion__group.panel
+							.e-accordion__heading
+								a.e-accordion__toggle.clearfix(data-toggle='collapse', data-parent='#e_demo__accordion', href="##{$content_id}", class=$title_class )
+									span.e-accordion__index.pull-left #{$index}
+									span.e-accordion__text.pull-left #{$title}
+							.e-accordion__body.collapse( id=$content_id, class=$content_class)
+								.e-accordion__inner #{$e_excerpt}

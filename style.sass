@@ -440,6 +440,19 @@ h6
 				text-transform: uppercase
 				font-weight: 400				
 
+	+when( bold )
+		+has( title )			
+			text-transform: uppercase
+			font-weight: 700
+			color: $color__dark--05
+			+if( md )
+				margin: 0px
+
+			+if( lowercase )
+				text-transform: lowercase
+				&:first-letter
+					text-transform: uppercase
+
 +new( testimonials, $prefix )
 	
 	+when( carousel )	
@@ -562,7 +575,6 @@ h6
 			&.active
 				background-color: $color--primary
 	
-
 +new( course, $prefix )
 
 	+when( withRating )
@@ -641,11 +653,10 @@ h6
 				color: $color__dark--05
 
 	+when( boxShadow )
-		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 		+transition( .25s )
 		&:hover
-			+box-shadow( 5px, 5px, 10px, 0px, $color__light__rgba--01 )
-
+			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
 +new( price, $prefix )
 	+has( ins )				
@@ -792,14 +803,8 @@ h6
 					+has( subtitle )
 						color: $color__light--06
 
-
-
-
 		+new-child( intro__content, $prefix )
 			color: $color__light--14
-
-
-
 
 	+when( borderTop )
 		border-top-width: $space--02  
@@ -1057,10 +1062,10 @@ h6
 				right: $space--08 * -1
 				width: 60%
 				background-color: $color__light--00
-				+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+				+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 				+transition( .25s )
 				&:hover
-					+box-shadow( 5px, 5px, 10px, 0px, $color__light__rgba--01 )
+					+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
 
 			+has( inner )
@@ -1370,7 +1375,6 @@ h6
 			+has( link )
 				text-decoration: none
 
-
 +new( row, $prefix )
 	+when( '07a' )
 		margin-left: $space--07a * -1
@@ -1388,17 +1392,16 @@ h6
 			padding-left: 0
 			padding-right: 0
 
-
 +new( col, $prefix )
 	+when( box )
 		display: block
 		background-color: $color__light--00
 		position: relative
 		padding: $space--09
-		+box-shadow( 0px, 1px, 5px, 0px, $color__light__rgba--01 )
+		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 		+transition( .25s )
 		&:hover
-			+box-shadow( 5px, 5px, 10px, 0px, $color__light__rgba--01 )
+			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
 +new( space, $prefix )
 	+when( '07' )
@@ -1443,20 +1446,22 @@ h6
 				+inline-block()
 				margin-left: $space--02
 
-
 +new( card, $prefix )
+
 	+when( 1st )
 		position: relative
 		overflow: hidden
-			
+
 		&:hover
 			+new-child( card, $prefix )				
 				+has( title )
 					bottom: 80px
-					+opacity( 1 )
+
 				+has( subtitle )
-					bottom: 50px
-					+opacity( 1 )
+					bottom: 50px					
+
+				+has( overlay )
+					background-color: $color__dark__rgba--02
 
 		+new-child( card, $prefix )				
 			+has( overlay )
@@ -1465,8 +1470,9 @@ h6
 				bottom: 0	
 				left: 0
 				right: 0
-				background-color: $color__dark__rgba--02
+				background-color: transparent
 				z-index: 1
+				+transition_m( background-color, .5s )
 	
 			+has( img )
 				display: block
@@ -1483,7 +1489,7 @@ h6
 				z-index: 2
 				margin-top: 0
 				margin-bottom: 0
-				+transition(.5s )
+				+transition_m( bottom, .5s )
 				+has( link )
 					text-decoration: none
 					color: $color__light--00
@@ -1499,13 +1505,85 @@ h6
 				z-index: 2
 				margin-top: 0
 				margin-bottom: 0
-				+transition( .25s )				
+				+transition_m( bottom, .25s )				
 				+has( link )
 					text-decoration: none
 					color: $color__light--00
 					&:hover
 						color: $color--primary
 
+	+when( 2nd )
+		
+		+new-child( card, $prefix )
+
+			+has( thumb )
+				position: relative
+				&:before
+					display: block
+					content: ''
+					position: absolute
+					top: $space--03
+					bottom: $space--03
+					left: $space--03
+					right: $space--03
+					border: 1px solid $color__light__rgba--01
+					background-color: transparent
+
+			+has( img )
+				display: block
+
++new( progress_bar, $prefix )
+
+	+when( 1st )		
+		margin-top: 0
+		margin-bottom: $space--07
+
+		+new-child( progress_bar, $prefix )
+
+			+has( label )
+				text-transform: uppercase
+				letter-spacing: 1px
+				margin-top: 0
+				margin-bottom: $space--01a
+				color: $color__dark--05
+
+			+has( value )
+				display: none
+				position: absolute
+				height: $space--05
+				width: $space--08
+				font-size: 14px
+				line-height: round( 14px * 1.3333 )
+				top: $space--06b	* -1
+				right: $space--05 * -1
+				color: $color__dark--11
+				font-family: $font--heading
+				font-weight: 400
+
+			+has( max )
+				+border-radius( $space--06 / 2 )
+				height: $space--06
+				background-color: $color__light--13
+				border: 1px solid $color__light--09
+				padding: $space--0
+
+			+has( current )
+				+border-radius( $space--04d / 2 )
+				position: relative
+				width: $space--04d
+				height: $space--04d				
+				background-color: $color__light--08
+				border: 1px solid $color__light--08
+				padding: $space--0
+				cursor: pointer				
+
+				&:hover				
+					background-color: $color--primary
+					border-color: $color--primary
+					
+					+new-child( progress_bar, $prefix )
+						+has( value )
+							display: block
 
 // For only demo.
 +new( body, $prefix )
@@ -1542,5 +1620,5 @@ h6
 				+when( '03' )
 					background-color: $color__light--12
 
-
-
+				+when( '07' )
+					background-color: $color__light--12

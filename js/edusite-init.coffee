@@ -1,20 +1,20 @@
 "use strict";
 
-jQuery(document).ready ($) ->
-
+jQuery( document ).ready ( $ ) ->
 	Edusite.initNavigation()	
 	Edusite_Count_Down.create()
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )	
 	Edusite_Testimonial.init( 'carousel' )
 	Edusite_Testimonial.init( 'carouselSingle' )
+	Edusite_Progress_Bar.init( '1st' )
 	return
 
-jQuery(window).load ($) ->	
+jQuery( window ).load ( $ ) ->
 	Edusite_Hack.matchHeight( '> div .e-col' )	
 	return
 
-jQuery(window).scroll ($) ->
+jQuery( window ).scroll ( $ ) ->
 	return
 
 Edusite =	
@@ -108,6 +108,44 @@ Edusite_Count_Down =
 				), countdown.HOURS | countdown.MINUTES | countdown.SECONDS)			
 						
 				return
+		return
+
+Edusite_Progress_Bar = 
+	init: ( type ) ->		
+		if '1st' == type
+			Edusite_Progress_Bar.init_style_1st()
+		return
+
+	init_style_1st: () ->
+
+		$bars = jQuery '.e-progress_bar--1st'
+
+		if $bars.length
+
+			jQuery.each $bars, ( index, element ) ->
+
+				$element = jQuery( this ).find '.e-progress_bar__current'
+
+				start   = $element.attr 'data-start'
+				percent = $element.attr 'data-percent'
+				delay   = 500
+
+				if !$element.hasClass( 'animated' )
+					$element.css
+						width : start
+
+				$element.appear ->
+				  setTimeout (->
+				    $element.animate( { 'width': percent + '%' }, 500, 'easeInOutExpo' ).addClass 'animated'
+				    return
+				  ), delay
+
+				  return
+
+				return
+
+			return
+
 		return
 
 Edusite_Hack = 

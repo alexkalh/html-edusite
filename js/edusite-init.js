@@ -1,5 +1,5 @@
 "use strict";
-var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Hack, Edusite_Slider, Edusite_Testimonial;
+var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Hack, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
   Edusite_Course.init('carousel');
   Edusite_Testimonial.init('carousel');
   Edusite_Testimonial.init('carouselSingle');
+  Edusite_Progress_Bar.init('1st');
 });
 
 jQuery(window).load(function($) {
@@ -112,6 +113,40 @@ Edusite_Count_Down = {
           $_obj.find('.e-date--seconds .e-date_block__number').html(ts.seconds);
         }), countdown.HOURS | countdown.MINUTES | countdown.SECONDS);
       });
+    }
+  }
+};
+
+Edusite_Progress_Bar = {
+  init: function(type) {
+    if ('1st' === type) {
+      Edusite_Progress_Bar.init_style_1st();
+    }
+  },
+  init_style_1st: function() {
+    var $bars;
+    $bars = jQuery('.e-progress_bar--1st');
+    if ($bars.length) {
+      jQuery.each($bars, function(index, element) {
+        var $element, delay, percent, start;
+        $element = jQuery(this).find('.e-progress_bar__current');
+        start = $element.attr('data-start');
+        percent = $element.attr('data-percent');
+        delay = 500;
+        if (!$element.hasClass('animated')) {
+          $element.css({
+            width: start
+          });
+        }
+        $element.appear(function() {
+          setTimeout((function() {
+            $element.animate({
+              'width': percent + '%'
+            }, 500, 'easeInOutExpo').addClass('animated');
+          }), delay);
+        });
+      });
+      return;
     }
   }
 };

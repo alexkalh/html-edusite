@@ -69,7 +69,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/blocks/elements/_image.jade
 								
 						.col-lg-6
-							.e-col.clearfix				
+							.e-col.clearfix
 								include jade/blocks/about/_signature.jade
 		
 			section.e-section.e-demo__row--04
@@ -82,21 +82,50 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 				.e-container--full
 					.row.e-row--noSpace
 						.col-lg-3
-							- var $card_thumb = 'demo/card/single/0.jpg'
-							- var $card_full  = 'demo/card/single/0-full.jpg'
-							include jade/blocks/elements/_card-1st.jade
+							.e-col.clearfix
+								- var $card_thumb = 'demo/card/single/0.jpg'
+								- var $card_full  = 'demo/card/single/0-full.jpg'
+								include jade/blocks/elements/_card-1st.jade
 						.col-lg-3
-							- var $card_thumb = 'demo/card/single/1.jpg'
-							- var $card_full  = 'demo/card/single/1-full.jpg'
-							include jade/blocks/elements/_card-1st.jade
+							.e-col.clearfix
+								- var $card_thumb = 'demo/card/single/1.jpg'
+								- var $card_full  = 'demo/card/single/1-full.jpg'
+								include jade/blocks/elements/_card-1st.jade
 						.col-lg-3
-							- var $card_thumb = 'demo/card/single/2.jpg'
-							- var $card_full  = 'demo/card/single/2-full.jpg'
-							include jade/blocks/elements/_card-1st.jade
+							.e-col.clearfix
+								- var $card_thumb = 'demo/card/single/2.jpg'
+								- var $card_full  = 'demo/card/single/2-full.jpg'
+								include jade/blocks/elements/_card-1st.jade
 						.col-lg-3
-							- var $card_thumb = 'demo/card/single/3.jpg'
-							- var $card_full  = 'demo/card/single/3-full.jpg'
-							include jade/blocks/elements/_card-1st.jade
+							.e-col.clearfix
+								- var $card_thumb = 'demo/card/single/3.jpg'
+								- var $card_full  = 'demo/card/single/3-full.jpg'
+								include jade/blocks/elements/_card-1st.jade
+
+			section.e-section.e-demo__row--06.e-padding_top--12.e-padding_bottom--12
+				.e-container.container
+					.row
+						.col-lg-6
+							.e-col.clearfix
+								- var $card_thumb    = 'demo/card/static/find-a-quote.jpg'
+								- var $card_title    = 'Find A Course and Sign Up Today!'
+								- var $card_desc     = 'Pellentesque quiselitnec justo blandit molestieullam etellus ultricies grvidanisi is etposue justo blandit molestieullam etellus ultricies grvidanisi is etposuer.'
+								- var $card_btn_text = 'View online courses'
+								- var $card_btn_link = '#'
+								include jade/blocks/elements/_card-2nd.jade
+
+						.col-lg-6
+							.e-col.clearfix							
+								include jade/blocks/misc/_skills.jade
+
+			section.e-section.e-demo__row--07.e-padding_top--12.e-padding_bottom--12
+				.e-container.container
+					.row
+						.col-lg-12
+							- var $caption_icon = 'fa fa-users'
+							- var $caption_text = 'Our Great Faculties'
+							- var $caption_desc = 'Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam'
+							include jade/blocks/caption/_centered.jade
 
 
 		include jade/_footer.jade
