@@ -859,7 +859,7 @@ h6
 		+if( shadow )
 			background-color: $color__light--14
 			border: 1px solid $color__light--11
-			+box-shadow( -1px, 1px, 2px, 0px, $color__light--08 )						
+			+box-shadow( -1px, 1px, 2px, 0px, $color__light--08 )
 
 	+when( submit )
 	
@@ -1585,6 +1585,60 @@ h6
 						+has( value )
 							display: block
 
++new( staff, $prefix )
+	+when( 1st )
+		background-color: $color__light--00		
+		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
+		+transition( .25s )
+		&:hover
+			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
+
+		+new-child( staff, $prefix )
+			
+			+has( avatar )
+				
+			+has( img )
+				display: block
+				width: 100%
+
+			+has( info )
+				padding: $space--05
+				text-align: center
+
+			+has( name )
+				margin-top: 0
+				margin-bottom: 0
+
+			+has( job )
+
+			+has( socials )
+				background-color: $color__light--13
+				padding: $space--04
+				text-align: center
+
+			+has( link )
+				+inline-block()
+				+transition( .25s )
+				text-decoration: none
+				width: $space--06a
+				height: $space--06a
+				line-height: $space--06a
+				color: $color__light--00
+				margin-left: $space--0
+				margin-right: $space--0
+				background-color: $color--primary
+				font-size: $space--03a
+				border: 1px solid $color--primary
+				
+				&:hover
+					border-color: $color--primary
+					background-color: $color__light--00
+					color: $color--primary
+
+			+has( icon)
+
+
+
 // For only demo.
 +new( body, $prefix )
 	+when( home )
@@ -1621,4 +1675,7 @@ h6
 					background-color: $color__light--12
 
 				+when( '07' )
-					background-color: $color__light--12
+					background-color: $color__light--12a
+
+				+when( '08' )
+					background-color: $color__light--12a	

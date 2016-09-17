@@ -115,17 +115,48 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/blocks/elements/_card-2nd.jade
 
 						.col-lg-6
-							.e-col.clearfix							
+							.e-col.clearfix
 								include jade/blocks/misc/_skills.jade
 
-			section.e-section.e-demo__row--07.e-padding_top--12.e-padding_bottom--12
+			section.e-section.e-demo__row--07.e-padding_top--12
 				.e-container.container
 					.row
 						.col-lg-12
-							- var $caption_icon = 'fa fa-users'
-							- var $caption_text = 'Our Great Faculties'
-							- var $caption_desc = 'Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam'
-							include jade/blocks/caption/_centered.jade
+							.e-col.clearfix
+								- var $caption_icon = 'fa fa-users'
+								- var $caption_text = 'Our Great Faculties'
+								- var $caption_desc = 'Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam'
+								include jade/blocks/caption/_centered.jade
 
+			section.e-section.e-demo__row--08.e-padding_bottom--12
+				.e-container.container
+					.row
+						.col-lg-3
+							.e-col.clearfix
+								- var $staff_avatar = 'demo/staff/single/1.jpg'
+								- var $staff_name = $quote_authors[0][0]
+								- var $staff_job = $quote_authors[0][2]
+								include jade/blocks/staff/_single.jade
+
+						.col-lg-3
+							.e-col.clearfix
+								- var $staff_avatar = 'demo/staff/single/2.jpg'
+								- var $staff_name = $quote_authors[1][0]
+								- var $staff_job = $quote_authors[1][2]
+								include jade/blocks/staff/_single.jade
+
+						.col-lg-3
+							.e-col.clearfix
+								- var $staff_avatar = 'demo/staff/single/3.jpg'
+								- var $staff_name = $quote_authors[2][0]
+								- var $staff_job = $quote_authors[2][2]
+								include jade/blocks/staff/_single.jade
+
+						.col-lg-3
+							.e-col.clearfix								
+								- var $staff_avatar = 'demo/staff/single/4.jpg'
+								- var $staff_name = $quote_authors[3][0]
+								- var $staff_job = $quote_authors[3][2]
+								include jade/blocks/staff/_single.jade
 
 		include jade/_footer.jade
