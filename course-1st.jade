@@ -1,0 +1,127 @@
+include jade/_config.jade
+include jade/mixins/_alex.jade
+
+doctype
+html( lang="en-US" prefix="og: http://ogp.me/ns#" )
+
+	include jade/_head.jade
+
+	body.e-body.e-body--relative.e-body--sub.e-body--courses
+
+		header.e-header.e-header--fixed
+			.container
+				.e-header_top.row
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--left
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href='mailto:support@colourstheme.com') support@colourstheme.com
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--right
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href="#login") Login
+								li.e-top_menu__link.e-top_menu__link--lvl_0.is-other
+									a.e-top_menu__url(href="#register") Register
+				
+				.e-header_bottom.e-header_bottom--fixed.clearfix
+					h1.e-logo.e-logo--left
+						a.e-logo__link(href=$e_home_url title='')
+							img.e-logo__img(src=$e_logo alt='')
+
+					nav.e-main_menu.e-main_menu--right
+						include jade/blocks/nav/_primary.jade
+		
+		.e-main_content
+			
+			section.e-section.e-demo__row--0.e-section--dark.e-padding_top--15.has-overlay
+				.e-container.container
+					.row
+						.col-lg-12
+							.e-col.clearfix.e-margin_top--13.e-margin_bottom--13
+								- var $breadcrumb_caption = 'Our Courses'
+								- var $breadcrumb_current = 'Courses'								
+								include jade/blocks/breadcrumbs/_centered.jade
+
+			section.e-section.e-demo__row--01.e-padding_top--12.e-padding_bottom--12
+				.e-container.container
+					.row
+						.col-lg-12
+							.e-col.clearfix
+
+								.e-courses_list.e-courses_list--grid
+									
+									.e-courses__toolbar.e-margin_bottom--10
+										form.e-form( action="" method="post" )
+											.row
+												.col-md-5
+													select.e-field.e-field--select.is-solid.is-huge.is-fullwidth.is-nospace(name="course-category" autocomplete="off" data-field="select" data-field-class="e-field e-field--dropdown is-solid is-huge is-fullwidth" )
+														option(value="" selected="selected") Select Category
+														option(value="foo") Foo
+														option(value="baz") Baz
+
+												.col-md-5
+													input.e-field.e-field--text.is-solid.is-huge.is-fullwidth(type="text" name="s" placeholder="Enter search keyword")
+
+												.col-md-2
+													input.e-field.e-field--submit.e-button.is-fullwidth.is-primary.is-huge(type="submit" value="Search")
+
+									.e-courses__outer
+
+										.e-courses__inner.clearfix
+
+											.row
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+											
+											.row
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+											.row
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+												.col-lg-3
+													- var $image = 'demo/courses/grid/1.jpg'
+													include jade/blocks/course/_with_rating.jade
+
+										.e-courses__pagination.clearfix
+											include jade/blocks/pagination/_default.jade
+
+		include jade/_footer.jade

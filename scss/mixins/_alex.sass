@@ -22,6 +22,34 @@
 	-webkit-transition: $var $time
 	-moz-transition: $var $time
 
+=transform( $transforms )
+	-moz-transform: $transforms
+	-o-transform: $transforms
+	-ms-transform: $transforms
+	-webkit-transform: $transforms
+	transform: $transforms
+
+=rotate ( $deg )
+	+transform( rotate( #{$deg}deg ) )
+
+=scale($scale)
+	+transform( scale( $scale ) )
+
+
+=translate ( $x, $y )
+	+transform( translate($x, $y) )
+
+=skew ($x, $y)
+	+transform( skew( #{$x}deg, #{$y}deg ) )
+
+=transform-origin ( $origin )
+	moz-transform-origin: $origin
+	-o-transform-origin: $origin
+	-ms-transform-origin: $origin
+	-webkit-transform-origin: $origin
+	transform-origin: $origin
+
+
 =animation-duration( $time )
 	-webkit-animation-duration: $time
 	animation-duration: $time

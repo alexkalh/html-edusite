@@ -1,5 +1,5 @@
 "use strict";
-var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Hack, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial;
+var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Field, Edusite_Hack, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
@@ -9,13 +9,14 @@ jQuery(document).ready(function($) {
   Edusite_Testimonial.init('carousel');
   Edusite_Testimonial.init('carouselSingle');
   Edusite_Progress_Bar.init('1st');
+  Edusite_Field.init('select');
 });
 
-jQuery(window).load(function($) {
+jQuery(window).on('load', function($) {
   Edusite_Hack.matchHeight('> div .e-col');
 });
 
-jQuery(window).scroll(function($) {});
+jQuery(window).on('scroll', function($) {});
 
 Edusite = {
   initNavigation: function() {
@@ -228,4 +229,60 @@ Edusite_Testimonial = {
 
 Edusite_Effect = {
   init: function(type) {}
+};
+
+Edusite_Field = {
+  init: function(type) {
+    if ('select' === type) {
+      Edusite_Field._select();
+    }
+  },
+  _select: function() {
+    var $fields;
+    $fields = jQuery('select[data-field=select]');
+    if ($fields.length) {
+      _.each($fields, function(el) {
+        var $options, $selected, list;
+        $options = jQuery(el).find('option');
+        $selected = jQuery(el).find('option:selected');
+        list = '<div class="e-field__placehold"><span class="e-field__current">' + $selected.text() + '</span><span class="e-field__caret fa fa-caret-down"></span></div>';
+        list += '<ul class="e-field__list">';
+        _.each($options, function(el_child) {
+          list += '<li class="e-field__item" data-value="' + jQuery(el_child).attr('value') + '">' + jQuery(el_child).text() + '</li>';
+        });
+        list += '</ul>';
+        jQuery(el).wrap('<div data-field="dropdown" class="' + jQuery(el).attr('data-field-class') + '"></div>').addClass('hidden');
+        jQuery(el).parent().append(list);
+      });
+      jQuery('.e-form').on('click', '.e-field__placehold', function(event) {
+        var $caret, $dropdown, $element, $list;
+        $element = jQuery(this);
+        $caret = $element.find('.e-field__caret');
+        $dropdown = $element.parent();
+        $list = $dropdown.find('.e-field__list');
+        if ($list.is(':hidden')) {
+          $list.show();
+          $caret.removeClass('fa-caret-down').addClass('fa-caret-up');
+        } else {
+          $list.hide();
+          $caret.removeClass('fa-caret-up').addClass('fa-caret-down');
+        }
+      });
+      jQuery('.e-form').on('click', '.e-field__item', function(event) {
+        var $current, $dropdown, $placehold, $select, $selected_text, $selected_value;
+        $dropdown = jQuery(this).parents('.e-field--dropdown');
+        $placehold = $dropdown.find('.e-field__placehold');
+        $current = $dropdown.find('.e-field__current');
+        $select = $dropdown.find('select');
+        $selected_value = jQuery(this).attr('data-value');
+        $selected_text = jQuery(this).text();
+        if ($selected_text !== $current.text()) {
+          $current.text($selected_text);
+          $select.find('option').removeAttr('selected');
+          $select.find('option[value="' + $selected_value + '"]').attr('selected', 'selected');
+        }
+        $placehold.click();
+      });
+    }
+  }
 };

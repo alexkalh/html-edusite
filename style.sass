@@ -267,32 +267,15 @@ h6
 		width: 50%		
 
 +new( button, $prefix )
-	+inline-block()	 
+	+inline-block()
 	border: none
-	font-family: $font--desc
-	font-weight: 500
+	font-family: $font--heading
+	font-weight: 400
 	letter-spacing: 1px
-	text-decoration: none
-	text-transform: uppercase	
-
-	+if( primary )
-		background-color: $color--primary
-		color: $color__light--00		
-		a
-			color: $color__light--00
-
-	+if( large )
-		height: $space--09
-		line-height: $space--09
-		padding: 0 $space--07			
-		font-size: 14px
-		
-
-	+if( medium )
-		height: $space--08 * 0.875
-		line-height: $space--08 * 0.875
-		padding: 0 $space--04		
-		font-size: 14px
+	text-decoration: none	
+	
+	+if( uppercase )
+		text-transform: uppercase	
 
 	+if( huge )
 		height: $space--10
@@ -300,8 +283,40 @@ h6
 		padding: 0 $space--10	
 		font-size: 14px
 
+	+if( large )
+		height: $space--09
+		line-height: $space--09
+		padding: 0 $space--07			
+		font-size: 14px
+		
+	+if( medium )
+		height: $space--08 * 0.875
+		line-height: $space--08 * 0.875
+		padding: 0 $space--04		
+		font-size: 14px
+
+	+if( small )
+		height: $space--05
+		line-height: $space--05
+		padding: 0 $space--02a
+		font-size: $space--03b
+
 	+if( shadow )		
 		+box-shadow( -1px, 1px, 2px, -1px, darken( $color--primary, 10 ) )
+	
+	+if( round )
+		+border-radius( $space--0 )
+
+	+when( fill )
+		+if( primary )
+			background-color: $color--primary
+			color: $color__light--00		
+			a
+				color: $color__light--00
+
+	+when( solid )
+		+if( primary )
+			border: 1px solid $color--primary
 
 +new( caption, $prefix )
 
@@ -658,6 +673,63 @@ h6
 		&:hover
 			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
+	+when( fullWidth )
+		background-color: $color__light--00
+		padding-left: $space--04
+		padding-right: $space--04
+
+		+new-child( course, $prefix )
+
+			+has( thumbnail )
+				+when( relative )
+					margin: 0
+					position: relative
+					overflow: hidden
+
+				img
+					display: block
+					width: 100%
+					height: auto
+				
+			+has( content )
+				padding-top: $space--06
+				padding-bottom: $space--06
+				padding-right: $space--04
+
+			+has( term )
+				position: absolute
+				top: $space--04
+				left: $space--03a
+
+			+has( stick )
+				position: absolute
+				top: $space--14b * -1/2
+				right: $space--13 * -1
+				text-transform: uppercase
+				font-size: $space--03
+				font-family: $font--heading
+
+			+has( name )
+				+if( md )
+					margin: 0
+
+			+has( link )
+				+inline-block()
+				font-family: $font--heading
+				font-size: $space--05 * 9 / 10
+				font-weight: 400
+				text-decoration: none
+				line-height: $space--06
+				color: $color__dark--05
+
+			+has( rating )
+				float: right
+
+			+has( left )
+				padding-left: 0px
+
+			+has( right)
+
 +new( price, $prefix )
 	+has( ins )				
 		text-decoration: none
@@ -866,12 +938,7 @@ h6
 	+when( select )
 		position: relative
 		padding: 0 $space--04
-		font-size: $space--04a
-		-webkit-appearance: none
-		-moz-appearance: none
-		appearance: none
-		&::-ms-expand
-			display: none
+		font-size: $space--04a		
 
 		+if( medium )
 			height: $space--07a
@@ -881,11 +948,97 @@ h6
 			height: $space--10
 			line-height: $space--10
 
+		+if( solid )
+			border: 1px solid $color__light--10
+			background-color: $color__light--00			
+			color: $color__dark--05
+
 		+if( shadow )
 			background-color: $color__light--14
 			border: 1px solid $color__light--11
 			color: $color__dark--05
 			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )			
+		
+	+when( dropdown )
+		position: relative
+		padding: 0		
+		
+		+new-child( field, $prefix )
+			+has( placehold )
+				display: block
+				position: relative
+				width: 100%				
+				cursor: pointer
+				padding: 0 $space--04
+				font-size: $space--04a					
+
+			+has( caret )
+				display: block
+				position: absolute
+				top: 0
+				bottom: 0
+				right: 0
+				color: $color__dark--08
+
+			+has( list )
+				display: none
+				position: absolute					
+				right: -1px
+				left: -1px
+				margin-top: 0
+				margin-bottom: 0
+				padding-left: 0
+				list-style-type: none
+				z-index: 30
+
+			+has( item )
+				position: relative
+				z-index: 20
+				height: $space--07
+				padding-left: $space--07
+				padding-right: $space--07
+				line-height: $space--07
+				cursor: pointer
+				font-size: $space--04a
+				+transition( .25s )
+				&:hover
+					padding-left: $space--08
+					background-color: $color__light--12
+
+		+if( medium )
+			height: $space--07a
+			line-height: $space--07a		
+
+		+if( huge )
+			height: $space--10
+			line-height: $space--10
+
+			+new-child( field, $prefix )
+				+has( placehold )
+					line-height: $space--10
+					height: $space--10
+
+				+has( caret )
+					width: $space--10
+					line-height: $space--10
+					font-size: $space--04c
+					text-align: center
+				
+				+has( list )
+					top: $space--10
+					border: 1px solid $color__light--10
+					background-color: $color__light--00
+
+		+if( solid )
+			border: 1px solid $color__light--10
+			background-color: $color__light--00			
+			color: $color__dark--05
+
+		+if( shadow )
+			background-color: $color__light--14
+			border: 1px solid $color__light--11
+			color: $color__dark--05
+			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )		
 
 +new( intro, $prefix )
 
@@ -1637,7 +1790,49 @@ h6
 
 			+has( icon)
 
++new( metadata, $prefix )
+	+when( default )
+		font-size: $space--04a
+		+new-child( metadata, $prefix )
 
+			+has( item )
+				display: block
+				float: left
+				margin-right: $space--04
+
+				+when( text )					
+					+new-child( metadata__item, $prefix )
+						+has( label )
+							+inline-block()
+							margin-right: $space--01a
+						+has( link )
+							+inline-block()
+							text-decoration: none
+
+				+when( icon )
+					+new-child( metadata__item, $prefix )
+						+has( icon )
+							+inline-block()
+							margin-right: $space--01a
+							color: $color__light--04
+
+						+has( text )
+							+inline-block()
+
++new( stick, $prefix )
+	+when( triangle )
+		+rotate( 45 )
+		+transform-origin( top left )
+		display: block
+		width: $space--13
+		height: $space--13
+		line-height: $space--06
+		text-align: center		
+		padding-top: $space--10
+	
+	+if( primary )
+		background-color: $color--primary
+		color: $color__light--00
 
 // For only demo.
 +new( body, $prefix )
@@ -1679,3 +1874,37 @@ h6
 
 				+when( '08' )
 					background-color: $color__light--12a	
+
+	+when( courses )
+		+new-child( demo, $prefix )
+			+has( row )
+				+when( '01' )
+					background-color: $color__light--12
+
+// WordPress: default markup
+nav.navigation
+	margin-top: $space--07
+	.nav-links		
+		text-align: center
+
+	.page-numbers
+		+inline-block()
+		height: $space--10
+		line-height: $space--10
+		min-width: $space--10
+		width: $space--10
+		width: auto
+		margin-left: $space--04 / 2
+		margin-right: $space--04 / 2
+		border: 1px solid $color__light--08
+		background-color: $color__light--12a
+		color: $color__dark--05
+		+transition( .25s )		
+
+		&:hover
+			background-color: $color--primary
+			color: $color__light--00
+			border-color: $color__light--00
+
+	a
+		text-decoration: none

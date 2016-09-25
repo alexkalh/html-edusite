@@ -1,5 +1,5 @@
 .e-widget.e-breadcrumb.e-breadcrumb--centered
-	h3.is-sm.e-breadcrumb__title Who we are
+	h3.is-sm.e-breadcrumb__title #{$breadcrumb_caption}
 	.e-breadcrumb__links
 
 		span.e-breadcrumb__item(itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem")
@@ -11,6 +11,6 @@
 
 		span.e-breadcrumb__item(itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem")
 			a.e-breadcrumb__link(itemprop="item" class="current-page" href="")
-				span.e-breadcrumb__text(itemprop="name") About
+				span.e-breadcrumb__text(itemprop="name") #{$breadcrumb_current}
 			meta(itemprop="position" content="2")
 
