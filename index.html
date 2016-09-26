@@ -52,29 +52,37 @@
         </div>
         <div class="e-header_bottom e-header_bottom--fixed clearfix">
           <h1 class="e-logo e-logo--left"><a href="index.html" title="" class="e-logo__link"><img src="demo/logo.png" alt="" class="e-logo__img"></a></h1>
-          <nav class="e-main_menu e-main_menu--right">
-            <ul class="e-main_menu__links e-main_menu__links--default sf-menu clearfix">
-              <li class="current-menu-item e-main_menu__link e-main_menu__link--lvl_0"><a href="index.html" class="e-main_menu__url">Home</a></li>
-              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="blog.html" class="e-main_menu__url">Blog  </a></li>
-              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="single-post.html" class="e-main_menu__url">Single</a>
-                <ul class="sub-menu">
-                  <li class="e-main_menu__link"><a href="single-post.html" class="e-main_menu__url">Standart</a></li>
-                  <li class="e-main_menu__link"><a href="single-video.html" class="e-main_menu__url">Video</a></li>
-                  <li class="e-main_menu__link"><a href="single-gallery.html" class="e-main_menu__url">Gallery</a></li>
-                  <li class="e-main_menu__link"><a href="single-audio.html" class="e-main_menu__url">Audio</a></li>
+          <nav class="e-navigation pull-right">
+            <ul class="e-menu e-menu--default sf-menu clearfix">
+              <li class="e-menu__link is-firstChild is-current"><a href="index.html">Home</a></li>
+              <li class="e-menu__link is-firstChild"><a href="blog.html">Blog  </a></li>
+              <li class="e-menu__link is-firstChild"><a href="single-post.html">Single</a>
+                <ul class="e-menu--sub sub-menu">
+                  <li class="e-menu__link"><a href="single-post.html">Standart</a></li>
+                  <li class="e-menu__link"><a href="single-video.html">Video</a></li>
+                  <li class="e-menu__link"><a href="single-gallery.html">Gallery</a></li>
+                  <li class="e-menu__link"><a href="single-audio.html">Audio</a></li>
                 </ul>
               </li>
-              <li class="e-main_menu__link e-main_menu__link--lvl_0"><a href="page.html" class="e-main_menu__url">Page</a>
-                <ul class="sub-menu">
-                  <li class="e-main_menu__link"><a href="page-fullwidth.html" class="e-main_menu__url">Page - Fullwidth</a></li>
-                  <li class="e-main_menu__link"><a href="about.html" class="e-main_menu__url">About Us</a></li>
-                  <li class="e-main_menu__link"><a href="elements.html" class="e-main_menu__url">Elements</a></li>
-                  <li class="e-main_menu__link"><a href="contact.html" class="e-main_menu__url">Contact</a></li>
-                  <li class="e-main_menu__link"><a href="404.html" class="e-main_menu__url">Error 404</a></li>
+              <li class="e-menu__link is-firstChild"><a href="page.html">Page</a>
+                <ul class="e-menu--sub is-rtl sub-menu">
+                  <li class="e-menu__link"><a href="page-fullwidth.html">Page - Fullwidth</a></li>
+                  <li class="e-menu__link"><a href="about.html">About Us</a>
+                    <ul class="e-menu--sub is-rtl sub-menu">
+                      <li class="e-menu__link"><a href="page-fullwidth.html">Item 1a</a></li>
+                      <li class="e-menu__link"><a href="about.html">Item 1b</a></li>
+                      <li class="e-menu__link"><a href="elements.html">Item 1c</a></li>
+                      <li class="e-menu__link"><a href="contact.html">Item 1d</a></li>
+                      <li class="e-menu__link"><a href="404.html">Item 1e</a></li>
+                    </ul>
+                  </li>
+                  <li class="e-menu__link"><a href="elements.html">Elements</a></li>
+                  <li class="e-menu__link"><a href="contact.html">Contact</a></li>
+                  <li class="e-menu__link"><a href="404.html">Error 404</a></li>
                 </ul>
               </li>
-              <li class="e-menu_icon e-menu_icon--circle e-main_menu__link e-main_menu__link--lvl_0"><a href="#" class="e-main_menu__url"><i class="e-menu_icon__icon ti-search"></i></a></li>
-              <li class="e-menu_icon e-menu_icon--transparent e-menu_icon--primary e-main_menu__link e-main_menu__link--lvl_0"><a href="#" class="e-main_menu__url"><i class="e-menu_icon__icon ti-shopping-cart"></i></a></li>
+              <li class="e-menu__icon e-menu__icon--circle is-firstChild"><a href="#"><i class="e-menu__icon__icon ti-search"></i></a></li>
+              <li class="e-menu__icon e-menu__icon--transparent is-firstChild"><a href="#"><i class="e-menu__icon__icon ti-shopping-cart"></i></a></li>
             </ul>
           </nav>
         </div>
@@ -138,7 +146,7 @@
                           </figure>
                           <div class="e-course__content">
                             <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                                 <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
@@ -150,7 +158,7 @@
                           </figure>
                           <div class="e-course__content">
                             <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                                 <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
@@ -162,7 +170,7 @@
                           </figure>
                           <div class="e-course__content">
                             <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                                 <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
@@ -174,7 +182,7 @@
                           </figure>
                           <div class="e-course__content">
                             <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                            <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                                 <del class="e-price__del__link">$240.05</del></a></div>
                           </div>
                         </article>
@@ -264,24 +272,24 @@
                   <form action="" method="post" class="e-form">
                     <div class="row">
                       <div class="col-md-3">
-                        <select name="course-category" autocomplete="off" class="e-field e-field--select is-shadow is-huge is-fullwidth">
+                        <select name="course-category" autocomplete="off" data-field="select" data-field-class="e-field e-field--dropdown is-solid is-huge is-fullwidth" class="e-field e-field--select is-shadow is-huge is-fullwidth">
                           <option value="" selected="selected">Select Category</option>
-                          <option value="Foo">Foo</option>
-                          <option value="Foo">Baz				</option>
+                          <option value="foo">Foo</option>
+                          <option value="baz">Baz				</option>
                         </select>
                       </div>
                       <div class="col-md-3">
-                        <select name="course-status" autocomplete="off" class="e-field e-field--select is-shadow is-huge is-fullwidth">
+                        <select name="course-status" autocomplete="off" data-field="select" data-field-class="e-field e-field--dropdown is-solid is-huge is-fullwidth" class="e-field e-field--select is-shadow is-huge is-fullwidth">
                           <option value="" selected="selected">Select Status</option>
-                          <option value="Lorem">Lorem</option>
-                          <option value="Ipsum">Ipsum</option>
+                          <option value="lorem">Lorem</option>
+                          <option value="ipsum">Ipsum</option>
                         </select>
                       </div>
                       <div class="col-md-3">
                         <input type="text" name="s" placeholder="Type keyword" class="e-field e-field--text is-shadow is-huge is-fullwidth">
                       </div>
                       <div class="col-md-3">
-                        <input type="submit" value="Search cource" class="e-field e-field--submit e-button is-fullwidth is-primary is-huge is-shadow">
+                        <input type="submit" value="Search cource" class="e-field e-field--submit e-button e-button--fill is-fullwidth is-primary is-huge is-shadow">
                       </div>
                     </div>
                   </form>
@@ -340,7 +348,7 @@
                         </figure>
                         <div class="e-course__content">
                           <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                               <del class="e-price__del__link">$240.05</del></a></div>
                         </div>
                       </article>
@@ -352,7 +360,7 @@
                         </figure>
                         <div class="e-course__content">
                           <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                               <del class="e-price__del__link">$240.05</del></a></div>
                         </div>
                       </article>
@@ -364,7 +372,7 @@
                         </figure>
                         <div class="e-course__content">
                           <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                               <del class="e-price__del__link">$240.05</del></a></div>
                         </div>
                       </article>
@@ -376,7 +384,7 @@
                         </figure>
                         <div class="e-course__content">
                           <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                          <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
                               <del class="e-price__del__link">$240.05</del></a></div>
                         </div>
                       </article>
@@ -690,6 +698,7 @@
         <script src="js/jquery-appear.js"></script>
         <script src="js/jquery-easing.js"></script>
         <script src="js/countdown.js"></script>
+        <script src="js/jquery-hover-intent.js"></script>
         <script src="js/edusite-custom.js"></script>
         <script src="js/edusite-init.js"></script>
       </div>

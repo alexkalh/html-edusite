@@ -9,17 +9,17 @@
 	form.e-form(action="" method="post")
 		.row
 			.col-md-3
-				select.e-field.e-field--select.is-shadow.is-huge.is-fullwidth(name="course-category" autocomplete="off")
+				select.e-field.e-field--select.is-shadow.is-huge.is-fullwidth( name="course-category" autocomplete="off" data-field="select" data-field-class="e-field e-field--dropdown is-solid is-huge is-fullwidth" )
 					option(value="" selected="selected") Select Category
-					option(value="Foo") Foo
-					option(value="Foo") Baz				
+					option(value="foo") Foo
+					option(value="baz") Baz				
 			.col-md-3
-				select.e-field.e-field--select.is-shadow.is-huge.is-fullwidth(name="course-status" autocomplete="off")
+				select.e-field.e-field--select.is-shadow.is-huge.is-fullwidth(name="course-status" autocomplete="off" data-field="select" data-field-class="e-field e-field--dropdown is-solid is-huge is-fullwidth" )
 					option(value="" selected="selected") Select Status
-					option(value="Lorem") Lorem
-					option(value="Ipsum") Ipsum
+					option(value="lorem") Lorem
+					option(value="ipsum") Ipsum
 			.col-md-3
 				input.e-field.e-field--text.is-shadow.is-huge.is-fullwidth(type="text" name="s" placeholder="Type keyword")
 
 			.col-md-3
-				input.e-field.e-field--submit.e-button.is-fullwidth.is-primary.is-huge.is-shadow(type="submit" value="Search cource")
+				input.e-field.e-field--submit.e-button.e-button--fill.is-fullwidth.is-primary.is-huge.is-shadow(type="submit" value="Search cource")

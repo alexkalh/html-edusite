@@ -1,41 +1,52 @@
-ul.e-main_menu__links.e-main_menu__links--default.sf-menu.clearfix
+ul.e-menu.e-menu--default.sf-menu.clearfix
 
-  li.current-menu-item.e-main_menu__link.e-main_menu__link--lvl_0
-    a.e-main_menu__url(href=$e_home_url) Home
+	li.e-menu__link.is-firstChild.is-current
+		a(href=$e_home_url) Home
 
-  li.e-main_menu__link.e-main_menu__link--lvl_0
-    a.e-main_menu__url(href=$e_archive_url) Blog  
+	li.e-menu__link.is-firstChild
+		a(href=$e_archive_url) Blog  
 
-  li.e-main_menu__link.e-main_menu__link--lvl_0
-    a.e-main_menu__url(href=$e_single_url) Single
-    ul.sub-menu
-      li.e-main_menu__link
-        a.e-main_menu__url(href=$e_single_url) Standart
-      li.e-main_menu__link
-        a.e-main_menu__url(href="single-video.html") Video
-      li.e-main_menu__link
-        a.e-main_menu__url(href="single-gallery.html") Gallery
-      li.e-main_menu__link
-        a.e-main_menu__url(href="single-audio.html") Audio
-  
-  li.e-main_menu__link.e-main_menu__link--lvl_0
-    a.e-main_menu__url(href="page.html") Page
-    ul.sub-menu
-      li.e-main_menu__link
-        a.e-main_menu__url(href="page-fullwidth.html") Page - Fullwidth
-      li.e-main_menu__link
-        a.e-main_menu__url(href="about.html") About Us
-      li.e-main_menu__link
-        a.e-main_menu__url(href="elements.html") Elements
-      li.e-main_menu__link
-        a.e-main_menu__url(href="contact.html") Contact
-      li.e-main_menu__link
-        a.e-main_menu__url(href="404.html") Error 404
+	li.e-menu__link.is-firstChild
+		a(href=$e_single_url) Single
+		ul.e-menu--sub.sub-menu
+			li.e-menu__link
+				a(href=$e_single_url) Standart
+			li.e-menu__link
+				a(href="single-video.html") Video
+			li.e-menu__link
+				a(href="single-gallery.html") Gallery
+			li.e-menu__link
+				a(href="single-audio.html") Audio
+	
+	li.e-menu__link.is-firstChild
+		a(href="page.html") Page
+		ul.e-menu--sub.is-rtl.sub-menu
+			li.e-menu__link
+				a(href="page-fullwidth.html") Page - Fullwidth
+			li.e-menu__link
+				a(href="about.html") About Us
+				ul.e-menu--sub.is-rtl.sub-menu
+					li.e-menu__link
+						a(href="page-fullwidth.html") Item 1a
+					li.e-menu__link
+						a(href="about.html") Item 1b
+					li.e-menu__link
+						a(href="elements.html") Item 1c
+					li.e-menu__link
+						a(href="contact.html") Item 1d
+					li.e-menu__link
+						a(href="404.html") Item 1e
+			li.e-menu__link
+				a(href="elements.html") Elements
+			li.e-menu__link
+				a(href="contact.html") Contact
+			li.e-menu__link
+				a(href="404.html") Error 404
 
-  li.e-menu_icon.e-menu_icon--circle.e-main_menu__link.e-main_menu__link--lvl_0
-    a.e-main_menu__url(href="#")
-      i.e-menu_icon__icon.ti-search
+	li.e-menu__icon.e-menu__icon--circle.is-firstChild
+		a(href="#")
+			i.e-menu__icon__icon.ti-search
 
-  li.e-menu_icon.e-menu_icon--transparent.e-menu_icon--primary.e-main_menu__link.e-main_menu__link--lvl_0
-    a.e-main_menu__url(href="#")
-      i.e-menu_icon__icon.ti-shopping-cart
+	li.e-menu__icon.e-menu__icon--transparent.is-firstChild
+		a(href="#")
+			i.e-menu__icon__icon.ti-shopping-cart

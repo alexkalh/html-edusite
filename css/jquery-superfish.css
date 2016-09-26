@@ -9,8 +9,6 @@
 .sf-menu ul.sub-menu {
     position: absolute;
     display: none;
-    top: 100%;
-    left: 0;
     z-index: 20;
 }
 .sf-menu > li {
@@ -26,8 +24,10 @@
     position: relative;
 }
 .sf-menu ul.sub-menu ul.sub-menu {
+		/*     
     top: 0;
     left: 100%;
+     */
 }
 
 /*Megafish*/

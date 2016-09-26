@@ -23,7 +23,7 @@ Edusite = {
     if (jQuery('.e-navigation').length) {
       jQuery('.e-navigation ul').superfish({
         cssArrows: false,
-        delay: 0,
+        delay: 800,
         speed: 'fast',
         speedOut: 'fast'
       });

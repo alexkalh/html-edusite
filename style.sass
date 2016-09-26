@@ -174,55 +174,108 @@ h6
 		margin: 0
 		padding: 0
 
-+new( main_menu, $prefix )
-	+when( right )
-		float: right
-	+has( links )		
-	
-	+has( link )
-		+when( lvl_0 )
-			margin-left: $space--03
-			height: $logo-height			
-			
-			+new-child( main_menu__url, $prefix, '>' )
-				padding: 0 $space--03
-				line-height: $logo-height
-				font-size: $space--04a
-				font-family: $font--heading
-				text-transform: uppercase
-				color: $color__dark--04
-				letter-spacing: 1px
++new( navigation, $prefix )
 
-			+attr( current-menu-item )
-				+new-child( main_menu__url, $prefix, '>' )
-					font-weight: 700
-					color: $color__dark--02
++new( menu, $prefix )
+	+when( default )
+		+new-child( menu, $prefix )
+			+has( link )			
+				+if( firstChild )
+					margin-left: $space--03
+					height: $logo-height
+					
+					& > a
+						padding: 0 $space--03
+						line-height: $logo-height
+						font-size: $space--04a
+						font-family: $font--heading
+						color: $color__dark--04
+						letter-spacing: 1px
+						text-decoration: none
+						text-transform: uppercase
+				
+				+if( current )
+					& > a
+						font-weight: 700
+						color: $color__dark--02
 
-	+has( url )
-		text-decoration: none
-
-+new( menu_icon, $prefix )
-	+when( primary )
-		+new-child( menu_icon, $prefix )
 			+has( icon )
-				color: $color--primary 
+				+if( firstChild )
+					margin-left: $space--03
+					height: $logo-height
+				
+				+when( circle )
+					background-color: $color--primary					
+					+border-radius( 50% )
 
-	+when( circle )
-		background-color: $color--primary
-		+border-radius( 50% )
+					& > a
+						text-decoration: none
+				
+					+new-child( menu__icon, $prefix )
+						+has( icon )
+							display: block
+							color: $color__light--00
+							font-size: $space--04b
+							line-height: $logo-height
+							width: $logo-height
+							text-align: center
+
+				+when( transparent )
+					& > a
+						text-decoration: none
+
+					+new-child( menu__icon, $prefix )
+						+has( icon )
+							display: block
+							font-size: $space--06
+							line-height: $logo-height
+							width: $logo-height
+							text-align: center
+
+	+when( sub )
+		width: $space--16
+		top: $logo-height + $space--06 + $space--01
+		left: 0px
+		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
+
+		+if( rtl )
+			right: 0px
+			left: auto
 		
-		+new-child( menu_icon, $prefix )
-			+has( icon )
-				display: block
-				color: $color__light--00
-				font-size: $space--04b
-				line-height: $logo-height			
+		+new-child( menu, $prefix )
+			+when( sub )
+				top: 0px
+				left: $space--16 + $space--02a
 
-	+when( transparent )				
-		+new-child( menu_icon, $prefix )
-			+has( icon )
-				font-size: $space--06
-				line-height: $logo-height
+				+if( rtl )
+					left: auto
+					right: $space--16 + $space--02a
+
+			+has( link )
+				display: block
+				padding: $space--03 0
+				background-color: $color__light--00
+				border-top: 1px solid $color__light--09
+
+				&:first-child
+					border-top: none
+				
+				& > a					
+					display: block
+					text-decoration: none
+					color: $color__dark--08
+					padding: 0 $space--06
+					line-height: $space--07
+					border-left: $space--01b solid transparent
+					border-right: $space--01b solid transparent
+
+				&:hover
+					background-color: $color--third
+					& > a
+						color: $color__light--00
+						border-left-color: $color--primary
+						border-right-color: $color--primary
+
 
 +new( slider, $prefix )
 	+when( nivo )
@@ -311,6 +364,12 @@ h6
 		+if( primary )
 			background-color: $color--primary
 			color: $color__light--00		
+			a
+				color: $color__light--00
+
+		+if( third )
+			background-color: $color--third
+			color: $color__light--00
 			a
 				color: $color__light--00
 
@@ -1828,7 +1887,7 @@ h6
 		height: $space--13
 		line-height: $space--06
 		text-align: center		
-		padding-top: $space--10
+		padding-top: $space--10 + 4px
 	
 	+if( primary )
 		background-color: $color--primary
