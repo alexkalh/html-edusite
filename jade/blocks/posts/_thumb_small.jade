@@ -1,0 +1,21 @@
+.e-widget.e-posts.e-posts--small_thumb.e-margin_bottom--10
+	.e-caption.e-caption--borderBottomLong.e-padding_bottom--05.e-margin_bottom--05
+		h5.is-md.e-caption__title.clearfix			
+			span.e-caption__text Recent Posts
+	
+	- for (var $i=0; $i<3; $i++)
+		- var $image           = 'demo/posts/small-thumb/1.jpg'
+		- var $post_title      = $e_titles[$i]
+		- var $article_classes = ( 0 == $i ) ? 'is-first' : 'is-other'
+
+		article.e-article.e-article--small_thumb.clearfix( class=$article_classes )
+			img.e-article__thumb(src=$image alt='')
+
+			h6.e-article__title.is-lg
+				a.e-article__link(href=$e_single_url title="") #{$post_title}
+
+			div.e-article__date
+				i.e-article__icon.fa.fa-pencil-square
+				span.e-article__time Posted 1 min ago
+
+

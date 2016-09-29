@@ -276,7 +276,6 @@ h6
 						border-left-color: $color--primary
 						border-right-color: $color--primary
 
-
 +new( slider, $prefix )
 	+when( nivo )
 		position: relative
@@ -526,6 +525,43 @@ h6
 				text-transform: lowercase
 				&:first-letter
 					text-transform: uppercase
+
+	+when( borderBottomLong )
+		position: relative
+		border-bottom: 1px solid $color__light--08
+		
+		&:hover
+			&:before
+				width: 100%
+
+		&:before		
+			content: ''
+			display: block
+			position: absolute
+			bottom: -1px
+			left: 0
+			height: 3px
+			width: $space--10
+			background-color: $color--primary
+			+transition( .5s )
+
+		+new-child( caption, $prefix )
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+			
+			+has( icon )
+				display: block
+				float: left
+				margin-right: $space--03
+				line-height: $space--06
+
+			+has( text )
+				display: block
+				float: left
+				text-transform: uppercase
+				font-weight: 400				
 
 +new( testimonials, $prefix )
 	
@@ -951,7 +987,7 @@ h6
 
 +new( field, $prefix )
 	+if( fullwidth )
-		width: 100%		
+		width: 99%		
 
 	+when( text )
 		padding: 0 $space--04
@@ -1006,6 +1042,11 @@ h6
 		+if( huge )
 			height: $space--10
 			line-height: $space--10
+			
+			option				
+				line-height: $space--06
+				padding: $space--03
+
 
 		+if( solid )
 			border: 1px solid $color__light--10
@@ -1018,87 +1059,6 @@ h6
 			color: $color__dark--05
 			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )			
 		
-	+when( dropdown )
-		position: relative
-		padding: 0		
-		
-		+new-child( field, $prefix )
-			+has( placehold )
-				display: block
-				position: relative
-				width: 100%				
-				cursor: pointer
-				padding: 0 $space--04
-				font-size: $space--04a					
-
-			+has( caret )
-				display: block
-				position: absolute
-				top: 0
-				bottom: 0
-				right: 0
-				color: $color__dark--08
-
-			+has( list )
-				display: none
-				position: absolute					
-				right: -1px
-				left: -1px
-				margin-top: 0
-				margin-bottom: 0
-				padding-left: 0
-				list-style-type: none
-				z-index: 30
-
-			+has( item )
-				position: relative
-				z-index: 20
-				height: $space--07
-				padding-left: $space--07
-				padding-right: $space--07
-				line-height: $space--07
-				cursor: pointer
-				font-size: $space--04a
-				+transition( .25s )
-				&:hover
-					padding-left: $space--08
-					background-color: $color__light--12
-
-		+if( medium )
-			height: $space--07a
-			line-height: $space--07a		
-
-		+if( huge )
-			height: $space--10
-			line-height: $space--10
-
-			+new-child( field, $prefix )
-				+has( placehold )
-					line-height: $space--10
-					height: $space--10
-
-				+has( caret )
-					width: $space--10
-					line-height: $space--10
-					font-size: $space--04c
-					text-align: center
-				
-				+has( list )
-					top: $space--10
-					border: 1px solid $color__light--10
-					background-color: $color__light--00
-
-		+if( solid )
-			border: 1px solid $color__light--10
-			background-color: $color__light--00			
-			color: $color__dark--05
-
-		+if( shadow )
-			background-color: $color__light--14
-			border: 1px solid $color__light--11
-			color: $color__dark--05
-			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )		
-
 +new( intro, $prefix )
 
 	+when( 1st )
@@ -1442,6 +1402,32 @@ h6
 				border: 1px solid $color__dark--05
 				color: $color__light--00
 
++new( footer, $prefix )
+	font-size: $space--04a
+
+	+new-child( widget, $prefix )
+		margin-bottom: $space--08
+
+	+new-child( footer, $prefix )
+		+has( widgets )
+
+			+if( light )	
+				background-color: $color__light--12			
+			
+			+if( dark )
+				background-color: $color__dark--01
+
+		+has( info )			
+
+			+if( light )
+				background-color: $color__light--12
+
+			+if( dark )
+				background-color: $color__dark--01
+
+			+has( right )
+				text-align: right
+
 +new( section, $prefix )
 
 	+new-child( container, $prefix )
@@ -1478,32 +1464,6 @@ h6
 			left: 0
 			right: 0
 			background-color: $color__dark__rgba--02
-
-+new( footer, $prefix )
-	font-size: $space--04a
-
-	+new-child( widget, $prefix )
-		margin-bottom: $space--08
-
-	+new-child( footer, $prefix )
-		+has( widgets )
-
-			+if( light )	
-				background-color: $color__light--12			
-			
-			+if( dark )
-				background-color: $color__dark--01
-
-		+has( info )			
-
-			+if( light )
-				background-color: $color__light--12
-
-			+if( dark )
-				background-color: $color__dark--01
-
-			+has( right )
-				text-align: right
 
 +new( section, $prefix )
 	+if( dark )
@@ -1892,6 +1852,98 @@ h6
 	+if( primary )
 		background-color: $color--primary
 		color: $color__light--00
+
++new( category_list, $prefix )
+	+when( flat )
+		+new-child( category_list, $prefix )
+			+has( container )
+				margin-top: 0
+				margin-bottom: 0
+				padding-left: $space--04
+				list-style-type: square
+				color: $color--primary
+
+			+has( item )
+				padding-top: $space--01a
+				padding-bottom: $space--01a
+
+			+has( link )
+				position: relative
+				display: block
+				text-decoration: none
+				color: $color__dark--06
+
+			+has( count )
+				display: block
+				position: absolute
+				top: 0
+				right: 0
+				color: $color__dark--09
+
++new( archive, $prefix )
+	+when( flat )
+		+new-child( archive, $prefix )
+			+has( container )
+				margin-top: 0
+				margin-bottom: 0
+				padding-left: $space--04
+				list-style-type: square
+				color:  $color--primary
+
+			+has( item )
+				padding-top: $space--01a
+				padding-bottom: $space--01a
+
+			+has( link )
+				position: relative
+				display: block
+				text-decoration: none
+				color: $color__dark--06
+
+			+has( count )
+				display: block
+				position: absolute
+				top: 0
+				right: 0
+				color: $color__dark--09
+
++new( article, $prefix )
+	+when( small_thumb )
+		
+		+if( first )
+			margin-top: 0
+			
+		+if( other )
+			margin-top: $space--07
+
+		+new-child( article, $prefix )
+
+			+has( thumb )
+				display: block
+				float: left
+				margin-right: $space--04
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+				font-weight: 400				
+			
+			+has( link )
+				text-decoration: none
+				color: $color__dark--05
+
+			+has( date )
+				font-size: $space--04a
+				margin-top: $space--03
+				margin-bottom: 0
+
+			+has( icon )
+				+inline-block()
+				color: $color--primary
+				margin-right: $space--01
+
+			+has( time )
+				color: $color__dark--10
 
 // For only demo.
 +new( body, $prefix )
