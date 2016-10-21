@@ -54,7 +54,20 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/blocks/archives/_list_flat.jade
 
 						.col-lg-9
-							.e-col.clearfix
-								
+							.e-col.clearfix								
+								.e-articles--avatar_left
+									include jade/blocks/blog/default/_standart.jade
+									
+									include jade/blocks/blog/default/_gallery.jade
+
+									include jade/blocks/blog/default/_video.jade
+
+									include jade/blocks/blog/default/_quote.jade									
+									
+									include jade/blocks/blog/default/_audio.jade
+
+								.row
+									.col-lg-10.col-lg-push-2
+										include jade/blocks/pagination/_second.jade
 
 		include jade/_footer.jade

@@ -1,5 +1,5 @@
 "use strict";
-var Edusite, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Hack, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial;
+var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Gallery, Edusite_Hack, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
@@ -8,7 +8,10 @@ jQuery(document).ready(function($) {
   Edusite_Course.init('carousel');
   Edusite_Testimonial.init('carousel');
   Edusite_Testimonial.init('carouselSingle');
-  Edusite_Progress_Bar.init('1st');
+  Edusite_Progress_Bar.init('default');
+  Edusite_Gallery.init('default');
+  Edusite_Video.init('responsive');
+  Edusite_Audio.init('mediaelementplayer');
 });
 
 jQuery(window).on('load', function($) {
@@ -119,11 +122,11 @@ Edusite_Count_Down = {
 
 Edusite_Progress_Bar = {
   init: function(type) {
-    if ('1st' === type) {
-      Edusite_Progress_Bar.init_style_1st();
+    if ('default' === type) {
+      Edusite_Progress_Bar.init_style_default();
     }
   },
-  init_style_1st: function() {
+  init_style_default: function() {
     var $bars;
     $bars = jQuery('.e-progress_bar--1st');
     if ($bars.length) {
@@ -228,4 +231,50 @@ Edusite_Testimonial = {
 
 Edusite_Effect = {
   init: function(type) {}
+};
+
+Edusite_Gallery = {
+  init: function(stype) {
+    if ('default' === stype) {
+      Edusite_Gallery.init_style_default();
+    }
+  },
+  init_style_default: function() {
+    var $galleries;
+    $galleries = jQuery("[data-role='gallery'][data-style='default']").not("[data-state='bound']");
+    if ($galleries.length) {
+      jQuery.each($galleries, function() {
+        jQuery(this).find('.owl-carousel').owlCarousel({
+          items: 1,
+          singleItem: true,
+          pagination: false,
+          navigation: true,
+          theme: 'e-owl--default',
+          navigationText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>']
+        });
+      });
+    }
+  }
+};
+
+Edusite_Video = {
+  init: function(stype) {
+    if ('responsive' === stype) {
+      Edusite_Video.init_responsive();
+    }
+  },
+  init_responsive: function() {
+    jQuery('body').fitVids();
+  }
+};
+
+Edusite_Audio = {
+  init: function(stype) {
+    if ('mediaelementplayer' === stype) {
+      Edusite_Audio.init_mediaelementplayer();
+    }
+  },
+  init_mediaelementplayer: function() {
+    jQuery('audio').mediaelementplayer();
+  }
 };

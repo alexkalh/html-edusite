@@ -1,0 +1,45 @@
+article.e-article.e-article--avatar_left( class=$article_class )
+	.row
+		.col-lg-2
+			.e-article__author.e-user.e-user--name_bottom
+				img.e-user__img.clearfix( src='demo/blog/default/user.jpg' alt='' )
+				a.e-user__link.clearfix( href='#' )
+					span.e-user__name by Massa						
+
+
+		.col-lg-10
+			.e-article__main_content
+				.e-article__audio
+					audio.e-audio_player--default( width="100%" )
+						source( src="demo/audio/horse.ogg" type="audio/ogg" )
+						source( src="demo/audio/horse.mp3" type="audio/mpeg" )
+
+				h4.e-article__title.is-sm
+					a.e-article__link.is-uppercase( href=$e_single_url title="" ) Your one stop solution for development needs
+					
+				
+				.e-article__metadata.e-metadata.e-metadata--secondary.clearfix
+					span.e-metadata__item.e-metadata__item--icon
+						i.e-metadata__item__icon.fa.fa-calendar
+						span.e-metadata__item__text 26 April 2016
+					
+					span.e-metadata__item.e-metadata__item--icon
+						i.e-metadata__item__icon.fa.fa-comments-o
+						span.e-metadata__item__text 1.335 Comments
+
+					span.e-metadata__item.e-metadata__item--icon
+						i.e-metadata__item__icon.fa.fa-heart
+						span.e-metadata__item__text 1.235 Likes
+					
+					span.e-metadata__item.e-metadata__item--icon
+						i.e-metadata__item__icon.fa.fa-eye
+						span.e-metadata__item__text 356 Views
+
+				.e-article__excerpt.clearfix
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
+				
+				.e-article__more.e-margin_top--04.clearfix
+					a.e-button.e-button--icon_right.is-large.is-primary.is-uppercase( href=$e_single_url )
+						span.e-button__text Read More
+						i.e-button__icon.fa.fa-sign-out
+			.e-article__divider							

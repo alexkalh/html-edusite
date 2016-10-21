@@ -75,7 +75,12 @@ h4
 		font-size: 24px
 		line-height: round( 24px * 1.3333 )
 		margin: round( 24px / 3 ) 0
-
+	
+	&.is-sm	
+		font-size: $space--05
+		line-height: round( $space--05 * 1.3333 )
+		margin: round( $space--05 / 3 ) 0
+	
 h5
 	&,
 	&.is-md
@@ -375,6 +380,39 @@ h6
 	+when( solid )
 		+if( primary )
 			border: 1px solid $color--primary
+	
+	+when( icon_right )
+		position: relative
+		
+		+if( uppercase )
+			text-transform: uppercase
+			letter-spacing: 1px
+
+		+if( primary )
+			background-color: $color--primary			
+			
+			&:hover
+				+new-child( button, $prefix )
+					+has( icon )
+						background-color: $color--third
+						color: $color__light--00
+
+			+new-child( button, $prefix )
+				+has( text )
+					color: $color__light--00
+
+				+has( icon )
+					+transition_m( background-color, .25s )
+					display: block
+					position: absolute
+					top: 0
+					right: $space--09 * -1
+					height: $space--09
+					width: $space--09
+					line-height: $space--09
+					text-align: center
+					background-color: $color__light--10
+					color: $color__dark--05
 
 +new( caption, $prefix )
 
@@ -1319,7 +1357,6 @@ h6
 				font-size: $space--05
 
 +new( info, $prefix )
-	
 	+when( iconLeft )
 		position: relative
 		padding-left: $space--05
@@ -1945,6 +1982,304 @@ h6
 			+has( time )
 				color: $color__dark--10
 
++new( tags, $prefix )
+	+when( cloud )
+		+new-child( tags, $prefix )
+			+has( outter )
+				margin-top: $space--03 * -1
+				margin-left: $space--03 * -1
+
+		+new-child( tag, $prefix )
+			+when( solid )
+				display: block
+				float: left
+				margin-top: $space--03
+				margin-left: $space--03
+				padding: $space--01a $space--03
+				line-height: $space--06a
+				border: 1px solid $color__light--10
+				color: $color__dark--08
+				text-decoration: none
+				+transition( .25s )
+				&:hover
+					background-color: $color--primary
+					border-color: darken( $color--primary, 2 )
+					color: $color__light--00
+					+border-radius( $space--04c )
+
++new( article, $prefix )
+	+when( avatar_left )
+		
+		+if( first )
+
+		+if( other )
+
+		+new-child( article, $prefix )
+			+has( divider )
+				margin-top: $space--07
+				padding-top: $space--07
+				border-top: 1px solid $color__light--06
+
+			+has( main_content )
+				+if( quote )
+					position: relative
+					background-color: $color__light--13
+					padding: $space--08 $space--07 $space--04 $space--07
+					border-left: $space--0 solid $color--primary
+
+					+new-child( article, $prefix )
+						+has( icon )
+							display: block
+							position: absolute
+							top: $space--07
+							right: $space--07
+							height: $space--09
+							width: $space--09
+							line-height: $space--09
+							color: $color__light--08
+							font-size: $space--09						
+
+			+has( thumb )
+				margin: 0 0 $space--07 0				
+				padding: 0
+			
+			+has( gallery )
+				margin-bottom: $space--07
+
+			+has( video )
+				margin-bottom: $space--07
+	
+			+has( audio )
+				margin-bottom: $space--07
+
+			+has( img )
+				display: block
+				max-width: 100%
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: $space--05
+				font-weight: 400
+
+			+has( link )
+				color: $color__dark--05
+				text-decoration: none				
+				+if( uppercase )
+					text-transform: uppercase
+
+			+has( metadata )
+				padding-top: $space--04
+				border-top: 1px solid $color__light--06
+			
+			+has( excerpt )
+				margin-top: $space--04
+
+			+has( author )
+				+attr( user, $prefix )
+					+when( name_bottom )
+						position: relative
+
+						&:after
+							display: block
+							position: absolute
+							content: ''
+							top: ( $space--09 - ( $space--0 / 2 ) )
+							right: ( $space--05 * -1 )							
+							height: $space--0
+							width: $space--06b
+							background-color: $color__light--09
+
+
+
+
+
++new( quote, $prefix )
+	+when( default )
+		+new-child( quote, $prefix )
+			+has( author )
+				margin-top: $space--07
+				+has( link )
+					text-decoration: none
+
++new( user, $prefix )
+	+when( name_bottom )
+		text-align: center
+
+		+new-child( user, $prefix )
+			+has( img )
+				+inline-block()
+				+border-radius( 50% )
+
+			+has( link )
+				+inline-block()
+				+border-radius( $space--01a )
+				text-decoration: none
+				padding: $space--01a
+				background-color: $color--primary
+				color: $color__light--00				
+				margin-top: $space--03
+				position: relative
+
+				&:before
+					display: block
+					content: ''
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: 0 5px 6px 5px
+					border-color: transparent transparent $color--primary
+					position: absolute
+					top: -6px
+					left: 50%
+					margin-left: -5px
+
++new( gallery, $prefix )
+	+when( default )
+		+new-child( gallery, $prefix )
+			+has( img )
+				display: block
+
++new ( owl, $prefix )
+	+when( default )
+		position: relative
+
+		.owl-controls		
+			+clearfix()
+			position: absolute
+			left: 0
+			right: 0
+			top: 50%
+			margin-top: ( $space--10 * -1/2 )
+			height: $space--10
+			line-height: $space--10
+
+		.owl-prev, .owl-next
+			+transition( .25s )
+			display: block
+			height: $space--10
+			width: $space--10
+			text-align: center
+			background-color: $color__dark__rgba--01
+			color: $color__light--00
+			&:hover
+				+border-radius( 50% )
+
+		.owl-prev
+			float: left
+			margin-left: $space--02
+
+		.owl-next
+			float: right
+			margin-right: $space--02
+
++new( metadata, $prefix )
+	+when( secondary )
+		font-size: $space--04a
+		+new-child( metadata, $prefix )
+
+			+has( item )
+				&:last-child
+					padding-right: 0
+					border-right: none
+				display: block
+				float: left
+				margin-right: $space--04
+				padding-right: $space--04
+				border-right: 1px solid $color__light--06
+
+				+when( text )					
+					+new-child( metadata__item, $prefix )
+						+has( label )
+							+inline-block()
+							margin-right: $space--01a
+						+has( link )
+							+inline-block()
+							text-decoration: none
+
+				+when( icon )					
+					+new-child( metadata__item, $prefix )
+						+has( icon )
+							+inline-block()
+							margin-right: $space--01a							
+							color: $color--primary
+
+						+has( text )
+							+inline-block()
+
++new( pagination_loadmore, $prefix )
+	+when( default )
+		text-align: center
+		
+		+new-child( pagination_loadmore, $prefix )
+			+has( link )
+				+inline-block()
+				text-decoration: none
+
+			+has( icon )
+				+inline-block()
+				height: $space--10
+				line-height: $space--10
+				width: $space--10
+				text-align: center
+				+border-radius( 50% )
+				color: $color__light--00
+				font-size: $space--05
+				background-color: $color--primary
+			
+			+has( label )
+				display: block
+				color: $color__dark--05				
+				text-transform: uppercase
+				letter-spacing: 2px
+				margin-bottom: 0
+				margin-top: $space--05
+
+
+
+// WordPress: default markup
++new( pagination, $prefix )
+	+when( second )		
+		.page-numbers
+			&.prev
+				float: left
+				margin-left: 0
+			&.next
+				float: right
+				margin-right: 0
+
+nav.navigation
+	margin-top: $space--07
+	.nav-links		
+		+clearfix()
+		text-align: center
+
+	.page-numbers
+		+inline-block()
+		height: $space--10
+		line-height: $space--10
+		min-width: $space--10
+		width: $space--10
+		width: auto
+		margin-left: $space--04 / 2
+		margin-right: $space--04 / 2
+		border: 1px solid $color__light--08
+		background-color: $color__light--12a
+		color: $color__dark--05
+		+transition( .25s )		
+	
+		&.current
+			background-color: $color--primary
+			color: $color__light--00
+			border-color: $color__light--00
+
+		&:hover
+			background-color: $color__light--00
+			color: $color--primary
+			border-color: $color--primary
+
+	a
+		text-decoration: none
+
 // For only demo.
 +new( body, $prefix )
 	+when( home )
@@ -1992,30 +2327,8 @@ h6
 				+when( '01' )
 					background-color: $color__light--12
 
-// WordPress: default markup
-nav.navigation
-	margin-top: $space--07
-	.nav-links		
-		text-align: center
++new( body_blog, $prefix )
+	+when( two_cols )
+		+new-child( main_content, $prefix )
+			background-color: $color__light--12
 
-	.page-numbers
-		+inline-block()
-		height: $space--10
-		line-height: $space--10
-		min-width: $space--10
-		width: $space--10
-		width: auto
-		margin-left: $space--04 / 2
-		margin-right: $space--04 / 2
-		border: 1px solid $color__light--08
-		background-color: $color__light--12a
-		color: $color__dark--05
-		+transition( .25s )		
-
-		&:hover
-			background-color: $color--primary
-			color: $color__light--00
-			border-color: $color__light--00
-
-	a
-		text-decoration: none

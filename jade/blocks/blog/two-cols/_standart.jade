@@ -1,0 +1,18 @@
+- var $post_title = $e_titles[0]
+article.e-article.e-article--fullBg.e-margin_bottom--11
+	img(src=$image alt='')
+
+	.e-article__outter
+		.e-article__inner
+			div.e-article__date
+				span.e-article__day 09
+				span.e-article__month_year Aug, 16
+
+			h5.e-article__title.is-xs
+				a.e-article__link(href=$e_single_url title="") #{$post_title}
+
+			p.e-article__excerpt #{$e_excerpt}								
+
+			a.e-readmore.e-readmore--arrow.e-margin_top--05(href=$e_single_url)
+				span.e-readmore__text Read More
+				i.e-readmore__icon.icon-arrows-slim-right

@@ -7,7 +7,10 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Course.init( 'carousel' )	
 	Edusite_Testimonial.init( 'carousel' )
 	Edusite_Testimonial.init( 'carouselSingle' )
-	Edusite_Progress_Bar.init( '1st' )
+	Edusite_Progress_Bar.init( 'default' )
+	Edusite_Gallery.init( 'default' )
+	Edusite_Video.init( 'responsive' )
+	Edusite_Audio.init( 'mediaelementplayer' )
 	return
 
 jQuery( window ).on 'load', ( $ ) ->
@@ -112,11 +115,11 @@ Edusite_Count_Down =
 
 Edusite_Progress_Bar = 
 	init: ( type ) ->		
-		if '1st' == type
-			Edusite_Progress_Bar.init_style_1st()
+		if 'default' == type
+			Edusite_Progress_Bar.init_style_default()
 		return
 
-	init_style_1st: () ->
+	init_style_default: () ->
 
 		$bars = jQuery '.e-progress_bar--1st'
 
@@ -225,4 +228,47 @@ Edusite_Testimonial =
 
 Edusite_Effect =
 	init: ( type )->
+		return
+
+Edusite_Gallery =
+	init: ( stype )->
+		if 'default' == stype
+			Edusite_Gallery.init_style_default()
+		return
+
+	init_style_default: () ->
+
+		$galleries = jQuery("[data-role='gallery'][data-style='default']").not("[data-state='bound']")
+		
+		if $galleries.length
+			jQuery.each $galleries, () ->
+				
+				jQuery( @ ).find( '.owl-carousel' ).owlCarousel
+					items: 1
+					singleItem: true
+					pagination: false
+					navigation: true
+					theme: 'e-owl--default'
+					navigationText: [ '<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>' ]
+
+				return
+
+		return
+
+Edusite_Video =
+	init: ( stype )->
+		if 'responsive' == stype
+			Edusite_Video.init_responsive()
+		return
+	init_responsive: ()->
+		jQuery('body').fitVids()
+		return
+
+Edusite_Audio =
+	init: ( stype ) ->
+		if 'mediaelementplayer' == stype
+			Edusite_Audio.init_mediaelementplayer()
+		return
+	init_mediaelementplayer: ()->
+		jQuery('audio').mediaelementplayer()
 		return
