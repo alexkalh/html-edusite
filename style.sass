@@ -414,6 +414,12 @@ h6
 					background-color: $color__light--10
 					color: $color__dark--05
 
+	+when( icon_left )
+		+new-child( button, $prefix )
+			+has( icon )
+				+inline-block()
+				margin-right: $space--05
+
 +new( caption, $prefix )
 
 	+when( default )
@@ -1417,14 +1423,14 @@ h6
 			+has( date )
 				margin-top: $space--03
 
-+new( socials, $prefix )
++new( social, $prefix )
 	+when( default )
 		list-style-type: none
 		padding-left: 0
 		margin-top: 0
 		margin-bottom: 0
 
-		+new-child( socials, $prefix )
+		+new-child( social, $prefix )
 			+has( item )
 				+inline-block()
 
@@ -1438,6 +1444,37 @@ h6
 				background-color: $color__dark--05
 				border: 1px solid $color__dark--05
 				color: $color__light--00
+
++new( social, $prefix )
+	+when( solid_circle )
+		list-style-type: none
+		padding-left: 0
+		margin-top: 0
+		margin-bottom: 0
+
+		+new-child( social, $prefix )
+			+has( item )
+				+inline-block()
+				margin-left: $space--0
+				margin-right: $space--0
+
+			+has( link )
+				+border-radius( 50% )
+				+transition_m( background-color, .25s )
+				+transition_m( border-color, .25s )
+				display: block
+				height: $space--07
+				line-height: $space--07
+				width: $space--07
+				text-align: center
+				background-color: $color__light--00
+				border: 1px solid $color__light--10
+				color: $color--third
+				&:hover
+					background-color: $color--primary
+					border-color: $color--primary
+					color: $color__light--00
+
 
 +new( footer, $prefix )
 	font-size: $space--04a
@@ -1501,6 +1538,10 @@ h6
 			left: 0
 			right: 0
 			background-color: $color__dark__rgba--02
+	
+	+with( overlay_primary )
+		&::before
+			background-color: $color__primary__rgba--01
 
 +new( section, $prefix )
 	+if( dark )
@@ -1554,9 +1595,9 @@ h6
 				+if( shadow )
 
 
-		+new-child( socials, $prefix )
+		+new-child( social, $prefix )
 			+when( default )
-				+new-child( socials, $prefix )
+				+new-child( social, $prefix )
 					+has( link )					
 						border-color: $color__dark--05a
 
@@ -1605,12 +1646,18 @@ h6
 	+when( box )
 		display: block
 		background-color: $color__light--00
-		position: relative
-		padding: $space--09
+		position: relative		
 		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 		+transition( .25s )
 		&:hover
 			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
+		
+		+if( lg )
+		+if( md )
+			padding: $space--09
+		+if( sm )
+			padding: $space--05
+		+if( xs )
 
 +new( space, $prefix )
 	+when( '07' )
@@ -2089,10 +2136,6 @@ h6
 							width: $space--06b
 							background-color: $color__light--09
 
-
-
-
-
 +new( quote, $prefix )
 	+when( default )
 		+new-child( quote, $prefix )
@@ -2234,7 +2277,135 @@ h6
 				margin-bottom: 0
 				margin-top: $space--05
 
++new( page_title, $prefix )
+	+when( default )		
+		+new-child( page_title, $prefix )		
+			+has( subtitle )
+				margin-top: 0
+				margin-bottom: $space--04
+				font-weight: 400
 
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+				font-weight: 400
+				+if( uppercase )
+					text-transform: uppercase
+
+			+has( action )
+				display: block
+				margin-top: $space--07
+				margin-bottom: 0
+				font-weight: 400
+				font-size: $space--06
+				line-height: $space--06
+				text-decoration: none
+
+				+has( icon )
+					+inline-block()
+					margin-right: $space--04
+				+has( text )
+					+inline-block()
+
++new( section, $prefix )
+	+when( dark )
+		+new-child( page_title, $prefix )
+			+when( default )
+				+new-child( page_title, $prefix )
+					+has( subtitle )
+						color: $color__light--00
+					+has( title )
+						color: $color__light--00
+					+has( action )
+						color: $color__light--00				
+
++new( video, $prefix )
+	+when( course )
+		+new-child( video, $prefix )
+			+has( container )
+				position: relative
+
+			+has( cover )
+				display: block
+				width: 100%
+				height: auto
+
+			+has( overlay )
+				display: block				
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				background-color: $color__dark__rgba--01
+
+			+has( link )
+				display: block				
+				position: absolute
+				top: 50%
+				left: 50%
+				width: $space--12
+				height: $space--12
+				line-height: $space--12
+				margin-top: ( $space--07a * -1 )
+				margin-left: ( $space--07a * -1 )
+				font-size: $space--12
+				text-decoration: none
+
+			+has( icon )
+
++new( course_summary, $prefix )
+	+when( simple )
+		+new-child( course_summary, $prefix )
+			+has( add_to_cart )
+				+new-child( button, $prefix )
+					width: 100%
+					text-align: center
+
++new( list, $prefix )
+	+when( centered )
+		+new-child( list, $prefix )
+			+has( item )
+
+			+has( key )
+				+has( icon )
+					+inline-block()
+					color: $color--primary
+					margin-right: $space--04
+
+				+has( text )
+					color: $color__dark--05
+
+			+has( value )
+				color: $color__light--02
+
++new( author, $prefix )
+	+when( socials_card )
+		text-align: center
+
+		+new-child( author, $prefix )
+			+has( avatar )
+				margin: 0 0 $space--04 0				
+
+			+has( img )
+				+border-radius( 50% )
+				+inline-block()
+				border: 1px solid $color__light--10
+				overflow: hidden				
+
+			+has( name )
+				margin-top: $space--02
+				margin-bottom: 0
+				color: $color--third
+				font-weight: 400
+				+if( uppercase )
+					text-transform: uppercase
+
+			+has( jobs )
+				margin-top: $space--01
+				margin-bottom: 0
+				color: $color__dark--07
+				font-weight: 400
 
 // WordPress: default markup
 +new( pagination, $prefix )
@@ -2302,7 +2473,7 @@ nav.navigation
 		+new-child( demo, $prefix )
 			+has( row )
 				+when( '0' )
-					background: url( demo/bg/breadcrumb.jpg ) repeat-y center center transparent
+					background: url( demo/bg/cover.jpg ) repeat-y center center transparent
 					background-attachment: scroll
 	
 					+with( overlay )

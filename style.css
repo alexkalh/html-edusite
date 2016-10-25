@@ -950,6 +950,12 @@ h6.is-lg {
   background-color: #e7e7e7;
   color: #333333;
 }
+.e-button--icon_left .e-button__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-right: 20px;
+}
 .e-caption--default__title {
   text-transform: uppercase;
   font-weight: 400;
@@ -1924,18 +1930,18 @@ h6.is-lg {
 .e-tweets--list .e-tweets__date {
   margin-top: 10px;
 }
-.e-socials--default {
+.e-social--default {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-.e-socials--default .e-socials__item {
+.e-social--default .e-social__item {
   display: inline-block;
   *display: inline;
   zoom: 1;
 }
-.e-socials--default .e-socials__link {
+.e-social--default .e-social__link {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -1947,6 +1953,46 @@ h6.is-lg {
   text-align: center;
   background-color: #333333;
   border: 1px solid #333333;
+  color: white;
+}
+.e-social--solid_circle {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.e-social--solid_circle .e-social__item {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.e-social--solid_circle .e-social__link {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  transition: background-color 0.25s;
+  -ms-transition: background-color 0.25s;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  transition: border-color 0.25s;
+  -ms-transition: border-color 0.25s;
+  -webkit-transition: border-color 0.25s;
+  -moz-transition: border-color 0.25s;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #e7e7e7;
+  color: #252d3b;
+}
+.e-social--solid_circle .e-social__link:hover {
+  background-color: #ff7f00;
+  border-color: #ff7f00;
   color: white;
 }
 .e-footer {
@@ -1998,6 +2044,9 @@ h6.is-lg {
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
+.e-section.has-overlay_primary::before {
+  background-color: rgba(255, 127, 0, 0.6);
+}
 .e-section.is-dark .e-caption--borderBottom:before {
   background-color: #888888;
 }
@@ -2034,7 +2083,7 @@ h6.is-lg {
   -ms-border-radius: 2px;
   border-radius: 2px;
 }
-.e-section.is-dark .e-socials--default .e-socials__link {
+.e-section.is-dark .e-social--default .e-social__link {
   border-color: #373737;
 }
 .e-breadcrumb--centered .e-breadcrumb__title {
@@ -2082,7 +2131,6 @@ h6.is-lg {
   display: block;
   background-color: white;
   position: relative;
-  padding: 45px;
   box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
   -ms-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
   -moz-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
@@ -2095,6 +2143,12 @@ h6.is-lg {
   -ms-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
   -moz-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
   -webkit-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
+}
+.e-col--box.is-md {
+  padding: 45px;
+}
+.e-col--box.is-sm {
+  padding: 20px;
 }
 .e-space--07 {
   height: 30px;
@@ -2735,6 +2789,127 @@ h6.is-lg {
   margin-bottom: 0;
   margin-top: 20px;
 }
+.e-page_title--default .e-page_title__subtitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.e-page_title--default .e-page_title__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+.e-page_title--default .e-page_title__title.is-uppercase {
+  text-transform: uppercase;
+}
+.e-page_title--default .e-page_title__action {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  text-decoration: none;
+}
+.e-page_title--default .e-page_title__action__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-right: 15px;
+}
+.e-page_title--default .e-page_title__action__text {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.e-section--dark .e-page_title--default .e-page_title__subtitle {
+  color: white;
+}
+.e-section--dark .e-page_title--default .e-page_title__title {
+  color: white;
+}
+.e-section--dark .e-page_title--default .e-page_title__action {
+  color: white;
+}
+.e-video--course .e-video__container {
+  position: relative;
+}
+.e-video--course .e-video__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.e-video--course .e-video__overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.e-video--course .e-video__link {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  font-size: 70px;
+  text-decoration: none;
+}
+.e-course_summary--simple .e-course_summary__add_to_cart .e-button {
+  width: 100%;
+  text-align: center;
+}
+.e-list--centered .e-list__key__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  color: #ff7f00;
+  margin-right: 15px;
+}
+.e-list--centered .e-list__key__text {
+  color: #333333;
+}
+.e-list--centered .e-list__value {
+  color: #ababab;
+}
+.e-author--socials_card {
+  text-align: center;
+}
+.e-author--socials_card .e-author__avatar {
+  margin: 0 0 15px 0;
+}
+.e-author--socials_card .e-author__img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  border: 1px solid #e7e7e7;
+  overflow: hidden;
+}
+.e-author--socials_card .e-author__name {
+  margin-top: 7px;
+  margin-bottom: 0;
+  color: #252d3b;
+  font-weight: 400;
+}
+.e-author--socials_card .e-author__name.is-uppercase {
+  text-transform: uppercase;
+}
+.e-author--socials_card .e-author__jobs {
+  margin-top: 4px;
+  margin-bottom: 0;
+  color: #666666;
+  font-weight: 400;
+}
 .e-pagination--second .page-numbers.prev {
   float: left;
   margin-left: 0;
@@ -2803,7 +2978,7 @@ nav.navigation a {
   background-attachment: fixed;
 }
 .e-body--sub .e-demo__row--0 {
-  background: url(demo/bg/breadcrumb.jpg) repeat-y center center transparent;
+  background: url(demo/bg/cover.jpg) repeat-y center center transparent;
   background-attachment: scroll;
 }
 .e-body--sub .e-demo__row--0.has-overlay::before {
