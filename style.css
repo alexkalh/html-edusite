@@ -2910,6 +2910,136 @@ h6.is-lg {
   color: #666666;
   font-weight: 400;
 }
+.e-lectures--carousel {
+  overflow-x: hidden;
+}
+.e-lecture--with_mask {
+  position: relative;
+}
+.e-lecture--with_mask .e-lecture__bg_img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.e-lecture--with_mask .e-lecture__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.e-lecture--with_mask .e-lecture__details {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 20;
+}
+.e-lecture--with_mask .e-lecture__number__label {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  font-size: 18px;
+  color: #ff7f00;
+  font-family: "Montserrat", sans-serif;
+  margin-right: 7px;
+}
+.e-lecture--with_mask .e-lecture__number__label.is-uppercase {
+  text-transform: uppercase;
+}
+.e-lecture--with_mask .e-lecture__number__value {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  font-size: 24px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.e-lecture--with_mask .e-lecture__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.e-lecture--with_mask .e-lecture__url {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+}
+.e-lecture--with_mask .e-lecture__metadata {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 10;
+}
+.e-metadata--lecture .e-metadata__item--icon_left .e-metadata__item__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-right: 10px;
+  color: #ff7f00;
+}
+.e-metadata--lecture .e-metadata__item--icon_left .e-metadata__item__text {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  font-family: "Montserrat", sans-serif;
+  color: #ff7f00;
+}
+.e-owl--bottom_navigation .e-owl__arrow {
+  display: block;
+  font-size: 10px;
+  line-height: 38px;
+  height: 38px;
+  width: 38px;
+  text-align: center;
+}
+.e-owl--bottom_navigation .owl-controls {
+  text-align: center;
+  position: relative;
+}
+.e-owl--bottom_navigation .owl-buttons:before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 0;
+  top: 50%;
+  margin-top: -0.5px;
+  left: 15px;
+  right: 15px;
+  border-top: 1px solid #e5e5e5;
+}
+.e-owl--bottom_navigation .owl-prev, .e-owl--bottom_navigation .owl-next {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -ms-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(150, 150, 150, 0.3);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.e-owl--bottom_navigation .owl-prev:hover, .e-owl--bottom_navigation .owl-next:hover {
+  box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
+  -ms-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
+}
+.e-owl--bottom_navigation .owl-prev {
+  margin-right: 4px;
+}
+.e-owl--bottom_navigation .owl-next {
+  margin-left: 4px;
+}
 .e-pagination--second .page-numbers.prev {
   float: left;
   margin-left: 0;

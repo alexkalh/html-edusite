@@ -1,0 +1,25 @@
+.e-widget.e-lectures.e-lectures--carousel.e-margin_bottom--04
+	.row
+		.owl-carousel
+			- for (var $i=0; $i<6; $i++)
+				- var $image = 'demo/lectures/carousel/1.jpg'
+				.col-xs-12
+					article.e-lecture.e-lecture--with_mask.e-margin_bottom--09
+						img.e-lecture__bg_img.img-responsive(src=$image title='')
+						.e-lecture__overlay
+						.e-lecture__details
+							p.e-lecture__number
+								span.e-lecture__number__label.is-uppercase Lecture
+								span.e-lecture__number__value 1.#{$i+1}
+
+							h5.e-lecture__title.is-md
+								a.e-lecture__url(href='#' title='') #{$e_titles[$i]}
+
+						.e-lecture__metadata.e-metadata.e-metadata--lecture.clearfix
+							.e-metadata__item.e-metadata__item--icon_left.pull-left
+								i.e-metadata__item__icon.fa.fa-play
+								span.e-metadata__item__text Video
+
+							.e-metadata__item.e-metadata__item--icon_left.pull-right
+								i.e-metadata__item__icon.fa.fa-clock-o
+								span.e-metadata__item__text 25 Mins

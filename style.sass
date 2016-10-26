@@ -9,12 +9,12 @@
 body
 	font-family: $font--content
 	font-size: $space--04
-	line-height: $space--06	
+	line-height: $space--06
 	color: $color__dark--08
 
 h1, h2, h3, h4, h5, h6
 	font-family: $font--heading
-	color: $color__dark--03	
+	color: $color__dark--03
 
 p, dl, multicol
 	margin-top: 0
@@ -65,7 +65,7 @@ h3
 
 	&,
 	&.is-md
-		font-size: 46px 
+		font-size: 46px
 		line-height: round( 46px * 1.3333 )
 		margin: round( 46px / 3 ) 0
 
@@ -75,12 +75,12 @@ h4
 		font-size: 24px
 		line-height: round( 24px * 1.3333 )
 		margin: round( 24px / 3 ) 0
-	
-	&.is-sm	
+
+	&.is-sm
 		font-size: $space--05
 		line-height: round( $space--05 * 1.3333 )
 		margin: round( $space--05 / 3 ) 0
-	
+
 h5
 	&,
 	&.is-md
@@ -134,8 +134,8 @@ h6
 	+has ( links )
 		list-style-type: none
 		padding-left: 0
-		margin: $space--04 0			
-	
+		margin: $space--04 0
+
 	+has( link )
 		+when( lvl_0 )
 			+inline-block
@@ -150,19 +150,19 @@ h6
 					content: ''
 					top: 3px
 					bottom: 3px
-					left: -3px				
-					width: 2px 
-					background-color: $color__light--06			
+					left: -3px
+					width: 2px
+					background-color: $color__light--06
 					transform: skewX(160deg)
 
 
-	+has( url )		
+	+has( url )
 		&:link, &:visited
 			color: $color__light--06
-		text-decoration: none		
+		text-decoration: none
 		+transition_m( color, 0.25s )
 		&:hover
-			color: $color--primary		
+			color: $color--primary
 
 +new( header_bottom, $prefix )
 	+when( fixed )
@@ -184,11 +184,11 @@ h6
 +new( menu, $prefix )
 	+when( default )
 		+new-child( menu, $prefix )
-			+has( link )			
+			+has( link )
 				+if( firstChild )
 					margin-left: $space--03
 					height: $logo-height
-					
+
 					& > a
 						padding: 0 $space--03
 						line-height: $logo-height
@@ -198,7 +198,7 @@ h6
 						letter-spacing: 1px
 						text-decoration: none
 						text-transform: uppercase
-				
+
 				+if( current )
 					& > a
 						font-weight: 700
@@ -208,14 +208,14 @@ h6
 				+if( firstChild )
 					margin-left: $space--03
 					height: $logo-height
-				
+
 				+when( circle )
-					background-color: $color--primary					
+					background-color: $color--primary
 					+border-radius( 50% )
 
 					& > a
 						text-decoration: none
-				
+
 					+new-child( menu__icon, $prefix )
 						+has( icon )
 							display: block
@@ -246,7 +246,7 @@ h6
 		+if( rtl )
 			right: 0px
 			left: auto
-		
+
 		+new-child( menu, $prefix )
 			+when( sub )
 				top: 0px
@@ -264,8 +264,8 @@ h6
 
 				&:first-child
 					border-top: none
-				
-				& > a					
+
+				& > a
 					display: block
 					text-decoration: none
 					color: $color__dark--08
@@ -287,7 +287,7 @@ h6
 		&::before
 			display: block
 			position: absolute
-			content: ''			
+			content: ''
 			top: 0px
 			left: 0px
 			bottom: 0px
@@ -295,23 +295,23 @@ h6
 			z-index: 10
 			background-color: $color__dark--00
 			+opacity( .5 )
-	
+
 +new( slide, $prefix )
 	+when( nivo )
 		position: relative
-		background: transparent		
+		background: transparent
 		margin-bottom: $space--14
 
 	+has( title )
 		font-size: $space--11
 		line-height: $space--13
-		font-weight: 700		
+		font-weight: 700
 		text-transform: uppercase
 		color: $color--primary
 		width: 50%
 		margin: 0
 
-	+has( subtitle )		
+	+has( subtitle )
 		font-size: $space--09
 		line-height: $space--11
 		text-transform: uppercase
@@ -321,7 +321,7 @@ h6
 
 	+has( excerpt )
 		color: $color__light--00
-		width: 50%		
+		width: 50%
 
 +new( button, $prefix )
 	+inline-block()
@@ -329,27 +329,27 @@ h6
 	font-family: $font--heading
 	font-weight: 400
 	letter-spacing: 1px
-	text-decoration: none	
-	
+	text-decoration: none
+
 	+if( uppercase )
-		text-transform: uppercase	
+		text-transform: uppercase
 
 	+if( huge )
 		height: $space--10
 		line-height: $space--10
-		padding: 0 $space--10	
+		padding: 0 $space--10
 		font-size: 14px
 
 	+if( large )
 		height: $space--09
 		line-height: $space--09
-		padding: 0 $space--07			
+		padding: 0 $space--07
 		font-size: 14px
-		
+
 	+if( medium )
 		height: $space--08 * 0.875
 		line-height: $space--08 * 0.875
-		padding: 0 $space--04		
+		padding: 0 $space--04
 		font-size: 14px
 
 	+if( small )
@@ -358,16 +358,16 @@ h6
 		padding: 0 $space--02a
 		font-size: $space--03b
 
-	+if( shadow )		
+	+if( shadow )
 		+box-shadow( -1px, 1px, 2px, -1px, darken( $color--primary, 10 ) )
-	
+
 	+if( round )
 		+border-radius( $space--0 )
 
 	+when( fill )
 		+if( primary )
 			background-color: $color--primary
-			color: $color__light--00		
+			color: $color__light--00
 			a
 				color: $color__light--00
 
@@ -380,17 +380,17 @@ h6
 	+when( solid )
 		+if( primary )
 			border: 1px solid $color--primary
-	
+
 	+when( icon_right )
 		position: relative
-		
+
 		+if( uppercase )
 			text-transform: uppercase
 			letter-spacing: 1px
 
 		+if( primary )
-			background-color: $color--primary			
-			
+			background-color: $color--primary
+
 			&:hover
 				+new-child( button, $prefix )
 					+has( icon )
@@ -423,7 +423,7 @@ h6
 +new( caption, $prefix )
 
 	+when( default )
-		+has( title )			
+		+has( title )
 			text-transform: uppercase
 			font-weight: 400
 			color: $color__dark--05
@@ -436,7 +436,7 @@ h6
 					text-transform: uppercase
 
 	+when( withIcon )
-		
+
 		+has( title )
 			margin: 0
 			+when( relative )
@@ -466,7 +466,7 @@ h6
 
 		+has( subtitle )
 			margin: 0
-			font-weight: 300		
+			font-weight: 300
 			font-family: $font--desc
 
 		+if( center )
@@ -482,7 +482,7 @@ h6
 
 		+has( subtitle )
 			line-height: $space--06
-			font-weight: 300	
+			font-weight: 300
 			font-family: $font--desc
 			text-transform: uppercase
 			letter-spacing: 2px
@@ -496,10 +496,10 @@ h6
 
 	+when( withIconTop )
 
-		+if( center )									
+		+if( center )
 			text-align: center
 
-		+new-child( caption, $prefix )	
+		+new-child( caption, $prefix )
 
 			+has( link )
 				display: block
@@ -516,7 +516,7 @@ h6
 				+border-radius( 50% )
 				border: 1px solid $color__primary__rgba--01
 				color: $color--primary
-				
+
 			+has( title )
 				margin: 0
 				font-weight: 400
@@ -524,7 +524,7 @@ h6
 			+has( subtitle )
 				margin: $space--05 0 0 0
 				font-family: $font--desc
-				font-weight: 300	
+				font-weight: 300
 
 	+when( borderBottom )
 		position: relative
@@ -544,7 +544,7 @@ h6
 			+has( title )
 				margin-top: 0
 				margin-bottom: 0
-			
+
 			+has( icon )
 				display: block
 				float: left
@@ -555,10 +555,10 @@ h6
 				display: block
 				float: left
 				text-transform: uppercase
-				font-weight: 400				
+				font-weight: 400
 
 	+when( bold )
-		+has( title )			
+		+has( title )
 			text-transform: uppercase
 			font-weight: 700
 			color: $color__dark--05
@@ -573,12 +573,12 @@ h6
 	+when( borderBottomLong )
 		position: relative
 		border-bottom: 1px solid $color__light--08
-		
+
 		&:hover
 			&:before
 				width: 100%
 
-		&:before		
+		&:before
 			content: ''
 			display: block
 			position: absolute
@@ -594,7 +594,7 @@ h6
 			+has( title )
 				margin-top: 0
 				margin-bottom: 0
-			
+
 			+has( icon )
 				display: block
 				float: left
@@ -605,11 +605,11 @@ h6
 				display: block
 				float: left
 				text-transform: uppercase
-				font-weight: 400				
+				font-weight: 400
 
 +new( testimonials, $prefix )
-	
-	+when( carousel )	
+
+	+when( carousel )
 		+new-child( testimonials, $prefix )
 			+has( outer )
 				position: relative
@@ -655,7 +655,7 @@ h6
 				display: block
 				float: left
 				margin-right: $space--01
-				font-size: $space--04d				
+				font-size: $space--04d
 				color: $color__dark--05
 				text-transform: uppercase
 
@@ -663,7 +663,7 @@ h6
 				display: block
 				float: left
 				margin-right: $space--01
-				font-size: $space--04d				
+				font-size: $space--04d
 				color: $color__dark--05
 				text-transform: uppercase
 
@@ -673,13 +673,13 @@ h6
 				color: $color__dark--12
 
 	+when( carouselSingle )
-		+new-child( testimonials, $prefix )					
+		+new-child( testimonials, $prefix )
 			+has( quote )
 				text-align: center
-			
+
 			+has( avatar )
 				text-align: center
-			
+
 			+has( img )
 				+inline-block()
 
@@ -698,7 +698,7 @@ h6
 
 			+has( authorName )
 				text-transform: uppercase
-				margin-top: $space--04				
+				margin-top: $space--04
 
 			+has( authorInfo )
 				color: $color__dark--09a
@@ -713,12 +713,12 @@ h6
 
 			+has( country )
 				+inline-block()
-			
+
 		+new-child( owl-pagination  )
 			margin-top: $space--08
 			text-align: center
 
-		+new-child( owl-page )			
+		+new-child( owl-page )
 			+inline-block
 			margin-left: $space--01
 			margin-right: $space--01
@@ -728,23 +728,23 @@ h6
 
 			&.active
 				background-color: $color--primary
-	
+
 +new( course, $prefix )
 
 	+when( withRating )
 		background-color: $color__light--00
-		
+
 		+new-child( course, $prefix )
 
 			+has( thumbnail )
 				+when( relative )
 					margin: 0
-					position: relative			
+					position: relative
 				img
 					display: block
 					width: 100%
 					height: auto
-				
+
 			+has( content )
 				padding: $space--06 0
 
@@ -779,7 +779,7 @@ h6
 					float: right
 					font-size: 14px
 					line-height: $space--06
-					color: $color__light--00	
+					color: $color__light--00
 
 			+has( name )
 				+if( md )
@@ -795,7 +795,7 @@ h6
 						bottom: $space--01
 						left: 0
 						width: $space--01
-						background-color: $color--primary	
+						background-color: $color--primary
 
 			+has( link )
 				display: block
@@ -829,7 +829,7 @@ h6
 					display: block
 					width: 100%
 					height: auto
-				
+
 			+has( content )
 				padding-top: $space--06
 				padding-bottom: $space--06
@@ -870,7 +870,7 @@ h6
 			+has( right)
 
 +new( price, $prefix )
-	+has( ins )				
+	+has( ins )
 		text-decoration: none
 		+has( link )
 			text-decoration: none
@@ -878,7 +878,7 @@ h6
 	+has( del )
 		&:link,
 		&:visited
-			color: $color__light--03		
+			color: $color__light--03
 
 +new( rating, $prefix )
 	+when( small )
@@ -902,11 +902,11 @@ h6
 
 	+when( four )
 		&::before
-			content: "\f005\f005\f005\f005\f006"	
+			content: "\f005\f005\f005\f005\f006"
 
 	+when( five )
 		&::before
-			content: "\f005\f005\f005\f005\f005"	
+			content: "\f005\f005\f005\f005\f005"
 
 +new( owl, $prefix )
 	+has( nav )
@@ -917,7 +917,7 @@ h6
 		margin-top: $space--08 / -2
 		text-align: right
 
-		+has( link )						
+		+has( link )
 			+inline-block()
 			width: $space--08
 			height: $space--08
@@ -953,7 +953,7 @@ h6
 			top: 0
 			bottom: 0
 			right: -1px
-			left: 50%			
+			left: 50%
 			border-left: 1px dashed $color__light--07
 			background-color: $color__light--12
 
@@ -981,7 +981,7 @@ h6
 		text-transform: uppercase
 
 +new( widget, $prefix )
-	+when( dark )				
+	+when( dark )
 
 		+new-child( caption, $prefix )
 
@@ -1000,17 +1000,17 @@ h6
 
 				+has( title )
 					color: $color__light--00
-		
+
 			+when( withIconTop )
 
-				+new-child( caption, $prefix )	
+				+new-child( caption, $prefix )
 					+has( link )
-					
+
 					+has( icon )
-						
+
 					+has( title )
 						color: $color__light--00
-					
+
 					+has( subtitle )
 						color: $color__light--06
 
@@ -1018,7 +1018,7 @@ h6
 			color: $color__light--14
 
 	+when( borderTop )
-		border-top-width: $space--02  
+		border-top-width: $space--02
 		border-top-style: solid
 
 	+when( borderPrimary )
@@ -1026,12 +1026,12 @@ h6
 
 +new( field_group, $prefix )
 	+when( first )
-	+when( other )		
+	+when( other )
 	+when( last )
 
 +new( field, $prefix )
 	+if( fullwidth )
-		width: 99%		
+		width: 99%
 
 	+when( text )
 		padding: 0 $space--04
@@ -1044,16 +1044,16 @@ h6
 		+if( huge )
 			height: $space--10
 			line-height: $space--10
-			
+
 		+if( solid )
 			border: 1px solid $color__light--10
-			background-color: $color__light--00			
+			background-color: $color__light--00
 			color: $color__dark--05
 
 		+if( shadow )
 			background-color: $color__light--14
 			border: 1px solid $color__light--11
-			+box-shadow( -1px, 1px, 2px, 0px, $color__light--08 )						
+			+box-shadow( -1px, 1px, 2px, 0px, $color__light--08 )
 
 	+when( textarea )
 		padding: 0 $space--04
@@ -1061,10 +1061,10 @@ h6
 		line-height: $space--06
 		resize: vertical
 		min-height: $space--14
-			
+
 		+if( solid )
 			border: 1px solid $color__light--10
-			background-color: $color__light--00			
+			background-color: $color__light--00
 			color: $color__dark--05
 
 		+if( shadow )
@@ -1073,36 +1073,36 @@ h6
 			+box-shadow( -1px, 1px, 2px, 0px, $color__light--08 )
 
 	+when( submit )
-	
+
 	+when( select )
 		position: relative
 		padding: 0 $space--04
-		font-size: $space--04a		
+		font-size: $space--04a
 
 		+if( medium )
 			height: $space--07a
-			line-height: $space--07a		
+			line-height: $space--07a
 
 		+if( huge )
 			height: $space--10
 			line-height: $space--10
-			
-			option				
+
+			option
 				line-height: $space--06
 				padding: $space--03
 
 
 		+if( solid )
 			border: 1px solid $color__light--10
-			background-color: $color__light--00			
+			background-color: $color__light--00
 			color: $color__dark--05
 
 		+if( shadow )
 			background-color: $color__light--14
 			border: 1px solid $color__light--11
 			color: $color__dark--05
-			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )			
-		
+			+box-shadow( -1px, 1px, 2px, -1px, $color__light--08 )
+
 +new( intro, $prefix )
 
 	+when( 1st )
@@ -1113,14 +1113,14 @@ h6
 				display: block
 				font-size: $space--09
 				line-height: $space--09
-				margin-right: $space--04				
+				margin-right: $space--04
 
 
 	+when( 2nd )
 
 		+new-child( intro, $prefix )
 
-			+has( symbol )				
+			+has( symbol )
 				color: $color__light--00
 				position: relative
 				z-index: 5
@@ -1133,8 +1133,8 @@ h6
 				width: $space--15
 				margin-right: $space--05
 				position: relative
-				border: 1px solid $color__primary__rgba--01				
-				+border-radius( 50% )				
+				border: 1px solid $color__primary__rgba--01
+				+border-radius( 50% )
 
 				&:after
 					display: block
@@ -1145,7 +1145,7 @@ h6
 					left: $space--03
 					right: $space--03
 					+border-radius( 50% )
-					background-color: $color__primary__rgba--01					
+					background-color: $color__primary__rgba--01
 
 			+has( index )
 				font-family: $font--heading
@@ -1156,9 +1156,9 @@ h6
 				position: relative
 				&:after
 					display: block
-					position: absolute				
+					position: absolute
 					content: ''
-					bottom: 1px					
+					bottom: 1px
 					left: 50%
 					margin-left: ( $space--14 * -0.5 ) + 20
 					background-color: $color__dark__rgba--03
@@ -1212,14 +1212,14 @@ h6
 			padding: 0
 
 +new( accordion, $prefix )
-	
+
 	+has( group )
-		margin-bottom: $space--01a	
+		margin-bottom: $space--01a
 
 	+when( 1st )
 
 		+new-child( accordion, $prefix )
-			
+
 			+has( toggle )
 				display: block
 				text-decoration: none
@@ -1232,26 +1232,26 @@ h6
 							background-color: $color__light--11
 							color: $color__dark--11
 
-						+has( text )							
-							color: $color__dark--05					
+						+has( text )
+							color: $color__dark--05
 
 			+has( heading )
 				font-family: $font--heading
 				font-size: $space--04a
 				line-height: $space--06a
-							
+
 			+has( index )
 				line-height: $space--06a
 				padding: $space--03 0
 				width: $space--09
-				text-align: center				
+				text-align: center
 				color: $color__light--00
 				background-color: $color--primary__lighten--01
 
 			+has( text )
 				line-height: $space--06a
 				padding: $space--03
-				color: $color__light--00		
+				color: $color__light--00
 
 			+has( inner )
 				padding: $space--07a
@@ -1267,13 +1267,13 @@ h6
 					background-color: $color--primary
 
 +new( article, $prefix )
-	
+
 	+when( fullBg )
 		position: relative
 
 		+new-child( article, $prefix )
 			+has( outter )
-				position: absolute				
+				position: absolute
 				top: $space--11
 				right: $space--08 * -1
 				width: 60%
@@ -1324,10 +1324,10 @@ h6
 				color: $color__light--00
 				text-align: center
 				font-family: $font--date
-				text-transform: uppercase				
+				text-transform: uppercase
 
 			+has( day )
-				display: block				
+				display: block
 				font-size: $space--07
 				line-height: $space--07
 
@@ -1343,13 +1343,13 @@ h6
 		+inline-block()
 		text-decoration: none
 
-		+new-child( readmore, $prefix )			
+		+new-child( readmore, $prefix )
 
 			+has( text )
 				display: block
 				float: left
 				font-family: $font--heading
-				font-size: $space--03a				
+				font-size: $space--03a
 				line-height: $space--06
 				text-transform: uppercase
 				color: $color--primary
@@ -1374,7 +1374,7 @@ h6
 			&:hover
 				text-decoration: underline
 
-		+new-child( info, $prefix )			
+		+new-child( info, $prefix )
 
 			+has( icon )
 				display: block
@@ -1404,12 +1404,12 @@ h6
 	+when( list )
 
 		+new-child( tweets, $prefix )
-			+has( outter )				
+			+has( outter )
 				a
 					text-decoration: none
 					&:hover
 						text-decoration: underline
-						
+
 			+has( single )
 				+if( first )
 
@@ -1485,13 +1485,13 @@ h6
 	+new-child( footer, $prefix )
 		+has( widgets )
 
-			+if( light )	
-				background-color: $color__light--12			
-			
+			+if( light )
+				background-color: $color__light--12
+
 			+if( dark )
 				background-color: $color__dark--01
 
-		+has( info )			
+		+has( info )
 
 			+if( light )
 				background-color: $color__light--12
@@ -1510,10 +1510,10 @@ h6
 
 	+when( dark )
 		+new-child( intro, $prefix )
-			+when( 2nd )		
+			+when( 2nd )
 				+new-child( intro, $prefix )
 					+has( index )
-						color: $color__light--00	
+						color: $color__light--00
 					+has( excerpt )
 						color: $color__light--06
 
@@ -1538,7 +1538,7 @@ h6
 			left: 0
 			right: 0
 			background-color: $color__dark__rgba--02
-	
+
 	+with( overlay_primary )
 		&::before
 			background-color: $color__primary__rgba--01
@@ -1548,7 +1548,7 @@ h6
 		+new-child( caption, $prefix )
 			+when( borderBottom )
 
-				&:before					
+				&:before
 					background-color: $color__dark--09
 
 				+new-child( caption, $prefix )
@@ -1556,8 +1556,8 @@ h6
 					+has( title )
 						color: $color__light--00
 					+has( icon )
-					
-					+has( text )				
+
+					+has( text )
 
 		+new-child( divider, $prefix )
 			+when( solid )
@@ -1575,16 +1575,16 @@ h6
 
 				+if( solid )
 					+border-radius( 2px )
-					border-color: $color__dark--05a					
-					background-color: $color__dark--03		
+					border-color: $color__dark--05a
+					background-color: $color__dark--03
 					color: $color__light--00
 
 			+when( textarea )
-			
+
 				+if( solid )
 					+border-radius( 2px )
 					border-color: $color__dark--05a
-					background-color: $color__dark--03		
+					background-color: $color__dark--03
 					color: $color__light--00
 
 			+when( submit )
@@ -1598,7 +1598,7 @@ h6
 		+new-child( social, $prefix )
 			+when( default )
 				+new-child( social, $prefix )
-					+has( link )					
+					+has( link )
 						border-color: $color__dark--05a
 
 +new( breadcrumb, $prefix )
@@ -1609,11 +1609,11 @@ h6
 				margin-top: 0
 				margin-bottom: 0
 				text-transform: uppercase
-			
+
 			+has( links )
 				text-align: center
 				font-size: $space--04a
-			
+
 			+has( item )
 				+inline-block()
 
@@ -1629,15 +1629,15 @@ h6
 	+when( '07a' )
 		margin-left: $space--07a * -1
 		margin-right: $space--07a * -1
-		& > [class^="col-"], 
+		& > [class^="col-"],
 		& > [class*=" col-"]
 			padding-left: $space--07a
 			padding-right: $space--07a
-	
+
 	+when( noSpace )
 		margin-left: 0
 		margin-right: 0
-		& > [class^="col-"], 
+		& > [class^="col-"],
 		& > [class*=" col-"]
 			padding-left: 0
 			padding-right: 0
@@ -1646,12 +1646,12 @@ h6
 	+when( box )
 		display: block
 		background-color: $color__light--00
-		position: relative		
+		position: relative
 		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 		+transition( .25s )
 		&:hover
 			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
-		
+
 		+if( lg )
 		+if( md )
 			padding: $space--09
@@ -1681,7 +1681,7 @@ h6
 				display: block
 				margin: 0
 				padding: 0
-				
+
 			+has( img )
 				display: block
 				margin: 0
@@ -1709,27 +1709,27 @@ h6
 		overflow: hidden
 
 		&:hover
-			+new-child( card, $prefix )				
+			+new-child( card, $prefix )
 				+has( title )
 					bottom: 80px
 
 				+has( subtitle )
-					bottom: 50px					
+					bottom: 50px
 
 				+has( overlay )
 					background-color: $color__dark__rgba--02
 
-		+new-child( card, $prefix )				
+		+new-child( card, $prefix )
 			+has( overlay )
 				position: absolute
 				top: 0
-				bottom: 0	
+				bottom: 0
 				left: 0
 				right: 0
 				background-color: transparent
 				z-index: 1
 				+transition_m( background-color, .5s )
-	
+
 			+has( img )
 				display: block
 				margin: 0
@@ -1761,7 +1761,7 @@ h6
 				z-index: 2
 				margin-top: 0
 				margin-bottom: 0
-				+transition_m( bottom, .25s )				
+				+transition_m( bottom, .25s )
 				+has( link )
 					text-decoration: none
 					color: $color__light--00
@@ -1769,7 +1769,7 @@ h6
 						color: $color--primary
 
 	+when( 2nd )
-		
+
 		+new-child( card, $prefix )
 
 			+has( thumb )
@@ -1790,7 +1790,7 @@ h6
 
 +new( progress_bar, $prefix )
 
-	+when( 1st )		
+	+when( 1st )
 		margin-top: 0
 		margin-bottom: $space--07
 
@@ -1827,32 +1827,32 @@ h6
 				+border-radius( $space--04d / 2 )
 				position: relative
 				width: $space--04d
-				height: $space--04d				
+				height: $space--04d
 				background-color: $color__light--08
 				border: 1px solid $color__light--08
 				padding: $space--0
-				cursor: pointer				
+				cursor: pointer
 
-				&:hover				
+				&:hover
 					background-color: $color--primary
 					border-color: $color--primary
-					
+
 					+new-child( progress_bar, $prefix )
 						+has( value )
 							display: block
 
 +new( staff, $prefix )
 	+when( 1st )
-		background-color: $color__light--00		
+		background-color: $color__light--00
 		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 		+transition( .25s )
 		&:hover
 			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
 		+new-child( staff, $prefix )
-			
+
 			+has( avatar )
-				
+
 			+has( img )
 				display: block
 				width: 100%
@@ -1885,7 +1885,7 @@ h6
 				background-color: $color--primary
 				font-size: $space--03a
 				border: 1px solid $color--primary
-				
+
 				&:hover
 					border-color: $color--primary
 					background-color: $color__light--00
@@ -1903,7 +1903,7 @@ h6
 				float: left
 				margin-right: $space--04
 
-				+when( text )					
+				+when( text )
 					+new-child( metadata__item, $prefix )
 						+has( label )
 							+inline-block()
@@ -1930,9 +1930,9 @@ h6
 		width: $space--13
 		height: $space--13
 		line-height: $space--06
-		text-align: center		
+		text-align: center
 		padding-top: $space--10 + 4px
-	
+
 	+if( primary )
 		background-color: $color--primary
 		color: $color__light--00
@@ -1993,10 +1993,10 @@ h6
 
 +new( article, $prefix )
 	+when( small_thumb )
-		
+
 		+if( first )
 			margin-top: 0
-			
+
 		+if( other )
 			margin-top: $space--07
 
@@ -2010,8 +2010,8 @@ h6
 			+has( title )
 				margin-top: 0
 				margin-bottom: 0
-				font-weight: 400				
-			
+				font-weight: 400
+
 			+has( link )
 				text-decoration: none
 				color: $color__dark--05
@@ -2056,7 +2056,7 @@ h6
 
 +new( article, $prefix )
 	+when( avatar_left )
-		
+
 		+if( first )
 
 		+if( other )
@@ -2084,18 +2084,18 @@ h6
 							width: $space--09
 							line-height: $space--09
 							color: $color__light--08
-							font-size: $space--09						
+							font-size: $space--09
 
 			+has( thumb )
-				margin: 0 0 $space--07 0				
+				margin: 0 0 $space--07 0
 				padding: 0
-			
+
 			+has( gallery )
 				margin-bottom: $space--07
 
 			+has( video )
 				margin-bottom: $space--07
-	
+
 			+has( audio )
 				margin-bottom: $space--07
 
@@ -2110,14 +2110,14 @@ h6
 
 			+has( link )
 				color: $color__dark--05
-				text-decoration: none				
+				text-decoration: none
 				+if( uppercase )
 					text-transform: uppercase
 
 			+has( metadata )
 				padding-top: $space--04
 				border-top: 1px solid $color__light--06
-			
+
 			+has( excerpt )
 				margin-top: $space--04
 
@@ -2131,7 +2131,7 @@ h6
 							position: absolute
 							content: ''
 							top: ( $space--09 - ( $space--0 / 2 ) )
-							right: ( $space--05 * -1 )							
+							right: ( $space--05 * -1 )
 							height: $space--0
 							width: $space--06b
 							background-color: $color__light--09
@@ -2159,7 +2159,7 @@ h6
 				text-decoration: none
 				padding: $space--01a
 				background-color: $color--primary
-				color: $color__light--00				
+				color: $color__light--00
 				margin-top: $space--03
 				position: relative
 
@@ -2186,7 +2186,7 @@ h6
 	+when( default )
 		position: relative
 
-		.owl-controls		
+		.owl-controls
 			+clearfix()
 			position: absolute
 			left: 0
@@ -2230,7 +2230,7 @@ h6
 				padding-right: $space--04
 				border-right: 1px solid $color__light--06
 
-				+when( text )					
+				+when( text )
 					+new-child( metadata__item, $prefix )
 						+has( label )
 							+inline-block()
@@ -2239,11 +2239,11 @@ h6
 							+inline-block()
 							text-decoration: none
 
-				+when( icon )					
+				+when( icon )
 					+new-child( metadata__item, $prefix )
 						+has( icon )
 							+inline-block()
-							margin-right: $space--01a							
+							margin-right: $space--01a
 							color: $color--primary
 
 						+has( text )
@@ -2252,7 +2252,7 @@ h6
 +new( pagination_loadmore, $prefix )
 	+when( default )
 		text-align: center
-		
+
 		+new-child( pagination_loadmore, $prefix )
 			+has( link )
 				+inline-block()
@@ -2268,18 +2268,18 @@ h6
 				color: $color__light--00
 				font-size: $space--05
 				background-color: $color--primary
-			
+
 			+has( label )
 				display: block
-				color: $color__dark--05				
+				color: $color__dark--05
 				text-transform: uppercase
 				letter-spacing: 2px
 				margin-bottom: 0
 				margin-top: $space--05
 
 +new( page_title, $prefix )
-	+when( default )		
-		+new-child( page_title, $prefix )		
+	+when( default )
+		+new-child( page_title, $prefix )
 			+has( subtitle )
 				margin-top: 0
 				margin-bottom: $space--04
@@ -2317,7 +2317,7 @@ h6
 					+has( title )
 						color: $color__light--00
 					+has( action )
-						color: $color__light--00				
+						color: $color__light--00
 
 +new( video, $prefix )
 	+when( course )
@@ -2331,7 +2331,7 @@ h6
 				height: auto
 
 			+has( overlay )
-				display: block				
+				display: block
 				position: absolute
 				top: 0
 				bottom: 0
@@ -2340,7 +2340,7 @@ h6
 				background-color: $color__dark__rgba--01
 
 			+has( link )
-				display: block				
+				display: block
 				position: absolute
 				top: 50%
 				left: 50%
@@ -2385,13 +2385,13 @@ h6
 
 		+new-child( author, $prefix )
 			+has( avatar )
-				margin: 0 0 $space--04 0				
+				margin: 0 0 $space--04 0
 
 			+has( img )
 				+border-radius( 50% )
 				+inline-block()
 				border: 1px solid $color__light--10
-				overflow: hidden				
+				overflow: hidden
 
 			+has( name )
 				margin-top: $space--02
@@ -2407,9 +2407,144 @@ h6
 				color: $color__dark--07
 				font-weight: 400
 
++new( lectures, $prefix )
+	+when( carousel )
+		overflow-x: hidden
+
++new( lecture, $prefix )
+	+when( with_mask )
+		position: relative
+
+		+new-child( lecture, $prefix )
+
+			+has( bg_img )
+				display: block
+				width: 100%
+				height: auto
+
+			+has( overlay )
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				z-index: 5
+				background-color: $color__dark__rgba--01
+
+			+has( details )
+				position: absolute
+				top: $space--06
+				left: $space--06
+				right: $space--06
+				z-index: 20
+
+			+has( number )
+
+				+has( label )
+					+inline-block()
+					font-size: $space--04c
+					color: $color--primary
+					font-family: $font--date
+					margin-right: $space--02
+					+if( uppercase )
+						text-transform: uppercase
+
+				+has( value )
+					+inline-block()
+					font-size: $space--06
+					color: $color__light--00
+					font-family: $font--date
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+
+			+has( url )
+				text-decoration: none
+				color: $color__light--00
+				font-weight: 400
+
+			+has( metadata )
+				position: absolute
+				bottom: $space--06
+				left: $space--06
+				right: $space--06
+				z-index: 10
+
++new( metadata, $prefix )
+	+when( lecture )
+		+new-child( metadata, $prefix )
+			+has( item )
+				+when( icon_left )
+					+new-child( metadata, $prefix )
+						+has( item )
+							+has( icon )
+								+inline-block()
+								margin-right: $space--03
+								color: $color--primary
+
+							+has( text )
+								+inline-block()
+								font-family: $font--date
+								color: $color--primary
+
++new( owl, $prefix )
+	+when( bottom_navigation )
+		+new-child( owl, $prefix )
+			+has( arrow )
+				display: block
+				font-size: $space--03
+				line-height: ( $space--08 - 2 )
+				height: ( $space--08 - 2 )
+				width: ( $space--08 - 2 )
+				text-align: center
+
+	+when( bottom_navigation )
+		.owl-controls			
+			text-align: center
+			position: relative
+		
+		.owl-buttons
+			&:before
+				display: block
+				position: absolute
+				content: ''
+				height: 0				
+				top: 50%
+				margin-top: -0.5px
+				left: $space--04
+				right: $space--04
+				border-top: 1px solid $color__light--09				
+
+		.owl-prev, .owl-next
+			+inline-block()
+			position: relative
+			width: $space--08
+			height: $space--08
+			line-height: $space--08
+			text-align: center
+			border: 1px solid $color__light--09
+			background-color: $color__light--00
+			+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
+			+transition( .25s )
+
+			&:hover
+				+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
+
+
+		.owl-prev
+			margin-right: $space--01
+		
+		.owl-next
+			margin-left: $space--01
+
+
+
+
+
 // WordPress: default markup
 +new( pagination, $prefix )
-	+when( second )		
+	+when( second )
 		.page-numbers
 			&.prev
 				float: left
@@ -2420,7 +2555,7 @@ h6
 
 nav.navigation
 	margin-top: $space--07
-	.nav-links		
+	.nav-links
 		+clearfix()
 		text-align: center
 
@@ -2436,8 +2571,8 @@ nav.navigation
 		border: 1px solid $color__light--08
 		background-color: $color__light--12a
 		color: $color__dark--05
-		+transition( .25s )		
-	
+		+transition( .25s )
+
 		&.current
 			background-color: $color--primary
 			color: $color__light--00
@@ -2460,14 +2595,14 @@ nav.navigation
 				+when( '02' )
 					background: url( demo/bg/welcome.jpg ) no-repeat center center transparent
 					background-attachment: fixed
-				
+
 				+when( '05' )
 					background: url( demo/bg/counter.jpg ) no-repeat center center transparent
 					background-attachment: fixed
-				
+
 				+when( '07' )
 					background: url( demo/bg/life.jpg ) no-repeat center center transparent
-					background-attachment: fixed					
+					background-attachment: fixed
 
 	+when( sub )
 		+new-child( demo, $prefix )
@@ -2475,11 +2610,11 @@ nav.navigation
 				+when( '0' )
 					background: url( demo/bg/cover.jpg ) repeat-y center center transparent
 					background-attachment: scroll
-	
+
 					+with( overlay )
 						&::before
 							background-color: $color__dark__rgba--02b
-	
+
 	+when( about )
 		+new-child( demo, $prefix )
 			+has( row )
@@ -2490,7 +2625,7 @@ nav.navigation
 					background-color: $color__light--12a
 
 				+when( '08' )
-					background-color: $color__light--12a	
+					background-color: $color__light--12a
 
 	+when( courses )
 		+new-child( demo, $prefix )

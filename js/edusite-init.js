@@ -1,11 +1,12 @@
 "use strict";
-var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Gallery, Edusite_Hack, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
+var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
   Edusite_Count_Down.create();
   Edusite_Slider.init('nivo');
   Edusite_Course.init('carousel');
+  Edusite_Lecture.init('carousel');
   Edusite_Testimonial.init('carousel');
   Edusite_Testimonial.init('carouselSingle');
   Edusite_Progress_Bar.init('default');
@@ -276,5 +277,29 @@ Edusite_Audio = {
   },
   init_mediaelementplayer: function() {
     jQuery('audio').mediaelementplayer();
+  }
+};
+
+Edusite_Lecture = {
+  init: function(stype) {
+    if ('carousel' === stype) {
+      Edusite_Lecture.init_carousel();
+    }
+  },
+  init_carousel: function() {
+    var $e_lectures;
+    $e_lectures = jQuery('.e-lectures--carousel .owl-carousel');
+    if ($e_lectures.length) {
+      jQuery.each($e_lectures, function() {
+        var $_owl;
+        $_owl = jQuery(this).owlCarousel({
+          items: 4,
+          pagination: false,
+          navigation: true,
+          theme: 'e-owl--bottom_navigation',
+          navigationText: ['<i class="e-owl__arrow ti-angle-left"></i>', '<i class="e-owl__arrow ti-angle-right"></i>']
+        });
+      });
+    }
   }
 };

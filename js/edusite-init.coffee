@@ -5,6 +5,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Count_Down.create()
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )	
+	Edusite_Lecture.init( 'carousel' )	
 	Edusite_Testimonial.init( 'carousel' )
 	Edusite_Testimonial.init( 'carouselSingle' )
 	Edusite_Progress_Bar.init( 'default' )
@@ -271,4 +272,24 @@ Edusite_Audio =
 		return
 	init_mediaelementplayer: ()->
 		jQuery('audio').mediaelementplayer()
+		return
+
+Edusite_Lecture =
+	init: ( stype ) ->
+		if 'carousel' == stype
+			Edusite_Lecture.init_carousel()
+		return
+	init_carousel: ()->
+
+		$e_lectures = jQuery( '.e-lectures--carousel .owl-carousel' )
+		if $e_lectures.length
+			
+			jQuery.each $e_lectures, ()->
+				$_owl = jQuery(this).owlCarousel			
+					items : 4
+					pagination : false
+					navigation : true
+					theme: 'e-owl--bottom_navigation'
+					navigationText: [ '<i class="e-owl__arrow ti-angle-left"></i>', '<i class="e-owl__arrow ti-angle-right"></i>' ]					
+				return
 		return
