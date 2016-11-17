@@ -1,0 +1,67 @@
+.e-widget.e-comment_list--default
+	.e-caption.e-caption--borderBottom.is-sm.e-padding_bottom--05.e-margin_bottom--05
+		h5.is-md.e-caption__title.clearfix
+			span.e-caption__text Reviews
+
+	.e-comment_list__ratings
+		.row
+			.col-lg-7
+				.row
+					.col-lg-5
+						.e-rate_summary--default
+							h5.is-md.e-rate_summary__title Average Rating
+
+							.e-rate_summary__outer
+								- var $avg = Math.round( ( (3*5) + (4*4) + (3*3) + (1*2) + (1*2) ) / 12 )
+								p.e-rate_summary__avg #{$avg}
+								p.e-rate_summary__stars
+									i.e-rating.e-rating--four.e-rating--small.e-rating--primary.fa
+								p.e-rate_summary__text 12 Ratings
+
+					.col-lg-7
+						.e-rate_list--default
+							h5.is-md.e-rate_list__title Detailed Rating
+
+							.e-rate_list__outer
+								- var $progress_bar__label = '5 Stars'
+								- var $progress_bar__value = 25
+								- var $progress_bar__index = 3
+								include ../../../elements/_progress-bar-2nd.jade
+
+								- var $progress_bar__label = '4 Stars'
+								- var $progress_bar__value = 33.33
+								- var $progress_bar__index = 4
+								include ../../../elements/_progress-bar-2nd.jade
+
+								- var $progress_bar__label = '3 Stars'
+								- var $progress_bar__value = 25
+								- var $progress_bar__index = 3
+								include ../../../elements/_progress-bar-2nd.jade
+
+								- var $progress_bar__label = '2 Stars'
+								- var $progress_bar__value = 8
+								- var $progress_bar__index = 1
+								include ../../../elements/_progress-bar-2nd.jade
+
+								- var $progress_bar__label = '1 Stars'
+								- var $progress_bar__value = 8
+								- var $progress_bar__index = 1
+								include ../../../elements/_progress-bar-2nd.jade
+
+	ul.e-comment_list__list
+		- for (var $i=0; $i<2; $i++)
+			- var $class = ( 0 == $i ) ? 'is-first' : 'is-other'
+			li.e-comment--default( class=$class )
+				img.e-comment__avatar(src='demo/comments/1.jpg' alt='')
+				
+				h5.is-md.e-comment__heading
+					a.e-comment__name(href="#") Anthony
+					i.e-comment__rating.e-rating.e-rating--four.e-rating--small.e-rating--primary.fa
+				
+				p.e-comment__subject Beautiful theme - Awesome plugin
+
+				div.e-comment__comment 5 stars for this theme too. Education WP theme brings the best LMS experience ever with super friendly UX and complete eLearning features. Really satisfied.
+
+
+		
+

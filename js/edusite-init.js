@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
   Edusite_Testimonial.init('carousel');
   Edusite_Testimonial.init('carouselSingle');
   Edusite_Progress_Bar.init('default');
+  Edusite_Progress_Bar.init('secondary');
   Edusite_Gallery.init('default');
   Edusite_Video.init('responsive');
   Edusite_Audio.init('mediaelementplayer');
@@ -125,6 +126,8 @@ Edusite_Progress_Bar = {
   init: function(type) {
     if ('default' === type) {
       Edusite_Progress_Bar.init_style_default();
+    } else if ('secondary' === type) {
+      Edusite_Progress_Bar.init_style_secondary();
     }
   },
   init_style_default: function() {
@@ -150,7 +153,32 @@ Edusite_Progress_Bar = {
           }), delay);
         });
       });
-      return;
+    }
+  },
+  init_style_secondary: function() {
+    var $bars;
+    $bars = jQuery('.e-progress_bar--secondary');
+    if ($bars.length) {
+      jQuery.each($bars, function(index, element) {
+        var $element, delay, percent, start;
+        $element = jQuery(this).find('.e-progress_bar__current');
+        console.log($element);
+        start = $element.attr('data-start');
+        percent = $element.attr('data-percent');
+        delay = 500;
+        if (!$element.hasClass('animated')) {
+          $element.css({
+            width: start
+          });
+        }
+        $element.appear(function() {
+          setTimeout((function() {
+            $element.animate({
+              'width': percent + '%'
+            }, 500, 'easeInOutExpo').addClass('animated');
+          }), delay);
+        });
+      });
     }
   }
 };

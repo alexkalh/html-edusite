@@ -1,0 +1,28 @@
+.e-widget.e-teacher_list--two_cols
+	.e-caption.e-caption--borderBottom.is-sm.e-padding_bottom--05.e-margin_bottom--05
+		h5.is-md.e-caption__title.clearfix
+			span.e-caption__text About Instructor
+
+	.e-teacher_list__outer
+		- for (var $i=0; $i<2; $i++)
+			- var $class = (0 == $i) ? 'is-first' : 'is-other'
+			.e-teacher--two_cols(class=$class)
+				.row
+					.col-lg-5
+						a.e-teacher__avatar(href="#" alt="")
+							img.e-teacher__img(src="demo/teacher/teacher.jpg" alt="")
+
+						h5.is-md.e-teacher__name
+							span.e-teacher__name__label Teacher:
+							a.e-teacher__name__link(href="#" title="") John Doe
+						p.e-teacher__position (Literature P.H.D)
+						include ../../../socials/_socials_solid_circle.jade
+
+					.col-lg-7
+						.e-teacher__bio
+							p Auctor lacinia pellentesque. Vivamus et tellus in urna faucibus porttitor. Sed aut nuncn pulvinar. Fusce lacinia, velit vitae pharetra porttitor.Auctor lacinia pellentesque. Vivamus et tellus in urna faucibus porttitor. Sed aut nuncn pulvinar. Fusce lacinia, velit vitae pharetra porttitor.
+
+
+
+
+

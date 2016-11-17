@@ -1,0 +1,16 @@
+.e-widget.e-course_tabs.e-course_tabs--default.e-tabs--pills
+  ul.e-tab_list(role='tablist')
+    li.e-tab_list__item(role='presentation')
+      a.e-tab_list__link(href='#e-tab--course_desc', aria-controls='e-tab--course_desc', role='tab', data-toggle='tab') Course Description
+    li.e-tab_list__item(role='presentation')
+      a.e-tab_list__link(href='#e-tab--course_about', aria-controls='e-tab--course_about', role='tab', data-toggle='tab') About Instructor
+    li.e-tab_list__item.active(role='presentation')
+      a.e-tab_list__link(href='#e-tab--course_review', aria-controls='e-tab--course_review', role='tab', data-toggle='tab') Reviews (12)
+
+  .e-tab_panes.e-padding_top--10.e-padding_bottom--10.e-padding_left--07.e-padding_right--07
+    #e-tab--course_desc.e-tab_panes__item(role='tabpanel')
+      include tabs/_course_desc.jade
+    #e-tab--course_about.e-tab_panes__item(role='tabpanel')
+      include tabs/_teacher_list.jade
+    #e-tab--course_review.e-tab_panes__item.active(role='tabpanel')
+      include tabs/_course_review.jade
