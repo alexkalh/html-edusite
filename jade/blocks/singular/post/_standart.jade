@@ -6,15 +6,13 @@ article.e-article.e-article--avatar_left( class=$article_class )
 				a.e-user__link.clearfix( href='#' )
 					span.e-user__name by Massa
 
-
 		.col-lg-10
 			.e-article__main_content
 				figure.e-article__thumb
 					img.e-article__img( src="demo/posts/avatar-left/1.jpg" )
 
 				h4.e-article__title.is-sm
-					a.e-article__link.is-uppercase( href=$e_single_url title="" ) Your one stop solution for development needs
-
+					a.e-article__link.is-uppercase(href=$e_single_url title="") Your one stop solution for development needs
 
 				.e-article__metadata.e-metadata.e-metadata--secondary.clearfix
 					span.e-metadata__item.e-metadata__item--icon
@@ -33,7 +31,16 @@ article.e-article.e-article--avatar_left( class=$article_class )
 						i.e-metadata__item__icon.fa.fa-eye
 						span.e-metadata__item__text 356 Views
 
-				.e-article__excerpt.clearfix
+				.e-article__content.clearfix
+
+					ul.e-list--circle.is-primary.e-article__similar
+						li.e-list--circle__item
+							a(href="#" title="") Most Kids Still Live With 2 Parents: Census Bureau
+						li.e-list--circle__item
+							a(href="#" title="") Obama: Trump Needs to Stand Up to Russia
+						li.e-list--circle__item
+							a(href="#" title="") Trump Offers Flynn Job as National Security Adviser
+
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
 
 					blockquote.e-blockquote--background_image.e-demo__blockquote--01
@@ -51,7 +58,7 @@ article.e-article.e-article--avatar_left( class=$article_class )
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
-					
+
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
@@ -63,3 +70,14 @@ article.e-article.e-article--avatar_left( class=$article_class )
 
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu interdum justo, et auctor tellus. Phasellus vel turpis elit. Pellentesque ex velit, finibus non viverra id, rhoncus a ex. Nullam sagittis ligula nec justo commodo, ut pharetra ipsum semper. Suspendisse id mauris vel urna mattis aliquet vel ut arcu. Sed a urna fringilla, volutpat ex vitae, aliquet enim. Donec tempus mauris at mi euismod, sed porta neque scelerisque.
 
+			- var $tags_class = 'e-article__post_tags'
+			include parts/_tags.jade
+
+			- var $categories_class = 'e-article__post_categories'
+			include parts/_categories.jade
+
+			- var $socials_class = 'e-article__post_share_buttons'
+			include ../../socials/_socials_square.jade
+
+			- var $posts_adjacent_class = 'e-article__posts_adjacent'
+			include parts/_posts_adjacent.jade
