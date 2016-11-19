@@ -2210,9 +2210,71 @@ h6
 					text-decoration: none
 					color: $color__dark--05
 
++new( author_bio, $prefix )
+	+when( default )
+		+new-child( author_bio, $prefix )
+			+has( outer)
+				position: relative
+				padding-left: ( $space--15 + $space--07 )
+
+			+has( img )
+				+border-radius( 50% )
+				display: block
+				float: left
+				height: $space--15
+				width: $space--15
+				position: absolute
+				left: 0
+				top: 0
+
+			+has( header )
+				+has( left )
+
+				+has( right )
+					text-align: right
+
+			+has( name )
+				margin-top: 0
+				margin-bottom: 0
+
+				+has( link )
+					text-decoration: none
+					color: $color__dark--05
+					text-transform: uppercase
+
+			+has( jobs )
+				margin-bottom: 0
+				margin-top: $space--03
+
+			+has( bio )
+				position: relative
+				margin-top: $space--03
+				padding-top: $space--07
+				border-top: 1px solid $color__light--09
+				&:hover
+					&:before
+						width: 100%
+						
+				&:before
+					+transition( .25s )
+					display: block
+					content: ''
+					position: absolute
+					top: -1px
+					left: 0
+					width: $space--12
+					height: 1px
+					background-color: $color--primary
+
 +new( article, $prefix )
 	+when( avatar_left )
 		+new-child( article, $prefix )
+			+has( author_bio )
+				margin-top: $space--08
+				padding-top: $space--08
+				margin-bottom: 0
+				border-top: 1px solid $color__light--09
+
 			+has( posts_adjacent )
 				margin-top: $space--08
 				margin-bottom: 0
