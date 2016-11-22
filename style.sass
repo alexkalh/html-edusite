@@ -8,7 +8,7 @@
 
 body
 	font-family: $font--content
-	font-size: $space--04
+	font-size: $space--04d
 	line-height: $space--06
 	color: $color__dark--08
 
@@ -624,6 +624,8 @@ h6
 				float: left
 				text-transform: uppercase
 				font-weight: 400
+
+
 
 +new( testimonials, $prefix )
 
@@ -2254,7 +2256,7 @@ h6
 				&:hover
 					&:before
 						width: 100%
-						
+
 				&:before
 					+transition( .25s )
 					display: block
@@ -2269,7 +2271,19 @@ h6
 +new( article, $prefix )
 	+when( avatar_left )
 		+new-child( article, $prefix )
+			+has( comments_list )
+				margin-top: $space--08
+				padding-top: $space--08
+				margin-bottom: 0
+				border-top: 1px solid $color__light--09				
+
 			+has( author_bio )
+				margin-top: $space--08
+				padding-top: $space--08
+				margin-bottom: 0
+				border-top: 1px solid $color__light--09
+
+			+has( posts_related )
 				margin-top: $space--08
 				padding-top: $space--08
 				margin-bottom: 0
@@ -3194,6 +3208,36 @@ h6
 					border-color: $color--primary
 					+border-radius( $space--0 )
 
++new( article, $prefix )
+	+when( left_small_thumb )
+
+		+if( first )
+
+		+if( other )
+			margin-top: $space--04
+			padding-top: $space--04
+			border-top: 1px solid $color__light--09
+
+		+new-child( article, $prefix )
+			+has( img )
+				display: block
+				float: left
+				margin-right: $space--04
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+
+				+has( link )
+					+inline-block()
+
+			+has( created_date )
+				+inline-block()
+				margin-top: $space--03
+				margin-bottom: 0
+				font-size: $space--04a
+				color: $color--secondary
+
 // WordPress: default markup
 +new( pagination, $prefix )
 	+when( second )
@@ -3294,4 +3338,3 @@ nav.navigation
 	+has( blockquote )
 		+when( '01' )
 			background: url( demo/bg/welcome.jpg ) no-repeat center center transparent
-

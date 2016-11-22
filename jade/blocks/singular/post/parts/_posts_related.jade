@@ -1,0 +1,25 @@
+.e-widget.e-posts_related--default.e-articles--grid_small_thumb( class=$posts_related_class )
+	.e-caption.e-caption--default.e-margin_bottom--05
+		h5.is-md.e-caption--default__title.clearfix	Related Posts
+
+	.e-articles--grid_small_thumb__outer
+		.row
+			.col-lg-6.col-xs-12
+				- var $article_class = 'is-first'
+				- var $thumbnail     = 'demo/posts/left-small-thumb/0.jpg'
+				include ../../../elements/_article_left_small_thumb.jade
+				
+				- var $article_class = 'is-other'
+				- var $thumbnail = 'demo/posts/left-small-thumb/1.jpg'
+				include ../../../elements/_article_left_small_thumb.jade
+		
+			.col-lg-6.col-xs-12
+				- var $article_class = 'is-first'
+				- var $thumbnail     = 'demo/posts/left-small-thumb/2.jpg'
+				include ../../../elements/_article_left_small_thumb.jade
+				
+				- var $article_class = 'is-other'
+				- var $thumbnail = 'demo/posts/left-small-thumb/3.jpg'
+				include ../../../elements/_article_left_small_thumb.jade
+
+
