@@ -626,6 +626,11 @@ h5, h5.is-md {
   line-height: 24px;
   margin: 6px 0;
 }
+h5.is-sm {
+  font-size: 17px;
+  line-height: 23px;
+  margin: 6px 0;
+}
 h5.is-xs {
   font-size: 16px;
   line-height: 21px;
@@ -2766,7 +2771,7 @@ h6.is-lg {
   height: 1px;
   background-color: #ff7f00;
 }
-.e-article--avatar_left .e-article__comments_list {
+.e-article--avatar_left .e-article__comment_list {
   margin-top: 40px;
   padding-top: 40px;
   margin-bottom: 0;
@@ -3553,6 +3558,109 @@ h6.is-lg {
   margin-bottom: 0;
   margin-top: 0;
   border-top: 1px solid #e5e5e5;
+}
+.e-comment_list--secondary .e-comment_list__list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.e-comment--secondary.is-other {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #e5e5e5;
+}
+.e-comment--secondary .e-comment__outer {
+  position: relative;
+  padding-left: 110px;
+  min-height: 80px;
+}
+.e-comment--secondary .e-comment__avatar {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+}
+.e-comment--secondary .e-comment__name {
+  display: block;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 30px;
+  line-height: 24px;
+}
+.e-comment--secondary .e-comment__name__link {
+  text-decoration: none;
+  color: #333333;
+}
+.e-comment--secondary .e-comment__date {
+  display: block;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #aaaaaa;
+  font-size: 13px;
+}
+.e-comment--secondary .e-comment__date__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-right: 5px;
+  height: 24px;
+  line-height: 24px;
+}
+.e-comment--secondary .e-comment__date__text {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-transform: uppercase;
+}
+.e-comment--secondary .e-comment__reply {
+  display: block;
+  float: right;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+  text-decoration: none;
+}
+.e-comment--secondary .e-comment__reply__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-right: 5px;
+  color: #ff7f00;
+  height: 24px;
+  line-height: 24px;
+}
+.e-comment--secondary .e-comment__reply__text {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  color: #777777;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.e-comment--secondary .e-comment__comment {
+  margin-top: 10px;
+  padding-top: 15px;
+  position: relative;
+}
+.e-comment--secondary .e-comment__comment:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff7f00;
+  height: 1px;
+  width: 80px;
 }
 .e-comment--default {
   padding-top: 30px;

@@ -1,0 +1,26 @@
+.e-widget.e-comment_list--secondary(class=$posts_comment_list_class)
+	.e-caption.e-caption--default.e-margin_bottom--05
+		h5.is-md.e-caption--default__title.clearfix	Comments (3)
+
+	ul.e-comment_list__list
+
+		- for (var $i=0; $i<3; $i++)
+			- var $class = ( 0 == $i ) ? 'is-first' : 'is-other'
+			li.e-comment--secondary.clearfix( class=$class )
+
+				.e-comment__outer.clearfix
+					img.e-comment__avatar(src='demo/author/author-prototype-secondary.png' alt='')
+
+					.e-comment__heading.clearfix
+						h6.is-lg.e-comment__name
+							a.e-comment__name__link(href="#") Cristiana Martin
+
+						span.e-comment__date
+							span.e-comment__date__icon.fa.fa-calendar
+							span.e-comment__date__text 10 April, 2016
+
+						a.e-comment__reply(href="#")
+							span.e-comment__reply__icon.fa.fa-share.fa-flip-horizontal
+							span.e-comment__reply__text Reply
+
+					div.e-comment__comment Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem.

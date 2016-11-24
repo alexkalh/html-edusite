@@ -92,10 +92,17 @@ h5
 		line-height: round( 18px * 1.3333 )
 		margin: round( 18px / 3 ) 0
 
+	&.is-sm
+		font-size: 17px
+		line-height: round( 17px * 1.3333 )
+		margin: round( 17px / 3 ) 0
+
 	&.is-xs
 		font-size: 16px
 		line-height: round( 16px * 1.3333 )
 		margin: round( 16px / 3 ) 0
+
+
 
 h6
 	&.is-xs
@@ -624,8 +631,6 @@ h6
 				float: left
 				text-transform: uppercase
 				font-weight: 400
-
-
 
 +new( testimonials, $prefix )
 
@@ -2268,14 +2273,17 @@ h6
 					height: 1px
 					background-color: $color--primary
 
++new( comment_list, $prefix )
+
+
 +new( article, $prefix )
 	+when( avatar_left )
 		+new-child( article, $prefix )
-			+has( comments_list )
+			+has( comment_list )
 				margin-top: $space--08
 				padding-top: $space--08
 				margin-bottom: 0
-				border-top: 1px solid $color__light--09				
+				border-top: 1px solid $color__light--09
 
 			+has( author_bio )
 				margin-top: $space--08
@@ -3042,6 +3050,104 @@ h6
 				margin-bottom: 0
 				margin-top: 0
 				border-top: 1px solid $color__light--09
+
+	+when( secondary )
+		+new-child( comment_list, $prefix )
+			+has( list )
+				list-style-type: none
+				padding-left: 0
+				margin-bottom: 0
+				margin-top: 0
+
++new( comment, $prefix )
+	+when( secondary )
+		+if( other )
+			margin-top: $space--07
+			padding-top: $space--07
+			border-top: 1px solid $color__light--09
+
+		+new-child( comment, $prefix )
+			+has( outer )
+				position: relative
+				padding-left: ( $space--07 + $space--13 )
+				min-height: $space--13
+
+			+has( avatar )
+				+border-radius( 50% )
+				display: block
+				margin: 0
+				position: absolute
+				top: 0
+				left: 0
+				width: $space--13
+				height: $space--13
+
+			+has( heading )
+
+			+has( name )
+				display: block
+				float: left
+				margin-top: 0
+				margin-bottom: 0
+				margin-right: $space--07
+				line-height: $space--06
+
+				+has( link )
+					text-decoration: none
+					color: $color__dark--05
+
+			+has( date )
+				display: block
+				float: left
+				margin-top: 0
+				margin-bottom: 0
+				color: $color__light--01
+				font-size: $space--04b
+
+				+has( icon )
+					+inline-block()
+					margin-right: $space--01a				
+					height: $space--06
+					line-height: $space--06
+
+				+has( text )
+					+inline-block()
+					text-transform: uppercase
+
+			+has( reply )
+				display: block
+				float: right
+				margin-top: 0
+				margin-bottom: 0
+				font-size: $space--04b
+				text-decoration: none
+
+				+has( icon )
+					+inline-block()
+					margin-right: $space--01a					
+					color: $color--primary
+					height: $space--06
+					line-height: $space--06
+
+				+has( text )
+					+inline-block()
+					color: $color__dark--08
+					text-transform: uppercase
+					font-weight: 700					
+
+			+has( comment )
+				margin-top: $space--03
+				padding-top: $space--04
+				position: relative
+				&:before
+					display: block
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					background-color: $color--primary
+					height: 1px
+					width: $space--13
 
 +new( comment, $prefix )
 	+when( default )
