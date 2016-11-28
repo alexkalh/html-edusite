@@ -1060,7 +1060,7 @@ h6
 
 +new( field, $prefix )
 	+if( fullwidth )
-		width: 99%
+		width: 100%
 
 	+when( text )
 		padding: 0 $space--04
@@ -1090,6 +1090,9 @@ h6
 		line-height: $space--06
 		resize: vertical
 		min-height: $space--14
+
+		+if( huge )
+			min-height: $space--15
 
 		+if( solid )
 			border: 1px solid $color__light--10
@@ -2273,12 +2276,15 @@ h6
 					height: 1px
 					background-color: $color--primary
 
-+new( comment_list, $prefix )
++new( comment_form, $prefix )
 
 
 +new( article, $prefix )
 	+when( avatar_left )
 		+new-child( article, $prefix )
+			+has( comment_form )
+				margin-top: $space--13
+
 			+has( comment_list )
 				margin-top: $space--08
 				padding-top: $space--08

@@ -1,0 +1,17 @@
+.e-widget.e-comment_form--secondary(class=$posts_comment_form_class)
+	.e-caption.e-caption--default.e-margin_bottom--08
+		h5.is-md.e-caption--default__title.clearfix	Leave a comment
+
+	form.e-form(action="" method="post")
+
+		.e-field_group.row
+			.col-lg-6.e-margin_bottom--07
+				input.e-field.e-field--text.is-solid.is-huge.is-fullwidth(type="text" name="name" placeholder="Name *")
+			.col-lg-6.e-margin_bottom--07
+				input.e-field.e-field--text.is-solid.is-huge.is-fullwidth(type="text" name="name" placeholder="Email *")
+
+		.e-field_group.e-margin_bottom--07
+			textarea.e-field.e-field--textarea.is-solid.is-huge.is-fullwidth(type="text" name="email" placeholder="Enter your comment")
+
+		.e-field_group
+			input.e-field.e-field--submit.e-button.e-button--fill.is-primary.is-huge(type="submit" value="Send")				

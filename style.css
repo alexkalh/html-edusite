@@ -1571,7 +1571,7 @@ h6.is-lg {
   border-color: #ff7f00;
 }
 .e-field.is-fullwidth {
-  width: 99%;
+  width: 100%;
 }
 .e-field--text {
   padding: 0 15px;
@@ -1604,6 +1604,9 @@ h6.is-lg {
   line-height: 24px;
   resize: vertical;
   min-height: 90px;
+}
+.e-field--textarea.is-huge {
+  min-height: 130px;
 }
 .e-field--textarea.is-solid {
   border: 1px solid #e7e7e7;
@@ -2770,6 +2773,9 @@ h6.is-lg {
   width: 70px;
   height: 1px;
   background-color: #ff7f00;
+}
+.e-article--avatar_left .e-article__comment_form {
+  margin-top: 80px;
 }
 .e-article--avatar_left .e-article__comment_list {
   margin-top: 40px;
