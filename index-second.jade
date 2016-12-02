@@ -1,0 +1,72 @@
+include jade/_config.jade
+include jade/mixins/_alex.jade
+
+doctype
+html( lang="en-US" prefix="og: http://ogp.me/ns#" )
+
+	include jade/_head.jade
+
+	body.e-body.e-body--home_second
+
+		header.e-header.e-header--secondary
+
+			section.e-section.e-section--split
+				.container.e-section__outer
+					.row.e-row--noSpace.e-height--match
+						.col-lg-3
+							.e-header__site_logo.e-col.clearfix
+								h1.e-logo.e-logo--secondary.e-margin_top--05.e-margin_bottom--05
+									a.e-logo__link(href=$e_home_url title='')
+										img.e-logo__img(src=$e_logo_secondary alt='')
+
+
+						.col-lg-9
+							.e-header__site_info.e-col.clearfix
+								.row.e-header__site_info__outer
+									.col-lg-3.e-header__card.e-card--icon_left
+										i.e-card__icon.fa.fa-map-marker.pull-left
+										p.e-card__content
+											|0258 Hans Centers
+											br
+											|Cristoballand, USA
+
+									.col-lg-3.e-header__card.e-card--icon_left
+										i.e-card__icon.fa.fa-phone.pull-left
+										p.e-card__content
+											|Any question at
+											br
+											|1-800-23-456-7890
+
+									.col-lg-3.e-header__card.e-card--icon_left
+										i.e-card__icon.fa.fa-clock-o.pull-left
+										p.e-card__content
+											|9am - 8pm
+											br
+											|Mon - Sat
+
+									.col-lg-3.e-header__call_to_action
+										a.e-button.e-button--fill.is-primary.is-medium_secondary.is-fullwidth.is-uppercase(href="#") Get a free quote
+
+			section.e-section.e-header__nav
+				.container
+					nav.e-navigation.pull-left
+						include jade/blocks/nav/_secondary.jade
+
+					.e-header__icon_links.pull-right
+						a.e-header__icon_links__link.is-cart
+							i.e-header__icon_links__link__icon.fa.fa-shopping-cart
+							span.e-header__icon_links__link__count 2
+
+						a.e-header__icon_links__separator |
+
+						a.e-header__icon_links__link.is-circle
+							i.e-header__icon_links__link__icon.fa.fa-search
+
+					.e-header__auth_links.pull-right
+						a.e-header__auth_links__link(href="#login") Login
+						span.e-header__auth_links__separator /
+						a.e-header__auth_links__link(href="#register") Register
+
+		.e-main_content
+
+		include jade/_footer_secondary.jade

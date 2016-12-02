@@ -162,7 +162,6 @@ Edusite_Progress_Bar = {
       jQuery.each($bars, function(index, element) {
         var $element, delay, percent, start;
         $element = jQuery(this).find('.e-progress_bar__current');
-        console.log($element);
         start = $element.attr('data-start');
         percent = $element.attr('data-percent');
         delay = 500;

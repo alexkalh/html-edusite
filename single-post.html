@@ -55,9 +55,9 @@
           <h1 class="e-logo e-logo--left"><a href="index.html" title="" class="e-logo__link"><img src="demo/logo.png" alt="" class="e-logo__img"></a></h1>
           <nav class="e-navigation pull-right">
             <ul class="e-menu e-menu--default sf-menu clearfix">
-              <li class="e-menu__link is-firstChild is-current"><a href="index.html">Home</a></li>
-              <li class="e-menu__link is-firstChild"><a href="blog.html">Blog  </a></li>
-              <li class="e-menu__link is-firstChild"><a href="single-post.html">Single</a>
+              <li class="e-menu__link is-lvl_1 is-current"><a href="index.html">Home</a></li>
+              <li class="e-menu__link is-lvl_1"><a href="blog.html">Blog  </a></li>
+              <li class="e-menu__link is-lvl_1"><a href="single-post.html">Single</a>
                 <ul class="e-menu--sub sub-menu">
                   <li class="e-menu__link"><a href="single-post.html">Standart</a></li>
                   <li class="e-menu__link"><a href="single-video.html">Video</a></li>
@@ -65,7 +65,7 @@
                   <li class="e-menu__link"><a href="single-audio.html">Audio</a></li>
                 </ul>
               </li>
-              <li class="e-menu__link is-firstChild"><a href="page.html">Page</a>
+              <li class="e-menu__link is-lvl_1"><a href="page.html">Page</a>
                 <ul class="e-menu--sub is-rtl sub-menu">
                   <li class="e-menu__link"><a href="page-fullwidth.html">Page - Fullwidth</a></li>
                   <li class="e-menu__link"><a href="about.html">About Us</a>
@@ -82,8 +82,8 @@
                   <li class="e-menu__link"><a href="404.html">Error 404</a></li>
                 </ul>
               </li>
-              <li class="e-menu__icon e-menu__icon--circle is-firstChild"><a href="#"><i class="e-menu__icon__icon ti-search"></i></a></li>
-              <li class="e-menu__icon e-menu__icon--transparent is-firstChild"><a href="#"><i class="e-menu__icon__icon ti-shopping-cart"></i></a></li>
+              <li class="e-menu__icon e-menu__icon--circle is-lvl_1"><a href="#"><i class="e-menu__icon__icon ti-search"></i></a></li>
+              <li class="e-menu__icon e-menu__icon--transparent is-lvl_1"><a href="#"><i class="e-menu__icon__icon ti-shopping-cart"></i></a></li>
             </ul>
           </nav>
         </div>
@@ -303,14 +303,17 @@
                           <form action="" method="post" class="e-form">
                             <div class="e-field_group row">
                               <div class="col-lg-6 e-margin_bottom--07">
-                                <input type="text" name="name" placeholder="Name *" class="e-field e-field--text is-solid is-huge is-fullwidth">
+                                <label class="e-field--label">Your Name (*)</label>
+                                <input type="text" name="name" class="e-field e-field--text is-solid is-huge is-fullwidth">
                               </div>
                               <div class="col-lg-6 e-margin_bottom--07">
-                                <input type="text" name="name" placeholder="Email *" class="e-field e-field--text is-solid is-huge is-fullwidth">
+                                <label class="e-field--label">Your Email (*)</label>
+                                <input type="text" name="email" class="e-field e-field--text is-solid is-huge is-fullwidth">
                               </div>
                             </div>
                             <div class="e-field_group e-margin_bottom--07">
-                              <textarea type="text" name="email" placeholder="Enter your comment" class="e-field e-field--textarea is-solid is-huge is-fullwidth"></textarea>
+                              <label class="e-field--label">Your Comment (*)</label>
+                              <textarea type="text" name="comment" class="e-field e-field--textarea is-solid is-huge is-fullwidth"></textarea>
                             </div>
                             <div class="e-field_group">
                               <input type="submit" value="Send" class="e-field e-field--submit e-button e-button--fill is-primary is-huge">

@@ -55,9 +55,9 @@
           <h1 class="e-logo e-logo--left"><a href="index.html" title="" class="e-logo__link"><img src="demo/logo.png" alt="" class="e-logo__img"></a></h1>
           <nav class="e-navigation pull-right">
             <ul class="e-menu e-menu--default sf-menu clearfix">
-              <li class="e-menu__link is-firstChild is-current"><a href="index.html">Home</a></li>
-              <li class="e-menu__link is-firstChild"><a href="blog.html">Blog  </a></li>
-              <li class="e-menu__link is-firstChild"><a href="single-post.html">Single</a>
+              <li class="e-menu__link is-lvl_1 is-current"><a href="index.html">Home</a></li>
+              <li class="e-menu__link is-lvl_1"><a href="blog.html">Blog  </a></li>
+              <li class="e-menu__link is-lvl_1"><a href="single-post.html">Single</a>
                 <ul class="e-menu--sub sub-menu">
                   <li class="e-menu__link"><a href="single-post.html">Standart</a></li>
                   <li class="e-menu__link"><a href="single-video.html">Video</a></li>
@@ -65,7 +65,7 @@
                   <li class="e-menu__link"><a href="single-audio.html">Audio</a></li>
                 </ul>
               </li>
-              <li class="e-menu__link is-firstChild"><a href="page.html">Page</a>
+              <li class="e-menu__link is-lvl_1"><a href="page.html">Page</a>
                 <ul class="e-menu--sub is-rtl sub-menu">
                   <li class="e-menu__link"><a href="page-fullwidth.html">Page - Fullwidth</a></li>
                   <li class="e-menu__link"><a href="about.html">About Us</a>
@@ -82,8 +82,8 @@
                   <li class="e-menu__link"><a href="404.html">Error 404</a></li>
                 </ul>
               </li>
-              <li class="e-menu__icon e-menu__icon--circle is-firstChild"><a href="#"><i class="e-menu__icon__icon ti-search"></i></a></li>
-              <li class="e-menu__icon e-menu__icon--transparent is-firstChild"><a href="#"><i class="e-menu__icon__icon ti-shopping-cart"></i></a></li>
+              <li class="e-menu__icon e-menu__icon--circle is-lvl_1"><a href="#"><i class="e-menu__icon__icon ti-search"></i></a></li>
+              <li class="e-menu__icon e-menu__icon--transparent is-lvl_1"><a href="#"><i class="e-menu__icon__icon ti-shopping-cart"></i></a></li>
             </ul>
           </nav>
         </div>
@@ -111,7 +111,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="e-col clearfix">
-                <div class="e-courses_list e-courses_list--fullwidth">
+                <div class="e-courses_list e-courses_list--grid">
                   <div class="e-courses__toolbar e-margin_bottom--10">
                     <form action="" method="post" class="e-form">
                       <div class="row">
@@ -133,102 +133,156 @@
                   </div>
                   <div class="e-courses__outer">
                     <div class="e-courses__inner clearfix">
-                      <article class="e-course e-course--fullWidth e-course--boxShadow e-margin_bottom--07">
-                        <div class="row">
-                          <div class="col-lg-3 e-course__left">
-                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/list/1.jpg" alt class="img-responsive"><a href="blog.html" class="e-course__term e-button e-button--fill is-third is-small is-uppercase is-round">Education</a><span class="e-course__stick e-stick e-stick--triangle is-primary">New</span></figure>
-                          </div>
-                          <div class="col-lg-9 e-course__right">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
                             <div class="e-course__content">
-                              <h5 class="is-md e-course__name clearfix"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-course__rating e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                              <div class="e-metadata e-metadata--default clearfix e-margin_top--04"><span class="e-metadata__item e-metadata__item--text"><span class="e-metadata__item__label">Start Date: </span><a href="#" title="" class="e-metadata__item__link">June 28, 2016</a></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-users"></i><span class="e-metadata__item__text">246 Members</span></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-comments"></i><span class="e-metadata__item__text">3 Comments</span></span></div>
-                              <div class="e-course__excerpt e-margin_top--04">Proin efficitur nibh eleifend ligula tincidunt, id mollis metus efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ornare odio tortor. Morbi ut aliquam eros.</div>
-                              <div class="e-price e-margin_top--05"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"><ins class="e-price__ins__link">$122.25				</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
-                                  <del class="e-price__del__link">$240.05</del></a><a href="#" title="" class="e-price__more e-button e-button--solid is-primary is-medium is-round pull-right">Join Us</a></div>
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
                             </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
-                      <article class="e-course e-course--fullWidth e-course--boxShadow e-margin_bottom--07">
-                        <div class="row">
-                          <div class="col-lg-3 e-course__left">
-                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/list/1.jpg" alt class="img-responsive"><a href="blog.html" class="e-course__term e-button e-button--fill is-third is-small is-uppercase is-round">Education</a><span class="e-course__stick e-stick e-stick--triangle is-primary">New</span></figure>
-                          </div>
-                          <div class="col-lg-9 e-course__right">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
                             <div class="e-course__content">
-                              <h5 class="is-md e-course__name clearfix"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-course__rating e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                              <div class="e-metadata e-metadata--default clearfix e-margin_top--04"><span class="e-metadata__item e-metadata__item--text"><span class="e-metadata__item__label">Start Date: </span><a href="#" title="" class="e-metadata__item__link">June 28, 2016</a></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-users"></i><span class="e-metadata__item__text">246 Members</span></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-comments"></i><span class="e-metadata__item__text">3 Comments</span></span></div>
-                              <div class="e-course__excerpt e-margin_top--04">Proin efficitur nibh eleifend ligula tincidunt, id mollis metus efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ornare odio tortor. Morbi ut aliquam eros.</div>
-                              <div class="e-price e-margin_top--05"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"><ins class="e-price__ins__link">$122.25				</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
-                                  <del class="e-price__del__link">$240.05</del></a><a href="#" title="" class="e-price__more e-button e-button--solid is-primary is-medium is-round pull-right">Join Us</a></div>
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
                             </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
-                      <article class="e-course e-course--fullWidth e-course--boxShadow e-margin_bottom--07">
-                        <div class="row">
-                          <div class="col-lg-3 e-course__left">
-                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/list/1.jpg" alt class="img-responsive"><a href="blog.html" class="e-course__term e-button e-button--fill is-third is-small is-uppercase is-round">Education</a><span class="e-course__stick e-stick e-stick--triangle is-primary">New</span></figure>
-                          </div>
-                          <div class="col-lg-9 e-course__right">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
                             <div class="e-course__content">
-                              <h5 class="is-md e-course__name clearfix"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-course__rating e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                              <div class="e-metadata e-metadata--default clearfix e-margin_top--04"><span class="e-metadata__item e-metadata__item--text"><span class="e-metadata__item__label">Start Date: </span><a href="#" title="" class="e-metadata__item__link">June 28, 2016</a></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-users"></i><span class="e-metadata__item__text">246 Members</span></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-comments"></i><span class="e-metadata__item__text">3 Comments</span></span></div>
-                              <div class="e-course__excerpt e-margin_top--04">Proin efficitur nibh eleifend ligula tincidunt, id mollis metus efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ornare odio tortor. Morbi ut aliquam eros.</div>
-                              <div class="e-price e-margin_top--05"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"><ins class="e-price__ins__link">$122.25				</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
-                                  <del class="e-price__del__link">$240.05</del></a><a href="#" title="" class="e-price__more e-button e-button--solid is-primary is-medium is-round pull-right">Join Us</a></div>
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
                             </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
-                      <article class="e-course e-course--fullWidth e-course--boxShadow e-margin_bottom--07">
-                        <div class="row">
-                          <div class="col-lg-3 e-course__left">
-                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/list/1.jpg" alt class="img-responsive"><a href="blog.html" class="e-course__term e-button e-button--fill is-third is-small is-uppercase is-round">Education</a><span class="e-course__stick e-stick e-stick--triangle is-primary">New</span></figure>
-                          </div>
-                          <div class="col-lg-9 e-course__right">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
                             <div class="e-course__content">
-                              <h5 class="is-md e-course__name clearfix"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-course__rating e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                              <div class="e-metadata e-metadata--default clearfix e-margin_top--04"><span class="e-metadata__item e-metadata__item--text"><span class="e-metadata__item__label">Start Date: </span><a href="#" title="" class="e-metadata__item__link">June 28, 2016</a></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-users"></i><span class="e-metadata__item__text">246 Members</span></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-comments"></i><span class="e-metadata__item__text">3 Comments</span></span></div>
-                              <div class="e-course__excerpt e-margin_top--04">Proin efficitur nibh eleifend ligula tincidunt, id mollis metus efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ornare odio tortor. Morbi ut aliquam eros.</div>
-                              <div class="e-price e-margin_top--05"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"><ins class="e-price__ins__link">$122.25				</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
-                                  <del class="e-price__del__link">$240.05</del></a><a href="#" title="" class="e-price__more e-button e-button--solid is-primary is-medium is-round pull-right">Join Us</a></div>
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
                             </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
-                      <article class="e-course e-course--fullWidth e-course--boxShadow e-margin_bottom--07">
-                        <div class="row">
-                          <div class="col-lg-3 e-course__left">
-                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/list/1.jpg" alt class="img-responsive"><a href="blog.html" class="e-course__term e-button e-button--fill is-third is-small is-uppercase is-round">Education</a><span class="e-course__stick e-stick e-stick--triangle is-primary">New</span></figure>
-                          </div>
-                          <div class="col-lg-9 e-course__right">
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
                             <div class="e-course__content">
-                              <h5 class="is-md e-course__name clearfix"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-course__rating e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                              <div class="e-metadata e-metadata--default clearfix e-margin_top--04"><span class="e-metadata__item e-metadata__item--text"><span class="e-metadata__item__label">Start Date: </span><a href="#" title="" class="e-metadata__item__link">June 28, 2016</a></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-users"></i><span class="e-metadata__item__text">246 Members</span></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-comments"></i><span class="e-metadata__item__text">3 Comments</span></span></div>
-                              <div class="e-course__excerpt e-margin_top--04">Proin efficitur nibh eleifend ligula tincidunt, id mollis metus efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ornare odio tortor. Morbi ut aliquam eros.</div>
-                              <div class="e-price e-margin_top--05"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"><ins class="e-price__ins__link">$122.25				</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
-                                  <del class="e-price__del__link">$240.05</del></a><a href="#" title="" class="e-price__more e-button e-button--solid is-primary is-medium is-round pull-right">Join Us</a></div>
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
                             </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
-                      <article class="e-course e-course--fullWidth e-course--boxShadow e-margin_bottom--07">
-                        <div class="row">
-                          <div class="col-lg-3 e-course__left">
-                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/list/1.jpg" alt class="img-responsive"><a href="blog.html" class="e-course__term e-button e-button--fill is-third is-small is-uppercase is-round">Education</a><span class="e-course__stick e-stick e-stick--triangle is-primary">New</span></figure>
-                          </div>
-                          <div class="col-lg-9 e-course__right">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
                             <div class="e-course__content">
-                              <h5 class="is-md e-course__name clearfix"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-course__rating e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
-                              <div class="e-metadata e-metadata--default clearfix e-margin_top--04"><span class="e-metadata__item e-metadata__item--text"><span class="e-metadata__item__label">Start Date: </span><a href="#" title="" class="e-metadata__item__link">June 28, 2016</a></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-users"></i><span class="e-metadata__item__text">246 Members</span></span><span class="e-metadata__item e-metadata__item--icon"><i class="e-metadata__item__icon fa fa-comments"></i><span class="e-metadata__item__text">3 Comments</span></span></div>
-                              <div class="e-course__excerpt e-margin_top--04">Proin efficitur nibh eleifend ligula tincidunt, id mollis metus efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ornare odio tortor. Morbi ut aliquam eros.</div>
-                              <div class="e-price e-margin_top--05"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"><ins class="e-price__ins__link">$122.25				</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
-                                  <del class="e-price__del__link">$240.05</del></a><a href="#" title="" class="e-price__more e-button e-button--solid is-primary is-medium is-round pull-right">Join Us</a></div>
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
                             </div>
-                          </div>
+                          </article>
                         </div>
-                      </article>
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
+                            <div class="e-course__content">
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
+                            <div class="e-course__content">
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
+                            <div class="e-course__content">
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
+                            <div class="e-course__content">
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
+                            <div class="e-course__content">
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-lg-3">
+                          <article class="e-course e-course--withRating e-course--boxShadow e-margin_bottom--07">
+                            <figure class="e-course__thumbnail e-course__thumbnail--relative clearfix"><img src="demo/courses/grid/1.jpg" alt class="img-responsive">
+                              <figcaption class="e-course__metadata"><a href="blog.html" class="e-course__term">Education							</a><span class="e-course__date e-course__date--right">83 Days</span><i class="e-course__icon e-course__icon--right e-margin_right--02 ti-alarm-clock"></i></figcaption>
+                            </figure>
+                            <div class="e-course__content">
+                              <h5 class="is-md e-course__name e-course__name--borderLeft"><a href="single-post.html" class="e-course__link">Become a startup founder</a><i class="e-rating e-rating--three e-rating--small e-rating--primary fa"></i></h5>
+                              <div class="e-price e-margin_top--06"><a href="#" title="" class="e-price__ins e-button e-button--fill is-primary is-medium"> <ins class="e-price__ins__link">$122.25</ins></a><a href="#" title="" class="e-price__del e-button is-medium">
+                                  <del class="e-price__del__link">$240.05</del></a></div>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
                     </div>
                     <div class="e-courses__pagination clearfix">
                       <div class="e-pagination--default clearfix">

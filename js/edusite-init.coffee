@@ -15,7 +15,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Audio.init( 'mediaelementplayer' )
 	return
 
-jQuery( window ).on 'load', ( $ ) ->
+jQuery( window ).on 'load', ( $ ) ->	
 	Edusite_Hack.matchHeight( '> div .e-col' )
 	return
 
@@ -161,7 +161,7 @@ Edusite_Progress_Bar =
 			jQuery.each $bars, ( index, element ) ->
 
 				$element = jQuery( this ).find '.e-progress_bar__current'
-				console.log $element
+				
 				start   = $element.attr 'data-start'
 				percent = $element.attr 'data-percent'
 				delay   = 500
@@ -185,6 +185,7 @@ Edusite_Progress_Bar =
 Edusite_Hack =
 	matchHeight: (selector)->
 		$e_rows = jQuery( '.e-height--match' )
+		
 		if $e_rows.length
 			jQuery.each $e_rows, ()->
 				jQuery(this).find( selector ).matchHeight()

@@ -205,7 +205,7 @@ h6
 	+when( default )
 		+new-child( menu, $prefix )
 			+has( link )
-				+if( firstChild )
+				+if( lvl_1 )
 					margin-left: $space--03
 					height: $logo-height
 
@@ -225,7 +225,7 @@ h6
 						color: $color__dark--02
 
 			+has( icon )
-				+if( firstChild )
+				+if( lvl_1 )
 					margin-left: $space--03
 					height: $logo-height
 
@@ -257,49 +257,114 @@ h6
 							width: $logo-height
 							text-align: center
 
-	+when( sub )
-		width: $space--16
-		top: $logo-height + $space--06 + $space--01
-		left: 0px
-		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
+		+new-child( menu, $prefix )
+			+when( sub )
+				width: $space--16
+				top: $logo-height + $space--06 + $space--01
+				left: 0px
+				+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 
-		+if( rtl )
-			right: 0px
-			left: auto
+				+if( rtl )
+					right: 0px
+					left: auto
+
+				+new-child( menu, $prefix )
+					+when( sub )
+						top: 0px
+						left: $space--16 + $space--02a
+
+						+if( rtl )
+							left: auto
+							right: $space--16 + $space--02a
+
+					+has( link )
+						display: block
+						padding: $space--03 0
+						background-color: $color__light--00
+						border-top: 1px solid $color__light--09
+
+						&:first-child
+							border-top: none
+
+						& > a
+							display: block
+							text-decoration: none
+							color: $color__dark--08
+							padding: 0 $space--06
+							line-height: $space--07
+							border-left: $space--01b solid transparent
+							border-right: $space--01b solid transparent
+
+						&:hover
+							background-color: $color--third
+							& > a
+								color: $color__light--00
+								border-left-color: $color--primary
+								border-right-color: $color--primary
+
+	+when( secondary )
+		+new-child( menu, $prefix )
+			+has( link )
+				+if( lvl_1 )
+					& > a
+						padding: $space--04b $space--04
+						line-height: $space--06
+						font-size: $space--04a
+						font-family: $font--heading
+						color: $color__light--00
+						letter-spacing: 1px
+						text-decoration: none
+						text-transform: uppercase
+
+				+if( current )
+					& > a
+						font-weight: 700
+						color: $color__dark--01
 
 		+new-child( menu, $prefix )
 			+when( sub )
-				top: 0px
-				left: $space--16 + $space--02a
+				width: $space--16
+				top: $space--10
+				left: 0px
+				+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 
 				+if( rtl )
+					right: 0px
 					left: auto
-					right: $space--16 + $space--02a
 
-			+has( link )
-				display: block
-				padding: $space--03 0
-				background-color: $color__light--00
-				border-top: 1px solid $color__light--09
+				+new-child( menu, $prefix )
+					+when( sub )
+						top: 0px
+						left: $space--16 + $space--02a
 
-				&:first-child
-					border-top: none
+						+if( rtl )
+							left: auto
+							right: $space--16 + $space--02a
 
-				& > a
-					display: block
-					text-decoration: none
-					color: $color__dark--08
-					padding: 0 $space--06
-					line-height: $space--07
-					border-left: $space--01b solid transparent
-					border-right: $space--01b solid transparent
+					+has( link )
+						display: block
+						padding: $space--03 0
+						background-color: $color__light--00
+						border-top: 1px solid $color__light--09
 
-				&:hover
-					background-color: $color--third
-					& > a
-						color: $color__light--00
-						border-left-color: $color--primary
-						border-right-color: $color--primary
+						&:first-child
+							border-top: none
+
+						& > a
+							display: block
+							text-decoration: none
+							color: $color__dark--08
+							padding: 0 $space--06
+							line-height: $space--07
+							border-left: $space--01b solid transparent
+							border-right: $space--01b solid transparent
+
+						&:hover
+							background-color: $color--third
+							& > a
+								color: $color__light--00
+								border-left-color: $color--primary
+								border-right-color: $color--primary
 
 +new( slider, $prefix )
 	+when( nivo )
@@ -351,6 +416,9 @@ h6
 	letter-spacing: 1px
 	text-decoration: none
 
+	+if( fullwidth )
+		width: 100%
+
 	+if( uppercase )
 		text-transform: uppercase
 
@@ -364,6 +432,12 @@ h6
 		height: $space--09
 		line-height: $space--09
 		padding: 0 $space--07
+		font-size: 14px
+
+	+if( medium_secondary )
+		height: $space--08
+		line-height: $space--08
+		padding: 0 $space--04
 		font-size: 14px
 
 	+if( medium )
@@ -1061,6 +1135,11 @@ h6
 +new( field, $prefix )
 	+if( fullwidth )
 		width: 100%
+
+	+when( label )
+		font-family: $font--heading
+		font-size: $space--04
+		font-weight: 400
 
 	+when( text )
 		padding: 0 $space--04
@@ -1886,6 +1965,21 @@ h6
 			+has( img )
 				display: block
 
+	+when( icon_left )
+		+new-child( card, $prefix )
+			+has( icon )
+				width: $space--08
+				height: $space--08
+				line-height: $space--08
+				text-align: center
+				color: $color--primary
+				font-size: $space--05
+
+			+has( content )
+				line-height: $space--05
+				font-size: $space--04
+				margin-bottom: $space--05
+
 +new( progress_bar, $prefix )
 
 	+when( 1st )
@@ -2278,7 +2372,6 @@ h6
 
 +new( comment_form, $prefix )
 
-
 +new( article, $prefix )
 	+when( avatar_left )
 		+new-child( article, $prefix )
@@ -2451,7 +2544,7 @@ h6
 			+has( img )
 				display: block
 
-+new ( owl, $prefix )
++new( owl, $prefix )
 	+when( default )
 		position: relative
 
@@ -3112,7 +3205,7 @@ h6
 
 				+has( icon )
 					+inline-block()
-					margin-right: $space--01a				
+					margin-right: $space--01a
 					height: $space--06
 					line-height: $space--06
 
@@ -3130,7 +3223,7 @@ h6
 
 				+has( icon )
 					+inline-block()
-					margin-right: $space--01a					
+					margin-right: $space--01a
 					color: $color--primary
 					height: $space--06
 					line-height: $space--06
@@ -3139,7 +3232,7 @@ h6
 					+inline-block()
 					color: $color__dark--08
 					text-transform: uppercase
-					font-weight: 700					
+					font-weight: 700
 
 			+has( comment )
 				margin-top: $space--03
@@ -3350,6 +3443,122 @@ h6
 				font-size: $space--04a
 				color: $color--secondary
 
++new( section, $prefix )
+	+when( split )
+		position: relative
+
+		&:before, &:after
+			display: block
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			height: 100%
+			width: 50%
+
+		&:before
+			left: 0
+			background-color: $color__light--00
+
+		&:after
+			right: 0
+			background-color: $color__dark--01
+
+
+		+new-child( section, $prefix )
+			+has( outer )
+				position: relative
+				z-index: 5
+
++new( header, $prefix )
+	+when( secondary )
+		+new-child( header, $prefix )
+			+has( site_logo )
+				background-color: $color__light--00
+
+			+has( site_info )
+				background-color: $color__dark--01
+				padding-left: $space--08
+
+				+has( outer )
+					padding-top: $space--05
+
+			+has( nav )
+				background-color: $color--primary
+
+			+has( auth_links )
+				font-size: $space--04
+				font-family: $font--heading
+				line-height: $space--06
+				font-weight: 400
+
+				+has( separator )
+					+inline-block()
+					margin: $space--04b	$space--02
+					color: $color__light--00
+
+				+has( link )
+					+inline-block()
+					margin-top: $space--04b
+					margin-bottom: $space--04b
+					color: $color__light--00
+					text-decoration: none
+
+			+has( icon_links )
+				margin-left: $space--05
+
+				+has( link )
+					+inline-block()
+					line-height: $space--07
+					width: $space--07
+					margin-top: $space--03
+					margin-bottom: $space--03
+					color: $color__light--00
+					text-align: center
+					position: relative
+					cursor: pointer
+
+					+if( cart )
+						font-size: $space--03a
+						+new-child( header__icon_links__link, $prefix )
+							+has( icon )
+
+							+has( count )
+								+border-radius( 50% )
+								display: block
+								height: $space--04c
+								width: $space--04c
+								min-width: $space--04c
+								width: auto
+								line-height: $space--04c
+								text-align: center
+								position: absolute
+								top: ( $space--01a * -1 )
+								right: ( $space--01a * -1 )
+								background-color: $color__light--00
+								font-size: $space--03a
+								color: $color__dark--08
+
+					+if( circle )
+						font-size: $space--03a
+						&:before
+							+border-radius( 50% )
+							display: block
+							border: 2px solid $color__light__rgba--01
+							position: absolute
+							content: ''
+							top: 0
+							left: 0
+							bottom: 0
+							right: 0
+
+				+has( separator )
+					+inline-block()
+					margin: $space--04b	$space--02
+					color: $color__light--00
+
++new( logo, $prefix )
+
 // WordPress: default markup
 +new( pagination, $prefix )
 	+when( second )
@@ -3444,7 +3653,7 @@ nav.navigation
 +new( body_blog, $prefix )
 	+when( two_cols )
 		+new-child( main_content, $prefix )
-			background-color: $color__light--12
+			background-color: $color__light--14
 
 +new( demo, $prefix )
 	+has( blockquote )
