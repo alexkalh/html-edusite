@@ -1,0 +1,22 @@
+.e-widget.e-form--searchCourse
+	.e-caption.e-caption--large.is-center.e-padding_bottom--08
+		h2.is-md.e-caption__title Find Your Course			
+		p.e-caption__subtitle Make Your Success a Priority
+
+	form.e-form(action="" method="post")
+		.row
+			.col-md-3
+				select.e-field.e-field--select.is-huge.is-fullwidth( name="course-category" autocomplete="off" )
+					option(value="" selected="selected") Select Category
+					option(value="foo") Foo
+					option(value="baz") Baz				
+			.col-md-3
+				select.e-field.e-field--select.is-huge.is-fullwidth(name="course-status" autocomplete="off" )
+					option(value="" selected="selected") Select Status
+					option(value="lorem") Lorem
+					option(value="ipsum") Ipsum
+			.col-md-3
+				input.e-field.e-field--text.is-huge.is-fullwidth(type="text" name="s" placeholder="Type keyword")
+
+			.col-md-3
+				input.e-field.e-field--submit.e-button.e-button--fill.is-fullwidth.is-primary.is-huge(type="submit" value="Search cource")

@@ -1231,6 +1231,16 @@ h6.is-lg {
   text-transform: uppercase;
   font-weight: 400;
 }
+.e-caption--large.is-center {
+  text-align: center;
+}
+.e-caption--large .e-caption__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.e-caption--large .e-caption__subtitle {
+  margin-bottom: 0;
+}
 .e-testimonials--carousel .e-testimonials__outer {
   position: relative;
   padding-left: 100px;
@@ -2202,6 +2212,12 @@ h6.is-lg {
 .e-section.is-dark .e-caption--borderBottom .e-caption__title {
   color: white;
 }
+.e-section.is-dark .e-caption--large .e-caption__title {
+  color: white;
+}
+.e-section.is-dark .e-caption--large .e-caption__subtitle {
+  color: white;
+}
 .e-section.is-dark .e-divider--solid {
   background: #373737;
 }
@@ -2477,6 +2493,101 @@ h6.is-lg {
   line-height: 20px;
   font-size: 15px;
   margin-bottom: 20px;
+}
+.e-card--icon_circle {
+  padding: 35px 25px;
+  position: relative;
+}
+.e-card--icon_circle:hover.is-primary:after {
+  display: none;
+}
+.e-card--icon_circle:hover .e-card__hover {
+  visibility: visible;
+  bottom: 0;
+}
+.e-card--icon_circle:hover .e-card__hover.is-secondary {
+  background-color: #325577;
+}
+.e-card--icon_circle.is-primary {
+  background-color: #31aec2;
+}
+.e-card--icon_circle.is-primary:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+.e-card--icon_circle.is-primary .e-card__icon {
+  color: white;
+}
+.e-card--icon_circle.is-primary .e-card__icon:after {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.e-card--icon_circle.is-primary .e-card__title {
+  color: white;
+}
+.e-card--icon_circle.is-primary .e-card__content {
+  color: white;
+}
+.e-card--icon_circle.is-secondary {
+  background-color: #31aec2;
+}
+.e-card--icon_circle.is-secondary .e-card__icon {
+  color: white;
+}
+.e-card--icon_circle.is-secondary .e-card__icon:after {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.e-card--icon_circle.is-secondary .e-card__title {
+  color: white;
+}
+.e-card--icon_circle.is-secondary .e-card__content {
+  color: white;
+}
+.e-card--icon_circle .e-card__icon {
+  display: block;
+  float: left;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+  text-align: center;
+  margin-right: 25px;
+  position: relative;
+}
+.e-card--icon_circle .e-card__icon:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.e-card--icon_circle .e-card__title {
+  line-height: 30px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+}
+.e-card--icon_circle .e-card__content {
+  margin-top: 35px;
+}
+.e-card--icon_circle .e-card__hover {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  left: 0;
+  bottom: -130px;
+  right: 0;
 }
 .e-progress_bar--1st {
   margin-top: 0;
@@ -3176,6 +3287,9 @@ h6.is-lg {
   display: inline-block;
   *display: inline;
   zoom: 1;
+}
+.e-section.is-hidden-overflow {
+  overflow: hidden;
 }
 .e-section--dark .e-page_title--default .e-page_title__subtitle {
   color: white;
@@ -4139,9 +4253,6 @@ nav.navigation a {
   text-decoration: none;
 }
 
-.e-body--home {
-  min-height: 4000px;
-}
 .e-body--home .e-demo__row--02 {
   background: url(demo/bg/welcome.jpg) no-repeat center center transparent;
   background-attachment: fixed;
@@ -4172,6 +4283,10 @@ nav.navigation a {
 }
 .e-body--courses .e-demo__row--01 {
   background-color: #f7f7f7;
+}
+.e-body--home_second .e-demo__row--01 {
+  background: url(demo/bg/find-course.jpg) no-repeat center center transparent;
+  background-attachment: fixed;
 }
 .e-body_blog--two_cols .e-main_content {
   background-color: #fcfcfc;

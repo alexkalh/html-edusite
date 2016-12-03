@@ -102,8 +102,6 @@ h5
 		line-height: round( 16px * 1.3333 )
 		margin: round( 16px / 3 ) 0
 
-
-
 h6
 	&.is-xs
 		font-size: 12px
@@ -705,6 +703,17 @@ h6
 				float: left
 				text-transform: uppercase
 				font-weight: 400
+
+	+when( large )
+		+if( center )
+			text-align: center
+		+new-child( caption, $prefix )
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+
+			+has( subtitle )
+				margin-bottom: 0
 
 +new( testimonials, $prefix )
 
@@ -1716,6 +1725,13 @@ h6
 
 					+has( text )
 
+			+when( large )
+				+new-child( caption, $prefix )
+					+has( title )
+						color: $color__light--00
+					+has( subtitle )
+						color: $color__light--00
+
 		+new-child( divider, $prefix )
 			+when( solid )
 				background: $color__dark--05a
@@ -1979,6 +1995,102 @@ h6
 				line-height: $space--05
 				font-size: $space--04
 				margin-bottom: $space--05
+
+	+when( icon_circle )
+		padding: $space--07a $space--06a
+		position: relative
+
+		&:hover
+			+if( primary )
+				&:after
+					display: none
+
+			+new-child( card, $prefix )										
+				+has( hover )
+					visibility: visible
+					bottom: 0
+
+					+if( secondary )
+						background-color: $color--secondary
+
+		+if( primary )
+			background-color: $color--primary
+
+			&:after
+				display: block
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				bottom: 0
+				border-right: 1px solid $color__light__rgba--02
+
+			+new-child( card, $prefix )
+				+has( icon )
+					color: $color__light--00
+					&:after
+						border: 1px solid $color__light__rgba--01
+
+				+has( title )
+					color: $color__light--00
+
+				+has( content )
+					color: $color__light--00
+
+		+if( secondary )
+			background-color: $color--primary
+
+			+new-child( card, $prefix )
+				+has( icon )
+					color: $color__light--00
+					&:after
+						border: 1px solid $color__light__rgba--01
+
+				+has( title )
+					color: $color__light--00
+
+				+has( content )
+					color: $color__light--00
+
+		+new-child( card, $prefix )
+			+has( icon )
+				display: block
+				float: left
+				width: $space--11
+				height: $space--11
+				line-height: $space--11
+				font-size: $space--06a
+				text-align: center
+				margin-right: $space--06a
+				position: relative
+
+				&:after
+					+border-radius( 50% )
+					display: block
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+
+			+has( title )
+				line-height: $space--07
+				font-family: $font--heading
+				margin-bottom: 0
+
+			+has( content )
+				margin-top: $space--07a
+
+			+has( hover )
+				+transition( .25s )
+				position: absolute
+				display: block
+				visibility: hidden
+				left: 0
+				bottom: ( $space--15 * -1 )
+				right: 0
+
 
 +new( progress_bar, $prefix )
 
@@ -2370,8 +2482,6 @@ h6
 					height: 1px
 					background-color: $color--primary
 
-+new( comment_form, $prefix )
-
 +new( article, $prefix )
 	+when( avatar_left )
 		+new-child( article, $prefix )
@@ -2670,6 +2780,9 @@ h6
 					+inline-block()
 
 +new( section, $prefix )
+	+if( hidden-overflow )
+		overflow: hidden
+
 	+when( dark )
 		+new-child( page_title, $prefix )
 			+when( default )
@@ -3606,7 +3719,6 @@ nav.navigation
 // For only demo.
 +new( body, $prefix )
 	+when( home )
-		min-height: 4000px
 		+new-child( demo, $prefix )
 			+has( row )
 				+when( '02' )
@@ -3649,6 +3761,13 @@ nav.navigation
 			+has( row )
 				+when( '01' )
 					background-color: $color__light--12
+
+	+when( home_second )
+		+new-child( demo, $prefix )
+			+has( row )
+				+when( '01' )
+					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
+					background-attachment: fixed
 
 +new( body_blog, $prefix )
 	+when( two_cols )
