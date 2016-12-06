@@ -99,7 +99,7 @@ Edusite_Course =
 
 Edusite_Count_Down =
 	create: ->
-		$e_counter = jQuery '.e-count_down'
+		$e_counter = jQuery '.e-count_down--first'
 
 		if $e_counter.length
 			jQuery.each $e_counter, ()->

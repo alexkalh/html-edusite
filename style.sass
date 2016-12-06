@@ -15,6 +15,8 @@ body
 h1, h2, h3, h4, h5, h6
 	font-family: $font--heading
 	color: $color__dark--03
+	&.is-bold
+		font-weight: 700
 	&.is-regular
 		font-weight: 400
 	&.is-upppercase
@@ -526,6 +528,10 @@ h6
 				text-transform: lowercase
 				&:first-letter
 					text-transform: uppercase
+
+	+when( medium )
+
+
 
 	+when( withIcon )
 
@@ -1048,13 +1054,12 @@ h6
 +new( count_down, $prefix )
 
 +new( date_block, $prefix )
-	display: block
-	min-height: 90px
-	height: 90px
-	height: auto
-	text-align: center
-
 	+when( halfBg )
+		display: block
+		min-height: 90px
+		height: 90px
+		height: auto
+		text-align: center
 		position: relative
 		background-color: $color__light--00
 		padding-top: $space--04
@@ -1069,28 +1074,30 @@ h6
 			border-left: 1px dashed $color__light--07
 			background-color: $color__light--12
 
+	+new-child( date_block, $prefix )
+
+		+has( number )
+			display: block
+			position: relative
+			font-family: $font--heading
+			font-size: $space--08 * .9
+			font-weight: 400
+			line-height: $space--08 * .9
+			color: $color__dark--05
+
+		+has( text )
+			display: block
+			position: relative
+			font-family: $font--heading
+			font-size: $space--04 * 0.8
+			font-weight: 400
+			line-height: $space--06
+			color: $color__dark--05
+			text-transform: uppercase
+
 	+when( borderRound )
 		overflow: hidden
 		+border-radius( 5px )
-
-	+has( number )
-		display: block
-		position: relative
-		font-family: $font--heading
-		font-size: $space--08 * .9
-		font-weight: 400
-		line-height: $space--08 * .9
-		color: $color__dark--05
-
-	+has( text )
-		display: block
-		position: relative
-		font-family: $font--heading
-		font-size: $space--04 * 0.8
-		font-weight: 400
-		line-height: $space--06
-		color: $color__dark--05
-		text-transform: uppercase
 
 +new( widget, $prefix )
 	+when( dark )
@@ -1709,6 +1716,10 @@ h6
 		&::before
 			background-color: $color__primary__rgba--01
 
+	+with( overlay_dark )
+		&::before
+			background-color: $color__dark__rgba--02b
+
 +new( section, $prefix )
 	+if( dark )
 		+new-child( caption, $prefix )
@@ -1767,12 +1778,39 @@ h6
 
 				+if( shadow )
 
-
 		+new-child( social, $prefix )
 			+when( default )
 				+new-child( social, $prefix )
 					+has( link )
 						border-color: $color__dark--05a
+
+		+new-child( caption, $prefix )
+			+when( medium )
+				+new-child( caption, $prefix )
+					+has( title )
+						color: $color__light--00
+
+		+new-child( date_block, $prefix )
+			+when( solid )
+				+new-child( date_block, $prefix )
+					+has( number )
+						color: $color__light--00
+
+		+new-child( count_down, $prefix )
+			+when( secondary )
+				+new-child( count_down, $prefix )
+					+has( caption )
+						color: $color__light--00
+
+					+has( info )
+						color: $color__light--06
+
+				+new-child( info, $prefix )
+					+when( iconLeft )
+						+new-child( info, $prefix )
+							+has( icon )
+								color: $color__light--06
+
 
 +new( breadcrumb, $prefix )
 	+when( centered )
@@ -2005,7 +2043,7 @@ h6
 				&:after
 					display: none
 
-			+new-child( card, $prefix )										
+			+new-child( card, $prefix )
 				+has( hover )
 					visibility: visible
 					bottom: 0
@@ -2090,7 +2128,6 @@ h6
 				left: 0
 				bottom: ( $space--15 * -1 )
 				right: 0
-
 
 +new( progress_bar, $prefix )
 
@@ -3672,6 +3709,158 @@ h6
 
 +new( logo, $prefix )
 
++new( quick_link, $prefix )
+	+when( primary )
+		&:hover
+			+new-child( quick_link, $prefix )
+				+has( link )
+					color: $color--secondary
+				+has( icon )
+					margin-left: $space--04
+
+		+new-child( quick_link, $prefix )
+			+has( link )
+				+transition( .25s )
+				display: block
+				text-decoration: none
+				font-size: $space--04c
+				color: $color--primary
+
+			+has( text )
+				+inline-block()
+				line-height: $space--06
+				font-family: $font--heading
+
+			+has( icon )
+				+transition( .25s )
+				+inline-block()
+				margin-left: $space--03
+				line-height: $space--06
+				vertical-align: middle
+				font-size: $space--04
+
++new( card, $prefix )
+	+when( image_shadow )
+
+		+new-child( card, $prefix )
+
+			+has( link )
+				display: block
+				position: relative
+
+				&:after
+					display: block
+					content: ''
+					position: absolute
+					right: ( $space--03 * -1 )
+					bottom: ( $space--03 * -1 )
+					width: 100%
+					height: 100%
+					background-color: $color--primary
+					z-index: 5
+
+			+has( img )
+				display: block
+				position: relative
+				z-index: 10
+				+box-shadow( 0px, 2px, 5px, 2px, $color__dark__rgba--01 )
+
++new( count_down, $prefix )
+	+when( secondary )
+		+new-child( count_down, $prefix )
+
+			+has( caption )
+
+			+has( info )
+
+			+has( counter )
+				margin-top: $space--07
+
+			+has( date )
+				float: left
+
+			+has( button )
+				margin-left: $space--07a
+				margin-top: $space--07a
+
+
+			+has( divider )
+				display: block
+				float: left
+				width: $space--07a
+				height: $space--13a
+				position: relative
+
+				&:before, &:after
+					display: block
+					position: absolute
+					content: ''
+					width: $space--01
+					height: $space--01
+					background-color: $color__dark--06
+					z-index: 5
+					left: 50%
+					margin-left: ( $space--01b * -1 )
+					+border-radius( 50% )
+
+				&:before
+					top: 50%
+					margin-top: ( $space--02 * -1 )
+
+				&:after
+					bottom: 50%
+					margin-bottom: ( $space--02 * -1 )
+
++new( date_block, $prefix )
+	+when( solid )
+		display: block
+		width: $space--13a
+		height: $space--13a
+		text-align: center
+		padding-top: $space--04
+		border: 1px solid $color__dark--12
+		position: relative
+
+		&:before, &:after
+			display: block
+			position: absolute
+			content: ''
+			width: $space--10
+			height: $space--0
+			background-color: $color__light--06
+			z-index: 5
+			left: 50%
+			margin-left: ( $space--06a * -1 )
+
+		&:before
+			top: -2px
+
+		&:after
+			bottom: -2px
+
+		+new-child( date_block, $prefix )
+			+has( number )
+				display: block
+				position: relative
+				font-family: $font--heading
+				font-size: $space--08 * .9
+				font-weight: 400
+				line-height: $space--08 * .9
+				color: $color__dark--05
+
+			+has( text )
+				display: block
+				position: relative
+				font-family: $font--heading
+				font-size: $space--04 * 0.8
+				font-weight: 400
+				line-height: $space--06
+				color: $color__light--03
+				text-transform: uppercase
+
+
+
+
 // WordPress: default markup
 +new( pagination, $prefix )
 	+when( second )
@@ -3768,6 +3957,9 @@ nav.navigation
 				+when( '01' )
 					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
 					background-attachment: fixed
+				+when( '04' )
+					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
+					background-attachment: cover
 
 +new( body_blog, $prefix )
 	+when( two_cols )

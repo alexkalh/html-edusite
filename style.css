@@ -553,6 +553,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   color: #262626;
 }
+h1.is-bold, h2.is-bold, h3.is-bold, h4.is-bold, h5.is-bold, h6.is-bold {
+  font-weight: 700;
+}
 h1.is-regular, h2.is-regular, h3.is-regular, h4.is-regular, h5.is-regular, h6.is-regular {
   font-weight: 400;
 }
@@ -1567,14 +1570,12 @@ h6.is-lg {
 .e-owl__nav__link--prev {
   margin-right: 4px;
 }
-.e-date_block {
+.e-date_block--halfBg {
   display: block;
   min-height: 90px;
   height: 90px;
   height: auto;
   text-align: center;
-}
-.e-date_block--halfBg {
   position: relative;
   background-color: white;
   padding-top: 15px;
@@ -1590,14 +1591,7 @@ h6.is-lg {
   border-left: 1px dashed #dde5f3;
   background-color: #f7f7f7;
 }
-.e-date_block--borderRound {
-  overflow: hidden;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
-}
-.e-date_block__number {
+.e-date_block .e-date_block__number {
   display: block;
   position: relative;
   font-family: "Montserrat", sans-serif;
@@ -1606,7 +1600,7 @@ h6.is-lg {
   line-height: 36px;
   color: #333333;
 }
-.e-date_block__text {
+.e-date_block .e-date_block__text {
   display: block;
   position: relative;
   font-family: "Montserrat", sans-serif;
@@ -1615,6 +1609,13 @@ h6.is-lg {
   line-height: 24px;
   color: #333333;
   text-transform: uppercase;
+}
+.e-date_block--borderRound {
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
 }
 .e-widget--dark .e-caption--withIcon {
   display: block;
@@ -2206,6 +2207,9 @@ h6.is-lg {
 .e-section.has-overlay_primary::before {
   background-color: rgba(49, 174, 194, 0.6);
 }
+.e-section.has-overlay_dark::before {
+  background-color: rgba(0, 0, 0, 0.85);
+}
 .e-section.is-dark .e-caption--borderBottom:before {
   background-color: #888888;
 }
@@ -2250,6 +2254,21 @@ h6.is-lg {
 }
 .e-section.is-dark .e-social--default .e-social__link {
   border-color: #373737;
+}
+.e-section.is-dark .e-caption--medium .e-caption__title {
+  color: white;
+}
+.e-section.is-dark .e-date_block--solid .e-date_block__number {
+  color: white;
+}
+.e-section.is-dark .e-count_down--secondary .e-count_down__caption {
+  color: white;
+}
+.e-section.is-dark .e-count_down--secondary .e-count_down__info {
+  color: #cccccc;
+}
+.e-section.is-dark .e-count_down--secondary .e-info--iconLeft .e-info__icon {
+  color: #cccccc;
 }
 .e-breadcrumb--centered .e-breadcrumb__title {
   text-align: center;
@@ -4201,6 +4220,147 @@ h6.is-lg {
   margin: 13px 7px;
   color: white;
 }
+.e-quick_link--primary:hover .e-quick_link__link {
+  color: #325577;
+}
+.e-quick_link--primary:hover .e-quick_link__icon {
+  margin-left: 15px;
+}
+.e-quick_link--primary .e-quick_link__link {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  color: #31aec2;
+}
+.e-quick_link--primary .e-quick_link__text {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  line-height: 24px;
+  font-family: "Montserrat", sans-serif;
+}
+.e-quick_link--primary .e-quick_link__icon {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-left: 10px;
+  line-height: 24px;
+  vertical-align: middle;
+  font-size: 15px;
+}
+.e-card--image_shadow .e-card__link {
+  display: block;
+  position: relative;
+}
+.e-card--image_shadow .e-card__link:after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: #31aec2;
+  z-index: 5;
+}
+.e-card--image_shadow .e-card__img {
+  display: block;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.4);
+}
+.e-count_down--secondary .e-count_down__counter {
+  margin-top: 30px;
+}
+.e-count_down--secondary .e-count_down__date {
+  float: left;
+}
+.e-count_down--secondary .e-count_down__button {
+  margin-left: 35px;
+  margin-top: 35px;
+}
+.e-count_down--secondary .e-count_down__divider {
+  display: block;
+  float: left;
+  width: 35px;
+  height: 85px;
+  position: relative;
+}
+.e-count_down--secondary .e-count_down__divider:before, .e-count_down--secondary .e-count_down__divider:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #555555;
+  z-index: 5;
+  left: 50%;
+  margin-left: -2px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.e-count_down--secondary .e-count_down__divider:before {
+  top: 50%;
+  margin-top: -7px;
+}
+.e-count_down--secondary .e-count_down__divider:after {
+  bottom: 50%;
+  margin-bottom: -7px;
+}
+.e-date_block--solid {
+  display: block;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+  padding-top: 15px;
+  border: 1px solid #909090;
+  position: relative;
+}
+.e-date_block--solid:before, .e-date_block--solid:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #cccccc;
+  z-index: 5;
+  left: 50%;
+  margin-left: -25px;
+}
+.e-date_block--solid:before {
+  top: -2px;
+}
+.e-date_block--solid:after {
+  bottom: -2px;
+}
+.e-date_block--solid .e-date_block__number {
+  display: block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #333333;
+}
+.e-date_block--solid .e-date_block__text {
+  display: block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #b9b9b9;
+  text-transform: uppercase;
+}
 .e-pagination--second .page-numbers.prev {
   float: left;
   margin-left: 0;
@@ -4287,6 +4447,10 @@ nav.navigation a {
 .e-body--home_second .e-demo__row--01 {
   background: url(demo/bg/find-course.jpg) no-repeat center center transparent;
   background-attachment: fixed;
+}
+.e-body--home_second .e-demo__row--04 {
+  background: url(demo/bg/find-course.jpg) no-repeat center center transparent;
+  background-attachment: cover;
 }
 .e-body_blog--two_cols .e-main_content {
   background-color: #fcfcfc;
