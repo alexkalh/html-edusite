@@ -843,6 +843,15 @@ h6
 			&.active
 				background-color: $color--primary
 
++new( courses, $prefix )
+	+when( masonry )
+		+new-child( courses, $prefix )
+			+has( outer )
+				margin-top: ( $space--10 * -1 )
+			+has( course )
+				margin-top: $space--10
+
+
 +new( course, $prefix )
 
 	+when( withRating )
@@ -983,9 +992,54 @@ h6
 
 			+has( right)
 
-+new( couse_desc, $prefix )
-	+when( default )
-		+has( content )
+	+when( medium_thumb )
+		+new-child( course, $prefix )
+
+			+has( thumb )
+				display: block
+				position: relative
+				margin-bottom: $space--05
+
+				+has( img )
+					display: block
+					width: 100%
+
+			+has( price )
+				left: 0
+				bottom: 0
+				position: absolute
+				text-decoration: none
+				border-left: $space--0 solid $color--primary
+				
+				+has( ins )
+					+inline_block()
+					+border-radius( $space--0 )
+					height: $space--07a
+					line-height: $space--07a
+					padding-left: $space--04
+					padding-right: $space--04
+					margin-left: ( $space--03c - $space--0 )
+					background-color: $color--primary
+					color: $color__light--00
+					font-size: $space--04d
+					font-family: $font--date
+
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+				+has( link )
+					text-decoration: none					
+
+			+has( metadata )
+				margin-top: $space--03
+				margin-bottom: 0
+
+			+has( rating )
+
+			+has( excerpt )
+				margin-top: $space--03
+				margin-bottom: 0
 
 +new( price, $prefix )
 	+has( ins )
@@ -1050,8 +1104,6 @@ h6
 				margin-right: $space--01
 
 			+when( next )
-
-+new( count_down, $prefix )
 
 +new( date_block, $prefix )
 	+when( halfBg )
@@ -1792,6 +1844,8 @@ h6
 
 		+new-child( date_block, $prefix )
 			+when( solid )
+				&:before, &:after
+					background-color: $color__light--00
 				+new-child( date_block, $prefix )
 					+has( number )
 						color: $color__light--00
@@ -1809,8 +1863,6 @@ h6
 					+when( iconLeft )
 						+new-child( info, $prefix )
 							+has( icon )
-								color: $color__light--06
-
 
 +new( breadcrumb, $prefix )
 	+when( centered )
@@ -3756,7 +3808,7 @@ h6
 					bottom: ( $space--03 * -1 )
 					width: 100%
 					height: 100%
-					background-color: $color--primary
+					background-color: $color__primary__rgba--04
 					z-index: 5
 
 			+has( img )
@@ -3818,8 +3870,10 @@ h6
 		height: $space--13a
 		text-align: center
 		padding-top: $space--04
-		border: 1px solid $color__dark--12
+		border: 1px solid $color--secondary
 		position: relative
+		background-color: $color--secondary
+		+box-shadow( 0px, 2px, 5px, 2px, $color__dark__rgba--02a )
 
 		&:before, &:after
 			display: block
@@ -3857,9 +3911,6 @@ h6
 				line-height: $space--06
 				color: $color__light--03
 				text-transform: uppercase
-
-
-
 
 // WordPress: default markup
 +new( pagination, $prefix )

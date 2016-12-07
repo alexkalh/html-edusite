@@ -245,4 +245,41 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 										a(href="#" title='').e-count_down__button.e-field.e-field--submit.e-button.e-button--fill.is-primary.is-huge Join Now
 
+			section.e-section.e-demo__row--05.e-padding_bottom--11.e-bg_color--07
+				.container
+					.row
+						.col-lg-12
+							.e-col.cleafix
+
+								.e-widget.e-courses--masonry.e-margin_top--09
+									.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
+										h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+											i.e-caption--withIcon__icon.fa.fa-bullhorn
+											span.e-caption--withIcon__text Popular courses
+
+										p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
+
+									.e-courses__outer.animated.row
+										- for (var $i=0; $i<6; $i++)
+											.e-courses__course.col-lg-4
+												.e-course--medium_thumb
+
+													.e-course__thumb
+														img.e-course__thumb__img.img-responsive( src='demo/courses/masonry/1.jpg' )
+														a.e-course__price.e-price--secondary( href='#' title='' )
+															span.e-course__price__ins $122.230
+
+													h5.is-md.e-course__title
+														a.e-course__title__link( href='#' title='' ) Become a Startup Founder
+
+													p.e-course__metadata
+														span.e-icon--text_right
+															i.e-icon__icon.fa.fa-book
+															span.e-icon__text 5 Lessons
+
+														i.e-course__rating.e-rating.e-rating--three.e-rating--small.e-rating--primary.fa
+
+													p.e-course__excerpt Education is the process of facilitating learning. Knowledge, skills, values, beliefs, and habits ..
+
+
 		include jade/_footer.jade
