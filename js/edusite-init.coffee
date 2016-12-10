@@ -5,6 +5,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Count_Down.create()
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )
+	Edusite_Course.init( 'masonry' )
 	Edusite_Lecture.init( 'carousel' )
 	Edusite_Testimonial.init( 'carousel' )
 	Edusite_Testimonial.init( 'carouselSingle' )
@@ -15,7 +16,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Audio.init( 'mediaelementplayer' )
 	return
 
-jQuery( window ).on 'load', ( $ ) ->	
+jQuery( window ).on 'load', ( $ ) ->
 	Edusite_Hack.matchHeight( '> div .e-col' )
 	return
 
@@ -67,6 +68,8 @@ Edusite_Course =
 	init: ( type ) ->
 		if 'carousel' == type
 			Edusite_Course.makeCarousel()
+		else if 'masonry' == type
+			Edusite_Course.makeMasonry()
 		return
 
 	makeCarousel: ->
@@ -95,6 +98,24 @@ Edusite_Course =
 						return
 				return
 
+		return
+
+	makeMasonry: ->
+
+		$e_course_masonries = jQuery( '.e-courses--masonry .e-courses__outer' )
+		if $e_course_masonries.length
+
+			jQuery.each $e_course_masonries, ()->
+
+				$_tmp = jQuery( @ )
+
+				$_tmp.imagesLoaded ()->
+
+					$_tmp.masonry
+						itemSelector: '.e-courses__course'		 
+
+					return
+				return
 		return
 
 Edusite_Count_Down =
@@ -161,7 +182,7 @@ Edusite_Progress_Bar =
 			jQuery.each $bars, ( index, element ) ->
 
 				$element = jQuery( this ).find '.e-progress_bar__current'
-				
+
 				start   = $element.attr 'data-start'
 				percent = $element.attr 'data-percent'
 				delay   = 500
@@ -171,8 +192,8 @@ Edusite_Progress_Bar =
 						width : start
 
 				$element.appear ->
-				  setTimeout (->				  	
-				    $element.animate( { 'width': percent + '%' }, 500, 'easeInOutExpo' ).addClass 'animated'				    
+				  setTimeout (->
+				    $element.animate( { 'width': percent + '%' }, 500, 'easeInOutExpo' ).addClass 'animated'
 				    return
 				  ), delay
 
@@ -185,7 +206,7 @@ Edusite_Progress_Bar =
 Edusite_Hack =
 	matchHeight: (selector)->
 		$e_rows = jQuery( '.e-height--match' )
-		
+
 		if $e_rows.length
 			jQuery.each $e_rows, ()->
 				jQuery(this).find( selector ).matchHeight()

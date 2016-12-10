@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
   Edusite_Count_Down.create();
   Edusite_Slider.init('nivo');
   Edusite_Course.init('carousel');
+  Edusite_Course.init('masonry');
   Edusite_Lecture.init('carousel');
   Edusite_Testimonial.init('carousel');
   Edusite_Testimonial.init('carouselSingle');
@@ -74,6 +75,8 @@ Edusite_Course = {
   init: function(type) {
     if ('carousel' === type) {
       Edusite_Course.makeCarousel();
+    } else if ('masonry' === type) {
+      Edusite_Course.makeMasonry();
     }
   },
   makeCarousel: function() {
@@ -97,6 +100,21 @@ Edusite_Course = {
               $_owl.trigger('owl.next');
             });
           }
+        });
+      });
+    }
+  },
+  makeMasonry: function() {
+    var $e_course_masonries;
+    $e_course_masonries = jQuery('.e-courses--masonry .e-courses__outer');
+    if ($e_course_masonries.length) {
+      jQuery.each($e_course_masonries, function() {
+        var $_tmp;
+        $_tmp = jQuery(this);
+        $_tmp.imagesLoaded(function() {
+          $_tmp.masonry({
+            itemSelector: '.e-courses__course'
+          });
         });
       });
     }

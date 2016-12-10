@@ -58,6 +58,30 @@
 	-ms-border-radius: $radius
 	border-radius: $radius
 
+=border-left-radius($radius)
+	-webkit-border-left-radius: $radius
+	-moz-border-left-radius: $radius
+	-ms-border-left-radius: $radius
+	border-left-radius: $radius
+
+=border-right-radius($radius)
+	-webkit-border-right-radius: $radius
+	-moz-border-right-radius: $radius
+	-ms-border-right-radius: $radius
+	border-right-radius: $radius
+
+=border-top-radius($radius)
+	-webkit-border-top-radius: $radius
+	-moz-border-top-radius: $radius
+	-ms-border-top-radius: $radius
+	border-top-radius: $radius
+
+=border-bottom-radius($radius)
+	-webkit-border-bottom-radius: $radius
+	-moz-border-bottom-radius: $radius
+	-ms-border-bottom-radius: $radius
+	border-bottom-radius: $radius	
+
 =attr( $name, $type:null )
 	@if $type != null
 		$namespace: str-slice($type, 0, 1)
@@ -107,11 +131,11 @@
 	+when( 04 )
 		+animation-duration(4s)
 	+when( 05 )
-		+animation-duration(5s)			
+		+animation-duration(5s)
 
 @for $i from 0 to length( $space--list )
 
-	+new( margin_top, $prefix )		
+	+new( margin_top, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
 			+has( negative )
 				+space( margin, nth(  $space--list, $i+1 ) * -1 )
@@ -119,22 +143,22 @@
 	+new( margin_top, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
 			+space( margin, nth(  $space--list, $i+1 ) )
-		
+
 	+new( margin_bottom, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
 			+space( margin, null, null, nth(  $space--list, $i+1 ) )
-	
+
 	+new( margin_right, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
-			+space( margin, null, nth(  $space--list, $i+1 ) )		
-	
+			+space( margin, null, nth(  $space--list, $i+1 ) )
+
 	+new( padding_top, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
 			+space( padding, nth(  $space--list, $i+1 ) )
 
 	+new( padding_bottom, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
-			+space( padding, null, null, nth(  $space--list, $i+1 ) )	
+			+space( padding, null, null, nth(  $space--list, $i+1 ) )
 
 	+new( padding_left, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
@@ -142,7 +166,7 @@
 
 	+new( padding_right, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
-			+space( padding, null, nth(  $space--list, $i+1 ) )				
+			+space( padding, null, nth(  $space--list, $i+1 ) )
 
 	+new( padding, $prefix )
 		+when( nth( $indexs, $i+ 1 ) )
@@ -163,8 +187,8 @@
 		background-color: $color__light--14
 	+when( '10' )
 		background-color: $color__light--10
-	
-	+when( dark_05 )		
+
+	+when( dark_05 )
 		background-color: $color__dark--05
 
 +new( row, $prefix )

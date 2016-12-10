@@ -847,10 +847,11 @@ h6
 	+when( masonry )
 		+new-child( courses, $prefix )
 			+has( outer )
+				position: relative
 				margin-top: ( $space--10 * -1 )
-			+has( course )
-				margin-top: $space--10
 
+			+has( course )
+				padding-top: $space--10									
 
 +new( course, $prefix )
 
@@ -993,9 +994,12 @@ h6
 			+has( right)
 
 	+when( medium_thumb )
+		overflow: hidden
+		
 		+new-child( course, $prefix )
-
+	
 			+has( thumb )
+				width: 100%
 				display: block
 				position: relative
 				margin-bottom: $space--05
@@ -1008,38 +1012,99 @@ h6
 				left: 0
 				bottom: 0
 				position: absolute
-				text-decoration: none
-				border-left: $space--0 solid $color--primary
-				
-				+has( ins )
-					+inline_block()
-					+border-radius( $space--0 )
-					height: $space--07a
-					line-height: $space--07a
-					padding-left: $space--04
-					padding-right: $space--04
-					margin-left: ( $space--03c - $space--0 )
-					background-color: $color--primary
-					color: $color__light--00
-					font-size: $space--04d
-					font-family: $font--date
-
 
 			+has( title )
 				margin-top: 0
 				margin-bottom: 0
 				+has( link )
-					text-decoration: none					
+					text-decoration: none
+					color: $color__dark--05
 
 			+has( metadata )
 				margin-top: $space--03
 				margin-bottom: 0
+
+				+has( item )
+					+if( other )
+						margin-left: $space--05
 
 			+has( rating )
 
 			+has( excerpt )
 				margin-top: $space--03
 				margin-bottom: 0
+
+	+when( large_thumb )
+		position: relative
+		overflow: hidden
+
+		+new-child( course, $prefix )
+			+has( thumb )
+				width: 100%
+				display: block
+				z-index: 1							
+
+				+has( img )
+					display: block
+					width: 100%
+
+			+has( title )
+				z-index: 4
+				margin-top: 0
+				margin-bottom: 0
+				+has( link )
+					text-decoration: none
+					color: $color__light--00
+
+			+has( outer )
+				padding: $space--05
+				position: absolute
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: 2
+
+			+has( inner )
+				position: relative
+				z-index: 3
+				padding-top: $space--04
+
+			+has( price )
+				z-index: 4
+				position: absolute
+				left: 0
+				top: ( $space--07a * -1 )
+
++new( icon, $prefix )
+	+when( text_right )
+		+inline_block()
+
+		+new-child( icon, $prefix )
+			+has( icon )
+				+inline_block()
+				margin-right: $space--03c
+			+has( text )
+				+inline_block()
+
++new( price, $prefix )
+	+when( secondary )
+		+inline_block()
+		text-decoration: none
+		border-left: $space--0 solid $color--primary
+
+		+new-child( price, $prefix )
+			+has( ins )
+				+inline_block()
+				+border-radius( $space--0 )
+				height: $space--07a
+				line-height: $space--07a
+				padding-left: $space--04
+				padding-right: $space--04
+				margin-left: ( $space--03c - $space--0 )
+				background-color: $color--primary
+				color: $color__light--00
+				font-size: $space--04d
+				font-family: $font--date
 
 +new( price, $prefix )
 	+has( ins )
