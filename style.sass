@@ -851,7 +851,7 @@ h6
 				margin-top: ( $space--10 * -1 )
 
 			+has( course )
-				padding-top: $space--10									
+				padding-top: $space--10
 
 +new( course, $prefix )
 
@@ -995,9 +995,9 @@ h6
 
 	+when( medium_thumb )
 		overflow: hidden
-		
+
 		+new-child( course, $prefix )
-	
+
 			+has( thumb )
 				width: 100%
 				display: block
@@ -1042,7 +1042,7 @@ h6
 			+has( thumb )
 				width: 100%
 				display: block
-				z-index: 1							
+				z-index: 1
 
 				+has( img )
 					display: block
@@ -1417,16 +1417,16 @@ h6
 				margin: 0
 				text-transform: uppercase
 
-+new( cta, $prefix )
-	+inline-block()
-	padding: ( ( $space--10 - $space--06) / 2 ) $space--08
-	+border-radius( 2px )
-	font-family: $font--heading
-
-	+when( light )
-		background-color: $color__light--00
++new( call_to_action, $prefix )
 
 	+when( default )
+		+inline-block()
+		+border-radius( 2px )
+		padding: ( ( $space--10 - $space--06) / 2 ) $space--08
+		font-family: $font--heading
+
+		+if( light )
+			background-color: $color__light--00
 
 		+has( secondary )
 			display: block
@@ -1444,6 +1444,34 @@ h6
 			left-right: $space--07
 			float: left
 			color: $color--primary
+
+	+when( icon_left )
+		+border-radius( $space--01a )
+		+clearfix()
+		padding: $space--05
+		background-color: $color--third
+
+		+new-child( call_to_action, $prefix )
+			+has( icon )
+				+inline-block()
+				+border-radius( 50% )
+				height: $space--09
+				width: $space--09
+				line-height: $space--09
+				background-color: $color__light--00
+				border: 1px solid $color__light__rgba--02
+				text-align: center
+				color: $color--third
+				margin-right: $space--05
+
+			+has( text )
+				color: $color__light--00
+
+			+has( button )
+				+border-radius( $space--01a )
+				float: right
+				color: $color__light--00
+				border: 1px solid $color__light__rgba--02
 
 +new( banner, $prefix )
 	+when( single )
@@ -3928,7 +3956,93 @@ h6
 					bottom: 50%
 					margin-bottom: ( $space--02 * -1 )
 
++new( events, $prefix )
+
+	+when( one_col )
+		+new-child( events, $prefix )
+
+			+has( outer )
+				margin-top: ( $space--03 * -1 )
+
+			+has( item )
+				+clearfix()
+				padding: $space--07 $space--05 $space--07 ( $space--05 + $space--05 + $space--07 + $space--11 )
+				background-color: $color__light--00
+				margin-top: $space--03
+				position: relative
+				&:before					
+					display: block
+					position: absolute
+					content: ''
+					top: -1px
+					left: $space--05
+					width: $space--11
+					height: $space--01c 
+					background-color: $color--primary
+
+				+has( datetime )
+					display: block
+					position: absolute
+					top: $space--07
+					left: $space--05
+					padding-right: $space--05
+					border-right: 1px solid $color__light--09
+
+				+has( sub_title )
+					+clearfix()
+					display: block
+					text-decoration: none
+					font-family: $font--date
+					font-size: $space--04b
+					color: $color__dark--09
+					text-transform: uppercase
+					margin-bottom: $space--03
+
+				+has( title )
+					+clearfix()
+					margin-top: 0
+					margin-bottom: 0
+
+					+has( link )
+						display: block
+						float: left
+						color: $color__dark--05
+						text-decoration: none
+
+					+has( icon )
+						display: block
+						float: left
+						height: round( $space--04d * 1.3333 )
+						width: round( $space--04d * 1.3333 )
+						line-height: round( $space--04d * 1.3333 )
+						margin-left: $space--03
+						text-align: center
+						color: $color__dark--05
+						font-size: round( $space--04d * 1.3333 )
+
+				+has( location )
+					+clearfix()
+					margin-top: $space--03
+					margin-bottom: 0
+					font-family: $font--date
+					font-size: $space--04b
+
+					+has( label )
+						display: block
+						float: left
+						text-transform: uppercase
+						margin-right: $space--01a
+						color: $color--secondary
+
+					+has( link )
+						display: block
+						float: left
+						text-decoration: none
+
+
+
 +new( date_block, $prefix )
+
 	+when( solid )
 		display: block
 		width: $space--13a
@@ -3976,6 +4090,36 @@ h6
 				line-height: $space--06
 				color: $color__light--03
 				text-transform: uppercase
+
+	+when( border_top )
+		display: block
+		width: $space--11
+		font-family: $font--date
+		color: $color--secondary
+		text-align: center
+
+		+new-child( date_block, $prefix )
+			+has( month )
+				display: block
+				font-size: $space--05
+				line-height: $space--05
+				margin-top: 0
+				margin-bottom: 0
+
+			+has( day )
+				display: block
+				font-size: $space--07
+				line-height: $space--07
+				margin-top: $space--03
+				margin-bottom: $space--03
+
+			+has( year )
+				display: block
+				font-size: $space--04c
+				line-height: $space--04c
+				margin-top: 0
+				margin-bottom: 0
+
 
 // WordPress: default markup
 +new( pagination, $prefix )
@@ -4076,6 +4220,11 @@ nav.navigation
 				+when( '04' )
 					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
 					background-attachment: cover
+				+when( '06' )
+					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
+					background-attachment: cover
+					&:before
+						background-color: $color__fourth__rgba--01
 
 +new( body_blog, $prefix )
 	+when( two_cols )

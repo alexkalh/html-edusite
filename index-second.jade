@@ -173,22 +173,22 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 									p.e-quick_link--primary
 										a(href='#' title='').e-quick_link__link
 											span.e-quick_link__text 5 Steps to U.S. Study
-											i.e-quick_link__icon.ti-arrow-right
+											i.e-quick_link__icon.arrow_right
 
 									p.e-quick_link--primary
 										a(href='#' title='').e-quick_link__link
 											span.e-quick_link__text Find an Advising Center
-											i.e-quick_link__icon.ti-arrow-right
+											i.e-quick_link__icon.arrow_right
 
 									p.e-quick_link--primary
 										a(href='#' title='').e-quick_link__link
 											span.e-quick_link__text Financial Aid
-											i.e-quick_link__icon.ti-arrow-right
+											i.e-quick_link__icon.arrow_right
 
 									p.e-quick_link--primary
 										a(href='#' title='').e-quick_link__link
 											span.e-quick_link__text Events
-											i.e-quick_link__icon.ti-arrow-right
+											i.e-quick_link__icon.arrow_right
 
 			section.e-section.has-overlay.has-overlay_dark.is-dark.e-demo__row--04.e-padding_top--11.e-padding_bottom--11
 				.container
@@ -295,5 +295,43 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 																	span.e-price__ins $122.230
 																h5.is-md.e-course__title
 																	a.e-course__title__link( href='#' title='' ) Become a Startup Founder
+
+								.e-widget.e-text.e-text--default.e-margin_top--11
+									.e-call_to_action--icon_left
+										i.e-call_to_action__icon.fa.fa-users
+										span.e-call_to_action__text 3000+ People already Joined to our club, it’s the first step
+										a.e-call_to_action__button.e-button.e-button--solid.is-large.is-uppercase(href="#" title='') Join to us now
+
+			section.e-section.has-overlay.is-dark.e-demo__row--06.e-padding_top--11.e-padding_bottom--11
+				.container
+					.row
+						.col-lg-5
+							.e-col.cleafix
+
+								.e-widget.e-events--one_col
+									.e-events__outer
+										- for (var $i=0; $i<2; $i++)
+											.e-events__item
+
+												.e-events__item__datetime
+													.e-date_block--border_top
+														span.e-date_block__month Nov
+														span.e-date_block__day 14
+														span.e-date_block__year 2016
+
+												.e-events__item__summary
+													a(href='#' title='').e-events__item__sub_title In-Person Event
+
+													h5.is-xs.is-uppercase.e-events__item__title
+														a.e-events__item__title__link(href='#' title='') 2016 LLM Tour in Europe
+														i.e-events__item__title__icon.arrow_right
+
+													p.e-events__item__location
+														span.e-events__item__location__label Locations:
+														a.e-events__item__location__link(href='#' title='') Netherlands
+
+						.col-lg-7
+							.e-col.cleafix
+
 
 		include jade/_footer.jade

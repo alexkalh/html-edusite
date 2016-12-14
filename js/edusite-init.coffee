@@ -106,14 +106,10 @@ Edusite_Course =
 		if $e_course_masonries.length
 
 			jQuery.each $e_course_masonries, ()->
-
 				$_tmp = jQuery( @ )
-
 				$_tmp.imagesLoaded ()->
-
 					$_tmp.masonry
-						itemSelector: '.e-courses__course'		 
-
+						itemSelector: '.e-courses__course'
 					return
 				return
 		return
