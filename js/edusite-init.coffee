@@ -8,7 +8,8 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Course.init( 'masonry' )
 	Edusite_Lecture.init( 'carousel' )
 	Edusite_Testimonial.init( 'carousel' )
-	Edusite_Testimonial.init( 'carouselSingle' )
+	Edusite_Testimonial.init( 'carousel-single' )
+	Edusite_Testimonial.init( 'carousel-with-nav' )
 	Edusite_Progress_Bar.init( 'default' )
 	Edusite_Progress_Bar.init( 'secondary' )
 	Edusite_Gallery.init( 'default' )
@@ -213,8 +214,10 @@ Edusite_Testimonial =
 	init: ( type ) ->
 		if 'carousel' == type
 			Edusite_Testimonial.makeCarousel()
-		else if 'carouselSingle' == type
-			Edusite_Testimonial.makeCarouselSingle()
+		else if 'carousel-single' == type
+			Edusite_Testimonial.makeCarouselSingle()		
+		else if 'carousel-with-nav' == type
+			Edusite_Testimonial.makeCarouselWithNav()
 		return
 
 	makeCarousel: () ->
@@ -274,6 +277,30 @@ Edusite_Testimonial =
 				return
 
 		return
+
+	makeCarouselWithNav: () ->
+		$carousels = jQuery '.e-testimonials--carousel_with_nav'
+
+		if $carousels.length
+
+			jQuery.each $carousels, ( index, item ) ->
+
+				$slides = jQuery(this).find '.e-testimonials__slides'
+
+				if $slides.length
+					$slides.owlCarousel
+						items : 1
+						singleItem: true
+						pagination : false
+						navigation : true
+						autoHeight : true
+						rewindNav: false
+						transitionStyle: 'fade'
+						navigationText: [ '<i class="e-testimonials__nav__item e-testimonials__nav__prev arrow_left"></i>', '<i class="e-testimonials__nav__item e-testimonials__nav__next arrow_right"></i>' ]
+
+				return
+		return
+
 
 Edusite_Effect =
 	init: ( type )->
