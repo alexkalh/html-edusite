@@ -4850,6 +4850,97 @@ h6.is-lg {
   font-weight: 400;
   font-family: "Source Sans Pro", sans-serif;
 }
+.e-article--metadata_toggle {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+}
+.e-article--metadata_toggle .e-article {
+  position: relative;
+}
+.e-article--metadata_toggle .e-article__thumbnail__img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.e-article--metadata_toggle .e-article__outter {
+  padding-left: 59px;
+  position: relative;
+}
+.e-article--metadata_toggle .e-article__inner {
+  background-color: white;
+  margin-top: -30px;
+  padding: 0 24px 24px 24px;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+}
+.e-article--metadata_toggle .e-article__metadata {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  background-color: white;
+  text-align: center;
+  z-index: 10;
+  border-right: 1px solid #e5e5e5;
+}
+.e-article--metadata_toggle .e-article__metadata__item {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.e-article--metadata_toggle .e-article__metadata__icon {
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  font-size: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  color: #b9b9b9;
+}
+.e-article--metadata_toggle .e-article__metadata__text {
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  font-size: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+}
+.e-article--metadata_toggle .e-article__author {
+  position: relative;
+  padding-top: 40px;
+}
+.e-article--metadata_toggle .e-article__author__img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: -30px;
+  height: 60px;
+  width: 60px;
+}
+.e-article--metadata_toggle .e-article__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.e-article--metadata_toggle .e-article__title__link {
+  text-decoration: none;
+  color: #333333;
+}
+.e-article--metadata_toggle .e-article__excerpt {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
 .e-pagination--second .page-numbers.prev {
   float: left;
   margin-left: 0;

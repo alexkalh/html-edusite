@@ -3968,19 +3968,19 @@ h6
 				text-align: center
 
 			+has( date )
-				+inline-block()				
+				+inline-block()
 				vertical-align: middle
 
 			+has( divider )
-				+inline-block()				
-				position: relative				
+				+inline-block()
+				position: relative
 				line-height: $space--14a
 				width: ( ( $space--02 * 3 ) + ( $space--01 * 2 ) )
-				height: $space--14a				
+				height: $space--14a
 				vertical-align: middle
 				margin-left: $space--03
 				margin-right: $space--03
-				
+
 				+has( line )
 					display: block
 					position: absolute
@@ -4295,6 +4295,97 @@ h6
 					font-weight: 400
 					font-family: $font--content
 
++new( posts, $prefix )
+	+when( metadata_toggle )
+
++new( article, $prefix )
+	+when( metadata_toggle )
+		background-color: $color__light--00
+		border: 1px solid $color__light--09
+		overflow: hidden
+
+		+new-child( article, $prefix )
+			position: relative
+
+			+has( thumbnail )
+				+has( img )
+					display: block
+					margin: 0
+					padding: 0
+
+			+has( outter )
+				padding-left: ( $space--11 - 1px )
+				position: relative
+
+			+has( inner )
+				background-color: $color__light--00
+				margin-top: ( $space--11 / -2 )
+				padding: 0 $space--06 $space--06 $space--06
+				position: relative
+				z-index: 10
+				border-top: 1px solid $color__light--09
+				border-left: 1px solid $color__light--09
+
+			+has( metadata )
+				margin: 0
+				padding: 0
+				position: absolute
+				left: 0
+				bottom: 0
+				width: $space--11
+				background-color: $color__light--00
+				text-align: center
+				z-index: 10
+				border-right: 1px solid $color__light--09
+
+				+has( item )
+					border-top: 1px solid $color__light--09
+					padding-top: $space--03
+					padding-bottom: $space--03
+
+				+has( icon )
+					display: block
+					text-align: center
+					line-height: $space--04d
+					font-size: $space--04d
+					height: $space--04d
+					margin: 0
+					padding: 0
+					color: $color__light--03
+
+				+has( text )
+					display: block
+					text-align: center
+					line-height: $space--04d
+					font-size: $space--04d
+					height: $space--04d
+					margin: 0
+					padding: 0
+
+			+has( author )
+				position: relative
+				padding-top: $space--08
+
+				+has( img )
+					+border-radius( 50% )
+					display: block
+					position: absolute
+					left: 0
+					top: 0
+					margin-top: ( $space--11 / -2 )
+					height: $space--11
+					width: $space--11
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+				+has( link )
+					text-decoration: none
+					color: $color__dark--05
+
+			+has( excerpt )
+				margin-bottom: 0
+				margin-top: $space--03
 
 // WordPress: default markup
 +new( pagination, $prefix )
@@ -4402,7 +4493,7 @@ nav.navigation
 						background-color: $color__fourth__rgba--01
 				+when( '08' )
 					background: url( demo/bg/life.jpg ) no-repeat center center transparent
-					background-attachment: fixed						
+					background-attachment: fixed
 
 +new( body_blog, $prefix )
 	+when( two_cols )
