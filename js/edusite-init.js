@@ -1,11 +1,12 @@
 "use strict";
-var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
+var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Post, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
   Edusite_Count_Down.create();
   Edusite_Slider.init('nivo');
   Edusite_Course.init('carousel');
+  Edusite_Post.init('masonry');
   Edusite_Course.init('masonry');
   Edusite_Lecture.init('carousel');
   Edusite_Testimonial.init('carousel');
@@ -67,6 +68,29 @@ Edusite_Slider = {
             jQuery(this).addClass(jQuery(this).attr('data-animate'));
           });
         }
+      });
+    }
+  }
+};
+
+Edusite_Post = {
+  init: function(type) {
+    if ('masonry' === type) {
+      return Edusite_Post.makeMasonry();
+    }
+  },
+  makeMasonry: function() {
+    var $e_post_masonries;
+    $e_post_masonries = jQuery('.e-posts--metadata_toggle .e-posts__outer');
+    if ($e_post_masonries.length) {
+      jQuery.each($e_post_masonries, function() {
+        var $_tmp;
+        $_tmp = jQuery(this);
+        $_tmp.imagesLoaded(function() {
+          $_tmp.masonry({
+            itemSelector: '.e-posts__article'
+          });
+        });
       });
     }
   }

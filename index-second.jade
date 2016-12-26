@@ -259,7 +259,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 										p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
 
-									.e-courses__outer.animated.row(id='abc_xyz')
+									.e-courses__outer.animated.row
 										- for (var $i=0; $i<6; $i++)
 
 											- if( 0 == $i % 2 )
@@ -430,7 +430,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 							.e-col.clearfix
 								include jade/blocks/video/_centered.jade
 
-			section.e-section.e-demo__row--09.e-bg_color--07.e-padding_bottom--11
+			section.e-section.e-demo__row--09.e-bg_color--07.e-padding_bottom--04
 				.container
 					.row
 						.col-lg-12
@@ -444,14 +444,14 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 										p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendiss
 
-									.row
+									.e-posts__outer.row.animated
 										- for (var $i=0; $i<3; $i++)
 											- var $image_author = 'demo/author/metadata-toggle.jpg'
 											- var $image        = 'demo/posts/metadata-toggle/1.jpg'
 											- var $post_title   = $e_titles_sm[$i]
 
-											.col-lg-4
-												article.e-article--metadata_toggle
+											.e-posts__article.col-lg-4.col-xs-6
+												article.e-article--metadata_toggle.e-margin_bottom--07
 
 													.e-article__thumbnail
 														img.e-article__thumbnail__img.img-responsive(src=$image alt='')

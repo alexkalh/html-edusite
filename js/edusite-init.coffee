@@ -5,6 +5,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Count_Down.create()
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )
+	Edusite_Post.init( 'masonry' )
 	Edusite_Course.init( 'masonry' )
 	Edusite_Lecture.init( 'carousel' )
 	Edusite_Testimonial.init( 'carousel' )
@@ -63,6 +64,24 @@ Edusite_Slider =
 						jQuery(this).addClass jQuery(this).attr('data-animate')
 						return
 					return
+		return
+
+Edusite_Post =
+	init: ( type ) ->
+		if 'masonry' == type
+			Edusite_Post.makeMasonry()
+
+	makeMasonry: ->
+		$e_post_masonries = jQuery( '.e-posts--metadata_toggle .e-posts__outer' )
+		if $e_post_masonries.length
+
+			jQuery.each $e_post_masonries, ()->
+				$_tmp = jQuery( @ )
+				$_tmp.imagesLoaded ()->
+					$_tmp.masonry
+						itemSelector: '.e-posts__article'
+					return
+				return
 		return
 
 Edusite_Course =
@@ -300,7 +319,6 @@ Edusite_Testimonial =
 
 				return
 		return
-
 
 Edusite_Effect =
 	init: ( type )->
