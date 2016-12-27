@@ -2,7 +2,9 @@
 
 jQuery( document ).ready ( $ ) ->
 	Edusite.initNavigation()
-	Edusite_Count_Down.create()
+	Edusite_Count_Down.init( 'first' )
+	Edusite_Count_Down.init( 'second' )
+	Edusite_Count_Down.init( 'third' )	
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )
 	Edusite_Post.init( 'masonry' )
@@ -135,7 +137,16 @@ Edusite_Course =
 		return
 
 Edusite_Count_Down =
-	create: ->
+	init: ( type ) ->
+		if 'first' == type
+			Edusite_Count_Down.init_style_first()
+		else if 'second' == type
+			Edusite_Count_Down.init_style_second()
+		else if 'third' == type
+			Edusite_Count_Down.init_style_third()		
+		return
+
+	init_style_first: ->
 		$e_counter = jQuery '.e-count_down--first'
 
 		if $e_counter.length
@@ -148,9 +159,43 @@ Edusite_Count_Down =
 					$_obj.find( '.e-date--seconds .e-date_block__number' ).html ts.seconds
 					return
 				), countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
-
 				return
 		return
+
+	init_style_second: ->
+		$e_counter = jQuery '.e-count_down--circle'
+
+		if $e_counter.length
+			jQuery.each $e_counter, ()->
+				$_obj = jQuery(this)
+				$_end = new Date $_obj.find('.e-count_down__counter').attr( 'data-datetime' )
+				countdown( $_end, ( ( ts ) ->
+					$_obj.find( '.e-date--days .e-date_block__number' ).html ts.days
+					$_obj.find( '.e-date--hours .e-date_block__number' ).html ts.hours
+					$_obj.find( '.e-date--minutes .e-date_block__number' ).html ts.minutes
+					$_obj.find( '.e-date--seconds .e-date_block__number' ).html ts.seconds
+					return
+				), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS )
+				return
+		return
+
+	init_style_third: ->
+		$e_counter = jQuery '.e-count_down--secondary'
+
+		if $e_counter.length
+			jQuery.each $e_counter, ()->
+				$_obj = jQuery(this)
+				$_end = new Date $_obj.find('.e-count_down__counter').attr( 'data-datetime' )
+				countdown( $_end, ( ( ts ) ->
+					$_obj.find( '.e-date--days .e-date_block__number' ).html ts.days
+					$_obj.find( '.e-date--hours .e-date_block__number' ).html ts.hours
+					$_obj.find( '.e-date--minutes .e-date_block__number' ).html ts.minutes
+					$_obj.find( '.e-date--seconds .e-date_block__number' ).html ts.seconds
+					return
+				), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS )
+				return
+		return
+
 
 Edusite_Progress_Bar =
 	init: ( type ) ->

@@ -533,8 +533,6 @@ h6
 
 	+when( medium )
 
-
-
 	+when( withIcon )
 
 		+has( title )
@@ -602,7 +600,7 @@ h6
 		+new-child( caption, $prefix )
 
 			+has( link )
-				display: block
+				+inline-block()
 				text-decoration: none
 				margin-bottom: $space--05
 
@@ -722,6 +720,22 @@ h6
 
 			+has( subtitle )
 				margin-bottom: 0
+
+	+when( border_right )
+		+new-child( caption, $prefix )
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+
+			+has( text )
+				display: block
+				float: left
+				padding-right: $space--04
+
+			+has( line )
+				height: $space--04c
+				border-bottom: $space--01a solid $color--primary
+				overflow: hidden
 
 +new( testimonials, $prefix )
 
@@ -1800,30 +1814,63 @@ h6
 				font-size: $space--03a
 
 +new( footer, $prefix )
-	font-size: $space--04a
+	+when( default )
+		font-size: $space--04a
 
-	+new-child( widget, $prefix )
-		margin-bottom: $space--08
+		+new-child( widget, $prefix )
+			margin-bottom: $space--08
 
-	+new-child( footer, $prefix )
-		+has( widgets )
+		+new-child( footer, $prefix )
+			+has( widgets )
 
-			+if( light )
-				background-color: $color__light--12
+				+if( light )
+					background-color: $color__light--12
 
-			+if( dark )
-				background-color: $color__dark--01
+				+if( dark )
+					background-color: $color__dark--01
 
-		+has( info )
+			+has( info )
 
-			+if( light )
-				background-color: $color__light--12
+				+if( light )
+					background-color: $color__light--12
 
-			+if( dark )
-				background-color: $color__dark--01
+				+if( dark )
+					background-color: $color__dark--01
 
-			+has( right )
-				text-align: right
+				+has( right )
+					text-align: right
+
++new( footer, $prefix )
+	+when( secondary )
+		font-size: $space--04a
+
+		+new-child( widget, $prefix )
+			margin-bottom: $space--08
+
+		+new-child( footer, $prefix )
+			+has( widgets )
+
+				+if( light )
+					background-color: $color__light--12
+
+				+if( dark )
+					background-color: $color__dark--13
+
+					+new-child( col, $prefix )
+						+when( border_right )
+							border-right: 1px solid $color__dark--05a
+
+
+			+has( info )
+
+				+if( light )
+					background-color: $color__light--07
+
+				+if( dark )
+					background-color: $color__dark--01
+
+				+has( right )
+					text-align: right
 
 +new( section, $prefix )
 
@@ -1891,6 +1938,11 @@ h6
 					+has( title )
 						color: $color__light--00
 					+has( subtitle )
+						color: $color__light--00
+
+			+when( border_right )
+				+new-child( caption, $prefix )					
+					+has( text )
 						color: $color__light--00
 
 		+new-child( divider, $prefix )
@@ -4483,15 +4535,15 @@ nav.navigation
 				+when( '01' )
 					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
 					background-attachment: fixed
-				+when( '04' )
+				+when( '03' )
 					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
 					background-attachment: cover
-				+when( '06' )
+				+when( '05' )
 					background: url( demo/bg/find-course.jpg ) no-repeat center center transparent
 					background-attachment: cover
 					&:before
 						background-color: $color__fourth__rgba--01
-				+when( '08' )
+				+when( '07' )
 					background: url( demo/bg/life.jpg ) no-repeat center center transparent
 					background-attachment: fixed
 

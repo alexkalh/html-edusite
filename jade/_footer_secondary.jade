@@ -1,3 +1,44 @@
-footer.e-footer
+footer.e-footer.e-footer--secondary
+	section.e-section.e-footer__widgets.is-dark
+		.container
+			.row.e-row--noSpace.e-height--match
+
+				.col-lg-3
+					.e-col.e-col--border_right.clearfix.e-padding_left--07.e-padding_right--07.e-padding_top--14
+						- var $widget_title_style = 'border_right'
+						- var $widget_title_class = ''
+						- var $widget_title       = 'About'
+						include ../jade/blocks/contact/_info.jade
+
+				.col-lg-3
+					.e-col.e-col--border_right.clearfix.e-padding_left--07.e-padding_right--07.e-padding_top--14
+						- var $widget_title_style = 'border_right'
+						- var $widget_title_class = ''
+						- var $widget_title       = 'Links'
+						include ../jade/blocks/category/_list_flat.jade
+
+				.col-lg-3
+					.e-col.e-col--border_right.clearfix.e-padding_left--07.e-padding_right--07.e-padding_top--14
+						- var $widget_title_style = 'border_right'
+						- var $widget_title_class = ''
+						- var $widget_title       = 'Latest Tweets'
+						include ../jade/blocks/socials/_list_tweets.jade
+
+				.col-lg-3
+					.e-col.clearfix.e-padding_left--07.e-padding_right--07.e-padding_top--14
+						- var $widget_title_style = 'border_right'
+						- var $widget_title_class = ''
+						- var $widget_title       = 'Short Links'					
+
+	section.e-section.e-footer__info.is-light
+
+		.container.e-padding_top--04.e-padding_bottom--04
+			.row
+				.col-lg-6.e-footer__info__left
+					include ../jade/blocks/contact/_copyright.jade
+
+				.col-lg-6.e-footer__info__right
+					include ../jade/blocks/socials/_socials_solid_circle.jade
+
 	.e-scripts.hidden
 		+e_load_js()

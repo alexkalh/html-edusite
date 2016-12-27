@@ -1,17 +1,33 @@
-footer.e-footer
+footer.e-footer.e-footer--default
 	section.e-section.e-footer__widgets.is-dark.e-padding_top--14
 		.container
 			.row
 				.col-lg-3
+					- var $widget_title_style = 'border_bottom'
+					- var $widget_title_class = ''
+					- var $widget_title_icon  = 'fa fa-cogs'
+					- var $widget_title       = 'About'									
 					include ../jade/blocks/contact/_info.jade
 
 				.col-lg-3
+					- var $widget_title_style = 'border_bottom'
+					- var $widget_title_class = ''
+					- var $widget_title_icon  = 'fa fa-ellipsis-v'
+					- var $widget_title       = 'Links'							
 					include ../jade/blocks/category/_list_two_cols.jade
 
 				.col-lg-3
+					- var $widget_title_style = 'border_bottom'
+					- var $widget_title_class = ''
+					- var $widget_title_icon  = 'fa fa-twitter'
+					- var $widget_title       = 'Latest Tweets'							
 					include ../jade/blocks/socials/_list_tweets.jade
 
 				.col-lg-3
+					- var $widget_title_style = 'border_bottom'
+					- var $widget_title_class = ''
+					- var $widget_title_icon  = 'ti-email'
+					- var $widget_title       = 'Quick Contact'							
 					include ../jade/blocks/contact/_form.jade
 			
 	section.e-section.e-footer__info.is-dark
