@@ -1,5 +1,5 @@
 "use strict";
-var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Post, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
+var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Form, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Post, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
@@ -19,6 +19,7 @@ jQuery(document).ready(function($) {
   Edusite_Gallery.init('default');
   Edusite_Video.init('responsive');
   Edusite_Audio.init('mediaelementplayer');
+  Edusite_Form.init();
 });
 
 jQuery(window).on('load', function($) {
@@ -394,6 +395,15 @@ Edusite_Gallery = {
         });
       });
     }
+  }
+};
+
+Edusite_Form = {
+  init: function() {
+    Edusite_Form.init_select();
+  },
+  init_select: function() {
+    jQuery('select.e-field--select').niceSelect();
   }
 };
 

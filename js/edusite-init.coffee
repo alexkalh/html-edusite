@@ -18,6 +18,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Gallery.init( 'default' )
 	Edusite_Video.init( 'responsive' )
 	Edusite_Audio.init( 'mediaelementplayer' )
+	Edusite_Form.init()
 	return
 
 jQuery( window ).on 'load', ( $ ) ->
@@ -195,7 +196,6 @@ Edusite_Count_Down =
 				), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS )
 				return
 		return
-
 
 Edusite_Progress_Bar =
 	init: ( type ) ->
@@ -392,6 +392,15 @@ Edusite_Gallery =
 
 				return
 
+		return
+
+Edusite_Form = 
+	init: ()->
+		Edusite_Form.init_select()
+		return
+
+	init_select: ()->
+		jQuery( 'select.e-field--select' ).niceSelect()
 		return
 
 Edusite_Video =

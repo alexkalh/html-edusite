@@ -1,0 +1,8 @@
+.e-widget.e-text.e-text--default
+
+	include ../caption/_switcher.jade
+
+	ul.e-links--without_bullet
+		- for (var $i=0; $i<5; $i++)
+			li.e-links__item
+				a.e-links__item__link(href='#' title='') #{$e_titles[$i]}

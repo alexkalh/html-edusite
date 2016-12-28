@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6
 		font-weight: 700
 	&.is-regular
 		font-weight: 400
-	&.is-upppercase
+	&.is-uppercase
 		text-transform: uppercase
 	&.is-centered
 		text-align: center
@@ -1705,9 +1705,7 @@ h6
 				+if( first )
 
 				+if( other )
-					margin-top: $space--04
-					padding-top: $space--04
-					border-top: 1px solid $color__light--09
+					margin-top: $space--07
 
 			+has( content )
 
@@ -1774,6 +1772,56 @@ h6
 				height: ( $space--07a - 2 )
 				line-height: ( $space--07a - 2 )
 				width: ( $space--07a - 2 )
+
++new( social, $prefix )
+	+when( solid_circle_primary )
+		list-style-type: none
+		padding-left: 0
+		margin-top: 0
+		margin-bottom: 0
+
+		+new-child( social, $prefix )
+			+has( caption )
+				+inline-block()
+				margin-left: $space--0
+				margin-right: $space--0
+				+has( text )
+					height: $space--07a
+					line-height: $space--07a
+					margin-top: 0
+					margin-bottom: 0
+
+			+has( item )
+				+inline-block()
+				margin-left: $space--0
+				margin-right: $space--0
+
+			+has( link )
+				+border-radius( 50% )
+				+transition( 0.25s )
+				display: block
+				height: $space--07a
+				line-height: $space--07a
+				width: $space--07a
+				text-align: center
+				background-color: $color--secondary
+				border: 1px solid $color--secondary
+				color: $color__light--00
+				text-decoration: none
+				&:hover
+					background-color: $color__light--00
+					color: $color--secondary
+
+			+has( icon )
+				display: block
+				margin: 0
+				padding: 0
+				text-align: center
+				height: ( $space--07a - 2 )
+				line-height: ( $space--07a - 2 )
+				width: ( $space--07a - 2 )
+
+
 
 +new( social, $prefix )
 	+when( square )
@@ -1864,13 +1912,22 @@ h6
 			+has( info )
 
 				+if( light )
-					background-color: $color__light--07
+					background-color: $color__light--07a
+
+					+new-child( copyright, $prefix )
+						+when( default )
+							color: $color__dark--00
 
 				+if( dark )
 					background-color: $color__dark--01
 
 				+has( right )
 					text-align: right
+
+				+has( left )
+					+new-child( copyright, $prefix )
+						+when( default )
+							line-height: $space--07
 
 +new( section, $prefix )
 
@@ -1941,7 +1998,7 @@ h6
 						color: $color__light--00
 
 			+when( border_right )
-				+new-child( caption, $prefix )					
+				+new-child( caption, $prefix )
 					+has( text )
 						color: $color__light--00
 
@@ -1953,7 +2010,7 @@ h6
 			+when( list )
 				+new-child( tweets, $prefix )
 					+has( single )
-						border-top-color: $color__dark--05a
+
 
 		+new-child( field, $prefix )
 
@@ -4438,6 +4495,28 @@ h6
 			+has( excerpt )
 				margin-bottom: 0
 				margin-top: $space--03
+
++new( links, $prefix )
+	+when( without_bullet )
+		list-style-type: none
+		margin-bottom: 0
+		padding-left: 0
+
+		+new-child( links, $prefix )
+			+has( item )
+				margin-top: $space--05
+
+				&:first-child
+					margin-top: 0px
+
+				+has( link )
+					+transition( .25s )
+					text-decoration: none
+					color: $color__dark--08
+					&:hover
+						color: $color--primary
+
+
 
 // WordPress: default markup
 +new( pagination, $prefix )

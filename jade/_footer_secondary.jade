@@ -28,7 +28,8 @@ footer.e-footer.e-footer--secondary
 					.e-col.clearfix.e-padding_left--07.e-padding_right--07.e-padding_top--14
 						- var $widget_title_style = 'border_right'
 						- var $widget_title_class = ''
-						- var $widget_title       = 'Short Links'					
+						- var $widget_title       = 'Short Links'		
+						include ../jade/blocks/misc/_links.jade			
 
 	section.e-section.e-footer__info.is-light
 
@@ -38,7 +39,7 @@ footer.e-footer.e-footer--secondary
 					include ../jade/blocks/contact/_copyright.jade
 
 				.col-lg-6.e-footer__info__right
-					include ../jade/blocks/socials/_socials_solid_circle.jade
+					include ../jade/blocks/socials/_socials_solid_circle_primary.jade
 
 	.e-scripts.hidden
 		+e_load_js()
