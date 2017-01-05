@@ -66,6 +66,11 @@ h2
 		margin: round( 60px / 3 ) 0
 
 h3
+	&.is-lg
+		font-size: 36px
+		line-height: round( 36px * 1.3333 )
+		margin: round( 36px / 3 ) 0
+
 	&.is-sm
 		font-size: 30px
 		line-height: round( 30px * 1.3333 )
@@ -477,6 +482,10 @@ h6
 		+if( primary )
 			border: 1px solid $color--primary
 
+	+when( double_solid )
+		+if( primary )
+			border: 2px solid $color--primary
+
 	+when( icon_right )
 		position: relative
 
@@ -736,6 +745,18 @@ h6
 				height: $space--04c
 				border-bottom: $space--01a solid $color--primary
 				overflow: hidden
+
+	+when( with_sub )
+
+		+new-child( caption, $prefix )
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+
+			+has( subtitle )
+				margin-bottom: 0
+				color: $color__dark--08
+
 
 +new( testimonials, $prefix )
 
@@ -4223,7 +4244,6 @@ h6
 				margin-bottom: 0
 
 +new( events, $prefix )
-
 	+when( one_col )
 		+new-child( events, $prefix )
 
@@ -4304,6 +4324,52 @@ h6
 						display: block
 						float: left
 						text-decoration: none
+
+	+when( default )
+		+new-child( events, $prefix )
+
++new( event, $prefix )
+	+when( default )
+		padding-top: $space--08
+		border-top: 1px solid $color__light--07a
+
+		+if( other )
+			margin-top: $space--08
+
+		+new-child( info, $prefix )
+			+when( iconLeft )
+				+if( other )
+					margin-top: $space--01a
+				+if( first )
+					margin-top: $space--05
+
+		+new-child( event, $prefix )
+			+has( thumbnail )
+				display: block
+				margin: 0 0 $space--05 0
+				padding: 0
+
+
+			+has( img )
+				display: block
+				margin: 0
+				padding: 0
+
+			+has( title )
+				margin-top: 0
+				margin-bottom: 0
+
+				+has( link )
+					text-decoration: none
+					color: $color__dark--05
+
+			+has( excerpt )
+				margin-top: $space--05
+				margin-bottom: 0
+
+			+has( button_more )
+				margin-top: $space--05
+
 
 +new( testimonials, $prefix )
 
@@ -4528,6 +4594,44 @@ h6
 			&.next
 				float: right
 				margin-right: 0
+
+	+when( third )
+		margin-top: $space--08
+		padding-top: $space--05
+		border-top: 1px solid $color__light--07a
+
+		+new-child( pagination, $prefix )
+			+has( item )
+				color: $color__dark--05
+
+				+if( next )
+					+new-child( pagination, $prefix )
+						+has( item )
+							+has( icon )
+								margin-left: $space--05
+
+				+if( prev )
+					+new-child( pagination, $prefix )
+						+has( item )
+							+has( icon )
+								margin-right: $space--05
+
+				+if( prev )
+
+				+has( icon )
+					+inline-block()
+					width: $space--08
+					height: $space--08
+					line-height: $space--08
+					text-align: center
+					border: 1px solid $color__light--07a					
+
+				+has( text )
+					+inline-block()
+					height: $space--08
+					line-height: $space--08
+					font-weight: 700
+					font-family: $font--date
 
 nav.navigation
 	margin-top: $space--07

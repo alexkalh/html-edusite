@@ -1,0 +1,89 @@
+include jade/_config.jade
+include jade/mixins/_alex.jade
+
+doctype
+html( lang="en-US" prefix="og: http://ogp.me/ns#" )
+
+	include jade/_head.jade
+
+	body.e-body.e-body--relative.e-body--sub.e-body_events--default
+
+		header.e-header.e-header--fixed
+			.container
+				.e-header_top.row
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--left
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href='mailto:support@colourstheme.com') support@colourstheme.com
+					.col-lg-6
+						nav.e-top_menu.e-top_menu--right
+							ul.e-top_menu__links
+								li.e-top_menu__link.e-top_menu__link--lvl_0
+									a.e-top_menu__url(href="#login") Login
+								li.e-top_menu__link.e-top_menu__link--lvl_0.is-other
+									a.e-top_menu__url(href="#register") Register
+
+				.e-header_bottom.e-header_bottom--fixed.clearfix
+					h1.e-logo.e-logo--left
+						a.e-logo__link(href=$e_home_url title='')
+							img.e-logo__img(src=$e_logo alt='')
+
+					nav.e-navigation.pull-right
+						include jade/blocks/nav/_primary.jade
+
+		.e-main_content
+
+			section.e-section.e-demo__row--0.e-section--dark.e-padding_top--15.has-overlay
+				.e-container.container
+					.row
+						.col-lg-12
+							.e-col.clearfix.e-margin_top--13.e-margin_bottom--13
+								- var $breadcrumb_caption = 'Events'
+								- var $breadcrumb_current = 'Latest Events'
+								include jade/blocks/breadcrumbs/_centered.jade
+
+			section.e-section.e-demo__row--01.e-padding_top--12.e-padding_bottom--12
+				.e-container.container
+
+					.e-widget.e-events.e-events--default
+
+						.e-caption.e-caption--with_sub.e-padding_bottom--08
+							h3.is-lg.is-centered.e-caption__title.clearfix
+								span.e-caption__text Upcoming Events
+							h5.is-md.is-centered.is-regular.e-caption__subtitle November 2016
+
+
+						.e-events__outer
+
+							- for (var $i=0; $i<4; $i++)
+								- var $image = 'demo/events/default/1.jpg'
+								- var $post_title = $e_titles[$i]
+								- var $event_class = (0 == $i) ? 'is-first' : 'is-other'
+
+								.e-events__event.e-event--default.clearfix(class=$event_class)
+									.row
+										.col-lg-3
+											.e-event__thumbnail
+												img.e-event__img( src=$image )
+
+										.col-lg-9
+											.e-event__summary
+												h4.is-sm.is-regular.e-event__title.clearfix
+													a.e-event__title__link(href='' title='') #{$post_title}
+
+												.e-info.e-info--iconLeft.is-first
+													i.e-info__icon.fa.fa-map-marker
+													| Central Park, Brooklyn, NY 10036 New York, AK United States
+
+												.e-info.e-info--iconLeft.is-other
+													i.e-info__icon.fa.fa-calendar
+													| November 18 - November 22
+
+												p.e-event__excerpt Cras dapibus ullamcorper dictum. Vivamus nec erat placerat felis scelerisque porttitor in ac turpis. In nec imperdiet turpis. Suspendisse quis orci ut orci pulvinar eleifend. Nulla eu mattis ipsum. Integer eget sagittis nulla. Praesent consectetur lacus et..
+
+												a.e-event__button_more.e-button.e-button--double_solid.is-primary.is-large.is-uppercase.is-round(href='' title='') Read more
+
+						include jade/blocks/pagination/_third.jade
+
+		include jade/_footer.jade

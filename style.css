@@ -605,6 +605,11 @@ h2.is-lg {
   margin: 20px 0;
 }
 
+h3.is-lg {
+  font-size: 36px;
+  line-height: 48px;
+  margin: 12px 0;
+}
 h3.is-sm {
   font-size: 30px;
   line-height: 40px;
@@ -1011,6 +1016,9 @@ h6.is-lg {
 .e-button--solid.is-primary {
   border: 1px solid #31aec2;
 }
+.e-button--double_solid.is-primary {
+  border: 2px solid #31aec2;
+}
 .e-button--icon_right {
   position: relative;
 }
@@ -1262,6 +1270,14 @@ h6.is-lg {
   height: 18px;
   border-bottom: 5px solid #31aec2;
   overflow: hidden;
+}
+.e-caption--with_sub .e-caption__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.e-caption--with_sub .e-caption__subtitle {
+  margin-bottom: 0;
+  color: #777777;
 }
 .e-testimonials--carousel .e-testimonials__outer {
   position: relative;
@@ -4849,6 +4865,44 @@ h6.is-lg {
   float: left;
   text-decoration: none;
 }
+.e-event--default {
+  padding-top: 40px;
+  border-top: 1px solid #dddddd;
+}
+.e-event--default.is-other {
+  margin-top: 40px;
+}
+.e-event--default .e-info--iconLeft.is-other {
+  margin-top: 5px;
+}
+.e-event--default .e-info--iconLeft.is-first {
+  margin-top: 20px;
+}
+.e-event--default .e-event__thumbnail {
+  display: block;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+.e-event--default .e-event__img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.e-event--default .e-event__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.e-event--default .e-event__title__link {
+  text-decoration: none;
+  color: #333333;
+}
+.e-event--default .e-event__excerpt {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.e-event--default .e-event__button_more {
+  margin-top: 20px;
+}
 .e-testimonials--carousel_with_nav {
   position: relative;
 }
@@ -5068,6 +5122,39 @@ h6.is-lg {
 .e-pagination--second .page-numbers.next {
   float: right;
   margin-right: 0;
+}
+.e-pagination--third {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #dddddd;
+}
+.e-pagination--third .e-pagination__item {
+  color: #333333;
+}
+.e-pagination--third .e-pagination__item.is-next .e-pagination__item__icon {
+  margin-left: 20px;
+}
+.e-pagination--third .e-pagination__item.is-prev .e-pagination__item__icon {
+  margin-right: 20px;
+}
+.e-pagination--third .e-pagination__item__icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #dddddd;
+}
+.e-pagination--third .e-pagination__item__text {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 nav.navigation {
   margin-top: 30px;
