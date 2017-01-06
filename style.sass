@@ -2125,6 +2125,14 @@ h6
 			padding-left: $space--07a
 			padding-right: $space--07a
 
+	+when( '05' )
+		margin-left: $space--05 * -1
+		margin-right: $space--05 * -1
+		& > [class^="col-"],
+		& > [class*=" col-"]
+			padding-left: $space--05
+			padding-right: $space--05
+
 	+when( noSpace )
 		margin-left: 0
 		margin-right: 0
@@ -4582,6 +4590,37 @@ h6
 					&:hover
 						color: $color--primary
 
++new( google_map, $prefix )
+	+when( default )		
+		width: 100%
+		min-height: $space--17
+		height: $space--17
+		height: auto
+
++new( event, $prefix )
+	+when( standard )
+		+new-child( event, $prefix )
+			+has( thumbnail )
+				display: block
+				margin: 0
+				position: relative
+
+				+has( img )
+					display: block
+					margin: 0
+					width: 100%
+
+			+has( enroll )
+				position: absolute
+				bottom: $space--03
+				right: $space--03
+
+			+has( section )
+				+has( title )
+					margin-top: 0
+					margin-bottom: $space--05
+					padding-bottom: $space--03
+					border-bottom: 1px solid $color__light--09
 
 
 // WordPress: default markup

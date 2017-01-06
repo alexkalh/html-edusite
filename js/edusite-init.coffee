@@ -1,10 +1,12 @@
 "use strict";
 
+e_google_maps = ''
+
 jQuery( document ).ready ( $ ) ->
 	Edusite.initNavigation()
 	Edusite_Count_Down.init( 'first' )
 	Edusite_Count_Down.init( 'second' )
-	Edusite_Count_Down.init( 'third' )	
+	Edusite_Count_Down.init( 'third' )
 	Edusite_Slider.init( 'nivo' )
 	Edusite_Course.init( 'carousel' )
 	Edusite_Post.init( 'masonry' )
@@ -19,6 +21,7 @@ jQuery( document ).ready ( $ ) ->
 	Edusite_Video.init( 'responsive' )
 	Edusite_Audio.init( 'mediaelementplayer' )
 	Edusite_Form.init()
+	Edusite_Map.init()
 	return
 
 jQuery( window ).on 'load', ( $ ) ->
@@ -144,7 +147,7 @@ Edusite_Count_Down =
 		else if 'second' == type
 			Edusite_Count_Down.init_style_second()
 		else if 'third' == type
-			Edusite_Count_Down.init_style_third()		
+			Edusite_Count_Down.init_style_third()
 		return
 
 	init_style_first: ->
@@ -279,7 +282,7 @@ Edusite_Testimonial =
 		if 'carousel' == type
 			Edusite_Testimonial.makeCarousel()
 		else if 'carousel-single' == type
-			Edusite_Testimonial.makeCarouselSingle()		
+			Edusite_Testimonial.makeCarouselSingle()
 		else if 'carousel-with-nav' == type
 			Edusite_Testimonial.makeCarouselWithNav()
 		return
@@ -394,7 +397,7 @@ Edusite_Gallery =
 
 		return
 
-Edusite_Form = 
+Edusite_Form =
 	init: ()->
 		Edusite_Form.init_select()
 		return
@@ -440,3 +443,35 @@ Edusite_Lecture =
 					navigationText: [ '<i class="e-owl__arrow ti-angle-left"></i>', '<i class="e-owl__arrow ti-angle-right"></i>' ]
 				return
 		return
+
+Edusite_Map =
+	init: () ->
+		$e_map = jQuery('.e-google_map--default')
+
+		if $e_map.length
+			id_map     = $e_map.attr('id')
+			lat        = parseFloat($e_map.attr('data-latitude'))
+			lng        = parseFloat($e_map.attr('data-longitude'))
+			place      = $e_map.attr('data-place')
+
+			e_google_maps = new GMaps(
+				el: '#' + id_map
+				lat: lat
+				lng: lng
+				zoom: 8
+				scrollwheel: true
+				zoomControl: true
+				zoomControlOpt:
+					style: 'SMALL'
+					position: 'TOP_LEFT'
+					panControl: true
+					streetViewControl: true
+					mapTypeControl: true
+					overviewMapControl: true)
+
+			e_google_maps.addMarker
+				lat: lat
+				lng: lng
+				title: place
+
+			return

@@ -2598,6 +2598,14 @@ h6.is-lg {
   padding-left: 35px;
   padding-right: 35px;
 }
+.e-row--05 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.e-row--05 > [class^="col-"], .e-row--05 > [class*=" col-"] {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .e-row--noSpace {
   margin-left: 0;
   margin-right: 0;
@@ -5114,6 +5122,33 @@ h6.is-lg {
 }
 .e-links--without_bullet .e-links__item__link:hover {
   color: #31aec2;
+}
+.e-google_map--default {
+  width: 100%;
+  min-height: 350px;
+  height: 350px;
+  height: auto;
+}
+.e-event--standard .e-event__thumbnail {
+  display: block;
+  margin: 0;
+  position: relative;
+}
+.e-event--standard .e-event__thumbnail__img {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+.e-event--standard .e-event__enroll {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.e-event--standard .e-event__section__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
 }
 .e-pagination--second .page-numbers.prev {
   float: left;

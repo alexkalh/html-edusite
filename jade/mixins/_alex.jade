@@ -11,6 +11,10 @@ mixin e_load_js()
 	- for (var $index=0; $index<$e_js.length; $index++)
 		script(src=$e_js[$index])
 
+	- if ( $e_map_status )
+		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA62JY_t4hGDIW1-rG9pMZabWrD5el9cP0')
+		script(src='js/gmaps.js')
+
 	script(src='js/edusite-custom.js')
 	script(src='js/edusite-init.js')
 

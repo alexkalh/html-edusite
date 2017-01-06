@@ -1,12 +1,13 @@
 include jade/_config.jade
 include jade/mixins/_alex.jade
+- var $e_map_status = true
 
 doctype
 html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 	include jade/_head.jade
 
-	body.e-body.e-body--relative.e-body--sub.e-body--post
+	body.e-body.e-body--relative.e-body--sub.e-body_event--default
 
 		header.e-header.e-header--fixed
 			.container
@@ -39,24 +40,24 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 					.row
 						.col-lg-12
 							.e-col.clearfix.e-margin_top--13.e-margin_bottom--13
-								- var $breadcrumb_caption = 'Single post'
-								- var $breadcrumb_current = 'Your one stop Solution for Development Needs'
+								- var $breadcrumb_caption = 'Event'
+								- var $breadcrumb_current = 'Upcoming Events'
 								include jade/blocks/breadcrumbs/_centered.jade
 
-			section.e-section.e-demo__row--01.e-padding_top--12.e-padding_bottom--12.e-bg_color--07
+			section.e-section.e-demo__row--01.e-padding_top--12.e-padding_bottom--12
 				.e-container.container
-					.row
+					.row.e-row--05
+						.col-lg-9
+							.e-col.clearfix
+								.e-articles--avatar_left
+									include jade/blocks/singular/event/_standart.jade
+
 						.col-lg-3
 							.e-col.clearfix
 								include jade/blocks/category/_list_flat.jade
 								include jade/blocks/posts/_thumb_small.jade
 								include jade/blocks/tag/_cloud.jade
 								include jade/blocks/archives/_list_flat.jade
-
-						.col-lg-9
-							.e-col.clearfix
-								.e-articles--avatar_left
-									include jade/blocks/singular/post/_standart.jade
 
 
 		include jade/_footer.jade

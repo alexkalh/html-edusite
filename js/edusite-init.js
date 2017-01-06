@@ -1,5 +1,7 @@
 "use strict";
-var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Form, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Post, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video;
+var Edusite, Edusite_Audio, Edusite_Count_Down, Edusite_Course, Edusite_Effect, Edusite_Form, Edusite_Gallery, Edusite_Hack, Edusite_Lecture, Edusite_Map, Edusite_Post, Edusite_Progress_Bar, Edusite_Slider, Edusite_Testimonial, Edusite_Video, e_google_maps;
+
+e_google_maps = '';
 
 jQuery(document).ready(function($) {
   Edusite.initNavigation();
@@ -20,6 +22,7 @@ jQuery(document).ready(function($) {
   Edusite_Video.init('responsive');
   Edusite_Audio.init('mediaelementplayer');
   Edusite_Form.init();
+  Edusite_Map.init();
 });
 
 jQuery(window).on('load', function($) {
@@ -448,6 +451,40 @@ Edusite_Lecture = {
           theme: 'e-owl--bottom_navigation',
           navigationText: ['<i class="e-owl__arrow ti-angle-left"></i>', '<i class="e-owl__arrow ti-angle-right"></i>']
         });
+      });
+    }
+  }
+};
+
+Edusite_Map = {
+  init: function() {
+    var $e_map, id_map, lat, lng, place;
+    $e_map = jQuery('.e-google_map--default');
+    if ($e_map.length) {
+      id_map = $e_map.attr('id');
+      lat = parseFloat($e_map.attr('data-latitude'));
+      lng = parseFloat($e_map.attr('data-longitude'));
+      place = $e_map.attr('data-place');
+      e_google_maps = new GMaps({
+        el: '#' + id_map,
+        lat: lat,
+        lng: lng,
+        zoom: 8,
+        scrollwheel: true,
+        zoomControl: true,
+        zoomControlOpt: {
+          style: 'SMALL',
+          position: 'TOP_LEFT',
+          panControl: true,
+          streetViewControl: true,
+          mapTypeControl: true,
+          overviewMapControl: true
+        }
+      });
+      e_google_maps.addMarker({
+        lat: lat,
+        lng: lng,
+        title: place
       });
     }
   }
