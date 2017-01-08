@@ -143,7 +143,7 @@ h6
 				margin-bottom: $space--04
 
 +new( body, $prefix )
-	+when (relative)
+	+when ( relative )
 		position: relative
 
 +new( header, $prefix )
@@ -423,7 +423,7 @@ h6
 	letter-spacing: 1px
 	text-decoration: none
 
-	+if( fullwidth )
+	+if( full_width )
 		width: 100%
 
 	+if( uppercase )
@@ -542,7 +542,7 @@ h6
 
 	+when( medium )
 
-	+when( withIcon )
+	+when( with_icon )
 
 		+has( title )
 			margin: 0
@@ -579,12 +579,12 @@ h6
 		+if( center )
 			text-align: center
 			+new-child( caption, $prefix )
-				+when( withIcon )
+				+when( with_icon )
 					+has( icon )
 						left: 50%
 						margin-left: $space--11 / -2
 
-	+when( withPrefix )
+	+when( with_prefix )
 		margin-bottom: $space--05
 
 		+has( subtitle )
@@ -601,7 +601,7 @@ h6
 			& > span
 				color: $color--primary
 
-	+when( withIconTop )
+	+when( with_top_icon )
 
 		+if( center )
 			text-align: center
@@ -633,7 +633,7 @@ h6
 				font-family: $font--desc
 				font-weight: 300
 
-	+when( borderBottom )
+	+when( border_bottom )
 		position: relative
 
 		+if( sm )
@@ -682,7 +682,7 @@ h6
 				&:first-letter
 					text-transform: uppercase
 
-	+when( borderBottomLong )
+	+when( border_bottom_lg )
 		position: relative
 		border-bottom: 1px solid $color__light--08
 
@@ -823,7 +823,7 @@ h6
 				float: left
 				color: $color__dark--12
 
-	+when( carouselSingle )
+	+when( carousel_single )
 		+new-child( testimonials, $prefix )
 			+has( quote )
 				text-align: center
@@ -892,7 +892,7 @@ h6
 
 +new( course, $prefix )
 
-	+when( withRating )
+	+when( with_rating )
 		background-color: $color__light--00
 
 		+new-child( course, $prefix )
@@ -945,7 +945,7 @@ h6
 			+has( name )
 				+if( md )
 					margin: 0
-				+when( borderLeft )
+				+when( border_left )
 					padding: 0 $space--06
 					position: relative
 					&::before
@@ -967,13 +967,13 @@ h6
 				line-height: $space--06
 				color: $color__dark--05
 
-	+when( boxShadow )
+	+when( box_shadow )
 		+box-shadow( 0px, 1px, 5px, 0px, $color__dark__rgba--04 )
 		+transition( .25s )
 		&:hover
 			+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
-	+when( fullWidth )
+	+when( full_width )
 		background-color: $color__light--00
 		padding-left: $space--04
 		padding-right: $space--04
@@ -1249,7 +1249,7 @@ h6
 			color: $color__dark--05
 			text-transform: uppercase
 
-	+when( borderRound )
+	+when( border_round )
 		overflow: hidden
 		+border-radius( 5px )
 
@@ -1258,7 +1258,7 @@ h6
 
 		+new-child( caption, $prefix )
 
-			+when( withIcon )
+			+when( with_icon )
 				display: block
 				+has( text )
 					color: $color__light--00
@@ -1267,14 +1267,14 @@ h6
 				+has( subtitle )
 					color: $color__light--06
 
-			+when( withPrefix )
+			+when( with_prefix )
 				+has( subtitle)
 					color: $color__light--00
 
 				+has( title )
 					color: $color__light--00
 
-			+when( withIconTop )
+			+when( with_top_icon )
 
 				+new-child( caption, $prefix )
 					+has( link )
@@ -1290,11 +1290,11 @@ h6
 		+new-child( intro__content, $prefix )
 			color: $color__light--14
 
-	+when( borderTop )
+	+when( border_top )
 		border-top-width: $space--02
 		border-top-style: solid
 
-	+when( borderPrimary )
+	+when( border_primary )
 		border-color: $color--primary
 
 +new( field_group, $prefix )
@@ -1303,7 +1303,7 @@ h6
 	+when( last )
 
 +new( field, $prefix )
-	+if( fullwidth )
+	+if( full_width )
 		width: 100%
 
 	+if( round )
@@ -1390,20 +1390,15 @@ h6
 +new( intro, $prefix )
 
 	+when( 1st )
-
 		+new-child( intro, $prefix )
-
 			+has( icon )
 				display: block
 				font-size: $space--09
 				line-height: $space--09
 				margin-right: $space--04
 
-
 	+when( 2nd )
-
 		+new-child( intro, $prefix )
-
 			+has( symbol )
 				color: $color__light--00
 				position: relative
@@ -1580,7 +1575,7 @@ h6
 
 +new( article, $prefix )
 
-	+when( fullBg )
+	+when( full_bg )
 		position: relative
 
 		+new-child( article, $prefix )
@@ -1675,7 +1670,7 @@ h6
 				font-size: $space--05
 
 +new( info, $prefix )
-	+when( iconLeft )
+	+when( icon_left )
 		position: relative
 		padding-left: $space--05
 		margin-top: $space--03
@@ -1998,7 +1993,7 @@ h6
 +new( section, $prefix )
 	+if( dark )
 		+new-child( caption, $prefix )
-			+when( borderBottom )
+			+when( border_bottom )
 
 				&:before
 					background-color: $color__dark--09
@@ -2088,7 +2083,7 @@ h6
 						color: $color__light--06
 
 				+new-child( info, $prefix )
-					+when( iconLeft )
+					+when( icon_left )
 						+new-child( info, $prefix )
 							+has( icon )
 
@@ -2133,7 +2128,7 @@ h6
 			padding-left: $space--05
 			padding-right: $space--05
 
-	+when( noSpace )
+	+when( no_space )
 		margin-left: 0
 		margin-right: 0
 		& > [class^="col-"],
@@ -4345,7 +4340,7 @@ h6
 			margin-top: $space--08
 
 		+new-child( info, $prefix )
-			+when( iconLeft )
+			+when( icon_left )
 				+if( other )
 					margin-top: $space--01a
 				+if( first )
@@ -4591,7 +4586,7 @@ h6
 						color: $color--primary
 
 +new( google_map, $prefix )
-	+when( default )		
+	+when( default )
 		width: 100%
 		min-height: $space--17
 		height: $space--17
@@ -4663,7 +4658,7 @@ h6
 					height: $space--08
 					line-height: $space--08
 					text-align: center
-					border: 1px solid $color__light--07a					
+					border: 1px solid $color__light--07a
 
 				+has( text )
 					+inline-block()

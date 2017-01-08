@@ -1,16 +1,16 @@
 .e-widget.e-courses--grid.e-margin_top--09
-	.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
-		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
-			i.e-caption--withIcon__icon.fa.fa-bullhorn
-			span.e-caption--withIcon__text Popular courses
+	.e-caption.e-caption--with_icon.is-center.e-padding_bottom--08
+		h3.e-caption--with_icon__title.e-caption--with_icon__title--relative.clearfix
+			i.e-caption--with_icon__icon.fa.fa-bullhorn
+			span.e-caption--with_icon__text Popular courses
 			
-		p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
+		p.e-caption--with_icon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
 
 	.row
 		- for (var $i=0; $i<4; $i++)
 			- var $image = 'demo/courses/grid/1.jpg'
 			.col-lg-3
-				article.e-course.e-course--withRating.e-course--boxShadow.e-margin_bottom--07
+				article.e-course.e-course--with_rating.e-course--box_shadow.e-margin_bottom--07
 					figure.e-course__thumbnail.e-course__thumbnail--relative.clearfix
 						img.img-responsive(src=$image alt)
 						figcaption.e-course__metadata
@@ -18,7 +18,7 @@
 							span.e-course__date.e-course__date--right 83 Days
 							i.e-course__icon.e-course__icon--right.e-margin_right--02.ti-alarm-clock
 					.e-course__content
-						h5.is-md.e-course__name.e-course__name--borderLeft
+						h5.is-md.e-course__name.e-course__name--border_left
 							a.e-course__link(href=$e_single_url) Become a startup founder
 							i.e-rating.e-rating--three.e-rating--small.e-rating--primary.fa
 						.e-price.e-margin_top--06

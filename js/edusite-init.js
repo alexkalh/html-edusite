@@ -333,7 +333,7 @@ Edusite_Testimonial = {
   },
   makeCarouselSingle: function() {
     var $carousels;
-    $carousels = jQuery('.e-testimonials--carouselSingle');
+    $carousels = jQuery('.e-testimonials--carousel_single');
     if ($carousels.length) {
       jQuery.each($carousels, function(index, item) {
         var $slides;

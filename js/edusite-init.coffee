@@ -326,7 +326,7 @@ Edusite_Testimonial =
 		return
 
 	makeCarouselSingle: () ->
-		$carousels = jQuery '.e-testimonials--carouselSingle'
+		$carousels = jQuery '.e-testimonials--carousel_single'
 
 		if $carousels.length
 

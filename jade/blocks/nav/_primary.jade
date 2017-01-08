@@ -2,14 +2,19 @@ ul.e-menu.e-menu--default.sf-menu.clearfix
 
 	li.e-menu__link.is-lvl_1.is-current
 		a(href=$e_home_url) Home
-
-	li.e-menu__link.is-lvl_1
-		a(href='blog.html') Blog
 		ul.e-menu--sub.sub-menu
 			li.e-menu__link
-				a(href='blog.html') Blog With Sidebar
+				a(href=$e_home_url) Home 1
 			li.e-menu__link
-				a(href='blog-two-cols.html') Blog Two Columns
+				a(href='index-2.html') Home 2
+
+	li.e-menu__link.is-lvl_1
+		a(href='archive-post.html') Blog
+		ul.e-menu--sub.sub-menu
+			li.e-menu__link
+				a(href='archive-post.html') Blog With Sidebar
+			li.e-menu__link
+				a(href='archive-post-2.html') Blog Two Columns
 
 	li.e-menu__link.is-lvl_1
 		a(href=$e_single_url) Single
@@ -24,47 +29,47 @@ ul.e-menu.e-menu--default.sf-menu.clearfix
 				a(href="single-audio.html") Audio
 
 	li.e-menu__link.is-lvl_1
-		a(href="course-first.html") Course
+		a(href='archive-course.html') Course
 		ul.e-menu--sub.is-rtl.sub-menu
 			li.e-menu__link
-				a(href="course-first.html") Course List 1st
+				a(href="archive-course.html") Course List 1st
 			li.e-menu__link
-				a(href="course-second.html") Course List 2nd
+				a(href="archive-course-2.html") Course List 2nd
 			li.e-menu__link
-				a(href="single-course-first.html") Single Course
+				a(href="single-course.html") Single Course
 
 	li.e-menu__link.is-lvl_1
-		a(href="event-list.html") Event
+		a(href='archive-event.html') Event
 		ul.e-menu--sub.is-rtl.sub-menu
 			li.e-menu__link
-				a(href="event-list.html") Event List
+				a(href='archive-event.html') Event List
 			li.e-menu__link
-				a(href="event-detail.html") Single Event			
+				a(href='single-event.html') Single Event
 
 	li.e-menu__link.is-lvl_1
-		a(href="page.html") Page
+		a(href='page.html') Page
 		ul.e-menu--sub.is-rtl.sub-menu
 			li.e-menu__link
-				a(href="page-fullwidth.html") Page - Fullwidth
+				a(href='page-2.html') Page - Fullwidth
 			li.e-menu__link
-				a(href="about.html") About Us
+				a(href='about.html') About Us
 				ul.e-menu--sub.is-rtl.sub-menu
 					li.e-menu__link
-						a(href="page-fullwidth.html") Item 1a
+						a(href='page.html') Item 1a
 					li.e-menu__link
-						a(href="about.html") Item 1b
+						a(href='page.html') Item 1b
 					li.e-menu__link
-						a(href="elements.html") Item 1c
+						a(href='page.html') Item 1c
 					li.e-menu__link
-						a(href="contact.html") Item 1d
+						a(href='page.html') Item 1d
 					li.e-menu__link
-						a(href="404.html") Item 1e
+						a(href='page.html') Item 1e
 			li.e-menu__link
-				a(href="elements.html") Elements
+				a(href='elements.html') Elements
 			li.e-menu__link
-				a(href="contact.html") Contact
+				a(href='contact.html') Contact
 			li.e-menu__link
-				a(href="404.html") Error 404
+				a(href='404.html') Error 404
 
 	li.e-menu__icon.e-menu__icon--circle.is-lvl_1
 		a(href="#")
