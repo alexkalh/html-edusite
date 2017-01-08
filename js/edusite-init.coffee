@@ -458,8 +458,8 @@ Edusite_Map =
 				el: '#' + id_map
 				lat: lat
 				lng: lng
-				zoom: 8
-				scrollwheel: true
+				zoom: 10
+				scrollwheel: false
 				zoomControl: true
 				zoomControlOpt:
 					style: 'SMALL'
