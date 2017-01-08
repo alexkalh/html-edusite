@@ -4,7 +4,12 @@ ul.e-menu.e-menu--default.sf-menu.clearfix
 		a(href=$e_home_url) Home
 
 	li.e-menu__link.is-lvl_1
-		a(href=$e_archive_url) Blog  
+		a(href='blog.html') Blog
+		ul.e-menu--sub.is-rtl.sub-menu
+			li.e-menu__link
+				a(href='blog.html') Blog With Sidebar
+			li.e-menu__link
+				a(href='blog-two-cols.html') Blog Two Columns
 
 	li.e-menu__link.is-lvl_1
 		a(href=$e_single_url) Single
@@ -17,7 +22,17 @@ ul.e-menu.e-menu--default.sf-menu.clearfix
 				a(href="single-gallery.html") Gallery
 			li.e-menu__link
 				a(href="single-audio.html") Audio
-	
+
+	li.e-menu__link.is-lvl_1
+		a(href="course-first.html") Course
+		ul.e-menu--sub.is-rtl.sub-menu
+			li.e-menu__link
+				a(href="course-first.html") Course List 1st
+			li.e-menu__link
+				a(href="course-second.html") Course List 2nd
+			li.e-menu__link
+				a(href="single-course-first.html") Single Course
+
 	li.e-menu__link.is-lvl_1
 		a(href="page.html") Page
 		ul.e-menu--sub.is-rtl.sub-menu

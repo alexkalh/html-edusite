@@ -1,0 +1,18 @@
+.e-widget.e-testimonials.e-testimonials--carousel_with_nav.is-dark
+	.e-testimonials__outer
+		.e-testimonials__slides
+			- for (var $i=0; $i<2; $i++)
+				- var $name    = $quote_authors[$i][0]
+				- var $country = $quote_authors[$i][1]
+				- var $jobs    = $quote_authors[$i][2]
+				- var $image   = "demo/testimonials/carousel/" + $i + ".jpg"
+
+				.e-testimonials__item
+
+					.e-testimonials__item__quote
+						i.e-testimonials__item__icon.fa.fa-quote-left
+						.e-testimonials__item__text #{$quotes[$i]}
+
+					.e-testimonials__item__info
+						img.e-.e-testimonials__item__img( src="#{$image}" alt="#{$name}")
+						h4.is-md.e-testimonials__item__name - #{$name}

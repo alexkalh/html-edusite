@@ -1,0 +1,55 @@
+header.e-header.e-header--secondary
+
+	section.e-section.e-section--split
+		.container.e-section__outer
+			.row.e-row--noSpace.e-height--match
+				.col-lg-3
+					.e-header__site_logo.e-col.clearfix
+						include ../logo/_second.jade
+
+				.col-lg-9
+					.e-header__site_info.e-col.clearfix
+						.row.e-header__site_info__outer
+							.col-lg-3
+								- var $card_class = 'e-header__card'
+								- var $card_icon = 'fa fa-map-marker'
+								- var $card_title_1 = '0258 Hans Centers'
+								- var $card_title_2 = 'Cristoballand, USA'
+								include ../card/_icon_left.jade
+
+							.col-lg-3
+								- var $card_class = 'e-header__card'
+								- var $card_icon = 'fa fa-phone'
+								- var $card_title_1 = 'Any question at'
+								- var $card_title_2 = '1-800-23-456-7890'
+								include ../card/_icon_left.jade
+
+							.col-lg-3
+								- var $card_class = 'e-header__card'
+								- var $card_icon = 'fa fa-clock-o'
+								- var $card_title_1 = '9am - 8pm'
+								- var $card_title_2 = 'Mon - Sat'
+								include ../card/_icon_left.jade
+
+							.col-lg-3.e-header__call_to_action
+								a.e-button.e-button--fill.is-primary.is-medium_secondary.is-fullwidth.is-uppercase(href="#") Get a free quote
+
+	section.e-section.e-header__nav
+		.container
+			nav.e-navigation.pull-left
+				include ../nav/_secondary.jade
+
+			.e-header__icon_links.pull-right
+				a.e-header__icon_links__link.is-cart
+					i.e-header__icon_links__link__icon.fa.fa-shopping-cart
+					span.e-header__icon_links__link__count 2
+
+				a.e-header__icon_links__separator |
+
+				a.e-header__icon_links__link.is-circle
+					i.e-header__icon_links__link__icon.fa.fa-search
+
+			.e-header__auth_links.pull-right
+				a.e-header__auth_links__link(href="#login") Login
+				span.e-header__auth_links__separator /
+				a.e-header__auth_links__link(href="#register") Register
