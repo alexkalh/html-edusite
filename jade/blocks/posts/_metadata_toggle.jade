@@ -1,0 +1,44 @@
+.e-widget.e-posts--metadata_toggle.e-margin_top--09
+	.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
+		h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
+			i.e-caption--withIcon__icon.ti-write
+			span.e-caption--withIcon__text Register Now
+
+		p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendiss
+
+	.e-posts__outer.row.animated
+		- for (var $i=0; $i<3; $i++)
+			- var $image_author = 'demo/author/metadata-toggle.jpg'
+			- var $image        = 'demo/posts/metadata-toggle/1.jpg'
+			- var $post_title   = $e_titles_sm[$i]
+
+			.e-posts__article.col-lg-4.col-xs-6
+				article.e-article--metadata_toggle.e-margin_bottom--07
+
+					.e-article__thumbnail
+						img.e-article__thumbnail__img.img-responsive(src=$image alt='')
+
+					.e-article__outter
+
+						.e-article__metadata
+							.e-article__metadata__item
+								.e-article__metadata__icon.fa.fa-comments-o
+								.e-article__metadata__text 5
+
+							.e-article__metadata__item
+								.e-article__metadata__icon.fa.fa-heart
+								.e-article__metadata__text 0
+
+							.e-article__metadata__item
+								.e-article__metadata__icon.fa.fa-eye
+								.e-article__metadata__text 25
+
+						.e-article__inner
+
+							.e-article__author
+								img.e-article__author__img(src=$image_author alt='')
+
+							h6.is-md.e-article__title.is-uppercase
+								a.e-article__title__link(href=$e_single_url title="") #{$post_title}
+
+							p.e-article__excerpt Pellentesque et purus et lorem condimentum fringilla sit amet ac eros.

@@ -8,29 +8,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 	body.e-body.e-body--relative.e-body--sub.e-body--about
 
-		header.e-header.e-header--fixed
-			.container
-				.e-header_top.row
-					.col-lg-6
-						nav.e-top_menu.e-top_menu--left
-							ul.e-top_menu__links
-								li.e-top_menu__link.e-top_menu__link--lvl_0
-									a.e-top_menu__url(href='mailto:support@colourstheme.com') support@colourstheme.com
-					.col-lg-6
-						nav.e-top_menu.e-top_menu--right
-							ul.e-top_menu__links
-								li.e-top_menu__link.e-top_menu__link--lvl_0
-									a.e-top_menu__url(href="#login") Login
-								li.e-top_menu__link.e-top_menu__link--lvl_0.is-other
-									a.e-top_menu__url(href="#register") Register
-				
-				.e-header_bottom.e-header_bottom--fixed.clearfix
-					h1.e-logo.e-logo--left
-						a.e-logo__link(href=$e_home_url title='')
-							img.e-logo__img(src=$e_logo alt='')
-
-					nav.e-navigation.pull-right
-						include jade/blocks/nav/_primary.jade
+		include jade/blocks/header/_deault.jade
 		
 		.e-main_content
 			

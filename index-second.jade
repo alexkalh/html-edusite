@@ -8,64 +8,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 	body.e-body.e-body--home_second
 
-		header.e-header.e-header--secondary
-
-			section.e-section.e-section--split
-				.container.e-section__outer
-					.row.e-row--noSpace.e-height--match
-						.col-lg-3
-							.e-header__site_logo.e-col.clearfix
-								h1.e-logo.e-logo--secondary.e-margin_top--05.e-margin_bottom--05
-									a.e-logo__link(href=$e_home_url title='')
-										img.e-logo__img(src=$e_logo_secondary alt='')
-
-
-						.col-lg-9
-							.e-header__site_info.e-col.clearfix
-								.row.e-header__site_info__outer
-									.col-lg-3.e-header__card.e-card--icon_left
-										i.e-card__icon.fa.fa-map-marker.pull-left
-										p.e-card__content
-											|0258 Hans Centers
-											br
-											|Cristoballand, USA
-
-									.col-lg-3.e-header__card.e-card--icon_left
-										i.e-card__icon.fa.fa-phone.pull-left
-										p.e-card__content
-											|Any question at
-											br
-											|1-800-23-456-7890
-
-									.col-lg-3.e-header__card.e-card--icon_left
-										i.e-card__icon.fa.fa-clock-o.pull-left
-										p.e-card__content
-											|9am - 8pm
-											br
-											|Mon - Sat
-
-									.col-lg-3.e-header__call_to_action
-										a.e-button.e-button--fill.is-primary.is-medium_secondary.is-fullwidth.is-uppercase(href="#") Get a free quote
-
-			section.e-section.e-header__nav
-				.container
-					nav.e-navigation.pull-left
-						include jade/blocks/nav/_secondary.jade
-
-					.e-header__icon_links.pull-right
-						a.e-header__icon_links__link.is-cart
-							i.e-header__icon_links__link__icon.fa.fa-shopping-cart
-							span.e-header__icon_links__link__count 2
-
-						a.e-header__icon_links__separator |
-
-						a.e-header__icon_links__link.is-circle
-							i.e-header__icon_links__link__icon.fa.fa-search
-
-					.e-header__auth_links.pull-right
-						a.e-header__auth_links__link(href="#login") Login
-						span.e-header__auth_links__separator /
-						a.e-header__auth_links__link(href="#register") Register
+		include jade/blocks/header/_second.jade
 
 		.e-main_content
 
@@ -104,53 +47,24 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 									.row.e-row--noSpace
 										.col-lg-4
 											.e-col.clearfix
-												.e-widget.e-card--icon_circle.is-primary
-													i.e-card__icon.fa.fa-graduation-cap.pull-left
-													p.e-card__title
-														|Courses
-														br
-														|Management
-													.e-card__hover.e-card--icon_circle.is-secondary
-														i.e-card__icon.fa.fa-graduation-cap.pull-left
-														p.e-card__title
-															|Courses
-															br
-															|Management
-														.e-card__content.clearfix Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit.
-
+												- var $card_title_1 = 'Courses'
+												- var $card_title_2 = 'Management'
+												- var $card_excerpt = 'Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit.'
+												include jade/blocks/card/_icon_circle.jade
 
 										.col-lg-4
 											.e-col.clearfix
-												.e-widget.e-card--icon_circle.is-primary
-													i.e-card__icon.fa.fa-book.pull-left
-													p.e-card__title
-														|Teacher
-														br
-														|Management
-													.e-card__hover.e-card--icon_circle.is-secondary
-														i.e-card__icon.fa.fa-book.pull-left
-														p.e-card__title
-															|Teacher
-															br
-															|Management
-														.e-card__content.clearfix Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit.
+												- var $card_title_1 = 'Teacher'
+												- var $card_title_2 = 'Management'
+												- var $card_excerpt = 'Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit.'
+												include jade/blocks/card/_icon_circle.jade
 
 										.col-lg-4
 											.e-col.clearfix
-												.e-widget.e-card--icon_circle.is-primary
-													i.e-card__icon.fa.fa-calendar-plus-o.pull-left
-													p.e-card__title
-														|Events
-														br
-														|with Style
-
-													.e-card__hover.e-card--icon_circle.is-secondary
-														i.e-card__icon.fa.fa-calendar-plus-o.pull-left
-														p.e-card__title
-															|Events
-															br
-															|with Style
-														.e-card__content.clearfix Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit.
+												- var $card_title_1 = 'Events'
+												- var $card_title_2 = 'with Style'
+												- var $card_excerpt = 'Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit.'
+												include jade/blocks/card/_icon_circle.jade
 
 			section.e-section.e-demo__row--02.e-padding_top--11.e-padding_bottom--11
 				.container
@@ -170,187 +84,52 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 									.e-caption.e-caption--medium.e-margin_bottom--07
 										h4.is-md.is-bold.is-uppercase.e-caption__title.clearfix Quick Links
 
-									p.e-quick_link--primary
-										a(href='#' title='').e-quick_link__link
-											span.e-quick_link__text 5 Steps to U.S. Study
-											i.e-quick_link__icon.arrow_right
+									- var $link_text = '5 Steps to U.S. Study'
+									- var $link_icon = 'arrow_right'
+									include jade/blocks/quick_link/_primary.jade
 
-									p.e-quick_link--primary
-										a(href='#' title='').e-quick_link__link
-											span.e-quick_link__text Find an Advising Center
-											i.e-quick_link__icon.arrow_right
+									- var $link_text = 'Find an Advising Center'
+									- var $link_icon = 'arrow_right'
+									include jade/blocks/quick_link/_primary.jade
 
-									p.e-quick_link--primary
-										a(href='#' title='').e-quick_link__link
-											span.e-quick_link__text Financial Aid
-											i.e-quick_link__icon.arrow_right
+									- var $link_text = 'Financial Aid'
+									- var $link_icon = 'arrow_right'
+									include jade/blocks/quick_link/_primary.jade
 
-									p.e-quick_link--primary
-										a(href='#' title='').e-quick_link__link
-											span.e-quick_link__text Events
-											i.e-quick_link__icon.arrow_right
+									- var $link_text = 'Events'
+									- var $link_icon = 'arrow_right'
+									include jade/blocks/quick_link/_primary.jade
 
 			section.e-section.e-demo__row--03.has-overlay.has-overlay_dark.is-dark.e-padding_top--11.e-padding_bottom--11
 				.container
 					.row
 						.col-lg-5
 							.e-col.cleafix
-
 								.e-widget.e-text.e-text--default
-									.e-card--image_shadow
-										a(href="#" title="").e-card__link
-											img(src='demo/card/image-shadow/1.jpg' alt='').e-card__img
+									include jade/blocks/card/_image_shadow.jade
 
 						.col-lg-7
 							.e-col.cleafix.e-padding_left--04
-								.e-widget.e-count_down--secondary
-									.e-caption.e-caption--medium.e-margin_bottom--07
-										h4.is-md.is-bold.is-uppercase.e-caption__title.clearfix Upcomming Event
-
-
-									h4.e-count_down__caption.is-md.is-regular Annual meetup and scholarship presentation
-
-									.e-count_down__info.e-info.e-info--iconLeft
-										i.e-info__icon.ti-map-alt
-										|198 Lost Angles Avenue, US
-
-									.e-count_down__info.e-info.e-info--iconLeft
-										i.e-info__icon.fa.fa-calendar
-										|December 10, 2016
-
-
-									.e-count_down__counter.clearfix(data-datetime='2016,12,10')
-
-										.e-count_down__date.e-date_block--solid.e-date--days
-											b.e-date_block__number 14
-											span.e-date_block__text days
-
-										.e-count_down__divider
-
-										.e-count_down__date.e-date_block--solid.e-date--hours
-											b.e-date_block__number 00
-											span.e-date_block__text hours
-
-										.e-count_down__divider
-
-										.e-count_down__date.e-date_block--solid.e-date--minutes
-											b.e-date_block__number 44
-											span.e-date_block__text minutes
-
-										.e-count_down__divider
-
-										.e-count_down__date.e-date_block--solid.e-date--seconds
-											b.e-date_block__number 24
-											span.e-date_block__text seconds
-
-										a(href="#" title='').e-count_down__button.e-field.e-field--submit.e-button.e-button--fill.is-primary.is-huge Join Now
+								include jade/blocks/count_down/_secondary.jade
 
 			section.e-section.e-demo__row--04.e-padding_bottom--11.e-bg_color--07
 				.container
 					.row
 						.col-lg-12
 							.e-col.cleafix
-
-								.e-widget.e-courses--masonry.e-margin_top--09
-									.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
-										h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
-											i.e-caption--withIcon__icon.fa.fa-bullhorn
-											span.e-caption--withIcon__text Popular courses
-
-										p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
-
-									.e-courses__outer.animated.row
-										- for (var $i=0; $i<6; $i++)
-
-											- if( 0 == $i % 2 )
-												.e-courses__course.is-md.col-lg-4.col-xs-6
-													.e-course--medium_thumb
-
-														.e-course__thumb
-															img.e-course__thumb__img.img-responsive( src='demo/courses/masonry/1.jpg' )
-															a.e-course__price.e-price--secondary( href='#' title='' )
-																span.e-price__ins $122.230
-
-														h5.is-md.e-course__title
-															a.e-course__title__link( href='#' title='' ) Become a Startup Founder
-
-														p.e-course__metadata
-															span.e-icon--text_right.e-course__metadata__item
-																i.e-icon__icon.fa.fa-book
-																span.e-icon__text 5 Lessons
-
-															i.e-course__metadata__item.is-other.e-course__rating.e-rating.e-rating--three.e-rating--small.e-rating--primary.fa
-
-														p.e-course__excerpt Education is the process of facilitating learning. Knowledge, skills, values, beliefs, and habits ..
-
-											- else
-												.e-courses__course.is-lg.col-lg-4.col-xs-6
-													.e-course--large_thumb
-														.e-course__thumb
-															img.e-course__thumb__img.img-responsive( src='demo/courses/masonry/2.jpg' )
-
-														.e-course__outer
-															.e-course__inner
-																a.e-course__price.e-price--secondary( href='#' title='' )
-																	span.e-price__ins $122.230
-																h5.is-md.e-course__title
-																	a.e-course__title__link( href='#' title='' ) Become a Startup Founder
-
-								.e-widget.e-text.e-text--default.e-margin_top--11
-									.e-call_to_action--icon_left
-										i.e-call_to_action__icon.fa.fa-users
-										span.e-call_to_action__text 3000+ People already Joined to our club, it’s the first step
-										a.e-call_to_action__button.e-button.e-button--solid.is-large.is-uppercase(href="#" title='') Join to us now
+								include jade/blocks/courses/_masonry.jade
+								include jade/blocks/call_to_action/_icon_left.jade
 
 			section.e-section.e-demo__row--05.has-overlay.is-dark.e-padding_top--11.e-padding_bottom--11
 				.container
 					.row
 						.col-lg-5
 							.e-col.cleafix
-
-								.e-widget.e-events--one_col
-									.e-events__outer
-										- for (var $i=0; $i<2; $i++)
-											.e-events__item
-
-												.e-events__item__datetime
-													.e-date_block--border_top
-														span.e-date_block__month Nov
-														span.e-date_block__day 14
-														span.e-date_block__year 2016
-
-												.e-events__item__summary
-													a(href='#' title='').e-events__item__sub_title In-Person Event
-
-													h5.is-xs.is-uppercase.e-events__item__title
-														a.e-events__item__title__link(href='#' title='') 2016 LLM Tour in Europe
-														i.e-events__item__title__icon.arrow_right
-
-													p.e-events__item__location
-														span.e-events__item__location__label Locations:
-														a.e-events__item__location__link(href='#' title='') Netherlands
+								include jade/blocks/events/_one_col.jade
 
 						.col-lg-7
 							.e-col.cleafix
-
-								.e-widget.e-testimonials.e-testimonials--carousel_with_nav.is-dark
-									.e-testimonials__outer
-										.e-testimonials__slides
-											- for (var $i=0; $i<2; $i++)
-												- var $name    = $quote_authors[$i][0]
-												- var $country = $quote_authors[$i][1]
-												- var $jobs    = $quote_authors[$i][2]
-												- var $image   = "demo/testimonials/carousel/" + $i + ".jpg"
-
-												.e-testimonials__item
-
-													.e-testimonials__item__quote
-														i.e-testimonials__item__icon.fa.fa-quote-left
-														.e-testimonials__item__text #{$quotes[$i]}
-
-													.e-testimonials__item__info
-														img.e-.e-testimonials__item__img( src="#{$image}" alt="#{$name}")
-														h4.is-md.e-testimonials__item__name - #{$name}
+								include jade/blocks/testimonials/_carousel_with_nav.jade
 
 			section.e-section.e-demo__row--06.e-padding_bottom--11.e-bg_color--07
 				.container
@@ -358,47 +137,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 						.col-lg-10.col-lg-push-1
 							.e-col.cleafix
 
-								.e-widget.e-margin_top--09.e-count_down--circle
-
-									.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
-										h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
-											i.e-caption--withIcon__icon.ti-write
-											span.e-caption--withIcon__text Register Now
-
-										p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendiss
-
-									.e-count_down__counter.clearfix(data-datetime='2016,12,10')
-
-										.e-count_down__date.e-date_block--circle.e-date--days
-											b.e-date_block__number 14
-											span.e-date_block__text days
-
-										.e-count_down__divider
-											span.e-count_down__divider__line.is-left
-											span.e-count_down__divider__line.is-center
-											span.e-count_down__divider__line.is-right
-
-										.e-count_down__date.e-date_block--circle.e-date--hours
-											b.e-date_block__number 00
-											span.e-date_block__text hours
-
-										.e-count_down__divider
-											span.e-count_down__divider__line.is-left
-											span.e-count_down__divider__line.is-center
-											span.e-count_down__divider__line.is-right
-
-										.e-count_down__date.e-date_block--circle.e-date--minutes
-											b.e-date_block__number 44
-											span.e-date_block__text minutes
-
-										.e-count_down__divider
-											span.e-count_down__divider__line.is-left
-											span.e-count_down__divider__line.is-center
-											span.e-count_down__divider__line.is-right
-
-										.e-count_down__date.e-date_block--circle.e-date--seconds
-											b.e-date_block__number 24
-											span.e-date_block__text seconds
+								include jade/blocks/count_down/_circle.jade
 
 								.e-widget.e-text.e-text--default.e-margin_top--07
 									h4.is-sm.is-centered.is-regular
@@ -406,22 +145,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 										br
 										| access to 100s of online courses
 
-
-								.e-widget.e-form_register--secondary.e-margin_top--07
-									form.e-form( action="#" method="post" )
-										.row.e-row--sm
-											.col-md-3
-												.e-field_group
-													input.e-field.e-field--text.is-solid.is-huge.is-fullwidth.is-round(type="text" name="name" placeholder="Name *")
-											.col-md-3
-												.e-field_group
-													input.e-field.e-field--text.is-solid.is-huge.is-fullwidth.is-round(type="text" name="email" placeholder="Email *")
-											.col-md-3
-												.e-field_group
-													input.e-field.e-field--text.is-solid.is-huge.is-fullwidth.is-round(type="email" name="phone" placeholder="Phone")
-											.col-md-3
-												.e-field_group
-													input.e-field.e-field--submit.e-button.e-button--fill.is-primary.is-huge.is-fullwidth.is-round(type="submit" value="Signup Now")
+								include jade/blocks/form/_secondary.jade
 
 			section.e-section.e-demo__row--07.e-section--dark.has-overlay
 				.container
@@ -435,50 +159,6 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 					.row
 						.col-lg-12
 							.e-col.clearfix
-								.e-widget.e-posts--metadata_toggle.e-margin_top--09
-
-									.e-caption.e-caption--withIcon.is-center.e-padding_bottom--08
-										h3.e-caption--withIcon__title.e-caption--withIcon__title--relative.clearfix
-											i.e-caption--withIcon__icon.ti-write
-											span.e-caption--withIcon__text Register Now
-
-										p.e-caption--withIcon__subtitle Quisque cursus in augue eget faucibus suspendiss
-
-									.e-posts__outer.row.animated
-										- for (var $i=0; $i<3; $i++)
-											- var $image_author = 'demo/author/metadata-toggle.jpg'
-											- var $image        = 'demo/posts/metadata-toggle/1.jpg'
-											- var $post_title   = $e_titles_sm[$i]
-
-											.e-posts__article.col-lg-4.col-xs-6
-												article.e-article--metadata_toggle.e-margin_bottom--07
-
-													.e-article__thumbnail
-														img.e-article__thumbnail__img.img-responsive(src=$image alt='')
-
-													.e-article__outter
-
-														.e-article__metadata
-															.e-article__metadata__item
-																.e-article__metadata__icon.fa.fa-comments-o
-																.e-article__metadata__text 5
-
-															.e-article__metadata__item
-																.e-article__metadata__icon.fa.fa-heart
-																.e-article__metadata__text 0
-
-															.e-article__metadata__item
-																.e-article__metadata__icon.fa.fa-eye
-																.e-article__metadata__text 25
-
-														.e-article__inner
-
-															.e-article__author
-																img.e-article__author__img(src=$image_author alt='')
-
-															h6.is-md.e-article__title.is-uppercase
-																a.e-article__title__link(href=$e_single_url title="") #{$post_title}
-
-															p.e-article__excerpt Pellentesque et purus et lorem condimentum fringilla sit amet ac eros.
+								include jade/blocks/posts/_metadata_toggle.jade
 
 		include jade/_footer_secondary.jade

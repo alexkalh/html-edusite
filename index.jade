@@ -8,32 +8,10 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 	body.e-body.e-body--relative.e-body--home
 
-		header.e-header.e-header--fixed
-			.container
-				.e-header_top.row
-					.col-lg-6
-						nav.e-top_menu.e-top_menu--left
-							ul.e-top_menu__links
-								li.e-top_menu__link.e-top_menu__link--lvl_0
-									a.e-top_menu__url(href='mailto:support@colourstheme.com') support@colourstheme.com
-					.col-lg-6
-						nav.e-top_menu.e-top_menu--right 
-							ul.e-top_menu__links
-								li.e-top_menu__link.e-top_menu__link--lvl_0
-									a.e-top_menu__url(href="#login") Login
-								li.e-top_menu__link.e-top_menu__link--lvl_0.is-other
-									a.e-top_menu__url(href="#register") Register
-				
-				.e-header_bottom.e-header_bottom--fixed.clearfix
-					h1.e-logo.e-logo--left
-						a.e-logo__link(href=$e_home_url title='')
-							img.e-logo__img(src=$e_logo alt='')
+		include jade/blocks/header/_deault.jade
 
-					nav.e-navigation.pull-right
-						include jade/blocks/nav/_primary.jade
-		
 		.e-main_content
-			
+
 			section.e-section.e-demo__row--00
 				.e-container--full
 					.row
@@ -49,9 +27,9 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 								include jade/blocks/courses/_carousel.jade
 						.col-lg-4
 							.e-col.e-bg_color--10
-								include jade/blocks/misc/_count-down.jade
+								include jade/blocks/count_down/_first.jade
 								include jade/blocks/form/_register.jade
-			
+
 			section.e-section.e-demo__row--02.has-overlay.e-padding_bottom--09
 				.container
 					.row
@@ -61,7 +39,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 
 						.col-lg-5
 							.e-col.clearfix
-								include jade/blocks/misc/_welcome.jade		
+								include jade/blocks/misc/_welcome.jade
 
 			section.e-section.e-demo__row--03.e-bg_color--07
 				.container
@@ -103,23 +81,23 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 						.col-lg-4
 							.e-col.clearfix.e-margin_top--05
 								- var $intro_icon   = 'fa fa-graduation-cap'
-								- var $intro_number = '190'			
+								- var $intro_number = '190'
 								- var $intro_desc   = 'Countries reached'
 								include jade/blocks/elements/_intro-2nd.jade
 
 						.col-lg-4
 							.e-col.clearfix.e-margin_top--05
 								- var $intro_icon   = 'fa fa-book'
-								- var $intro_number = '25000'			
+								- var $intro_number = '25000'
 								- var $intro_desc   = 'Passed graduates'
 								include jade/blocks/elements/_intro-2nd.jade
 
 						.col-lg-4
 							.e-col.clearfix.e-margin_top--05
 								- var $intro_icon   = 'fa fa-users'
-								- var $intro_number = '3400'			
+								- var $intro_number = '3400'
 								- var $intro_desc   = 'Courses published'
-								include jade/blocks/elements/_intro-2nd.jade								
+								include jade/blocks/elements/_intro-2nd.jade
 
 			section.e-section.e-demo__row--06.e-bg_color--07
 				.container
@@ -145,5 +123,4 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 							.e-col.clearfix.e-margin_bottom--12
 								include jade/blocks/posts/_grid_two_cols.jade
 
-		
 		include jade/_footer.jade
