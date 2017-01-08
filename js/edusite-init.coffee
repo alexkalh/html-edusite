@@ -210,7 +210,7 @@ Edusite_Progress_Bar =
 
 	init_style_default: () ->
 
-		$bars = jQuery '.e-progress_bar--1st'
+		$bars = jQuery '.e-progress_bar--default'
 
 		if $bars.length
 

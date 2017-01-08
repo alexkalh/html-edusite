@@ -224,7 +224,7 @@ Edusite_Progress_Bar = {
   },
   init_style_default: function() {
     var $bars;
-    $bars = jQuery('.e-progress_bar--1st');
+    $bars = jQuery('.e-progress_bar--default');
     if ($bars.length) {
       jQuery.each($bars, function(index, element) {
         var $element, delay, percent, start;

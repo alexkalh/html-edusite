@@ -1389,7 +1389,7 @@ h6
 
 +new( intro, $prefix )
 
-	+when( 1st )
+	+when( default )
 		+new-child( intro, $prefix )
 			+has( icon )
 				display: block
@@ -1397,7 +1397,7 @@ h6
 				line-height: $space--09
 				margin-right: $space--04
 
-	+when( 2nd )
+	+when( secondary )
 		+new-child( intro, $prefix )
 			+has( symbol )
 				color: $color__light--00
@@ -1953,7 +1953,7 @@ h6
 
 	+when( dark )
 		+new-child( intro, $prefix )
-			+when( 2nd )
+			+when( secondary )
 				+new-child( intro, $prefix )
 					+has( index )
 						color: $color__light--00
@@ -2218,7 +2218,7 @@ h6
 
 +new( card, $prefix )
 
-	+when( 1st )
+	+when( default )
 		position: relative
 		overflow: hidden
 
@@ -2282,7 +2282,7 @@ h6
 					&:hover
 						color: $color--primary
 
-	+when( 2nd )
+	+when( secondary )
 
 		+new-child( card, $prefix )
 
@@ -2414,7 +2414,7 @@ h6
 
 +new( progress_bar, $prefix )
 
-	+when( 1st )
+	+when( default )
 		margin-top: 0
 		margin-bottom: $space--07
 
