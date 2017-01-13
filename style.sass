@@ -757,7 +757,6 @@ h6
 				margin-bottom: 0
 				color: $color__dark--08
 
-
 +new( testimonials, $prefix )
 
 	+when( carousel )
@@ -1836,8 +1835,6 @@ h6
 				height: ( $space--07a - 2 )
 				line-height: ( $space--07a - 2 )
 				width: ( $space--07a - 2 )
-
-
 
 +new( social, $prefix )
 	+when( square )
@@ -4132,7 +4129,6 @@ h6
 					+if( right )
 						right: 0
 
-
 +new( date_block, $prefix )
 	+when( circle )
 		+border-radius( 50% )
@@ -4165,7 +4161,6 @@ h6
 				color: $color__light--00
 				text-transform: uppercase
 				margin-top: $space--03
-
 
 +new( date_block, $prefix )
 	+when( solid )
@@ -4373,7 +4368,6 @@ h6
 			+has( button_more )
 				margin-top: $space--05
 
-
 +new( testimonials, $prefix )
 
 	+when( carousel_with_nav )
@@ -4472,9 +4466,6 @@ h6
 					margin-bottom: 0
 					font-weight: 400
 					font-family: $font--content
-
-+new( posts, $prefix )
-	+when( metadata_toggle )
 
 +new( article, $prefix )
 	+when( metadata_toggle )
@@ -4617,7 +4608,6 @@ h6
 					padding-bottom: $space--03
 					border-bottom: 1px solid $color__light--09
 
-
 // WordPress: default markup
 +new( pagination, $prefix )
 	+when( second )
@@ -4740,12 +4730,6 @@ nav.navigation
 				+when( '08' )
 					background-color: $color__light--12a
 
-	+when( courses )
-		+new-child( demo, $prefix )
-			+has( row )
-				+when( '01' )
-					background-color: $color__light--12
-
 	+when( home_second )
 		+new-child( demo, $prefix )
 			+has( row )
@@ -4764,8 +4748,20 @@ nav.navigation
 					background: url( demo/bg/life.jpg ) no-repeat center center transparent
 					background-attachment: fixed
 
++new( body_courses, $prefix )
+	+when( default )
+		+new-child( demo, $prefix )
+			+has( row )
+				+when( '01' )
+					background-color: $color__light--12
+
 +new( body_blog, $prefix )
 	+when( two_cols )
+		+new-child( main_content, $prefix )
+			background-color: $color__light--14
+
++new( body_course, $prefix )
+	+when( default )
 		+new-child( main_content, $prefix )
 			background-color: $color__light--14
 
@@ -4773,3 +4769,6 @@ nav.navigation
 	+has( blockquote )
 		+when( '01' )
 			background: url( demo/bg/welcome.jpg ) no-repeat center center transparent
+
+
+@import 'scss/responsive'

@@ -5263,9 +5263,6 @@ nav.navigation a {
 .e-body--about .e-demo__row--08 {
   background-color: whitesmoke;
 }
-.e-body--courses .e-demo__row--01 {
-  background-color: #f7f7f7;
-}
 .e-body--home_second .e-demo__row--01 {
   background: url(demo/bg/find-course.jpg) no-repeat center center transparent;
   background-attachment: fixed;
@@ -5285,7 +5282,13 @@ nav.navigation a {
   background: url(demo/bg/life.jpg) no-repeat center center transparent;
   background-attachment: fixed;
 }
+.e-body_courses--default .e-demo__row--01 {
+  background-color: #f7f7f7;
+}
 .e-body_blog--two_cols .e-main_content {
+  background-color: #fcfcfc;
+}
+.e-body_course--default .e-main_content {
   background-color: #fcfcfc;
 }
 .e-demo__blockquote--01 {
