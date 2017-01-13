@@ -5294,3 +5294,11 @@ nav.navigation a {
 .e-demo__blockquote--01 {
   background: url(demo/bg/welcome.jpg) no-repeat center center transparent;
 }
+@media only screen and (max-width: 1023px) {
+  .e-body--relative {
+    position: static;
+  }
+  .e-header--fixed {
+    position: relative;
+  }
+}

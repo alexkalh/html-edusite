@@ -1,6 +1,13 @@
 @media only screen and (max-width: 1179px)
 
 @media only screen and (max-width: 1023px)
+	+new( body, $prefix )
+		+when( relative )
+			position: static
+
+	+new( header, $prefix )
+		+when( fixed )
+			position: relative
 
 @media only screen and (max-width: 979px)
 
