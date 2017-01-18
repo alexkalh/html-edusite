@@ -1,14 +1,20 @@
 header.e-header.e-header--fixed
 	.container
-		.e-header_top.row
+		.e-header__top.row
 			.col-lg-6.col-xs-6
 				include ../nav/_top_left.jade
 
 			.col-lg-6.col-xs-6
 				include ../nav/_top_right.jade
 		
-		.e-header_bottom.e-header_bottom--fixed.clearfix
+		.e-header__bottom.e-header__bottom--fixed.clearfix
 			include ../logo/_default.jade
 
-			nav.e-navigation.pull-right
+			nav.e-navigation.e-navigation--default.pull-right
 				include ../nav/_primary.jade
+
+			.e-icon--square.is-primary.pull-right.is-lg
+				.e-icon__icon.fa.fa-search
+
+			.e-icon--square.is-solid.pull-right.is-lg
+				.e-icon__icon.fa.fa-bars

@@ -112,6 +112,11 @@ Edusite_Course =
 					items : 2
 					pagination : false
 					navigation : false
+					itemsDesktop : [1199, 2]
+					itemsDesktopSmall : [979, 2]
+					itemsTablet : [768, 2]
+					itemsTabletSmall : [479, 1]
+					itemsMobile : [479, 1]
 					afterInit: ->
 						$_prev.on "click", ->
 							$_owl.trigger 'owl.prev'

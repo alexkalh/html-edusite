@@ -1,6 +1,6 @@
 /* Slider */
 .slick-loading .slick-list {
-  background: white url("./ajax-loader.gif") center center no-repeat;
+  background: white url("../images/slick/ajax-loader.gif") center center no-repeat;
 }
 
 /* Icons */

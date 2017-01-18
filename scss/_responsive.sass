@@ -1,6 +1,16 @@
 @media only screen and (max-width: 1179px)
+	+new( slide, $prefix )
+		+when( nivo )
+			margin-bottom: $space--09
+			+new-child( slide, $prefix )
+				+has( title )
+					width: 100%
+				+has( subtitle )
+					width: 100%
+				+has( excerpt )
+					width: 100%
+					display: none
 
-@media only screen and (max-width: 1023px)
 	+new( body, $prefix )
 		+when( relative )
 			position: static
@@ -8,6 +18,25 @@
 	+new( header, $prefix )
 		+when( fixed )
 			position: relative
+
+			+new-child( logo, $prefix )
+				+when( left )
+					height: $logo-height
+					margin-top: $space--03
+					margin-bottom: $space--03
+
+			+new-child( header, $prefix )
+				+has( top )
+					display: none
+				+has( bottom )
+					+when( fixed )
+						padding: 0
+			+new-child( navigation, $prefix )
+				+when( default )
+					display: none
+
+@media only screen and (max-width: 1023px)
+
 
 @media only screen and (max-width: 979px)
 

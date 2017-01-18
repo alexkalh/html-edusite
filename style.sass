@@ -191,7 +191,7 @@ h6
 		&:hover
 			color: $color--primary
 
-+new( header_bottom, $prefix )
++new( header__bottom, $prefix )
 	+when( fixed )
 		background-color: $color__light--00
 		padding: $space--06
@@ -1122,6 +1122,33 @@ h6
 			+has( text )
 				+inline_block()
 
++new( icon, $prefix )
+	+when( square )
+		+inline_block()
+		text-align: center
+		cursor: pointer
+
+		+new-child( icon, $prefix )
+			+has( icon )
+
+		+if( lg )
+			height: ( $logo-height + $space--03 + $space--03 )
+			line-height: ( $logo-height + $space--03 + $space--03 )
+			width: ( $logo-height + $space--03 + $space--03 )
+
+			+new-child( icon, $prefix )
+				+has( icon )
+					font-size: $space--05
+
+
+		+if( primary )
+			background-color: $color--primary
+			color: $color__light--00
+
+		+if( solid )
+			color: $color--primary
+
+
 +new( price, $prefix )
 	+when( secondary )
 		+inline_block()
@@ -1226,6 +1253,7 @@ h6
 			left: 50%
 			border-left: 1px dashed $color__light--07
 			background-color: $color__light--12
+			+border-radius-separate( null, 5px, 5px, null )
 
 	+new-child( date_block, $prefix )
 
@@ -1398,6 +1426,11 @@ h6
 
 	+when( secondary )
 		+new-child( intro, $prefix )
+			+has( wrap )
+				position: relative
+				min-height: ( $space--15 + $space--01b )
+				padding-left: ( $space--15 + $space--01b + $space--05 )
+
 			+has( symbol )
 				color: $color__light--00
 				position: relative
@@ -1409,8 +1442,9 @@ h6
 				font-size: $space--09a
 				line-height: $space--15
 				width: $space--15
-				margin-right: $space--05
-				position: relative
+				position: absolute
+				top: 0
+				left: 0
 				border: 1px solid $color__primary__rgba--01
 				+border-radius( 50% )
 
@@ -1437,8 +1471,7 @@ h6
 					position: absolute
 					content: ''
 					bottom: 1px
-					left: 50%
-					margin-left: ( $space--14 * -0.5 ) + 20
+					left: 0
 					background-color: $color__dark__rgba--03
 					height: 1px
 					width: $space--14
