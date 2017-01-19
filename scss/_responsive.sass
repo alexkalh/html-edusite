@@ -35,8 +35,30 @@
 				+when( default )
 					display: none
 
-@media only screen and (max-width: 1023px)
+	+new( footer, $prefix )
+		+when( default )
+			+new-child( footer, $prefix )
+				+has( separator )
+					display: block
 
+	+new( section, $prefix )
+		+with( overlay )
+			background-attachment: scroll
+			background-position: center center
+
+@media only screen and (max-width: 1023px)
+	+new( ninja, $prefix )
+		+when( hide )
+			+when( tablet )
+				+when( since)
+					display: none
+
+	+new( ninja, $prefix )
+		+when( margin_top )
+			+when( tablet )
+				+when( since )
+					+when( '09' )
+						margin-top: $space--09
 
 @media only screen and (max-width: 979px)
 
@@ -47,14 +69,52 @@
 @media only screen and (max-width: 767px)
 
 @media only screen and (max-width: 639px)
+	+new( article, $prefix )
+		+when( full_bg )
+			+new-child( article, $prefix )
+				+has( outter )
+					top: auto
+					bottom: ( $space--07 * -1 )
+					left: $space--13
+					right: ( $space--07 * -1 )
+					width: 90%
 
 @media only screen and (max-width: 599px)
 
 @media only screen and (max-width: 479px)
+	+new( article, $prefix )
+		+when( full_bg )
+			+new-child( article, $prefix )
+				+has( excerpt )
+					display: none
+
+			+new-child( readmore, $prefix )
+				display: none
 
 @media only screen and (min-width: 1280px)
 
 @media only screen and (min-width: 1140px)
+
+@media only screen and (min-width: 1024px)
+
+@media only screen and (min-width: 981px)
+	+new( ninja, $prefix )
+		+when( margin_top )
+			+when( tablet )
+				+when( above )
+					+when( 12 )
+						margin-top: $space--12
+
+@media only screen and (min-width: 1024px) and (max-width: 1300px)
+	+new( article, $prefix )
+		+when( full_bg )
+			+new-child( article, $prefix )
+				+has( outter )
+					top: auto
+					bottom: ( $space--07 * -1 )
+					left: $space--13
+					right: ( $space--07 * -1 )
+					width: 90%
 
 @media only screen and (min-width: 1280px) and (max-width: 1300px)
 
@@ -75,6 +135,11 @@
 @media only screen and (min-width: 640px) and (max-width: 1023px)
 
 @media only screen and (min-width: 640px) and (max-width: 767px)
+	+new( courses, $prefix )
+		+when( grid )
+			+new-child( courses, $prefix )
+				+has( course )
+					width: 50%
 
 @media only screen and (min-width: 480px) and (max-width: 639px)
 

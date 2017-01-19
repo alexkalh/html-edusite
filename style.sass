@@ -1479,9 +1479,8 @@ h6
 			+has( excerpt )
 				font-family: $font--heading
 				font-size: $space--04c
-				line-height: $space--15 / 2
 				font-weight: 400
-				margin: 0
+				margin: $space--03 0 0 0
 				text-transform: uppercase
 
 +new( call_to_action, $prefix )
@@ -1622,6 +1621,10 @@ h6
 				&:hover
 					+box-shadow( 5px, 5px, 10px, 0px, $color__dark__rgba--04 )
 
+			+has( img )
+				width: 100%
+				max-width: 100%
+				height: auto
 
 			+has( inner )
 				position: relative
@@ -1915,6 +1918,10 @@ h6
 			margin-bottom: $space--08
 
 		+new-child( footer, $prefix )
+			+has( separator )
+				display: none
+				height: 1px
+
 			+has( widgets )
 
 				+if( light )
@@ -4640,6 +4647,14 @@ h6
 					margin-bottom: $space--05
 					padding-bottom: $space--03
 					border-bottom: 1px solid $color__light--09
+
++new( form, $prefix  )
+	+when( search_course )
+		+new-child( form, $prefix )
+			+has( row )
+				margin-top: ( $space--04 * -1 )
+			+has( col )
+				margin-top: $space--04
 
 // WordPress: default markup
 +new( pagination, $prefix )

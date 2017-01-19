@@ -7,13 +7,13 @@
 		p.e-caption--with_icon__subtitle Quisque cursus in augue eget faucibus suspendisse vel mattis libero aliquam
 
 
-	.row.e-row--07a
+	.row.e-row--07a.e-margin_top--09__negative
 		- for (var $i=0; $i<2; $i++)
 			- var $image = 'demo/posts/grid-two-cols/1.jpg'
 			- var $post_title = $e_titles[$i]
-			.col-lg-6
+			.col-lg-6.col-md-6.e-margin_top--09
 				article.e-article.e-article--full_bg
-					img(src=$image alt='')
+					img.e-article__img(src=$image alt='')
 
 					.e-article__outter
 						.e-article__inner

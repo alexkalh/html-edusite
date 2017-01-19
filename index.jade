@@ -33,7 +33,7 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 			section.e-section.e-demo__row--02.has-overlay.e-padding_bottom--09
 				.container
 					.row
-						.col-lg-5.col-lg-offset-1.col-md-5.col-md-offset-1
+						.col-lg-5.col-lg-offset-1.col-md-5.col-md-offset-1.e-ninja--hide--tablet--since
 							.e-col.clearfix
 								include jade/blocks/misc/_banner.jade
 
@@ -45,24 +45,24 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 				.container
 					.row
 						.col-lg-12
-							.e-col.e-col--box.is-md.clearfix.e-margin_top--09__negative
+							.e-col.e-col--box.is-md.clearfix.e-margin_top--09__negative.e-ninja--margin_top--tablet--since--09 
 								include jade/blocks/courses/_search.jade
 
 								section.e-section.e-section--child
-									.row
-										.col-lg-4.col-md-4
+									.row.e-margin_top--08__negative
+										.col-lg-4.col-md-4.e-margin_top--08
 											.e-col.clearfix
-												- var $intro_icon = 'icon_contacts_alt'
-												- var $intro_desc = 'Over 400 Students Enrolled Learn Skills'
+												- var $intro_icon  = 'icon_contacts_alt'
+												- var $intro_desc  = 'Over 400 Students Enrolled Learn Skills'
 												include jade/blocks/intro/_default.jade
 
-										.col-lg-4.col-md-4
+										.col-lg-4.col-md-4.e-margin_top--08
 											.e-col.clearfix
 												- var $intro_icon = 'icon_documents_alt'
 												- var $intro_desc = 'More than 3020 Online Courses Available'
 												include jade/blocks/intro/_default.jade
 
-										.col-lg-4.col-md-4
+										.col-lg-4.col-md-4.e-margin_top--08
 											.e-col.clearfix
 												- var $intro_icon = 'icon_bag_alt'
 												- var $intro_desc = 'More than 320 Instructors Available'
@@ -102,10 +102,11 @@ html( lang="en-US" prefix="og: http://ogp.me/ns#" )
 			section.e-section.e-demo__row--06.e-bg_color--07
 				.container
 					.row
-						.col-lg-6
-							.e-col.e-col--box.is-md.clearfix.e-margin_top--09__negative.e-margin_bottom--12
+						.col-lg-6.col-md-6
+							.e-col.e-col--box.is-md.clearfix.e-margin_top--09__negative.e-ninja--margin_top--tablet--since--09.e-margin_bottom--12
 								include jade/blocks/elements/_accordion-1st.jade
-						.col-lg-6
+						
+						.col-lg-6.col-md-6
 							.e-col.clearfix.e-margin_bottom--12
 								include jade/blocks/testimonials/_carousel.jade
 

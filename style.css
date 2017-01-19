@@ -1999,9 +1999,8 @@ h6.is-lg {
 .e-intro--secondary .e-intro__excerpt {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
-  line-height: 65px;
   font-weight: 400;
-  margin: 0;
+  margin: 10px 0 0 0;
   text-transform: uppercase;
 }
 .e-call_to_action--default {
@@ -2158,6 +2157,11 @@ h6.is-lg {
   -ms-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
   -moz-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
   -webkit-box-shadow: 5px 5px 10px 0px rgba(150, 150, 150, 0.3);
+}
+.e-article--full_bg .e-article__img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 .e-article--full_bg .e-article__inner {
   position: relative;
@@ -2458,6 +2462,10 @@ h6.is-lg {
 }
 .e-footer--default .e-widget {
   margin-bottom: 40px;
+}
+.e-footer--default .e-footer__separator {
+  display: none;
+  height: 1px;
 }
 .e-footer--default .e-footer__widgets.is-light {
   background-color: #f7f7f7;
@@ -5183,6 +5191,12 @@ h6.is-lg {
   padding-bottom: 10px;
   border-bottom: 1px solid #e5e5e5;
 }
+.e-form--search_course .e-form__row {
+  margin-top: -15px;
+}
+.e-form--search_course .e-form__col {
+  margin-top: 15px;
+}
 .e-pagination--second .page-numbers.prev {
   float: left;
   margin-left: 0;
@@ -5360,5 +5374,56 @@ nav.navigation a {
   }
   .e-header--fixed .e-navigation--default {
     display: none;
+  }
+  .e-footer--default .e-footer__separator {
+    display: block;
+  }
+  .e-section.has-overlay {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .e-ninja--hide--tablet--since {
+    display: none;
+  }
+  .e-ninja--margin_top--tablet--since--09 {
+    margin-top: 45px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .e-article--full_bg .e-article__outter {
+    top: auto;
+    bottom: -30px;
+    left: 80px;
+    right: -30px;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .e-article--full_bg .e-article__excerpt {
+    display: none;
+  }
+  .e-article--full_bg .e-readmore {
+    display: none;
+  }
+}
+@media only screen and (min-width: 981px) {
+  .e-ninja--margin_top--tablet--above--12 {
+    margin-top: 70px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+  .e-article--full_bg .e-article__outter {
+    top: auto;
+    bottom: -30px;
+    left: 80px;
+    right: -30px;
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+  .e-courses--grid .e-courses__course {
+    width: 50%;
   }
 }
