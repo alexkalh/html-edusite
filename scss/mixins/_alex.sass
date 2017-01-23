@@ -121,6 +121,12 @@
 	-moz-box-shadow: $h-shadow $v-shadow $blur $spread $color
 	-webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color
 
+=box-shadow-none()
+	box-shadow: none
+	-ms-box-shadow: none
+	-moz-box-shadow: none
+	-webkit-box-shadow: none
+	
 +new( animation-duration, $prefix )
 	+when( 01 )
 		+animation-duration(1s)

@@ -154,6 +154,13 @@ h6
 		width: 100%
 		z-index: 20
 
+	+new-child( header, $prefix )
+		+has( mobile )
+			+has( search )
+				display: none
+			+has( nav_toggle )
+				display: none
+
 +new( top_menu, $prefix )
 	+when (right)
 		text-align: right

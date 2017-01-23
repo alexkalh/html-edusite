@@ -31,6 +31,14 @@
 				+has( bottom )
 					+when( fixed )
 						padding: 0
+
+				+has( mobile )
+					+has( nav_toggle )
+						display: block
+					
+					+has( search )
+						display: block
+						
 			+new-child( navigation, $prefix )
 				+when( default )
 					display: none
@@ -67,6 +75,17 @@
 @media only screen and (max-width: 799px)
 
 @media only screen and (max-width: 767px)
+	+new( footer, $prefix )
+		+when( default )
+			+new-child( footer, $prefix )
+				+has( info )
+					+has( left )
+						text-align: center
+
+					+has( right )
+						text-align: center
+						margin-top: $space--05
+
 
 @media only screen and (max-width: 639px)
 	+new( article, $prefix )
@@ -78,6 +97,46 @@
 					left: $space--13
 					right: ( $space--07 * -1 )
 					width: 90%
+
+	+new( slide, $prefix )
+		+when( nivo )
+			margin-bottom: $space--04
+
+			+new-child( slide, $prefix )
+				+has( title )
+					font-size: 30px
+					line-height: round( 30px * 1.3333 )
+					margin: round( 30px / 3 ) 0
+
+				+has( subtitle )
+					font-size: 24px
+					line-height: round( 24px * 1.3333 )
+					margin: round( 24px / 3 ) 0
+
+
+			+new-child( button, $prefix )
+				display: none
+
+	+new( col, $prefix )
+		+when( box )
+			+when( mobile )
+				+when( reset )
+					+box-shadow-none()
+					background-color: transparent
+					
+					+if( lg )
+						padding: 0
+					+if( md )
+						padding: 0
+					+if( sm )
+						padding: 0
+					+if( xs )
+						padding: 0
+
+					&:hover
+						+box-shadow-none()
+
+
 
 @media only screen and (max-width: 599px)
 
